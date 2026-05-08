@@ -1,0 +1,16 @@
+# macOS clutter
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon?
+
+# Editor / IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Logs / temp
+*.log
+.tmp/

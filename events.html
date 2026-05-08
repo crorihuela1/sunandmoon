@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>What's Happening on 30A · Events Calendar | Sun &amp; Moon at 30A</title>
+  <meta name="description" content="Curated upcoming events, festivals, farmers markets, and concerts on Scenic 30A — Seagrove Beach, Seaside, WaterColor, Alys Beach, Rosemary Beach.">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --sand:#F5EFE4; --sand2:#EDE4D3; --tan:#C9B89A;
+      --brown:#8B6F52; --deep:#3B2F22;
+      --sky:#7BB8C8; --ocean:#3A7E96; --foam:#e6f0f4;
+      --sun:#E8A44A; --moon:#8BABC4;
+      --moon-deep:#3A6080; --sun-deep:#9B6B20;
+      --white:#FDFCFA; --text:#2C2318; --muted:#7A6A58;
+      --border:rgba(139,111,82,0.15);
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Georgia', 'Times New Roman', serif;
+      background: var(--sand); color: var(--text); line-height: 1.6;
+    }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; }
+
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 48px; height: 72px;
+      background: rgba(253,252,250,0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .nav-logo img { height: 36px; width: auto; }
+    .nav-logo-text { display: flex; flex-direction: column; line-height: 1; }
+    .nav-logo-main {
+      font-size: 17px; font-weight: 400; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--deep);
+    }
+    .nav-logo-sub {
+      font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--tan); font-family: -apple-system, sans-serif; margin-top: 2px;
+    }
+    .nav-links { display: flex; gap: 32px; list-style: none; }
+    .nav-links a {
+      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+      font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--muted); text-decoration: none;
+    }
+    .nav-links a:hover { color: var(--deep); }
+    .nav-book {
+      font-family: -apple-system, sans-serif; font-size: 12px;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      background: var(--deep); color: var(--white); border: none;
+      padding: 10px 22px; border-radius: 2px; text-decoration: none;
+    }
+    .nav-book:hover { background: var(--brown); }
+
+    /* PAGE HEADER */
+    .page-header {
+      padding: 144px 48px 64px;
+      max-width: 1200px; margin: 0 auto; text-align: center;
+    }
+    .page-header .eyebrow {
+      font-family: -apple-system, sans-serif; font-size: 10px;
+      letter-spacing: 0.28em; text-transform: uppercase;
+      color: var(--tan); margin-bottom: 14px;
+    }
+    .page-title {
+      font-size: clamp(40px, 5vw, 64px); font-weight: 400;
+      letter-spacing: -0.01em; color: var(--deep);
+      line-height: 1.12; margin-bottom: 16px;
+    }
+    .page-lede {
+      font-size: 17px; color: var(--muted); max-width: 640px;
+      margin: 0 auto; line-height: 1.7;
+    }
+    .updated-badge {
+      display: inline-block; margin-top: 24px;
+      font-family: -apple-system, sans-serif; font-size: 11px;
+      letter-spacing: 0.16em; text-transform: uppercase;
+      color: var(--muted);
+      padding: 8px 16px; background: white;
+      border-radius: 20px; border: 1px solid var(--border);
+    }
+    .updated-badge .dot {
+      display: inline-block; width: 6px; height: 6px;
+      background: var(--sun); border-radius: 50%;
+      margin-right: 8px; vertical-align: 1px;
+    }
+
+    /* FEATURED EVENT */
+    .events-section { padding: 32px 48px 80px; max-width: 1200px; margin: 0 auto; }
+    .section-label {
+      font-family: -apple-system, sans-serif; font-size: 10px;
+      letter-spacing: 0.28em; text-transform: uppercase;
+      color: var(--tan); margin-bottom: 14px;
+    }
+    .section-title {
+      font-size: clamp(26px, 3vw, 36px); font-weight: 400;
+      letter-spacing: -0.01em; color: var(--deep);
+      line-height: 1.2; margin-bottom: 28px;
+    }
+
+    .event-featured {
+      display: grid; grid-template-columns: auto 1fr auto; gap: 32px;
+      background: var(--deep); color: white;
+      padding: 36px 40px; border-radius: 4px; align-items: center;
+      box-shadow: 0 16px 40px rgba(44,35,24,0.12);
+    }
+    .event-featured-date {
+      display: flex; flex-direction: column; align-items: center;
+      padding: 14px 22px; border: 1px solid rgba(255,255,255,0.18);
+      border-radius: 4px; min-width: 100px;
+    }
+    .event-featured-date .month {
+      font-family: -apple-system, sans-serif; font-size: 10px;
+      letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--sun); margin-bottom: 4px;
+    }
+    .event-featured-date .day {
+      font-size: 36px; line-height: 1; font-weight: 400; color: white;
+    }
+    .event-featured-date .year {
+      font-family: -apple-system, sans-serif; font-size: 10px;
+      letter-spacing: 0.18em; color: rgba(255,255,255,0.4); margin-top: 6px;
+    }
+    .event-featured-eyebrow {
+      font-family: -apple-system, sans-serif; font-size: 10px;
+      letter-spacing: 0.22em; text-transform: uppercase;
+      color: var(--sun); margin-bottom: 6px;
+    }
+    .event-featured-name {
+      font-size: 28px; line-height: 1.2; margin-bottom: 8px;
+    }
+    .event-featured-meta {
+      font-family: -apple-system, sans-serif; font-size: 13px;
+      color: rgba(255,255,255,0.65);
+    }
+    .event-featured-cta a {
+      font-family: -apple-system, sans-serif; font-size: 11px;
+      letter-spacing: 0.16em; text-transform: uppercase;
+      color: var(--deep); background: var(--sun);
+      padding: 14px 22px; border-radius: 2px;
+      text-decoration: none; transition: background 0.2s; display: inline-block;
+    }
+    .event-featured-cta a:hover { background: white; }
+
+    /* CATEGORY BLOCKS */
+    .events-cat { margin-top: 56px; }
+    .events-grid {
+      display: grid; grid-template-columns: repeat(2, 1fr); gap: 4px;
+    }
+    .event-card {
+      background: white; padding: 24px 28px;
+      display: grid; grid-template-columns: 80px 1fr;
+      gap: 20px; align-items: center;
+      border: 1px solid var(--border); transition: background 0.2s, transform 0.2s;
+      text-decoration: none; color: inherit;
+    }
+    .event-card:hover { background: var(--sand2); transform: translateY(-1px); }
+    .event-date {
+      display: flex; flex-direction: column; align-items: center;
+      padding: 10px 6px; background: var(--foam); border-radius: 2px;
+    }
+    .event-date .month {
+      font-family: -apple-system, sans-serif; font-size: 9px;
+      letter-spacing: 0.2em; text-transform: uppercase; color: var(--moon-deep);
+    }
+    .event-date .day { font-size: 26px; color: var(--deep); line-height: 1.1; }
+    .event-date .span {
+      font-family: -apple-system, sans-serif; font-size: 10px;
+      color: var(--muted); margin-top: 2px;
+    }
+    .event-info-name { font-size: 17px; color: var(--deep); margin-bottom: 4px; line-height: 1.3; }
+    .event-info-meta {
+      font-family: -apple-system, sans-serif; font-size: 12px;
+      color: var(--muted); letter-spacing: 0.04em; line-height: 1.4;
+    }
+
+    /* FOOTER NOTE */
+    .events-foot {
+      max-width: 1200px; margin: 0 auto; padding: 0 48px 100px; text-align: center;
+    }
+    .events-foot a {
+      font-family: -apple-system, sans-serif; font-size: 11px;
+      letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--brown); border-bottom: 1px solid var(--tan);
+      padding-bottom: 4px; text-decoration: none;
+    }
+
+    footer {
+      background: var(--deep); color: rgba(255,255,255,0.5);
+      padding: 48px 48px 32px; text-align: center;
+    }
+    footer img { height: 56px; width: auto; opacity: 0.9; margin: 0 auto 12px; display: block; }
+    footer .tagline {
+      font-family: Georgia, serif; font-style: italic; font-size: 14px;
+      color: rgba(255,255,255,0.55); line-height: 1.6; margin-bottom: 20px;
+    }
+    footer .footer-links {
+      display: flex; gap: 24px; justify-content: center; flex-wrap: wrap;
+      font-family: -apple-system, sans-serif; font-size: 12px;
+    }
+    footer .footer-links a {
+      color: rgba(255,255,255,0.55); text-decoration: none; letter-spacing: 0.06em;
+    }
+    footer .footer-links a:hover { color: white; }
+    footer .copyright {
+      margin-top: 24px; font-family: -apple-system, sans-serif;
+      font-size: 11px; color: rgba(255,255,255,0.25);
+    }
+
+    @media (max-width: 900px) {
+      nav { padding: 0 24px; }
+      .nav-links { display: none; }
+      .nav-logo-text { display: none; }
+      .page-header { padding: 120px 24px 48px; }
+      .events-section, .events-foot { padding-left: 24px; padding-right: 24px; }
+      .events-grid { grid-template-columns: 1fr; }
+      .event-featured { grid-template-columns: auto 1fr; }
+      .event-featured-cta { grid-column: 1 / -1; }
+    }
+  </style>
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="apple-touch-icon" href="/favicon.png">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="What's Happening on 30A · Sun & Moon at 30A">
+  <meta property="og:description" content="A curated rolling calendar of upcoming festivals, concerts, markets, and signature weekends along Scenic 30A.">
+  <meta property="og:image" content="/images/aerial-30a.jpg">
+  <meta property="og:url" content="https://sunandmoonat30a.com/events.html">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#3B2F22">
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="nav-logo">
+    <img src="images/logos/sunmoon-color.png" alt="Sun &amp; Moon at 30A logo">
+    <div class="nav-logo-text">
+      <span class="nav-logo-main">Sun &amp; Moon</span>
+      <span class="nav-logo-sub">at 30A · Seagrove Beach</span>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html#about">The Cottages</a></li>
+    <li><a href="index.html#properties">Blue Moon &amp; Golden Sun</a></li>
+    <li><a href="index.html#gallery">Gallery</a></li>
+    <li><a href="events.html" style="color:var(--deep);">Events</a></li>
+    <li><a href="index.html#reviews">Reviews</a></li>
+  </ul>
+  <a href="index.html#book" class="nav-book">Check Availability</a>
+</nav>
+
+<!-- HEADER -->
+<div class="page-header">
+  <div class="eyebrow">What's Happening on 30A</div>
+  <h1 class="page-title">Events &amp; Markets</h1>
+  <p class="page-lede">
+    A curated rolling calendar of festivals, concerts, markets, and slow-living mornings within a short bike ride of Sun &amp; Moon at 30A. Updated automatically every other day.
+  </p>
+  <!-- LAST_UPDATED_BADGE_START -->
+  <div class="updated-badge"><span class="dot"></span>Last refreshed: May 8, 2026</div>
+  <!-- LAST_UPDATED_BADGE_END -->
+</div>
+
+<!-- FEATURED -->
+<!-- FEATURED_EVENT_START -->
+<section class="events-section">
+  <div class="section-label">Featured · Coming Up</div>
+  <h2 class="section-title">This week on 30A</h2>
+  <div class="event-featured">
+    <div class="event-featured-date">
+      <span class="month">May</span>
+      <span class="day">15-16</span>
+      <span class="year">2026</span>
+    </div>
+    <div class="event-featured-body">
+      <div class="event-featured-eyebrow">Featured Festival</div>
+      <div class="event-featured-name">Digital Graffiti at Alys Beach</div>
+      <div class="event-featured-meta">Outdoor immersive art festival · Alys Beach · 15-min drive from the cottages</div>
+    </div>
+    <div class="event-featured-cta">
+      <a href="https://www.digitalgraffiti.com/" target="_blank" rel="noopener">Festival Info →</a>
+    </div>
+  </div>
+</section>
+<!-- FEATURED_EVENT_END -->
+
+<!-- UPCOMING -->
+<!-- EVENT_LIST_START -->
+<section class="events-section" style="padding-top:0;">
+  <div class="events-cat">
+    <div class="section-label">Festivals &amp; Big Weekends</div>
+    <h2 class="section-title">Mark the calendar</h2>
+    <div class="events-grid">
+      <a href="https://seasideseeingred.com/" target="_blank" rel="noopener" class="event-card">
+        <div class="event-date">
+          <span class="month">Nov</span>
+          <span class="day">5-8</span>
+          <span class="span">2026</span>
+        </div>
+        <div class="event-info">
+          <div class="event-info-name">Seeing Red Wine Festival</div>
+          <div class="event-info-meta">Vintner dinners + Grand Tasting · Seaside Amphitheater · One of 30A's best food &amp; wine weekends</div>
+        </div>
+      </a>
+      <a href="https://www.30asongwritersfestival.com/" target="_blank" rel="noopener" class="event-card">
+        <div class="event-date">
+          <span class="month">Jan</span>
+          <span class="day">2027</span>
+          <span class="span">17th yr</span>
+        </div>
+        <div class="event-info">
+          <div class="event-info-name">30A Songwriters Festival</div>
+          <div class="event-info-meta">Multi-venue music festival across 30A · Tickets typically open in fall</div>
+        </div>
+      </a>
+      <a href="https://www.30awinefestival.com" target="_blank" rel="noopener" class="event-card">
+        <div class="event-date">
+          <span class="month">Feb</span>
+          <span class="day">2027</span>
+          <span class="span">15th yr</span>
+        </div>
+        <div class="event-info">
+          <div class="event-info-name">30A Wine Festival · Alys Beach</div>
+          <div class="event-info-meta">Wine dinners, oysters &amp; champagne, Grand Tasting · 5-day festival</div>
+        </div>
+      </a>
+      <a href="https://sandestinwinefestival.com/" target="_blank" rel="noopener" class="event-card">
+        <div class="event-date">
+          <span class="month">Apr</span>
+          <span class="day">2027</span>
+          <span class="span">40th yr</span>
+        </div>
+        <div class="event-info">
+          <div class="event-info-name">Sandestin Wine Festival</div>
+          <div class="event-info-meta">Village of Baytowne Wharf · Winemaker dinners &amp; Grand Tastings</div>
+        </div>
+      </a>
+    </div>
+  </div>
+
+  <div class="events-cat">
+    <div class="section-label">Weekly &amp; Recurring</div>
+    <h2 class="section-title">Concerts, markets, mornings</h2>
+    <div class="events-grid">
+      <a href="https://seasidefl.com/events/" target="_blank" rel="noopener" class="event-card">
+        <div class="event-date">
+          <span class="month">May–Sep</span>
+          <span class="day">Wed</span>
+          <span class="span">7 PM</span>
+        </div>
+        <div class="event-info">
+          <div class="event-info-name">Seaside Summer Concert Series</div>
+          <div class="event-info-meta">Free outdoor concerts · Seaside Amphitheater · Every Wednesday through Labor Day</div>
+        </div>
+      </a>
+      <a href="https://seasidefl.com/events/" target="_blank" rel="noopener" class="event-card">
+        <div class="event-date">
+          <span class="month">May–Aug</span>
+          <span class="day">T/Th</span>
+          <span class="span">5 PM</span>
+        </div>
+        <div class="event-info">
+          <div class="event-info-name">Huck &amp; Lilly · Family Music</div>
+          <div class="event-info-meta">Tuesdays &amp; Thursdays · Seaside Amphitheater · Also Alys, WaterColor, Hammock Bay</div>
+        </div>
+      </a>
+      <a href="https://30a.com/events/" target="_blank" rel="noopener" class="event-card">
+        <div class="event-date">
+          <span class="month">All Year</span>
+          <span class="day">Sun</span>
+          <span class="span">9–1</span>
+        </div>
+        <div class="event-info">
+          <div class="event-info-name">30A Farmers Market · Rosemary Beach</div>
+          <div class="event-info-meta">Local growers, makers, music · North Barrett Square · Every Sunday</div>
+        </div>
+      </a>
+      <a href="https://seasidefl.com/events/" target="_blank" rel="noopener" class="event-card">
+        <div class="event-date">
+          <span class="month">Year-Round</span>
+          <span class="day">Sat</span>
+          <span class="span">9–1</span>
+        </div>
+        <div class="event-info">
+          <div class="event-info-name">Seaside Farmers Market</div>
+          <div class="event-info-meta">Bi-weekly Saturdays · Seaside Amphitheater Lawn · Local produce, flowers, pastries</div>
+        </div>
+      </a>
+      <a href="https://seasidefl.com/events/" target="_blank" rel="noopener" class="event-card">
+        <div class="event-date">
+          <span class="month">Mar–Oct</span>
+          <span class="day">Daily</span>
+          <span class="span">8:30</span>
+        </div>
+        <div class="event-info">
+          <div class="event-info-name">Vinyasa Yoga · Seaside Amphitheater</div>
+          <div class="event-info-meta">Open-air vinyasa flow · Free / donation-based · Every morning</div>
+        </div>
+      </a>
+      <a href="https://thebigchill.com/events/" target="_blank" rel="noopener" class="event-card">
+        <div class="event-date">
+          <span class="month">Year-Round</span>
+          <span class="day">Live</span>
+          <span class="span">Music</span>
+        </div>
+        <div class="event-info">
+          <div class="event-info-name">The Big Chill 30A · Live Music &amp; Family Events</div>
+          <div class="event-info-meta">Seacrest Beach · Concerts, family events, full schedule on their site</div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+<!-- EVENT_LIST_END -->
+
+<div class="events-foot">
+  <a href="https://30a.com/events/" target="_blank" rel="noopener">See the full 30A events directory at 30a.com →</a>
+</div>
+
+<footer>
+  <img src="images/logos/sunmoon-white.png" alt="Sun &amp; Moon at 30A">
+  <div class="tagline">"Where every day begins with the sun and ends with the moon."</div>
+  <div class="footer-links">
+    <a href="index.html">Home</a>
+    <a href="index.html#book">Book</a>
+    <a href="index.html#about">About</a>
+    <a href="https://www.instagram.com/sunandmoonat30a/" target="_blank" rel="noopener">Instagram</a>
+  </div>
+  <div class="copyright">© 2026 Sun &amp; Moon at 30A · Seagrove Beach, Florida</div>
+</footer>
+
+</body>
+</html>

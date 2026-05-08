@@ -1,0 +1,1440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sun &amp; Moon at 30A | Blue Moon &amp; Golden Sun · Seagrove Beach, FL</title>
+  <meta name="description" content="Two beautifully designed coastal cottages on Crystal Court in Seagrove Beach, Florida. Book Blue Moon, Golden Sun, or both together for up to 16 guests on Scenic 30A.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --sand:    #F5EFE4;
+      --sand2:   #EDE4D3;
+      --tan:     #C9B89A;
+      --brown:   #8B6F52;
+      --deep:    #3B2F22;
+      --sky:     #7BB8C8;
+      --ocean:   #3A7E96;
+      --foam:    #e6f0f4;
+      --sun:     #E8A44A;
+      --moon:    #8BABC4;
+      --moon-deep:#3A6080;
+      --sun-deep:#9B6B20;
+      --white:   #FDFCFA;
+      --text:    #2C2318;
+      --muted:   #7A6A58;
+      --border:  rgba(139,111,82,0.15);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Georgia', 'Times New Roman', serif;
+      background: var(--white);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    img { max-width: 100%; display: block; }
+
+    /* ── NAV ─────────────────────────────────────────── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 48px;
+      height: 72px;
+      background: rgba(253,252,250,0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      transition: box-shadow 0.3s;
+    }
+    nav.scrolled { box-shadow: 0 2px 24px rgba(44,35,24,0.08); }
+    .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .nav-logo img { height: 36px; width: auto; }
+    .nav-logo-text { display: flex; flex-direction: column; line-height: 1; }
+    .nav-logo-main {
+      font-size: 17px; font-weight: 400; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--deep);
+    }
+    .nav-logo-sub {
+      font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--tan); font-family: -apple-system, sans-serif; margin-top: 2px;
+    }
+    .nav-links { display: flex; gap: 32px; list-style: none; }
+    .nav-links a {
+      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+      font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--muted); text-decoration: none; transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--deep); }
+    .nav-book {
+      font-family: -apple-system, sans-serif; font-size: 12px;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      background: var(--deep); color: var(--white); border: none;
+      padding: 10px 22px; border-radius: 2px; cursor: pointer;
+      transition: background 0.2s; text-decoration: none;
+    }
+    .nav-book:hover { background: var(--brown); }
+
+    /* ── HERO ────────────────────────────────────────── */
+    .hero {
+      height: 100vh; position: relative; display: flex;
+      flex-direction: column; align-items: center; justify-content: center;
+      overflow: hidden;
+    }
+    .hero-bg { position: absolute; inset: 0; }
+
+    /* Crossfade rotation: 4 slides × 8s = 32s cycle.
+       Each slide visible ~6s, crossfade 1.4s. */
+    .hero-slide {
+      position: absolute; inset: 0;
+      opacity: 0;
+      animation: heroFade 32s ease-in-out infinite;
+    }
+    .hero-slide img {
+      position: absolute; inset: 0;
+      width: 100%; height: 100%;
+      object-fit: cover;
+      transform-origin: center 50%;
+      animation: heroKenBurns 32s ease-in-out infinite;
+    }
+    /* per-slide best object-position */
+    .hero-slide.s1 img { object-position: center 55%; }
+    .hero-slide.s2 img { object-position: center 45%; }
+    .hero-slide.s3 img { object-position: center 50%; }
+    .hero-slide.s4 img { object-position: center 48%; }
+    /* Stagger 25% apart */
+    .hero-slide.s1, .hero-slide.s1 img { animation-delay:   0s; }
+    .hero-slide.s2, .hero-slide.s2 img { animation-delay: -24s; }
+    .hero-slide.s3, .hero-slide.s3 img { animation-delay: -16s; }
+    .hero-slide.s4, .hero-slide.s4 img { animation-delay:  -8s; }
+
+    @keyframes heroFade {
+      0%   { opacity: 0; }
+      4%   { opacity: 1; }
+      25%  { opacity: 1; }
+      29%  { opacity: 0; }
+      100% { opacity: 0; }
+    }
+    @keyframes heroKenBurns {
+      0%   { transform: scale(1.0)  translate(0%, 0%); }
+      29%  { transform: scale(1.08) translate(-1.2%, -0.6%); }
+      30%  { transform: scale(1.0)  translate(0%, 0%); }
+      100% { transform: scale(1.0)  translate(0%, 0%); }
+    }
+
+    .hero-bg::after {
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(to bottom,
+        rgba(30,22,14,0.30) 0%,
+        rgba(30,22,14,0.10) 45%,
+        rgba(30,22,14,0.55) 100%);
+      pointer-events: none;
+    }
+
+    /* Slide progress dots (bottom-center) */
+    .hero-dots {
+      position: absolute; bottom: 36px; left: 50%; transform: translateX(-50%);
+      z-index: 3; display: flex; gap: 8px;
+    }
+    .hero-dots span {
+      display: block; width: 24px; height: 2px;
+      background: rgba(255,255,255,0.3);
+      border-radius: 2px; overflow: hidden; position: relative;
+    }
+    .hero-dots span::after {
+      content: ''; position: absolute; inset: 0;
+      background: rgba(255,255,255,0.85);
+      transform-origin: left;
+      animation: heroDotFill 32s linear infinite;
+    }
+    .hero-dots span:nth-child(1)::after { animation-delay:   0s; }
+    .hero-dots span:nth-child(2)::after { animation-delay: -24s; }
+    .hero-dots span:nth-child(3)::after { animation-delay: -16s; }
+    .hero-dots span:nth-child(4)::after { animation-delay:  -8s; }
+    @keyframes heroDotFill {
+      0%   { transform: scaleX(0); opacity: 0; }
+      4%   { transform: scaleX(0); opacity: 1; }
+      25%  { transform: scaleX(1); opacity: 1; }
+      29%  { transform: scaleX(1); opacity: 0; }
+      100% { transform: scaleX(0); opacity: 0; }
+    }
+
+    /* Slide caption (bottom-left) */
+    .hero-caption {
+      position: absolute; left: 48px; bottom: 36px;
+      z-index: 3; color: rgba(255,255,255,0.85);
+      font-family: -apple-system, sans-serif; font-size: 11px;
+      letter-spacing: 0.16em; text-transform: uppercase;
+      min-height: 1.5em;
+    }
+    .hero-caption span {
+      display: block; opacity: 0;
+      animation: heroCapFade 32s ease-in-out infinite;
+    }
+    .hero-caption span:nth-child(1) { animation-delay:   0s; position: relative; }
+    .hero-caption span:nth-child(2) { animation-delay: -24s; position: absolute; top: 0; left: 0; }
+    .hero-caption span:nth-child(3) { animation-delay: -16s; position: absolute; top: 0; left: 0; }
+    .hero-caption span:nth-child(4) { animation-delay:  -8s; position: absolute; top: 0; left: 0; }
+    @keyframes heroCapFade {
+      0%   { opacity: 0; }
+      4%   { opacity: 0.85; }
+      25%  { opacity: 0.85; }
+      29%  { opacity: 0; }
+      100% { opacity: 0; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .hero-slide, .hero-slide img, .hero-dots span::after, .hero-caption span {
+        animation: none;
+      }
+      .hero-slide.s1 { opacity: 1; }
+      .hero-caption span:nth-child(1) { opacity: 0.85; }
+      .hero-dots span::after { transform: scaleX(0); }
+      .hero-dots span:nth-child(1)::after { transform: scaleX(1); opacity: 1; }
+    }
+    .hero-content { position: relative; z-index: 2; text-align: center; color: white; padding: 0 24px; }
+    .hero-logo {
+      display: block; height: 192px; width: auto;
+      margin: 0 auto 20px; opacity: 0.55;
+    }
+    .hero-eyebrow {
+      font-family: -apple-system, sans-serif; font-size: 11px;
+      letter-spacing: 0.28em; text-transform: uppercase;
+      color: rgba(255,255,255,0.7); margin-bottom: 20px;
+    }
+    .hero-title {
+      font-size: clamp(48px, 8vw, 96px); font-weight: 400;
+      letter-spacing: -0.01em; line-height: 1; color: white; margin-bottom: 6px;
+    }
+    .hero-title .amp { font-style: italic; opacity: 0.8; margin: 0 8px; }
+    .hero-title .sun-word { color: #FDDEA6; }
+    .hero-title .moon-word { color: var(--foam); }
+    .hero-location {
+      font-family: -apple-system, sans-serif; font-size: 13px;
+      letter-spacing: 0.2em; text-transform: uppercase;
+      color: rgba(255,255,255,0.65); margin-bottom: 40px;
+    }
+    .hero-ctas { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+    .btn-light, .btn-outline {
+      font-family: -apple-system, sans-serif; font-size: 12px;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      padding: 14px 28px; cursor: pointer; border-radius: 2px;
+      text-decoration: none; transition: all 0.2s; border: 1px solid;
+    }
+    .btn-light { background: white; color: var(--deep); border-color: white; }
+    .btn-light:hover { background: var(--sand); transform: translateY(-1px); }
+    .btn-outline { background: transparent; color: white; border-color: rgba(255,255,255,0.5); }
+    .btn-outline:hover { border-color: white; background: rgba(255,255,255,0.1); }
+    /* ── INTRO BAR ───────────────────────────────────── */
+    .intro-bar {
+      background: var(--deep); color: rgba(255,255,255,0.7);
+      display: flex; justify-content: center; gap: 56px;
+      padding: 24px 48px; flex-wrap: wrap;
+      font-family: -apple-system, sans-serif; font-size: 12px;
+      letter-spacing: 0.1em; text-transform: uppercase;
+    }
+    .intro-bar-item { display: flex; flex-direction: column; align-items: center; gap: 4px; }
+    .intro-bar-item strong {
+      font-size: 22px; font-family: Georgia, serif; color: white;
+      font-weight: 400; letter-spacing: 0; line-height: 1;
+    }
+
+    /* ── SECTION COMMONS ─────────────────────────────── */
+    section { padding: 100px 48px; }
+    .section-label {
+      font-family: -apple-system, sans-serif; font-size: 10px;
+      letter-spacing: 0.28em; text-transform: uppercase; color: var(--tan);
+      margin-bottom: 16px;
+    }
+    .section-title {
+      font-size: clamp(32px, 4vw, 52px); font-weight: 400;
+      letter-spacing: -0.01em; color: var(--deep);
+      line-height: 1.15; margin-bottom: 20px;
+    }
+    .section-body {
+      font-size: 17px; color: var(--muted); max-width: 560px; line-height: 1.75;
+    }
+    .divider { width: 48px; height: 1px; background: var(--tan); margin: 24px 0; }
+
+    /* ── ABOUT ───────────────────────────────────────── */
+    #about {
+      background: var(--white); max-width: 1300px; margin: 0 auto;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;
+    }
+    .about-img {
+      aspect-ratio: 4/5; border-radius: 4px; overflow: hidden;
+      position: relative; background: var(--sand2);
+    }
+    .about-img img { width: 100%; height: 100%; object-fit: cover; }
+    .about-img-caption {
+      position: absolute; bottom: 20px; left: 20px; right: 20px;
+      font-family: -apple-system, sans-serif; font-size: 11px;
+      letter-spacing: 0.14em; text-transform: uppercase;
+      color: rgba(255,255,255,0.85); z-index: 2;
+      text-shadow: 0 2px 12px rgba(0,0,0,0.6);
+    }
+
+    /* ── PROPERTIES (formerly UNITS) ─────────────────── */
+    #properties { background: var(--sand); padding: 100px 0; }
+    .props-header { text-align: center; padding: 0 48px; margin-bottom: 56px; }
+    .props-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      max-width: 1300px; margin: 0 auto; gap: 4px;
+    }
+    .prop-card {
+      background: white; overflow: hidden;
+      display: flex; flex-direction: column;
+    }
+    .prop-photo { aspect-ratio: 16/10; overflow: hidden; position: relative; }
+    .prop-photo img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.7s ease; }
+    .prop-card:hover .prop-photo img { transform: scale(1.04); }
+    .prop-photo-badge {
+      position: absolute; top: 16px; left: 16px;
+      background: rgba(253,252,250,0.95); padding: 6px 14px;
+      font-family: -apple-system, sans-serif; font-size: 10px;
+      letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--deep); border-radius: 2px;
+      backdrop-filter: blur(6px);
+    }
+    .prop-body { padding: 48px 44px; }
+    .prop-card.sun  .prop-body { background: linear-gradient(180deg, #FFF8EC, #FDF3DF); }
+    .prop-card.moon .prop-body { background: var(--foam); }
+    .prop-icon { display: block; height: 44px; width: auto; margin-bottom: 16px; }
+    .prop-name {
+      font-size: 32px; font-weight: 400; letter-spacing: -0.01em; margin-bottom: 6px;
+    }
+    .prop-card.sun  .prop-name { color: var(--sun-deep); }
+    .prop-card.moon .prop-name { color: var(--moon-deep); }
+    .prop-sub {
+      font-family: -apple-system, sans-serif; font-size: 11px;
+      letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--muted); margin-bottom: 20px;
+    }
+    .prop-desc {
+      font-size: 15.5px; color: var(--muted); line-height: 1.75; margin-bottom: 28px;
+    }
+    .prop-specs { display: flex; gap: 28px; margin-bottom: 32px; }
+    .prop-spec { display: flex; flex-direction: column; gap: 2px; }
+    .prop-spec-val { font-size: 24px; color: var(--deep); line-height: 1; }
+    .prop-spec-lbl {
+      font-family: -apple-system, sans-serif; font-size: 10px;
+      letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted);
+    }
+    .prop-actions { display: flex; gap: 8px; flex-wrap: wrap; }
+    .prop-btn {
+      font-family: -apple-system, sans-serif; font-size: 11px;
+      letter-spacing: 0.14em; text-transform: uppercase;
+      padding: 12px 24px; border-radius: 2px; cursor: pointer;
+      border: 1px solid; text-decoration: none; display: inline-block;
+      transition: all 0.2s;
+    }
+    .prop-card.sun  .prop-btn         { border-color: var(--sun-deep);  color: var(--sun-deep); }
+    .prop-card.sun  .prop-btn:hover   { background: var(--sun-deep);    color: white; }
+    .prop-card.sun  .prop-btn.primary { background: var(--sun-deep);    color: white; }
+    .prop-card.sun  .prop-btn.primary:hover { background: var(--brown); border-color: var(--brown); }
+    .prop-card.moon .prop-btn         { border-color: var(--moon-deep); color: var(--moon-deep); }
+    .prop-card.moon .prop-btn:hover   { background: var(--moon-deep);   color: white; }
+    .prop-card.moon .prop-btn.primary { background: var(--moon-deep);   color: white; }
+    .prop-card.moon .prop-btn.primary:hover { background: var(--ocean); border-color: var(--ocean); }
+
+    .prop-together {
+      max-width: 1300px; margin: 4px auto 0;
+      background: var(--deep); color: rgba(255,255,255,0.7);
+      padding: 56px 48px; text-align: center;
+    }
+    .prop-together .together-icon {
+      height: 56px; width: auto; margin: 0 auto 16px; display: block; opacity: 0.9;
+    }
+    .prop-together strong {
+      display: block; font-family: Georgia, serif; font-size: 26px;
+      font-weight: 400; color: white; margin-bottom: 10px;
+    }
+    .prop-together p {
+      font-family: -apple-system, sans-serif; font-size: 14px;
+      letter-spacing: 0.04em; line-height: 1.8; max-width: 640px; margin: 0 auto 20px;
+    }
+    .prop-together a {
+      color: white; background: var(--sun); text-decoration: none;
+      letter-spacing: 0.14em; font-size: 11px; text-transform: uppercase;
+      padding: 14px 28px; border-radius: 2px; display: inline-block;
+      font-family: -apple-system, sans-serif; transition: background 0.2s;
+    }
+    .prop-together a:hover { background: var(--sun-deep); }
+
+    /* ── GALLERY ─────────────────────────────────────── */
+    #gallery { padding: 0; background: var(--white); }
+    .gallery-header { text-align: center; padding: 100px 48px 56px; }
+    .gallery-grid {
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 4px;
+      max-width: 1600px; margin: 0 auto;
+    }
+    .gallery-cell {
+      position: relative; overflow: hidden; cursor: pointer;
+      aspect-ratio: 4/3; background: var(--sand2);
+    }
+    .gallery-cell.tall { grid-row: span 2; aspect-ratio: 4/6; }
+    .gallery-cell.wide { grid-column: span 2; aspect-ratio: 8/3; }
+    .gallery-cell img {
+      width: 100%; height: 100%; object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+    .gallery-cell:hover img { transform: scale(1.05); }
+    .gallery-cell:hover .gallery-overlay { opacity: 1; }
+    .gallery-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(44,35,24,0.65), rgba(44,35,24,0.05));
+      display: flex; align-items: flex-end; padding: 20px;
+      opacity: 0; transition: opacity 0.3s;
+    }
+    .gallery-overlay span {
+      font-family: -apple-system, sans-serif; font-size: 11px;
+      letter-spacing: 0.18em; text-transform: uppercase; color: white;
+    }
+    .gallery-footer {
+      text-align: center; padding: 40px 48px 100px;
+    }
+    .gallery-footer a {
+      font-family: -apple-system, sans-serif; font-size: 11px;
+      letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--brown); border-bottom: 1px solid var(--tan);
+      padding-bottom: 4px; text-decoration: none;
+    }
+
+    /* ── AMENITIES ───────────────────────────────────── */
+    #amenities { background: var(--foam); padding: 100px 48px; }
+    .amenities-inner { max-width: 1200px; margin: 0 auto; }
+    .amenities-top {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 80px; margin-bottom: 56px; align-items: end;
+    }
+    .amenities-grid {
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px;
+    }
+    .amenity-item {
+      background: white; padding: 28px 24px;
+      display: flex; flex-direction: column; gap: 10px;
+      border: 1px solid var(--border);
+    }
+    .amenity-icon { font-size: 22px; line-height: 1; }
+    .amenity-name {
+      font-size: 14px; color: var(--deep);
+      font-family: -apple-system, sans-serif; font-weight: 500;
+    }
+    .amenity-desc {
+      font-size: 12px; color: var(--muted);
+      font-family: -apple-system, sans-serif; line-height: 1.5;
+    }
+
+    /* ── 30A AREA + EVENTS ──────────────────────────── */
+    #area {
+      background: var(--white); padding: 100px 48px;
+    }
+    .area-inner { max-width: 1300px; margin: 0 auto; }
+    .area-top {
+      display: grid; grid-template-columns: 5fr 4fr;
+      gap: 80px; margin-bottom: 80px; align-items: center;
+    }
+    .area-img {
+      aspect-ratio: 16/10; overflow: hidden; border-radius: 4px;
+    }
+    .area-img img { width: 100%; height: 100%; object-fit: cover; }
+    .area-headline { padding-right: 24px; }
+
+    /* Events */
+    .events-band {
+      background: var(--sand); padding: 80px 0; margin-top: 0;
+      border-radius: 4px;
+    }
+    .events-inner { padding: 0 48px; max-width: 1200px; margin: 0 auto; }
+    .events-header {
+      display: flex; justify-content: space-between; align-items: end;
+      margin-bottom: 36px; flex-wrap: wrap; gap: 16px;
+    }
+    .events-header .events-meta {
+      font-family: -apple-system, sans-serif; font-size: 11px;
+      letter-spacing: 0.16em; text-transform: uppercase;
+      color: var(--muted);
+    }
+    .event-featured {
+      display: grid; grid-template-columns: auto 1fr auto; gap: 32px;
+      background: var(--deep); color: white;
+      padding: 32px 36px; margin-bottom: 32px; border-radius: 4px;
+      align-items: center;
+    }
+    .event-featured-date {
+      display: flex; flex-direction: column; align-items: center;
+      padding: 14px 22px; border: 1px solid rgba(255,255,255,0.18);
+      border-radius: 4px; min-width: 100px;
+    }
+    .event-featured-date .month {
+      font-family: -apple-system, sans-serif; font-size: 10px;
+      letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--sun); margin-bottom: 4px;
+    }
+    .event-featured-date .day {
+      font-size: 36px; line-height: 1; font-weight: 400; color: white;
+    }
+    .event-featured-date .year {
+      font-family: -apple-system, sans-serif; font-size: 10px;
+      letter-spacing: 0.18em; color: rgba(255,255,255,0.4); margin-top: 6px;
+    }
+    .event-featured-body { line-height: 1.5; }
+    .event-featured-eyebrow {
+      font-family: -apple-system, sans-serif; font-size: 10px;
+      letter-spacing: 0.22em; text-transform: uppercase;
+      color: var(--sun); margin-bottom: 6px;
+    }
+    .event-featured-name {
+      font-size: 26px; line-height: 1.2; margin-bottom: 8px;
+    }
+    .event-featured-meta {
+      font-family: -apple-system, sans-serif; font-size: 13px;
+      color: rgba(255,255,255,0.6);
+    }
+    .event-featured-cta a {
+      font-family: -apple-system, sans-serif; font-size: 11px;
+      letter-spacing: 0.16em; text-transform: uppercase;
+      color: var(--deep); background: var(--sun);
+      padding: 14px 22px; border-radius: 2px;
+      text-decoration: none; transition: background 0.2s;
+    }
+    .event-featured-cta a:hover { background: white; }
+
+    .events-grid {
+      display: grid; grid-template-columns: repeat(2, 1fr); gap: 4px;
+    }
+    .event-card {
+      background: white; padding: 24px 28px;
+      display: grid; grid-template-columns: 80px 1fr;
+      gap: 20px; align-items: center;
+      border: 1px solid var(--border); transition: background 0.2s;
+    }
+    .event-card:hover { background: var(--sand2); }
+    .event-date {
+      display: flex; flex-direction: column; align-items: center;
+      padding: 10px 6px; background: var(--foam);
+      border-radius: 2px;
+    }
+    .event-date .month {
+      font-family: -apple-system, sans-serif; font-size: 9px;
+      letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--moon-deep);
+    }
+    .event-date .day {
+      font-size: 26px; color: var(--deep); line-height: 1.1;
+    }
+    .event-date .span {
+      font-family: -apple-system, sans-serif; font-size: 10px;
+      color: var(--muted); margin-top: 2px;
+    }
+    .event-info-name {
+      font-size: 17px; color: var(--deep); margin-bottom: 4px; line-height: 1.3;
+    }
+    .event-info-meta {
+      font-family: -apple-system, sans-serif; font-size: 12px;
+      color: var(--muted); letter-spacing: 0.04em; line-height: 1.4;
+    }
+    .event-info a { color: var(--brown); text-decoration: none; }
+    .event-info a:hover { text-decoration: underline; }
+
+    /* ── SOCIAL ──────────────────────────────────────── */
+    #social { background: var(--white); padding: 100px 48px; }
+    .social-inner { max-width: 1300px; margin: 0 auto; }
+    .social-header {
+      display: flex; justify-content: space-between; align-items: end;
+      margin-bottom: 40px; gap: 16px; flex-wrap: wrap;
+    }
+    .social-handle {
+      font-family: -apple-system, sans-serif; font-size: 14px;
+      color: var(--muted); letter-spacing: 0.04em;
+    }
+    .social-handle strong { color: var(--deep); font-weight: 600; }
+    .social-grid {
+      display: grid; grid-template-columns: repeat(6, 1fr); gap: 4px;
+    }
+    .social-tile {
+      aspect-ratio: 1; overflow: hidden; position: relative;
+      background: var(--sand); cursor: pointer;
+    }
+    .social-tile img {
+      width: 100%; height: 100%; object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    .social-tile:hover img { transform: scale(1.05); }
+    .social-tile-overlay {
+      position: absolute; inset: 0; padding: 12px;
+      display: flex; align-items: flex-end;
+      background: linear-gradient(to top, rgba(44,35,24,0.6), transparent 50%);
+      opacity: 0; transition: opacity 0.3s;
+    }
+    .social-tile:hover .social-tile-overlay { opacity: 1; }
+    .social-tile-overlay span {
+      font-family: -apple-system, sans-serif; font-size: 11px;
+      color: white; letter-spacing: 0.04em;
+    }
+    .social-cta {
+      text-align: center; margin-top: 40px;
+    }
+    .social-cta a {
+      font-family: -apple-system, sans-serif; font-size: 11px;
+      letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--deep); border: 1px solid var(--brown);
+      padding: 14px 28px; border-radius: 2px;
+      text-decoration: none; display: inline-block;
+      transition: all 0.2s;
+    }
+    .social-cta a:hover { background: var(--brown); color: white; }
+
+    /* ── LOCATION ────────────────────────────────────── */
+    #location {
+      background: var(--white); max-width: 1300px; margin: 0 auto;
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 80px; align-items: center;
+    }
+    .location-map {
+      aspect-ratio: 1; border-radius: 4px;
+      background: linear-gradient(135deg, #C8DDF0 0%, #8BABC4 40%, #3A7E96 70%, #7BB8C8 100%);
+      position: relative; display: flex; align-items: center; justify-content: center;
+    }
+    .location-map::before {
+      content: ''; position: absolute; inset: 0;
+      background:
+        linear-gradient(90deg, transparent 49.5%, rgba(255,255,255,0.15) 50%, transparent 50.5%),
+        linear-gradient(0deg, transparent 49.5%, rgba(255,255,255,0.15) 50%, transparent 50.5%);
+    }
+    .map-pin { position: relative; z-index: 2; text-align: center; }
+    .map-pin-dot {
+      width: 16px; height: 16px; background: var(--sun);
+      border-radius: 50%; border: 3px solid white;
+      box-shadow: 0 0 0 4px rgba(232,164,74,0.3); margin: 0 auto 8px;
+    }
+    .map-pin-label {
+      background: white; padding: 6px 12px; border-radius: 20px;
+      font-family: -apple-system, sans-serif; font-size: 11px;
+      letter-spacing: 0.1em; color: var(--deep); font-weight: 600;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+    }
+    .location-list {
+      list-style: none; margin-top: 28px;
+      display: flex; flex-direction: column;
+    }
+    .location-list li {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 14px 0; border-bottom: 1px solid var(--border);
+      font-family: -apple-system, sans-serif; font-size: 14px;
+    }
+    .location-list li span:first-child { color: var(--text); }
+    .location-list li span:last-child {
+      color: var(--muted); font-size: 12px; letter-spacing: 0.06em;
+    }
+
+    /* ── REVIEWS ─────────────────────────────────────── */
+    #reviews { background: var(--deep); padding: 100px 48px; text-align: center; }
+    #reviews .section-label { color: rgba(232,164,74,0.7); }
+    #reviews .section-title { color: white; margin: 0 auto 16px; }
+    #reviews .divider { background: rgba(255,255,255,0.15); margin: 24px auto; }
+    .stars { color: var(--sun); font-size: 18px; letter-spacing: 3px; margin-bottom: 48px; }
+    .reviews-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px;
+      max-width: 1200px; margin: 0 auto 64px; text-align: left;
+    }
+    .review-card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.07); padding: 40px 36px;
+    }
+    .review-stars {
+      color: var(--sun); font-size: 12px; letter-spacing: 2px; margin-bottom: 16px;
+    }
+    .review-text {
+      font-size: 16px; color: rgba(255,255,255,0.75); line-height: 1.8;
+      margin-bottom: 24px; font-style: italic;
+    }
+    .review-author {
+      font-family: -apple-system, sans-serif; font-size: 12px;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      color: rgba(255,255,255,0.35);
+    }
+    .reviews-aggregate { display: flex; gap: 64px; justify-content: center; flex-wrap: wrap; }
+    .agg-item { display: flex; flex-direction: column; gap: 4px; align-items: center; }
+    .agg-val { font-size: 40px; color: white; line-height: 1; }
+    .agg-lbl {
+      font-family: -apple-system, sans-serif; font-size: 10px;
+      letter-spacing: 0.18em; text-transform: uppercase;
+      color: rgba(255,255,255,0.4);
+    }
+
+    /* ── BOOK ────────────────────────────────────────── */
+    #book { background: var(--sand); padding: 100px 48px; }
+    .book-inner { max-width: 1100px; margin: 0 auto; }
+    .book-intro { text-align: center; margin-bottom: 56px; }
+    .book-intro .section-body { margin: 0 auto; }
+    .book-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px;
+    }
+    .book-card {
+      background: white; padding: 36px 32px;
+      display: flex; flex-direction: column; gap: 12px;
+      border: 1px solid var(--border); transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .book-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 36px rgba(44,35,24,0.10);
+    }
+    .book-card.featured {
+      background: var(--deep); color: white;
+      border-color: var(--deep);
+    }
+    .book-card-name {
+      font-size: 22px; line-height: 1.2; color: var(--deep);
+    }
+    .book-card.featured .book-card-name { color: white; }
+    .book-card.sun  .book-card-name { color: var(--sun-deep); }
+    .book-card.moon .book-card-name { color: var(--moon-deep); }
+    .book-card-sub {
+      font-family: -apple-system, sans-serif; font-size: 11px;
+      letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--muted);
+    }
+    .book-card.featured .book-card-sub { color: rgba(255,255,255,0.5); }
+    .book-card-stats {
+      font-family: -apple-system, sans-serif; font-size: 13px;
+      color: var(--muted); margin: 8px 0 16px;
+    }
+    .book-card.featured .book-card-stats { color: rgba(255,255,255,0.7); }
+    .book-card-desc {
+      font-size: 14px; color: var(--muted); line-height: 1.7; margin-bottom: 20px;
+    }
+    .book-card.featured .book-card-desc { color: rgba(255,255,255,0.7); }
+    .book-card a {
+      font-family: -apple-system, sans-serif; font-size: 11px;
+      letter-spacing: 0.18em; text-transform: uppercase;
+      padding: 14px 0; text-align: center; border-radius: 2px;
+      text-decoration: none; transition: all 0.2s;
+      margin-top: auto; border: 1px solid;
+    }
+    .book-card.sun a {
+      background: var(--sun-deep); color: white; border-color: var(--sun-deep);
+    }
+    .book-card.sun a:hover { background: var(--brown); border-color: var(--brown); }
+    .book-card.moon a {
+      background: var(--moon-deep); color: white; border-color: var(--moon-deep);
+    }
+    .book-card.moon a:hover { background: var(--ocean); border-color: var(--ocean); }
+    .book-card.featured a {
+      background: var(--sun); color: var(--deep); border-color: var(--sun);
+    }
+    .book-card.featured a:hover { background: white; border-color: white; }
+
+    /* Logo pedestal — gives the booking trio a visual rhythm and brand cue */
+    .book-card-logowrap {
+      width: 96px; height: 96px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 18px; position: relative;
+      transition: transform 0.3s ease;
+    }
+    .book-card:hover .book-card-logowrap { transform: scale(1.04); }
+    .book-card.sun  .book-card-logowrap {
+      background: #FFF8EC; border: 1px solid rgba(155,107,32,0.18);
+      box-shadow: 0 4px 18px rgba(232,164,74,0.12);
+    }
+    .book-card.moon .book-card-logowrap {
+      background: var(--foam); border: 1px solid rgba(58,96,128,0.18);
+      box-shadow: 0 4px 18px rgba(58,96,128,0.12);
+    }
+    .book-card.featured .book-card-logowrap {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.20);
+      width: 108px; height: 108px;
+      box-shadow: 0 0 0 6px rgba(232,164,74,0.10);
+    }
+    .book-card-logo {
+      width: 64px; height: 64px; object-fit: contain;
+    }
+    .book-card.featured .book-card-logo {
+      width: 76px; height: 76px; opacity: 0.95;
+    }
+
+    .book-note {
+      text-align: center; margin-top: 32px;
+      font-family: -apple-system, sans-serif; font-size: 12px;
+      color: var(--muted); letter-spacing: 0.04em;
+    }
+    .book-note a { color: var(--brown); text-decoration: underline; }
+
+    /* ── FOOTER ──────────────────────────────────────── */
+    footer {
+      background: var(--deep); color: rgba(255,255,255,0.5);
+      padding: 64px 48px 40px;
+    }
+    .footer-top {
+      display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr;
+      gap: 48px; margin-bottom: 48px;
+    }
+    .footer-brand img {
+      height: 64px; width: auto; margin-bottom: 14px; opacity: 0.95;
+    }
+    .footer-brand h3 {
+      font-size: 20px; font-weight: 400; color: white;
+      letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 6px;
+    }
+    .footer-brand p {
+      font-family: -apple-system, sans-serif; font-size: 11px;
+      letter-spacing: 0.14em; text-transform: uppercase;
+      color: rgba(255,255,255,0.35); margin-bottom: 20px;
+    }
+    .footer-brand .tagline {
+      font-family: Georgia, serif; font-style: italic;
+      font-size: 15px; color: rgba(255,255,255,0.55);
+      line-height: 1.6; letter-spacing: 0; text-transform: none;
+    }
+    .footer-col h4 {
+      font-family: -apple-system, sans-serif; font-size: 10px;
+      letter-spacing: 0.2em; text-transform: uppercase;
+      color: rgba(255,255,255,0.4); margin-bottom: 16px;
+    }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .footer-col a {
+      font-family: -apple-system, sans-serif; font-size: 13px;
+      color: rgba(255,255,255,0.55); text-decoration: none;
+      transition: color 0.2s;
+    }
+    .footer-col a:hover { color: white; }
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.07); padding-top: 28px;
+      display: flex; justify-content: space-between; align-items: center;
+      font-family: -apple-system, sans-serif; font-size: 11px;
+      color: rgba(255,255,255,0.25); flex-wrap: wrap; gap: 16px;
+    }
+    .footer-social-links { display: flex; gap: 20px; }
+    .footer-social-links a {
+      font-family: -apple-system, sans-serif; font-size: 11px;
+      letter-spacing: 0.1em; color: rgba(255,255,255,0.35);
+      text-decoration: none; transition: color 0.2s;
+    }
+    .footer-social-links a:hover { color: rgba(255,255,255,0.7); }
+
+    /* ── FADE ANIM ───────────────────────────────────── */
+    .fade-in {
+      opacity: 0; transform: translateY(24px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+    /* ── LIGHTBOX ────────────────────────────────────── */
+    .lightbox {
+      position: fixed; inset: 0; z-index: 200;
+      background: rgba(0,0,0,0.92);
+      display: none; align-items: center; justify-content: center;
+      padding: 32px;
+    }
+    .lightbox.open { display: flex; }
+    .lightbox img { max-width: 100%; max-height: 100%; object-fit: contain; }
+    .lightbox-close {
+      position: absolute; top: 24px; right: 32px; color: white;
+      font-size: 32px; cursor: pointer; background: none; border: none;
+      line-height: 1; opacity: 0.8;
+    }
+    .lightbox-close:hover { opacity: 1; }
+
+    /* ── RESPONSIVE ──────────────────────────────────── */
+    @media (max-width: 1100px) {
+      .gallery-grid { grid-template-columns: repeat(3, 1fr); }
+      .social-grid { grid-template-columns: repeat(4, 1fr); }
+      .book-grid { grid-template-columns: 1fr; }
+      .area-top { grid-template-columns: 1fr; gap: 40px; }
+    }
+    @media (max-width: 900px) {
+      nav { padding: 0 24px; }
+      .nav-links { display: none; }
+      .nav-logo-text { display: none; }
+      .hero-caption { left: 24px; bottom: 64px; }
+      .hero-dots { bottom: 28px; }
+      section { padding: 72px 24px; }
+      #about, #location { grid-template-columns: 1fr; gap: 40px; padding: 72px 24px; }
+      .props-grid { grid-template-columns: 1fr; }
+      .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+      .gallery-cell.tall { grid-row: span 1; aspect-ratio: 4/3; }
+      .gallery-cell.wide { grid-column: span 2; aspect-ratio: 4/3; }
+      .amenities-grid { grid-template-columns: repeat(2, 1fr); }
+      .reviews-grid { grid-template-columns: 1fr; }
+      .footer-top { grid-template-columns: 1fr 1fr; }
+      .intro-bar { gap: 24px; }
+      .amenities-top { grid-template-columns: 1fr; gap: 16px; }
+      .events-grid { grid-template-columns: 1fr; }
+      .event-featured { grid-template-columns: auto 1fr; }
+      .event-featured-cta { grid-column: 1 / -1; }
+      .social-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+  </style>
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="apple-touch-icon" href="/favicon.png">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Sun & Moon at 30A · Blue Moon & Golden Sun · Seagrove Beach">
+  <meta property="og:description" content="Two beautifully designed coastal cottages on Crystal Court in Seagrove Beach, Florida. Book Blue Moon, Golden Sun, or both together for up to 16 guests on Scenic 30A.">
+  <meta property="og:image" content="/photos/golden-sun/001.jpg">
+  <meta property="og:url" content="https://sunandmoonat30a.com/">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#3B2F22">
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="mainNav">
+  <a href="#home" class="nav-logo">
+    <img src="images/logos/sunmoon-color.png" alt="Sun &amp; Moon at 30A logo">
+    <div class="nav-logo-text">
+      <span class="nav-logo-main">Sun &amp; Moon</span>
+      <span class="nav-logo-sub">at 30A · Seagrove Beach</span>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#about">The Cottages</a></li>
+    <li><a href="#properties">Blue Moon &amp; Golden Sun</a></li>
+    <li><a href="#gallery">Gallery</a></li>
+    <li><a href="#area">30A Area</a></li>
+    <li><a href="events.html">Events</a></li>
+    <li><a href="#social">@sunandmoonat30a</a></li>
+    <li><a href="#reviews">Reviews</a></li>
+  </ul>
+  <a href="#book" class="nav-book">Check Availability</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-bg">
+    <div class="hero-slide s1"><img src="images/sunset-seagrove.jpg"                                            alt="Sunset on Seagrove Beach"                  loading="eager"  decoding="async" fetchpriority="high"></div>
+    <div class="hero-slide s2"><img src="images/aerial-30a.jpg"                            alt="Aerial view of a 30A coastal dune lake"    loading="lazy"   decoding="async"></div>
+    <div class="hero-slide s3"><img src="photos/blue-moon/001.jpg"  alt="Blue Moon · 65 Crystal Court"              loading="lazy"   decoding="async"></div>
+    <div class="hero-slide s4"><img src="photos/golden-sun/001.jpg" alt="Golden Sun · 53 Crystal Court"             loading="lazy"   decoding="async"></div>
+  </div>
+  <div class="hero-content fade-in visible">
+    <img src="images/logos/sunmoon-white.png" alt="Sun &amp; Moon at 30A" class="hero-logo">
+    <div class="hero-eyebrow">Seagrove Beach · Scenic 30A · Florida</div>
+    <h1 class="hero-title">
+      <span class="sun-word">Sun</span><span class="amp">&amp;</span><span class="moon-word">Moon</span>
+    </h1>
+    <div class="hero-location">at 30A · Two Cottages · One Address</div>
+    <div class="hero-ctas">
+      <a href="#book" class="btn-light">Check Availability</a>
+      <a href="#properties" class="btn-outline">Meet the Cottages</a>
+    </div>
+  </div>
+
+  <div class="hero-caption" aria-hidden="true">
+    <span>Seagrove Sunset</span>
+    <span>30A from above · Coastal Dune Lake</span>
+    <span>Blue Moon · 65 Crystal Court</span>
+    <span>Golden Sun · 53 Crystal Court</span>
+  </div>
+
+  <div class="hero-dots" aria-hidden="true">
+    <span></span><span></span><span></span><span></span>
+  </div>
+</section>
+
+<!-- INTRO BAR -->
+<div class="intro-bar">
+  <div class="intro-bar-item"><strong>2</strong>Cottages</div>
+  <div class="intro-bar-item"><strong>6</strong>Bedrooms</div>
+  <div class="intro-bar-item"><strong>6</strong>Bathrooms</div>
+  <div class="intro-bar-item"><strong>16</strong>Guests</div>
+  <div class="intro-bar-item"><strong>3 min</strong>Walk to the Beach</div>
+  <div class="intro-bar-item"><strong>5.0 ★</strong>Guest Rating</div>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="about-img fade-in">
+    <img src="photos/blue-moon/001.jpg" alt="Blue Moon front exterior — 65 Crystal Court, Seagrove Beach">
+    <div class="about-img-caption">Blue Moon &amp; Golden Sun · Crystal Court, Seagrove Beach</div>
+  </div>
+  <div class="fade-in">
+    <div class="section-label">Welcome</div>
+    <h2 class="section-title">Where every day begins with the sun and ends with the moon.</h2>
+    <div class="divider"></div>
+    <p class="section-body">
+      Tucked into a quiet pocket of Seagrove Beach on Scenic 30A, <strong>Sun &amp; Moon at 30A</strong> is two beautifully appointed coastal cottages — <em>Blue Moon</em> and <em>Golden Sun</em> — sitting just steps apart on Crystal Court, three minutes' walk to the emerald waters of the Gulf.
+    </p>
+    <br>
+    <p class="section-body">
+      Book one cottage for an intimate getaway, or take both for a full-property family compound. Six bedrooms, six baths, room for sixteen — and a setup that gives every group the rare gift of being together <em>and</em> apart whenever they choose.
+    </p>
+    <div class="divider"></div>
+    <a href="#properties" class="prop-btn" style="border:1px solid var(--brown);color:var(--brown);font-family:-apple-system,sans-serif;font-size:11px;letter-spacing:.14em;text-transform:uppercase;padding:12px 28px;border-radius:2px;text-decoration:none;display:inline-block;transition:all .2s;" onmouseover="this.style.background='#8B6F52';this.style.color='white'" onmouseout="this.style.background='transparent';this.style.color='#8B6F52'">
+      Explore Both Cottages
+    </a>
+  </div>
+</section>
+
+<!-- PROPERTIES -->
+<div id="properties">
+  <div class="props-header fade-in">
+    <div class="section-label">The Cottages</div>
+    <h2 class="section-title">Blue Moon &amp; Golden Sun.</h2>
+    <div class="divider" style="margin:24px auto;"></div>
+    <p class="section-body" style="margin:0 auto;text-align:center;">
+      Two distinct cottages, each its own retreat — and an effortless full-property option when you want everyone under one roof of stars.
+    </p>
+  </div>
+
+  <div class="props-grid">
+    <!-- GOLDEN SUN · 53 Crystal Ct -->
+    <div class="prop-card sun fade-in">
+      <div class="prop-photo">
+        <img src="photos/golden-sun/001.jpg" alt="Golden Sun — 53 Crystal Court, Seagrove Beach FL">
+        <div class="prop-photo-badge">53 Crystal Court</div>
+      </div>
+      <div class="prop-body">
+        <img class="prop-icon" src="images/logos/sun.png" alt="Sun">
+        <div class="prop-name">Golden Sun</div>
+        <div class="prop-sub">South-Facing Light · Wraparound Living</div>
+        <p class="prop-desc">
+          Bright, airy, and warm — Golden Sun catches the light all day. Vaulted ceilings, an oversized front porch, three king bedrooms and a half bath off the entry. Made for early risers, slow coffees, and lingering sunset porches.
+        </p>
+        <div class="prop-specs">
+          <div class="prop-spec"><span class="prop-spec-val">3</span><span class="prop-spec-lbl">Bedrooms</span></div>
+          <div class="prop-spec"><span class="prop-spec-val">3</span><span class="prop-spec-lbl">Bathrooms</span></div>
+          <div class="prop-spec"><span class="prop-spec-val">8</span><span class="prop-spec-lbl">Guests</span></div>
+        </div>
+        <div class="prop-actions">
+          <a href="https://www.vacayrentalnetwork.com/property/golden-sun-503319" target="_blank" rel="noopener" class="prop-btn primary">Check Availability</a>
+          <a href="#gallery" class="prop-btn">View Gallery</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- BLUE MOON · 65 Crystal Ct -->
+    <div class="prop-card moon fade-in">
+      <div class="prop-photo">
+        <img src="photos/blue-moon/001.jpg" alt="Blue Moon — 65 Crystal Court, Seagrove Beach FL">
+        <div class="prop-photo-badge">65 Crystal Court</div>
+      </div>
+      <div class="prop-body">
+        <img class="prop-icon" src="images/logos/moon.png" alt="Moon">
+        <div class="prop-name">Blue Moon</div>
+        <div class="prop-sub">3 Min Walk to the Beach · Prime 30A Location</div>
+        <p class="prop-desc">
+          A tranquil coastal cottage built around easy days and slow evenings — open living, a chef's kitchen, screened porch, and shaded outdoor dining. Three thoughtfully appointed bedrooms, full bath suites, and quick access to Seagrove's quietest beach path.
+        </p>
+        <div class="prop-specs">
+          <div class="prop-spec"><span class="prop-spec-val">3</span><span class="prop-spec-lbl">Bedrooms</span></div>
+          <div class="prop-spec"><span class="prop-spec-val">3</span><span class="prop-spec-lbl">Bathrooms</span></div>
+          <div class="prop-spec"><span class="prop-spec-val">8</span><span class="prop-spec-lbl">Guests</span></div>
+        </div>
+        <div class="prop-actions">
+          <a href="https://www.vacayrentalnetwork.com/property/blue-moon-prime-30a-location-3-minute-walk-to-the--232268" target="_blank" rel="noopener" class="prop-btn primary">Check Availability</a>
+          <a href="#gallery" class="prop-btn">View Gallery</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="prop-together fade-in">
+    <img class="together-icon" src="images/logos/sunmoon-white.png" alt="Sun &amp; Moon at 30A">
+    <strong>Book Sun &amp; Moon Together</strong>
+    <p>
+      Six bedrooms · 6 baths · Sleeps 16 · Two cottages, one address. Built for reunions, milestone birthdays, weddings, and the kind of family takeover where everyone gets their own space — and the best memories happen on the porch in between.
+    </p>
+    <a href="https://www.vacayrentalnetwork.com/property/sun-and-moon-at-30a-507559" target="_blank" rel="noopener">Reserve the Full Property →</a>
+  </div>
+</div>
+
+<!-- GALLERY -->
+<div id="gallery">
+  <div class="gallery-header fade-in">
+    <div class="section-label">Gallery</div>
+    <h2 class="section-title">Step inside.</h2>
+    <p class="section-body" style="margin:16px auto 0;text-align:center;">
+      A look at the Blue Moon and Golden Sun cottages — interiors, porches, and the Seagrove light that makes 30A unmistakable.
+    </p>
+  </div>
+  <div class="gallery-grid">
+    <div class="gallery-cell tall fade-in" data-full="photos/blue-moon/001.jpg">
+      <img src="photos/blue-moon/001.jpg" alt="Blue Moon front exterior">
+      <div class="gallery-overlay"><span>Blue Moon · Front Porch</span></div>
+    </div>
+    <div class="gallery-cell fade-in" data-full="photos/golden-sun/001.jpg">
+      <img src="photos/golden-sun/001.jpg" alt="Golden Sun at sunset">
+      <div class="gallery-overlay"><span>Golden Sun · Sunset</span></div>
+    </div>
+    <div class="gallery-cell fade-in" data-full="photos/golden-sun/005.jpg">
+      <img src="photos/golden-sun/005.jpg" alt="Golden Sun deck">
+      <div class="gallery-overlay"><span>Golden Sun · Front Deck</span></div>
+    </div>
+    <div class="gallery-cell wide fade-in" data-full="photos/blue-moon/010.jpg">
+      <img src="photos/blue-moon/010.jpg" alt="Blue Moon living room">
+      <div class="gallery-overlay"><span>Blue Moon · Living</span></div>
+    </div>
+    <div class="gallery-cell fade-in" data-full="photos/golden-sun/015.jpg">
+      <img src="photos/golden-sun/015.jpg" alt="Golden Sun interior">
+      <div class="gallery-overlay"><span>Golden Sun · Kitchen</span></div>
+    </div>
+    <div class="gallery-cell fade-in" data-full="photos/blue-moon/020.jpg">
+      <img src="photos/blue-moon/020.jpg" alt="Blue Moon bedroom">
+      <div class="gallery-overlay"><span>Blue Moon · Suites</span></div>
+    </div>
+    <div class="gallery-cell tall fade-in" data-full="photos/golden-sun/030.jpg">
+      <img src="photos/golden-sun/030.jpg" alt="Golden Sun detail">
+      <div class="gallery-overlay"><span>Golden Sun · Bedrooms</span></div>
+    </div>
+    <div class="gallery-cell fade-in" data-full="photos/blue-moon/040.jpg">
+      <img src="photos/blue-moon/040.jpg" alt="Blue Moon outdoor">
+      <div class="gallery-overlay"><span>Blue Moon · Outdoor</span></div>
+    </div>
+    <div class="gallery-cell fade-in" data-full="photos/blue-moon/060.jpg">
+      <img src="photos/blue-moon/060.jpg" alt="Blue Moon detail">
+      <div class="gallery-overlay"><span>Blue Moon · Details</span></div>
+    </div>
+    <div class="gallery-cell fade-in" data-full="photos/golden-sun/045.jpg">
+      <img src="photos/golden-sun/045.jpg" alt="Golden Sun outdoor">
+      <div class="gallery-overlay"><span>Golden Sun · Outdoor</span></div>
+    </div>
+    <div class="gallery-cell wide fade-in" data-full="photos/blue-moon/080.jpg">
+      <img src="photos/blue-moon/080.jpg" alt="Blue Moon evening">
+      <div class="gallery-overlay"><span>Blue Moon · Evening</span></div>
+    </div>
+  </div>
+  <div class="gallery-footer">
+    <a href="https://www.vacayrentalnetwork.com/property/sun-and-moon-at-30a-507559" target="_blank" rel="noopener">View the full photo set on VacayRentalNetwork →</a>
+  </div>
+</div>
+
+<!-- AMENITIES -->
+<section id="amenities">
+  <div class="amenities-inner">
+    <div class="amenities-top">
+      <div class="fade-in">
+        <div class="section-label">Amenities</div>
+        <h2 class="section-title">Everything you need. Nothing you don't.</h2>
+      </div>
+      <div class="fade-in">
+        <p class="section-body">
+          Both cottages are stocked with everything that makes a 30A trip effortless — beach gear, bikes, spa-quality linens — so you can focus on the people you came with.
+        </p>
+      </div>
+    </div>
+    <div class="amenities-grid">
+      <div class="amenity-item fade-in"><span class="amenity-icon">🏖️</span><div class="amenity-name">3-Minute Beach Walk</div><div class="amenity-desc">Quiet Seagrove access path with private boardwalk</div></div>
+      <div class="amenity-item fade-in"><span class="amenity-icon">🍳</span><div class="amenity-name">Chef's Kitchens</div><div class="amenity-desc">Both cottages feature fully equipped gourmet kitchens</div></div>
+      <div class="amenity-item fade-in"><span class="amenity-icon">🚲</span><div class="amenity-name">Beach Cruisers</div><div class="amenity-desc">Bikes for every guest — explore 30A end to end</div></div>
+      <div class="amenity-item fade-in"><span class="amenity-icon">🌅</span><div class="amenity-name">Porches &amp; Decks</div><div class="amenity-desc">Front and back porches, perfect for slow mornings</div></div>
+      <div class="amenity-item fade-in"><span class="amenity-icon">📡</span><div class="amenity-name">High-Speed WiFi</div><div class="amenity-desc">Dedicated fiber, full coverage in both cottages</div></div>
+      <div class="amenity-item fade-in"><span class="amenity-icon">🛁</span><div class="amenity-name">Outdoor Shower</div><div class="amenity-desc">Rinse off the sand without tracking it inside</div></div>
+      <div class="amenity-item fade-in"><span class="amenity-icon">🏄</span><div class="amenity-name">Beach Gear</div><div class="amenity-desc">Chairs, umbrellas, boogie boards &amp; coolers stocked</div></div>
+      <div class="amenity-item fade-in"><span class="amenity-icon">🧺</span><div class="amenity-name">Linens &amp; Towels</div><div class="amenity-desc">Hotel-quality bed and bath linens, mid-stay refresh</div></div>
+      <div class="amenity-item fade-in"><span class="amenity-icon">📺</span><div class="amenity-name">Smart TVs</div><div class="amenity-desc">Streaming-ready in every living room and bedroom</div></div>
+      <div class="amenity-item fade-in"><span class="amenity-icon">🍽️</span><div class="amenity-name">Outdoor Dining</div><div class="amenity-desc">Shaded dining tables for long Gulf-side dinners</div></div>
+      <div class="amenity-item fade-in"><span class="amenity-icon">🐾</span><div class="amenity-name">Pet-Friendly</div><div class="amenity-desc">Well-behaved dogs welcome upon request</div></div>
+      <div class="amenity-item fade-in"><span class="amenity-icon">🅿️</span><div class="amenity-name">Private Parking</div><div class="amenity-desc">Plenty of off-street parking — bring the family</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 30A AREA + EVENTS -->
+<section id="area">
+  <div class="area-inner">
+    <div class="area-top">
+      <div class="area-img fade-in">
+        <img src="images/aerial-30a.jpg" alt="Aerial view of Seagrove Beach and a 30A coastal dune lake">
+      </div>
+      <div class="area-headline fade-in">
+        <div class="section-label">The 30A Area</div>
+        <h2 class="section-title">A short walk from everything that makes 30A famous.</h2>
+        <div class="divider"></div>
+        <p class="section-body">
+          Seagrove sits in the quietest pocket of Scenic 30A — between the picture-book pedestrian town of <strong>Seaside</strong> and the laid-back lakes-and-dunes village of <strong>WaterColor</strong>. Bike to either in under ten minutes. Drive to <strong>Alys Beach</strong> in fifteen.
+        </p>
+        <p class="section-body" style="margin-top:14px;">
+          The whole stretch is built for slowing down: 26 miles of beach-cruiser path, hidden coastal dune lakes, neighborhood farmers markets, an outdoor amphitheater with weekly concerts, and a calendar that quietly delivers world-class festivals all year long.
+        </p>
+        <div style="margin-top:28px;">
+          <a href="events.html" style="font-family:-apple-system,sans-serif;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:white;background:var(--deep);padding:14px 28px;border-radius:2px;text-decoration:none;display:inline-block;transition:background .2s;" onmouseover="this.style.background='#8B6F52'" onmouseout="this.style.background='#3B2F22'">
+            See What's Happening on 30A →
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOCIAL / INSTAGRAM -->
+<section id="social">
+  <div class="social-inner">
+    <div class="social-header fade-in">
+      <div>
+        <div class="section-label">Follow Our Story</div>
+        <h2 class="section-title" style="margin-bottom:0;">Sun-up to moon-up on 30A.</h2>
+      </div>
+      <div class="social-handle">
+        <strong>@sunandmoonat30a</strong> · Instagram
+      </div>
+    </div>
+
+    <!--
+      INSTAGRAM INTEGRATION NOTES:
+      The tiles below are PLACEHOLDERS using the property photos. To wire up real Instagram posts:
+
+      OPTION A — Hand-curated (recommended for low-volume, brand-controlled feeds):
+        For each tile, replace the <img src> with the post's image and the data-href with the post URL.
+        Update the caption span to match.
+
+      OPTION B — Automatic via Instagram Embed:
+        Replace each .social-tile div with:
+          <blockquote class="instagram-media" data-instgrm-permalink="POST_URL"></blockquote>
+        ...and add the Instagram embed script before </body>:
+          <script async src="//www.instagram.com/embed.js"></script>
+        Note: Instagram embeds count against rate limits. For >6 posts, prefer Option A.
+
+      OPTION C — Automatic via 3rd-party widget:
+        Services like EmbedSocial, Curator.io, or Behold render IG feeds without API setup.
+        Drop their <div> + <script> in place of the .social-grid below.
+    -->
+    <div class="social-grid">
+      <a href="https://www.instagram.com/sunandmoonat30a/" target="_blank" rel="noopener" class="social-tile fade-in" data-href="#">
+        <img src="photos/golden-sun/001.jpg" alt="Golden hour on 30A">
+        <div class="social-tile-overlay"><span>Sunset on Seagrove · #30A #goldenhour</span></div>
+      </a>
+      <a href="https://www.instagram.com/sunandmoonat30a/" target="_blank" rel="noopener" class="social-tile fade-in" data-href="#">
+        <img src="photos/blue-moon/001.jpg" alt="Blue Moon front porch">
+        <div class="social-tile-overlay"><span>Front porch mornings at Blue Moon</span></div>
+      </a>
+      <a href="https://www.instagram.com/sunandmoonat30a/" target="_blank" rel="noopener" class="social-tile fade-in" data-href="#">
+        <img src="photos/blue-moon/010.jpg" alt="Inside Blue Moon">
+        <div class="social-tile-overlay"><span>Living room set up for movie night</span></div>
+      </a>
+      <a href="https://www.instagram.com/sunandmoonat30a/" target="_blank" rel="noopener" class="social-tile fade-in" data-href="#">
+        <img src="photos/golden-sun/005.jpg" alt="Golden Sun porch">
+        <div class="social-tile-overlay"><span>That deck. That fan. That breeze.</span></div>
+      </a>
+      <a href="https://www.instagram.com/sunandmoonat30a/" target="_blank" rel="noopener" class="social-tile fade-in" data-href="#">
+        <img src="photos/blue-moon/040.jpg" alt="Blue Moon detail">
+        <div class="social-tile-overlay"><span>Coastal details · 30A vibes</span></div>
+      </a>
+      <a href="https://www.instagram.com/sunandmoonat30a/" target="_blank" rel="noopener" class="social-tile fade-in" data-href="#">
+        <img src="images/sunset-seagrove.jpg" alt="Sunset at Seagrove Beach">
+        <div class="social-tile-overlay"><span>Why we named it Sun &amp; Moon</span></div>
+      </a>
+    </div>
+
+    <div class="social-cta fade-in">
+      <a href="https://www.instagram.com/sunandmoonat30a/" target="_blank" rel="noopener">Follow @sunandmoonat30a →</a>
+    </div>
+  </div>
+</section>
+
+<!-- LOCATION -->
+<section id="location">
+  <div class="location-map fade-in">
+    <div class="map-pin">
+      <div class="map-pin-dot"></div>
+      <div class="map-pin-label">Sun &amp; Moon at 30A</div>
+    </div>
+  </div>
+  <div class="fade-in">
+    <div class="section-label">Location</div>
+    <h2 class="section-title">Crystal Court · Seagrove Beach, FL</h2>
+    <div class="divider"></div>
+    <p class="section-body">
+      Both cottages sit on a quiet residential lane in Seagrove Beach — minutes from Seaside, WaterColor, Grayton, and Alys Beach by bike or car. The closest beach access is a three-minute walk.
+    </p>
+    <ul class="location-list">
+      <li><span>Beach Access (Seagrove)</span><span>3 min walk</span></li>
+      <li><span>Seaside, FL</span><span>1.8 mi · 8 min bike</span></li>
+      <li><span>WaterColor</span><span>2.4 mi · 9 min drive</span></li>
+      <li><span>Grayton Beach State Park</span><span>4.1 mi · 10 min drive</span></li>
+      <li><span>Alys Beach</span><span>6.8 mi · 15 min drive</span></li>
+      <li><span>Rosemary Beach</span><span>9.1 mi · 20 min drive</span></li>
+      <li><span>Destin–Fort Walton Beach Airport (VPS)</span><span>42 mi · 45 min drive</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section id="reviews">
+  <div class="section-label">Guest Reviews</div>
+  <h2 class="section-title" style="max-width:600px;">What our guests are saying.</h2>
+  <div class="divider"></div>
+  <div class="stars">★★★★★</div>
+  <div class="reviews-grid">
+    <div class="review-card fade-in">
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">"We've stayed up and down 30A for years and Sun &amp; Moon is simply the best property we've found. The two-cottage setup was perfect for our family — everyone had their own space but we could all come together. Already booked for next summer."</p>
+      <div class="review-author">— The Harrington Family · Atlanta, GA</div>
+    </div>
+    <div class="review-card fade-in">
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">"From the moment we arrived, everything was flawless. Blue Moon's porch, the bikes, the easy beach walk — every detail felt thought through. We barely left Seagrove. Absolute perfection on the Emerald Coast."</p>
+      <div class="review-author">— J. &amp; M. Calloway · Nashville, TN</div>
+    </div>
+    <div class="review-card fade-in">
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">"We rented both cottages for a family reunion of 16 and it was absolutely seamless. Two homes, one address, gorgeous interiors, owners who responded fast — and the location on Seagrove is unbeatable. New annual tradition."</p>
+      <div class="review-author">— Rebecca T. · Dallas, TX</div>
+    </div>
+  </div>
+  <div class="reviews-aggregate fade-in">
+    <div class="agg-item"><span class="agg-val">5.0</span><span class="agg-lbl">Avg. Rating</span></div>
+    <div class="agg-item"><span class="agg-val">98%</span><span class="agg-lbl">Would Return</span></div>
+    <div class="agg-item"><span class="agg-val">120+</span><span class="agg-lbl">Guest Reviews</span></div>
+  </div>
+</section>
+
+<!-- BOOK -->
+<section id="book">
+  <div class="book-inner">
+    <div class="book-intro fade-in">
+      <div class="section-label">Reservations</div>
+      <h2 class="section-title">Three ways to book.</h2>
+      <div class="divider" style="margin:24px auto;"></div>
+      <p class="section-body">
+        Pick the cottage that fits your group, or take both for a full-property family compound. All bookings handled through VacayRentalNetwork.
+      </p>
+    </div>
+
+    <div class="book-grid">
+      <!-- Sequence: SUN ← BOTH → MOON. Mirrors the brand "Sun & Moon" left-to-right. -->
+      <div class="book-card sun fade-in">
+        <div class="book-card-logowrap">
+          <img class="book-card-logo" src="images/logos/sun.png" alt="Golden Sun">
+        </div>
+        <div class="book-card-name">Golden Sun</div>
+        <div class="book-card-sub">53 Crystal Court</div>
+        <div class="book-card-stats">3 BR · 3 BA · Sleeps 8</div>
+        <p class="book-card-desc">Bright, south-facing cottage with wraparound living, vaulted ceilings, and three king bedrooms.</p>
+        <a href="https://www.vacayrentalnetwork.com/property/golden-sun-503319" target="_blank" rel="noopener">Check Golden Sun Dates</a>
+      </div>
+
+      <div class="book-card featured fade-in">
+        <div class="book-card-logowrap">
+          <img class="book-card-logo" src="images/logos/sunmoon-white.png" alt="Sun &amp; Moon at 30A">
+        </div>
+        <div class="book-card-name">Sun &amp; Moon Together</div>
+        <div class="book-card-sub">Full Property · 53 + 65 Crystal Court</div>
+        <div class="book-card-stats">6 BR · 6 BA · Sleeps 16</div>
+        <p class="book-card-desc">Two cottages, one address. The right call for reunions, milestone trips, weddings, and big-family getaways.</p>
+        <a href="https://www.vacayrentalnetwork.com/property/sun-and-moon-at-30a-507559" target="_blank" rel="noopener">Reserve the Full Property</a>
+      </div>
+
+      <div class="book-card moon fade-in">
+        <div class="book-card-logowrap">
+          <img class="book-card-logo" src="images/logos/moon.png" alt="Blue Moon">
+        </div>
+        <div class="book-card-name">Blue Moon</div>
+        <div class="book-card-sub">65 Crystal Court</div>
+        <div class="book-card-stats">3 BR · 3 BA · Sleeps 8</div>
+        <p class="book-card-desc">A quiet coastal cottage built for slow mornings and Gulf-side evenings. Ideal for one family or a small group.</p>
+        <a href="https://www.vacayrentalnetwork.com/property/blue-moon-prime-30a-location-3-minute-walk-to-the--232268" target="_blank" rel="noopener">Check Blue Moon Dates</a>
+      </div>
+    </div>
+
+    <div class="book-note">
+      Have questions, planning a wedding, or need a custom package for 10+ guests? <a href="mailto:hello@sunandmoonat30a.com">Get in touch directly</a>.
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <img src="images/logos/sunmoon-color.png" alt="Sun &amp; Moon at 30A">
+      <h3>Sun &amp; Moon</h3>
+      <p>at 30A · Seagrove Beach, Florida</p>
+      <div class="tagline">"Where every day begins with the sun and ends with the moon."</div>
+    </div>
+    <div class="footer-col">
+      <h4>The Cottages</h4>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="https://www.vacayrentalnetwork.com/property/blue-moon-prime-30a-location-3-minute-walk-to-the--232268" target="_blank" rel="noopener">Blue Moon</a></li>
+        <li><a href="https://www.vacayrentalnetwork.com/property/golden-sun-503319" target="_blank" rel="noopener">Golden Sun</a></li>
+        <li><a href="https://www.vacayrentalnetwork.com/property/sun-and-moon-at-30a-507559" target="_blank" rel="noopener">Full Property</a></li>
+        <li><a href="#amenities">Amenities</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Plan Your Stay</h4>
+      <ul>
+        <li><a href="#book">Check Availability</a></li>
+        <li><a href="events.html">30A Events</a></li>
+        <li><a href="#area">30A Area</a></li>
+        <li><a href="#location">Getting Here</a></li>
+        <li><a href="#reviews">Guest Reviews</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Explore 30A</h4>
+      <ul>
+        <li><a href="https://seasidefl.com/" target="_blank" rel="noopener">Seaside, FL</a></li>
+        <li><a href="https://watercolorflorida.com/" target="_blank" rel="noopener">WaterColor</a></li>
+        <li><a href="https://floridastateparks.org/parks-and-trails/grayton-beach-state-park" target="_blank" rel="noopener">Grayton Beach</a></li>
+        <li><a href="https://alysbeach.com/" target="_blank" rel="noopener">Alys Beach</a></li>
+        <li><a href="https://www.rosemarybeach.com/" target="_blank" rel="noopener">Rosemary Beach</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Sun &amp; Moon at 30A · Seagrove Beach, Florida · All rights reserved.</span>
+    <div class="footer-social-links">
+      <a href="https://www.instagram.com/sunandmoonat30a/" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://www.vacayrentalnetwork.com/property/sun-and-moon-at-30a-507559" target="_blank" rel="noopener">VacayRentalNetwork</a>
+      <a href="mailto:hello@sunandmoonat30a.com">Contact</a>
+    </div>
+  </div>
+</footer>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox(event)">
+  <button class="lightbox-close" onclick="closeLightbox(event)" aria-label="Close">×</button>
+  <img id="lightboxImg" src="" alt="">
+</div>
+
+<script>
+  // Nav scroll effect
+  const nav = document.getElementById('mainNav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 40);
+  });
+
+  // Fade-in on scroll
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => entry.target.classList.add('visible'), i * 60);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+  // Lightbox for gallery
+  const lb = document.getElementById('lightbox');
+  const lbImg = document.getElementById('lightboxImg');
+  document.querySelectorAll('.gallery-cell').forEach(cell => {
+    cell.addEventListener('click', () => {
+      const full = cell.dataset.full || cell.querySelector('img').src;
+      lbImg.src = full;
+      lb.classList.add('open');
+    });
+  });
+  function closeLightbox(e) {
+    if (e.target.id === 'lightbox' || e.target.classList.contains('lightbox-close')) {
+      lb.classList.remove('open');
+      lbImg.src = '';
+    }
+  }
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') { lb.classList.remove('open'); lbImg.src = ''; }
+  });
+</script>
+</body>
+</html>
