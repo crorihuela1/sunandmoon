@@ -1,0 +1,66 @@
+# Sun & Moon 38 — brand system for generated content.
+
+brand:
+  name: Sun & Moon 38
+  website: https://sunandmoon38.com
+  booking_url: https://sunandmoon38.com/book
+  tagline: "Where every stay turns with the sky."
+  voice:
+    - warm, unhurried, a little celestial — sunrise-to-starlight imagery
+    - concrete and sensory (what guests see, taste, hear), never salesy filler
+    - always ends with one clear call to action (book, save the date, link in bio)
+  units:
+    - key: sun
+      label: The Sun Suite
+      angle: bright mornings, golden-hour decks, coffee at sunrise
+    - key: moon
+      label: The Moon Suite
+      angle: stargazing, firepit nights, slow evenings, deep quiet
+
+hashtags:
+  always: ["#SunAndMoon38", "#StayWithTheSky"]
+  rotating:
+    - "#ShortTermRental"
+    - "#WeekendGetaway"
+    - "#StaycationGoals"
+    - "#TravelMore"
+    - "#VacationRental"
+    - "#GetawayWeekend"
+
+# Content pillars: the engine cycles through these methodically so the feed
+# builds a brand instead of repeating one note. Weights set the mix.
+pillars:
+  - key: availability_spotlight
+    weight: 3
+    goal: bookings
+    description: >
+      Promote specific open dates found on the calendar — highest-scored windows
+      first (weekends, holidays, gap nights). Mention the rate/fee intentionally
+      when configured, with urgency framed warmly ("the deck is free this
+      Saturday — someone should be on it").
+  - key: events_experiences
+    weight: 3
+    goal: bookings + brand
+    description: >
+      Big events and on-site experiences at Sun & Moon 38 — pulled from the
+      events calendar. Announce, countdown, recap.
+  - key: local_guide
+    weight: 2
+    goal: brand + SEO
+    description: Area highlights — trails, restaurants, seasonal happenings near the property.
+  - key: behind_the_scenes
+    weight: 1
+    goal: brand
+    description: Host story, prep rituals, design details of each suite.
+  - key: guest_love
+    weight: 1
+    goal: trust
+    description: Reviews, UGC reposts (with permission), guest stories.
+
+# Intentional fee/rate promotion. Leave a rate null to omit pricing from copy.
+rates:
+  currency: USD
+  sun: null        # e.g. 189 — nightly rate to feature in availability posts
+  moon: null
+  whole_property: null
+  promo_note: null # e.g. "Midweek stays 15% off in June"

@@ -1,0 +1,25 @@
+# Email routing for booking alerts and the daily digest.
+#
+# "Imminent information" = new bookings detected on the calendars (a busy block
+# that wasn't there on the previous run), check-ins happening in the next 48h,
+# and the daily publish digest.
+#
+# NOTE: the CC below was transcribed ambiguously in the original request
+# ("...with a copy to mend the com view"). It defaults to the owner's gmail —
+# change it here if a different mailbox was intended.
+
+email:
+  to: experience@sunandmoon38.com
+  cc:
+    - corihuela@gmail.com
+  from: alerts@sunandmoon38.com   # must be a sender your SMTP account may use
+  smtp:
+    host_env: SMTP_HOST           # env var names, set as Actions secrets
+    port_env: SMTP_PORT
+    user_env: SMTP_USER
+    pass_env: SMTP_PASS
+
+alerts:
+  new_booking: true        # busy block appeared since last run
+  imminent_checkin_hours: 48
+  daily_digest: true       # what was published + current open windows

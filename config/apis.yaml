@@ -1,0 +1,125 @@
+# Sun & Moon 38 — Social platform API registry.
+#
+# Lifecycle for every API:
+#   planned        -> identified, no application submitted yet
+#   applied        -> developer app created / access requested
+#   keys_received  -> credentials issued, stored in Actions secrets
+#   vetted         -> passed docs/api-activation-checklist.md (test post, token
+#                     refresh, rate-limit review) on a private/test account
+#   active         -> the engine publishes to it automatically
+#   paused         -> temporarily disabled without losing config
+#
+# The engine refuses to publish to anything that is not `active`.
+# Secrets are NEVER stored in this file — only the env var names the
+# publisher expects (set them as GitHub Actions secrets).
+
+platforms:
+  meta_instagram:
+    label: Instagram (Meta Graph API)
+    status: planned
+    api_docs: https://developers.facebook.com/docs/instagram-platform/content-publishing
+    apply_at: https://developers.facebook.com/apps/
+    secrets: [META_ACCESS_TOKEN, IG_BUSINESS_ACCOUNT_ID]
+    cadence_per_week: 5          # 3 feed posts + 2 reels
+    formats: [image, carousel, reel, story]
+    notes: Requires an Instagram Business/Creator account linked to a Facebook Page.
+
+  meta_facebook:
+    label: Facebook Page (Meta Graph API)
+    status: planned
+    api_docs: https://developers.facebook.com/docs/pages-api
+    apply_at: https://developers.facebook.com/apps/
+    secrets: [META_ACCESS_TOKEN, FB_PAGE_ID]
+    cadence_per_week: 4
+    formats: [image, link, video, event]
+    notes: Same Meta app as Instagram; create Page "Sun & Moon 38" first.
+
+  tiktok:
+    label: TikTok (Content Posting API)
+    status: planned
+    api_docs: https://developers.tiktok.com/doc/content-posting-api-get-started
+    apply_at: https://developers.tiktok.com/
+    secrets: [TIKTOK_CLIENT_KEY, TIKTOK_CLIENT_SECRET, TIKTOK_ACCESS_TOKEN]
+    cadence_per_week: 3
+    formats: [video]
+    notes: App audit required before public posting; vet on a private account.
+
+  x_twitter:
+    label: X / Twitter (API v2)
+    status: planned
+    api_docs: https://docs.x.com/x-api/introduction
+    apply_at: https://developer.x.com/
+    secrets: [X_API_KEY, X_API_SECRET, X_ACCESS_TOKEN, X_ACCESS_SECRET]
+    cadence_per_week: 5
+    formats: [text, image]
+    notes: Free tier allows write-only posting (~500 posts/month) — enough.
+
+  pinterest:
+    label: Pinterest (API v5)
+    status: planned
+    api_docs: https://developers.pinterest.com/docs/api/v5/
+    apply_at: https://developers.pinterest.com/
+    secrets: [PINTEREST_ACCESS_TOKEN, PINTEREST_BOARD_ID]
+    cadence_per_week: 7          # pins compound; highest-volume channel
+    formats: [pin, idea_pin]
+    notes: Strong fit for travel planning intent; pins drive long-tail bookings.
+
+  youtube:
+    label: YouTube (Data API v3 — Shorts & videos)
+    status: planned
+    api_docs: https://developers.google.com/youtube/v3/docs/videos/insert
+    apply_at: https://console.cloud.google.com/apis/library/youtube.googleapis.com
+    secrets: [YT_CLIENT_ID, YT_CLIENT_SECRET, YT_REFRESH_TOKEN]
+    cadence_per_week: 2
+    formats: [short, video]
+    notes: Property tours, event recaps, area guides.
+
+  google_business_profile:
+    label: Google Business Profile (Posts API)
+    status: planned
+    api_docs: https://developers.google.com/my-business/content/posts-data
+    apply_at: https://developers.google.com/my-business
+    secrets: [GBP_CLIENT_ID, GBP_CLIENT_SECRET, GBP_REFRESH_TOKEN, GBP_LOCATION_ID]
+    cadence_per_week: 2
+    formats: [whats_new, event, offer]
+    notes: Directly surfaces availability/offers in Google Search & Maps.
+
+  linkedin:
+    label: LinkedIn (Community Management API)
+    status: planned
+    api_docs: https://learn.microsoft.com/linkedin/marketing/community-management/shares/posts-api
+    apply_at: https://developer.linkedin.com/
+    secrets: [LINKEDIN_ACCESS_TOKEN, LINKEDIN_ORG_URN]
+    cadence_per_week: 1
+    formats: [text, image, article]
+    notes: Corporate retreats / remote-work-stay angle.
+
+  threads:
+    label: Threads (Threads API)
+    status: planned
+    api_docs: https://developers.facebook.com/docs/threads
+    apply_at: https://developers.facebook.com/apps/
+    secrets: [THREADS_ACCESS_TOKEN, THREADS_USER_ID]
+    cadence_per_week: 3
+    formats: [text, image]
+    notes: Same Meta app; cheap incremental reach.
+
+  nextdoor:
+    label: Nextdoor (Business Posts)
+    status: planned
+    api_docs: https://developer.nextdoor.com/docs
+    apply_at: https://business.nextdoor.com/
+    secrets: [NEXTDOOR_ACCESS_TOKEN]
+    cadence_per_week: 1
+    formats: [post, event]
+    notes: Hyper-local reach for on-site events and experiences.
+
+# Optional fast path while individual APIs are in review: one aggregator key
+# can fan out to many networks immediately. Vet and activate like any platform.
+aggregators:
+  buffer:
+    label: Buffer (publish API)
+    status: planned
+    api_docs: https://buffer.com/developers/api
+    secrets: [BUFFER_ACCESS_TOKEN]
+    notes: Fastest way to be live everywhere while native API reviews are pending.

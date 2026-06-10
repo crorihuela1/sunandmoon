@@ -1,0 +1,59 @@
+# Daily, zero-touch run of the Sun & Moon 38 content engine.
+# Dry-run by default: it builds the queue, prints previews, and emails nothing
+# until the SOCIAL_LIVE repository variable is set to "true" and secrets exist.
+name: social-engine
+
+on:
+  schedule:
+    - cron: "0 13 * * *"   # 9:00 AM America/New_York (EDT) daily
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install
+        run: pip install -r requirements.txt
+
+      - name: Plan, publish, notify
+        working-directory: src
+        env:
+          SOCIAL_LIVE: ${{ vars.SOCIAL_LIVE }}
+          GOOGLE_CALENDAR_API_KEY: ${{ secrets.GOOGLE_CALENDAR_API_KEY }}
+          SMTP_HOST: ${{ secrets.SMTP_HOST }}
+          SMTP_PORT: ${{ secrets.SMTP_PORT }}
+          SMTP_USER: ${{ secrets.SMTP_USER }}
+          SMTP_PASS: ${{ secrets.SMTP_PASS }}
+          META_ACCESS_TOKEN: ${{ secrets.META_ACCESS_TOKEN }}
+          IG_BUSINESS_ACCOUNT_ID: ${{ secrets.IG_BUSINESS_ACCOUNT_ID }}
+          FB_PAGE_ID: ${{ secrets.FB_PAGE_ID }}
+          THREADS_ACCESS_TOKEN: ${{ secrets.THREADS_ACCESS_TOKEN }}
+          THREADS_USER_ID: ${{ secrets.THREADS_USER_ID }}
+          X_API_KEY: ${{ secrets.X_API_KEY }}
+          X_API_SECRET: ${{ secrets.X_API_SECRET }}
+          X_ACCESS_TOKEN: ${{ secrets.X_ACCESS_TOKEN }}
+          X_ACCESS_SECRET: ${{ secrets.X_ACCESS_SECRET }}
+          PINTEREST_ACCESS_TOKEN: ${{ secrets.PINTEREST_ACCESS_TOKEN }}
+          PINTEREST_BOARD_ID: ${{ secrets.PINTEREST_BOARD_ID }}
+          BUFFER_ACCESS_TOKEN: ${{ secrets.BUFFER_ACCESS_TOKEN }}
+        run: |
+          python -m sunmoon_social plan
+          python -m sunmoon_social publish --live
+          python -m sunmoon_social digest --live
+
+      - name: Persist state & queue
+        run: |
+          git config user.name "sunmoon-engine"
+          git config user.email "alerts@sunandmoon38.com"
+          git add state/ queue/ || true
+          git diff --cached --quiet || git commit -m "engine: state for $(date -u +%F) [skip ci]"
+          git push
