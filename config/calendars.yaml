@@ -9,21 +9,21 @@
 
 units:
   sun:
-    label: The Sun Suite
+    label: Golden Sun
     sources:
       - type: ical
         url: ""            # e.g. https://sunandmoon30a.com/calendar/sun.ics
       - type: ical
-        url: ""            # e.g. Airbnb iCal export for the Sun listing
+        url: ""            # e.g. Airbnb iCal export for the Golden Sun listing
       - type: google_calendar
         calendar_id: ""    # optional, if availability is kept in Google Calendar
   moon:
-    label: The Moon Suite
+    label: Blue Moon
     sources:
       - type: ical
         url: ""            # e.g. https://sunandmoon30a.com/calendar/moon.ics
       - type: ical
-        url: ""
+        url: ""            # e.g. Airbnb iCal export for the Blue Moon listing
       - type: google_calendar
         calendar_id: ""
 

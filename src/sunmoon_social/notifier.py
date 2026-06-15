@@ -12,7 +12,15 @@ import smtplib
 from datetime import date, datetime, timedelta
 from email.message import EmailMessage
 
-from .config import load_notifications
+from .config import load_brand, load_notifications
+
+
+def _house(unit_key: str) -> str:
+    """Resolve a unit key (sun/moon) to its house name (Golden Sun / Blue Moon)."""
+    for u in load_brand().get("brand", {}).get("units", []):
+        if u.get("key") == unit_key:
+            return u.get("label", unit_key.title())
+    return unit_key.title()
 
 
 def _send(subject: str, body: str, dry_run: bool) -> dict:
@@ -47,21 +55,22 @@ def booking_alerts(queue: dict, dry_run: bool = True) -> list[dict]:
     results = []
     if cfg.get("alerts", {}).get("new_booking", True):
         for booking in queue.get("new_bookings", []):
-            unit = booking["unit"].title()
+            house = _house(booking["unit"])
             results.append(_send(
-                f"[Sun & Moon 30A] New booking — {unit} Suite, {booking['start']} → {booking['end']}",
-                f"A new booking appeared on the {unit} Suite calendar.\n\n"
+                f"[Sun & Moon 30A] New booking — {house}, {booking['start']} → {booking['end']}",
+                f"A new booking appeared on the {house} calendar.\n\n"
                 f"  Check-in:  {booking['start']}\n  Check-out: {booking['end']}\n\n"
                 "Confirm guest details in the booking platform and prep the experience plan.\n",
                 dry_run))
     hours = cfg.get("alerts", {}).get("imminent_checkin_hours", 48)
     cutoff = (date.today() + timedelta(days=hours / 24)).isoformat()
     for unit, blocks in queue.get("busy_map", {}).items():
+        house = _house(unit)
         for start, end in blocks:
             if date.today().isoformat() <= start <= cutoff:
                 results.append(_send(
-                    f"[Sun & Moon 30A] Imminent check-in — {unit.title()} Suite arrives {start}",
-                    f"Guest checks in to the {unit.title()} Suite on {start} (out {end}).\n"
+                    f"[Sun & Moon 30A] Imminent check-in — {house} arrives {start}",
+                    f"Guest checks in to {house} on {start} (out {end}).\n"
                     "Time to run the arrival checklist.\n",
                     dry_run))
     return results

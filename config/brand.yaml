@@ -11,10 +11,10 @@ brand:
     - always ends with one clear call to action (book, save the date, link in bio)
   units:
     - key: sun
-      label: The Sun Suite
+      label: Golden Sun
       angle: bright mornings, golden-hour decks, coffee at sunrise
     - key: moon
-      label: The Moon Suite
+      label: Blue Moon
       angle: stargazing, firepit nights, slow evenings, deep quiet
 
 hashtags:
