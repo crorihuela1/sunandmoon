@@ -1,6 +1,6 @@
 """Email alerts: new bookings, imminent check-ins, and the daily digest.
 
-Routed per config/notifications.yaml — to experience@sunandmoon38.com with a
+Routed per config/notifications.yaml — to experience@sunandmoon30a.com with a
 configurable CC. Uses plain SMTP so it works with Google Workspace, Zoho, or
 any transactional provider.
 """
@@ -49,7 +49,7 @@ def booking_alerts(queue: dict, dry_run: bool = True) -> list[dict]:
         for booking in queue.get("new_bookings", []):
             unit = booking["unit"].title()
             results.append(_send(
-                f"[Sun & Moon 38] New booking — {unit} Suite, {booking['start']} → {booking['end']}",
+                f"[Sun & Moon 30A] New booking — {unit} Suite, {booking['start']} → {booking['end']}",
                 f"A new booking appeared on the {unit} Suite calendar.\n\n"
                 f"  Check-in:  {booking['start']}\n  Check-out: {booking['end']}\n\n"
                 "Confirm guest details in the booking platform and prep the experience plan.\n",
@@ -60,7 +60,7 @@ def booking_alerts(queue: dict, dry_run: bool = True) -> list[dict]:
         for start, end in blocks:
             if date.today().isoformat() <= start <= cutoff:
                 results.append(_send(
-                    f"[Sun & Moon 38] Imminent check-in — {unit.title()} Suite arrives {start}",
+                    f"[Sun & Moon 30A] Imminent check-in — {unit.title()} Suite arrives {start}",
                     f"Guest checks in to the {unit.title()} Suite on {start} (out {end}).\n"
                     "Time to run the arrival checklist.\n",
                     dry_run))
@@ -71,7 +71,7 @@ def daily_digest(queue: dict, publish_results: list[dict], dry_run: bool = True)
     cfg = load_notifications()
     if not cfg.get("alerts", {}).get("daily_digest", True):
         return {"status": "disabled"}
-    lines = [f"Sun & Moon 38 — daily engine digest, {queue['date']}",
+    lines = [f"Sun & Moon 30A — daily engine digest, {queue['date']}",
              f"Pillar of the day: {queue['pillar_of_day']}", ""]
     lines.append(f"Active platforms: {', '.join(queue['active_platforms']) or 'none yet'}")
     lines.append(f"Awaiting activation: {', '.join(queue['inactive_platforms'])}")
@@ -87,5 +87,5 @@ def daily_digest(queue: dict, publish_results: list[dict], dry_run: bool = True)
         lines.append(f"  {r.get('platform', '-'):<24} {r.get('status')}"
                      + (f" — {r['reason']}" if r.get("reason") else ""))
     lines.append("")
-    lines.append(f"Generated {datetime.utcnow().isoformat()}Z by the Sun & Moon 38 content engine.")
-    return _send(f"[Sun & Moon 38] Daily digest — {queue['date']}", "\n".join(lines), dry_run)
+    lines.append(f"Generated {datetime.utcnow().isoformat()}Z by the Sun & Moon 30A content engine.")
+    return _send(f"[Sun & Moon 30A] Daily digest — {queue['date']}", "\n".join(lines), dry_run)

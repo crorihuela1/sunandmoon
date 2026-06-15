@@ -1,10 +1,10 @@
-# Sun & Moon 38 — Social Content Engine
+# Sun & Moon 30A — Social Content Engine
 
-Automated, calendar-aware social media marketing for **sunandmoon38.com**.
+Automated, calendar-aware social media marketing for **sunandmoon30a.com**.
 The engine reads availability from the property calendars, generates methodical
 brand-building content for every connected platform, publishes it through each
 platform's API **only after that API has been vetted and activated**, and emails
-booking/activity alerts to `experience@sunandmoon38.com`.
+booking/activity alerts to `experience@sunandmoon30a.com`.
 
 ## How it works
 
@@ -18,7 +18,7 @@ calendars (iCal / Google Calendar)          config/apis.yaml (API registry)
    open-date scoring     content queue (queue/YYYY-MM-DD.json)
         │
         ▼
-   notifier.py ──► experience@sunandmoon38.com (+ CC) for new bookings & daily digest
+   notifier.py ──► experience@sunandmoon30a.com (+ CC) for new bookings & daily digest
 ```
 
 1. **API registry** — `config/apis.yaml` lists every platform API with a status
@@ -36,7 +36,7 @@ calendars (iCal / Google Calendar)          config/apis.yaml (API registry)
    set `SOCIAL_LIVE=true` to post for real.
 5. **Notifier** — emails imminent info (new bookings detected as new busy blocks,
    plus a daily digest of what was published and what's open) to
-   `experience@sunandmoon38.com` with a CC (see `config/notifications.yaml`).
+   `experience@sunandmoon30a.com` with a CC (see `config/notifications.yaml`).
 6. **Automation** — `.github/workflows/social-engine.yml` runs the whole loop
    daily with zero manual intervention.
 
@@ -62,7 +62,7 @@ Short version:
 
 ## Things to plug in (current gaps)
 
-- **sunandmoon38.com does not resolve in public DNS yet** (checked 2026-06-10).
+- **sunandmoon30a.com does not resolve in public DNS yet** (checked 2026-06-10).
   When the site is live, set its booking-calendar iCal URL(s) in
   `config/calendars.yaml`.
 - No "Sun"/"Moon" calendars exist in the connected Google account yet. Either

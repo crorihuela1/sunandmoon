@@ -33,7 +33,7 @@ class PinterestPublisher(Publisher):
                 "board_id": self.env("PINTEREST_BOARD_ID"),
                 "title": post["copy"][:100],
                 "description": self.caption(post)[:800],
-                "link": "https://sunandmoon38.com",
+                "link": "https://sunandmoon30a.com",
                 "media_source": {"source_type": "image_url", "url": media_url},
             }, timeout=30)
         resp.raise_for_status()

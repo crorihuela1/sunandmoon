@@ -1,4 +1,4 @@
-# Sun & Moon 38 — Social platform API registry.
+# Sun & Moon 30A — Social platform API registry.
 #
 # Lifecycle for every API:
 #   planned        -> identified, no application submitted yet
@@ -32,7 +32,7 @@ platforms:
     secrets: [META_ACCESS_TOKEN, FB_PAGE_ID]
     cadence_per_week: 4
     formats: [image, link, video, event]
-    notes: Same Meta app as Instagram; create Page "Sun & Moon 38" first.
+    notes: Same Meta app as Instagram; create Page "Sun & Moon 30A" first.
 
   tiktok:
     label: TikTok (Content Posting API)

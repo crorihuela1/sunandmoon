@@ -1,9 +1,9 @@
-# Sun & Moon 38 — brand system for generated content.
+# Sun & Moon 30A — brand system for generated content.
 
 brand:
-  name: Sun & Moon 38
-  website: https://sunandmoon38.com
-  booking_url: https://sunandmoon38.com/book
+  name: Sun & Moon 30A
+  website: https://sunandmoon30a.com
+  booking_url: https://sunandmoon30a.com/book
   tagline: "Where every stay turns with the sky."
   voice:
     - warm, unhurried, a little celestial — sunrise-to-starlight imagery
@@ -18,14 +18,18 @@ brand:
       angle: stargazing, firepit nights, slow evenings, deep quiet
 
 hashtags:
-  always: ["#SunAndMoon38", "#StayWithTheSky"]
+  always: ["#SunAndMoon30A", "#StayWithTheSky"]
   rotating:
+    - "#30A"
+    - "#30Aliving"
     - "#ShortTermRental"
     - "#WeekendGetaway"
     - "#StaycationGoals"
     - "#TravelMore"
     - "#VacationRental"
     - "#GetawayWeekend"
+    - "#FloridaPanhandle"
+    - "#EmeraldCoast"
 
 # Content pillars: the engine cycles through these methodically so the feed
 # builds a brand instead of repeating one note. Weights set the mix.
@@ -42,7 +46,7 @@ pillars:
     weight: 3
     goal: bookings + brand
     description: >
-      Big events and on-site experiences at Sun & Moon 38 — pulled from the
+      Big events and on-site experiences at Sun & Moon 30A — pulled from the
       events calendar. Announce, countdown, recap.
   - key: local_guide
     weight: 2

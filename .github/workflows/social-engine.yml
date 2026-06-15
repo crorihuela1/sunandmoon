@@ -1,4 +1,4 @@
-# Daily, zero-touch run of the Sun & Moon 38 content engine.
+# Daily, zero-touch run of the Sun & Moon 30A content engine.
 # Dry-run by default: it builds the queue, prints previews, and emails nothing
 # until the SOCIAL_LIVE repository variable is set to "true" and secrets exist.
 name: social-engine
@@ -53,7 +53,7 @@ jobs:
       - name: Persist state & queue
         run: |
           git config user.name "sunmoon-engine"
-          git config user.email "alerts@sunandmoon38.com"
+          git config user.email "alerts@sunandmoon30a.com"
           git add state/ queue/ || true
           git diff --cached --quiet || git commit -m "engine: state for $(date -u +%F) [skip ci]"
           git push

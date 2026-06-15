@@ -12,7 +12,7 @@ Facebook + Threads, one app), 3) Pinterest, 4) TikTok, 5) X, 6) YouTube,
 ## Lifecycle (every platform)
 
 1. **planned → applied** — create the developer app at the `apply_at` URL in
-   `config/apis.yaml`. Use a dedicated `dev@sunandmoon38.com`-style login, not
+   `config/apis.yaml`. Use a dedicated `dev@sunandmoon30a.com`-style login, not
    a personal account.
 2. **applied → keys_received** — when credentials are issued, add them as
    GitHub **Actions secrets** using the exact names in the platform's
@@ -47,6 +47,6 @@ Facebook + Threads, one app), 3) Pinterest, 4) TikTok, 5) X, 6) YouTube,
 ## Go-live switches (in order)
 
 1. Calendars wired in `config/calendars.yaml` (see README "Things to plug in").
-2. SMTP secrets set → digests/booking alerts flow to `experience@sunandmoon38.com`.
+2. SMTP secrets set → digests/booking alerts flow to `experience@sunandmoon30a.com`.
 3. Repository **variable** `SOCIAL_LIVE=true` → publishers and emails go live.
    Until then everything runs as a visible dry-run in the Actions log.

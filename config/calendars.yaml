@@ -1,10 +1,10 @@
-# Availability + events sources for Sun & Moon 38.
+# Availability + events sources for Sun & Moon 30A.
 #
 # Each unit can have any mix of sources; busy blocks from all of them are
 # merged, so cross-listing (site + Airbnb + VRBO) stays consistent.
 # Booked nights appear as BUSY events; everything else is open.
 #
-# >>> ACTION NEEDED: sunandmoon38.com has no public DNS yet (2026-06-10).
+# >>> ACTION NEEDED: sunandmoon30a.com has no public DNS yet (2026-06-10).
 # >>> When the site/booking engine is live, paste its iCal export URLs below.
 
 units:
@@ -12,7 +12,7 @@ units:
     label: The Sun Suite
     sources:
       - type: ical
-        url: ""            # e.g. https://sunandmoon38.com/calendar/sun.ics
+        url: ""            # e.g. https://sunandmoon30a.com/calendar/sun.ics
       - type: ical
         url: ""            # e.g. Airbnb iCal export for the Sun listing
       - type: google_calendar
@@ -21,7 +21,7 @@ units:
     label: The Moon Suite
     sources:
       - type: ical
-        url: ""            # e.g. https://sunandmoon38.com/calendar/moon.ics
+        url: ""            # e.g. https://sunandmoon30a.com/calendar/moon.ics
       - type: ical
         url: ""
       - type: google_calendar
@@ -32,7 +32,7 @@ units:
 events:
   sources:
     - type: ical
-      url: ""              # e.g. https://sunandmoon38.com/events.ics
+      url: ""              # e.g. https://sunandmoon30a.com/events.ics
     - type: google_calendar
       calendar_id: ""
 

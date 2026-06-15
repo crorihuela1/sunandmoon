@@ -1,7 +1,7 @@
 """Read unit calendars, compute open windows, and score them for promotion.
 
 Busy blocks (bookings) come from any mix of sources per unit:
-  - iCal export URLs (the booking engine on sunandmoon38.com, Airbnb, VRBO, ...)
+  - iCal export URLs (the booking engine on sunandmoon30a.com, Airbnb, VRBO, ...)
   - public Google Calendars (needs GOOGLE_CALENDAR_API_KEY)
 
 Everything not busy inside the scoring horizon is an open window. Windows are

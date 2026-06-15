@@ -9,10 +9,10 @@
 # change it here if a different mailbox was intended.
 
 email:
-  to: experience@sunandmoon38.com
+  to: experience@sunandmoon30a.com
   cc:
     - corihuela@gmail.com
-  from: alerts@sunandmoon38.com   # must be a sender your SMTP account may use
+  from: alerts@sunandmoon30a.com   # must be a sender your SMTP account may use
   smtp:
     host_env: SMTP_HOST           # env var names, set as Actions secrets
     port_env: SMTP_PORT
