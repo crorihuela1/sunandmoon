@@ -14,3 +14,9 @@ Icon?
 # Logs / temp
 *.log
 .tmp/
+
+# Deploy secrets (never commit your Cloudflare token)
+deploy.config.json
+.deploy-state.json
+deploy.log
+__pycache__/

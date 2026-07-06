@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://sunandmoonat30a.com/sitemap.xml
+Sitemap: https://sunandmoon30a.com/sitemap.xml

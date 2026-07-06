@@ -67,11 +67,12 @@
       font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase;
       color: var(--tan); font-family: -apple-system, sans-serif; margin-top: 2px;
     }
-    .nav-links { display: flex; gap: 32px; list-style: none; }
+    .nav-links { display: flex; gap: 22px; list-style: none; align-items: center; }
     .nav-links a {
       font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-      font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase;
+      font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase;
       color: var(--muted); text-decoration: none; transition: color 0.2s;
+      line-height: 1; white-space: nowrap;
     }
     .nav-links a:hover { color: var(--deep); }
     .nav-book {
@@ -374,6 +375,7 @@
     .gallery-header { text-align: center; padding: 100px 48px 56px; }
     .gallery-grid {
       display: grid; grid-template-columns: repeat(4, 1fr); gap: 4px;
+      grid-auto-flow: dense;       /* fills the top-right gap when wide cells overflow */
       max-width: 1600px; margin: 0 auto;
     }
     .gallery-cell {
@@ -447,6 +449,62 @@
     }
     .area-img img { width: 100%; height: 100%; object-fit: cover; }
     .area-headline { padding-right: 24px; }
+
+    /* ===========================================================
+       LOCAL PARTNERS
+       Extensible card grid. To add a partner, copy one
+       <a class="partner-card"> ... </a> block in the markup below.
+       The grid reflows automatically (auto-fit / minmax).
+       =========================================================== */
+    #partners { background: var(--sand2); padding: 100px 48px; }
+    .partners-inner { max-width: 1200px; margin: 0 auto; }
+    .partners-header { text-align: center; max-width: 720px; margin: 0 auto 56px; }
+    .partners-header .divider { margin-left: auto; margin-right: auto; }
+    .partners-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 28px;
+    }
+    .partner-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 40px 36px;
+      display: flex; flex-direction: column;
+      text-decoration: none; color: inherit;
+      transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+    }
+    .partner-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 18px 40px rgba(59,47,34,0.12);
+      border-color: var(--tan);
+    }
+    .partner-eyebrow {
+      font-family: -apple-system, sans-serif; font-size: 10px;
+      letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--brown); margin-bottom: 14px;
+    }
+    .partner-name {
+      font-family: Georgia, serif; font-size: 25px; font-weight: 400;
+      letter-spacing: -0.01em; color: var(--deep); line-height: 1.2;
+      margin-bottom: 16px;
+    }
+    .partner-desc {
+      font-size: 15px; color: var(--muted); line-height: 1.7;
+      margin-bottom: 26px; flex-grow: 1;
+    }
+    .partner-link {
+      font-family: -apple-system, sans-serif; font-size: 11px;
+      letter-spacing: 0.16em; text-transform: uppercase;
+      color: var(--deep); display: inline-flex; align-items: center; gap: 6px;
+    }
+    .partner-card:hover .partner-link { color: var(--brown); }
+    .partner-link .arrow { transition: transform 0.25s ease; }
+    .partner-card:hover .partner-link .arrow { transform: translateX(4px); }
+    @media (max-width: 640px) {
+      #partners { padding: 72px 24px; }
+      .partner-card { padding: 32px 28px; }
+    }
 
     /* Events */
     .events-band {
@@ -733,33 +791,15 @@
     }
     .book-card.featured a:hover { background: white; border-color: white; }
 
-    /* Logo pedestal — gives the booking trio a visual rhythm and brand cue */
-    .book-card-logowrap {
-      width: 96px; height: 96px; border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
-      margin-bottom: 18px; position: relative;
-      transition: transform 0.3s ease;
-    }
-    .book-card:hover .book-card-logowrap { transform: scale(1.04); }
-    .book-card.sun  .book-card-logowrap {
-      background: #FFF8EC; border: 1px solid rgba(155,107,32,0.18);
-      box-shadow: 0 4px 18px rgba(232,164,74,0.12);
-    }
-    .book-card.moon .book-card-logowrap {
-      background: var(--foam); border: 1px solid rgba(58,96,128,0.18);
-      box-shadow: 0 4px 18px rgba(58,96,128,0.12);
-    }
-    .book-card.featured .book-card-logowrap {
-      background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(255,255,255,0.20);
-      width: 108px; height: 108px;
-      box-shadow: 0 0 0 6px rgba(232,164,74,0.10);
-    }
+    /* Booking-card logos — bare (no pedestal) to match the property-card icons above.
+       align-self prevents flex-column from stretching the logo to the card's full width. */
     .book-card-logo {
-      width: 64px; height: 64px; object-fit: contain;
+      height: 56px; width: auto; margin-bottom: 18px; display: block;
+      align-self: flex-start;
+      object-fit: contain;
     }
     .book-card.featured .book-card-logo {
-      width: 76px; height: 76px; opacity: 0.95;
+      height: 64px;
     }
 
     .book-note {
@@ -880,7 +920,7 @@
   <meta property="og:title" content="Sun & Moon at 30A · Blue Moon & Golden Sun · Seagrove Beach">
   <meta property="og:description" content="Two beautifully designed coastal cottages on Crystal Court in Seagrove Beach, Florida. Book Blue Moon, Golden Sun, or both together for up to 16 guests on Scenic 30A.">
   <meta property="og:image" content="/photos/golden-sun/001.jpg">
-  <meta property="og:url" content="https://sunandmoonat30a.com/">
+  <meta property="og:url" content="https://sunandmoon30a.com/">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="theme-color" content="#3B2F22">
 </head>
@@ -901,7 +941,8 @@
     <li><a href="#gallery">Gallery</a></li>
     <li><a href="#area">30A Area</a></li>
     <li><a href="events.html">Events</a></li>
-    <li><a href="#social">@sunandmoonat30a</a></li>
+    <li><a href="#partners">Partners</a></li>
+    <li><a href="#social">@sunandmoon30a</a></li>
     <li><a href="#reviews">Reviews</a></li>
   </ul>
   <a href="#book" class="nav-book">Check Availability</a>
@@ -944,7 +985,7 @@
 <div class="intro-bar">
   <div class="intro-bar-item"><strong>2</strong>Cottages</div>
   <div class="intro-bar-item"><strong>6</strong>Bedrooms</div>
-  <div class="intro-bar-item"><strong>6</strong>Bathrooms</div>
+  <div class="intro-bar-item"><strong>4</strong>Bathrooms</div>
   <div class="intro-bar-item"><strong>16</strong>Guests</div>
   <div class="intro-bar-item"><strong>3 min</strong>Walk to the Beach</div>
   <div class="intro-bar-item"><strong>5.0 ★</strong>Guest Rating</div>
@@ -965,7 +1006,7 @@
     </p>
     <br>
     <p class="section-body">
-      Book one cottage for an intimate getaway, or take both for a full-property family compound. Six bedrooms, six baths, room for sixteen — and a setup that gives every group the rare gift of being together <em>and</em> apart whenever they choose.
+      Book one cottage for an intimate getaway, or take both for a full-property family compound. Six bedrooms, four baths, room for sixteen — and a setup that gives every group the rare gift of being together <em>and</em> apart whenever they choose.
     </p>
     <div class="divider"></div>
     <a href="#properties" class="prop-btn" style="border:1px solid var(--brown);color:var(--brown);font-family:-apple-system,sans-serif;font-size:11px;letter-spacing:.14em;text-transform:uppercase;padding:12px 28px;border-radius:2px;text-decoration:none;display:inline-block;transition:all .2s;" onmouseover="this.style.background='#8B6F52';this.style.color='white'" onmouseout="this.style.background='transparent';this.style.color='#8B6F52'">
@@ -995,13 +1036,13 @@
       <div class="prop-body">
         <img class="prop-icon" src="images/logos/sun.png" alt="Sun">
         <div class="prop-name">Golden Sun</div>
-        <div class="prop-sub">South-Facing Light · Wraparound Living</div>
+        <div class="prop-sub">Stylish 30A Retreat · Walk to the Gulf</div>
         <p class="prop-desc">
-          Bright, airy, and warm — Golden Sun catches the light all day. Vaulted ceilings, an oversized front porch, three king bedrooms and a half bath off the entry. Made for early risers, slow coffees, and lingering sunset porches.
+          Bright, airy, and warm — Golden Sun is a thoughtfully designed coastal retreat with a covered back patio and gas grill. Two king bedrooms plus a queen, a king en-suite with a large tiled shower, fireplace, and a quiet community pool just outside. Made for early risers, slow coffees, and lingering sunset evenings.
         </p>
         <div class="prop-specs">
           <div class="prop-spec"><span class="prop-spec-val">3</span><span class="prop-spec-lbl">Bedrooms</span></div>
-          <div class="prop-spec"><span class="prop-spec-val">3</span><span class="prop-spec-lbl">Bathrooms</span></div>
+          <div class="prop-spec"><span class="prop-spec-val">2</span><span class="prop-spec-lbl">Bathrooms</span></div>
           <div class="prop-spec"><span class="prop-spec-val">8</span><span class="prop-spec-lbl">Guests</span></div>
         </div>
         <div class="prop-actions">
@@ -1022,11 +1063,11 @@
         <div class="prop-name">Blue Moon</div>
         <div class="prop-sub">3 Min Walk to the Beach · Prime 30A Location</div>
         <p class="prop-desc">
-          A tranquil coastal cottage built around easy days and slow evenings — open living, a chef's kitchen, screened porch, and shaded outdoor dining. Three thoughtfully appointed bedrooms, full bath suites, and quick access to Seagrove's quietest beach path.
+          A tranquil coastal cottage built around easy days and slow evenings — open living, a fully equipped kitchen, fireplace, and a private back patio with gas grill. Three king bedrooms (one with an en-suite jetted tub), a queen sleeper sofa in the living room, and quick access to Seagrove's quietest beach path.
         </p>
         <div class="prop-specs">
           <div class="prop-spec"><span class="prop-spec-val">3</span><span class="prop-spec-lbl">Bedrooms</span></div>
-          <div class="prop-spec"><span class="prop-spec-val">3</span><span class="prop-spec-lbl">Bathrooms</span></div>
+          <div class="prop-spec"><span class="prop-spec-val">2</span><span class="prop-spec-lbl">Bathrooms</span></div>
           <div class="prop-spec"><span class="prop-spec-val">8</span><span class="prop-spec-lbl">Guests</span></div>
         </div>
         <div class="prop-actions">
@@ -1041,7 +1082,7 @@
     <img class="together-icon" src="images/logos/sunmoon-white.png" alt="Sun &amp; Moon at 30A">
     <strong>Book Sun &amp; Moon Together</strong>
     <p>
-      Six bedrooms · 6 baths · Sleeps 16 · Two cottages, one address. Built for reunions, milestone birthdays, weddings, and the kind of family takeover where everyone gets their own space — and the best memories happen on the porch in between.
+      Six bedrooms · 4 baths · Sleeps 16 · Two cottages, one address. Built for reunions, milestone birthdays, weddings, and the kind of family takeover where everyone gets their own space — and the best memories happen on the porch in between.
     </p>
     <a href="https://www.vacayrentalnetwork.com/property/sun-and-moon-at-30a-507559" target="_blank" rel="noopener">Reserve the Full Property →</a>
   </div>
@@ -1117,23 +1158,23 @@
       </div>
       <div class="fade-in">
         <p class="section-body">
-          Both cottages are stocked with everything that makes a 30A trip effortless — beach gear, bikes, spa-quality linens — so you can focus on the people you came with.
+          Both cottages are stocked with everything that makes a 30A trip effortless — beach chairs and wagon, fully equipped kitchens, spa-quality linens — so you can focus on the people you came with.
         </p>
       </div>
     </div>
     <div class="amenities-grid">
-      <div class="amenity-item fade-in"><span class="amenity-icon">🏖️</span><div class="amenity-name">3-Minute Beach Walk</div><div class="amenity-desc">Quiet Seagrove access path with private boardwalk</div></div>
-      <div class="amenity-item fade-in"><span class="amenity-icon">🍳</span><div class="amenity-name">Chef's Kitchens</div><div class="amenity-desc">Both cottages feature fully equipped gourmet kitchens</div></div>
-      <div class="amenity-item fade-in"><span class="amenity-icon">🚲</span><div class="amenity-name">Beach Cruisers</div><div class="amenity-desc">Bikes for every guest — explore 30A end to end</div></div>
-      <div class="amenity-item fade-in"><span class="amenity-icon">🌅</span><div class="amenity-name">Porches &amp; Decks</div><div class="amenity-desc">Front and back porches, perfect for slow mornings</div></div>
-      <div class="amenity-item fade-in"><span class="amenity-icon">📡</span><div class="amenity-name">High-Speed WiFi</div><div class="amenity-desc">Dedicated fiber, full coverage in both cottages</div></div>
+      <div class="amenity-item fade-in"><span class="amenity-icon">🏖️</span><div class="amenity-name">3-Minute Beach Walk</div><div class="amenity-desc">0.1 miles to Pelayo beach access, just across Scenic 30A</div></div>
+      <div class="amenity-item fade-in"><span class="amenity-icon">🏊</span><div class="amenity-name">Community Pool</div><div class="amenity-desc">Quiet Gulf Mist neighborhood pool — steps from both cottages</div></div>
+      <div class="amenity-item fade-in"><span class="amenity-icon">🍳</span><div class="amenity-name">Fully Equipped Kitchens</div><div class="amenity-desc">Everything you need to cook in — both cottages</div></div>
+      <div class="amenity-item fade-in"><span class="amenity-icon">🔥</span><div class="amenity-name">Fireplaces</div><div class="amenity-desc">Cozy living-room fireplace in each cottage</div></div>
+      <div class="amenity-item fade-in"><span class="amenity-icon">🌅</span><div class="amenity-name">Private Back Patios</div><div class="amenity-desc">Comfortable seating and gas grill at each cottage</div></div>
+      <div class="amenity-item fade-in"><span class="amenity-icon">📡</span><div class="amenity-name">High-Speed WiFi</div><div class="amenity-desc">Wireless internet, full coverage in both cottages</div></div>
       <div class="amenity-item fade-in"><span class="amenity-icon">🛁</span><div class="amenity-name">Outdoor Shower</div><div class="amenity-desc">Rinse off the sand without tracking it inside</div></div>
-      <div class="amenity-item fade-in"><span class="amenity-icon">🏄</span><div class="amenity-name">Beach Gear</div><div class="amenity-desc">Chairs, umbrellas, boogie boards &amp; coolers stocked</div></div>
-      <div class="amenity-item fade-in"><span class="amenity-icon">🧺</span><div class="amenity-name">Linens &amp; Towels</div><div class="amenity-desc">Hotel-quality bed and bath linens, mid-stay refresh</div></div>
-      <div class="amenity-item fade-in"><span class="amenity-icon">📺</span><div class="amenity-name">Smart TVs</div><div class="amenity-desc">Streaming-ready in every living room and bedroom</div></div>
-      <div class="amenity-item fade-in"><span class="amenity-icon">🍽️</span><div class="amenity-name">Outdoor Dining</div><div class="amenity-desc">Shaded dining tables for long Gulf-side dinners</div></div>
-      <div class="amenity-item fade-in"><span class="amenity-icon">🐾</span><div class="amenity-name">Pet-Friendly</div><div class="amenity-desc">Well-behaved dogs welcome upon request</div></div>
-      <div class="amenity-item fade-in"><span class="amenity-icon">🅿️</span><div class="amenity-name">Private Parking</div><div class="amenity-desc">Plenty of off-street parking — bring the family</div></div>
+      <div class="amenity-item fade-in"><span class="amenity-icon">🏄</span><div class="amenity-name">Beach Gear Included</div><div class="amenity-desc">Beach chairs, umbrella &amp; beach wagon — ready to roll</div></div>
+      <div class="amenity-item fade-in"><span class="amenity-icon">🧺</span><div class="amenity-name">Linens &amp; Towels</div><div class="amenity-desc">Bed, bath, pool &amp; beach towels all provided</div></div>
+      <div class="amenity-item fade-in"><span class="amenity-icon">📺</span><div class="amenity-name">Smart TVs</div><div class="amenity-desc">Streaming-ready TV in every bedroom</div></div>
+      <div class="amenity-item fade-in"><span class="amenity-icon">❄️</span><div class="amenity-name">A/C &amp; Heat</div><div class="amenity-desc">Central air and heat in both cottages</div></div>
+      <div class="amenity-item fade-in"><span class="amenity-icon">🅿️</span><div class="amenity-name">Off-Street Parking</div><div class="amenity-desc">Parking for up to 5 vehicles across both cottages</div></div>
     </div>
   </div>
 </section>
@@ -1150,7 +1191,7 @@
         <h2 class="section-title">A short walk from everything that makes 30A famous.</h2>
         <div class="divider"></div>
         <p class="section-body">
-          Seagrove sits in the quietest pocket of Scenic 30A — between the picture-book pedestrian town of <strong>Seaside</strong> and the laid-back lakes-and-dunes village of <strong>WaterColor</strong>. Bike to either in under ten minutes. Drive to <strong>Alys Beach</strong> in fifteen.
+          Seagrove sits in the quietest pocket of Scenic 30A — between the picture-book pedestrian town of <strong>Seaside</strong> and the laid-back lakes-and-dunes village of <strong>WaterColor</strong>. Both are a short drive (or a quick golf-cart ride from the rental shop around the corner). Drive to <strong>Alys Beach</strong> in fifteen.
         </p>
         <p class="section-body" style="margin-top:14px;">
           The whole stretch is built for slowing down: 26 miles of beach-cruiser path, hidden coastal dune lakes, neighborhood farmers markets, an outdoor amphitheater with weekly concerts, and a calendar that quietly delivers world-class festivals all year long.
@@ -1165,6 +1206,50 @@
   </div>
 </section>
 
+<!-- ===========================================================
+     LOCAL PARTNERS
+     Extensible list. To add a partner, copy one full
+     <a class="partner-card"> ... </a> block and update the
+     eyebrow, name, description, href, and link label.
+     The grid reflows on its own.
+     =========================================================== -->
+<section id="partners">
+  <div class="partners-inner">
+    <div class="partners-header fade-in">
+      <div class="section-label">Local Partners</div>
+      <h2 class="section-title">The people we trust to make your celebration effortless.</h2>
+      <div class="divider"></div>
+      <p class="section-body">
+        Planning a wedding, vow renewal, or a special gathering during your stay? These are the trusted local pros we recommend along Scenic 30A and the Emerald Coast — vetted teams who know these beaches as well as we do.
+      </p>
+    </div>
+
+    <div class="partners-grid">
+
+      <!-- Partner: Gulf Beach Weddings -->
+      <a class="partner-card fade-in" href="https://gulfbeachweddings.com/" target="_blank" rel="noopener">
+        <div class="partner-eyebrow">Beach Weddings &amp; Ceremonies</div>
+        <div class="partner-name">Gulf Beach Weddings</div>
+        <p class="partner-desc">
+          One of the Gulf Coast's most established beach-wedding companies, putting on 250+ Panhandle ceremonies a year — from intimate elopements and vow renewals to full all-inclusive celebrations. Their packages bundle the officiant, professional photography, setup, and music, so saying "I do" steps from your cottage is as simple as choosing a date.
+        </p>
+        <span class="partner-link">Plan a beach ceremony <span class="arrow">→</span></span>
+      </a>
+
+      <!-- Partner: Artistic Catering Destin -->
+      <a class="partner-card fade-in" href="https://www.artisticcateringdestin.com" target="_blank" rel="noopener">
+        <div class="partner-eyebrow">Catering &amp; Events</div>
+        <div class="partner-name">Artistic Catering Destin</div>
+        <p class="partner-desc">
+          A full-service Emerald Coast caterer serving the 30A area since 1981, with an award-winning culinary team and more than 150 years of combined experience. From weddings and receptions to family reunions and private yacht dinners, they handle the menu, table settings, and décor — and come recommended by 100% of the couples they've served.
+        </p>
+        <span class="partner-link">Explore catering <span class="arrow">→</span></span>
+      </a>
+
+    </div>
+  </div>
+</section>
+
 <!-- SOCIAL / INSTAGRAM -->
 <section id="social">
   <div class="social-inner">
@@ -1174,7 +1259,7 @@
         <h2 class="section-title" style="margin-bottom:0;">Sun-up to moon-up on 30A.</h2>
       </div>
       <div class="social-handle">
-        <strong>@sunandmoonat30a</strong> · Instagram
+        <strong>@sunandmoon30a</strong> · Instagram
       </div>
     </div>
 
@@ -1198,34 +1283,34 @@
         Drop their <div> + <script> in place of the .social-grid below.
     -->
     <div class="social-grid">
-      <a href="https://www.instagram.com/sunandmoonat30a/" target="_blank" rel="noopener" class="social-tile fade-in" data-href="#">
+      <a href="https://www.instagram.com/sunandmoon30a/" target="_blank" rel="noopener" class="social-tile fade-in" data-href="#">
         <img src="photos/golden-sun/001.jpg" alt="Golden hour on 30A">
         <div class="social-tile-overlay"><span>Sunset on Seagrove · #30A #goldenhour</span></div>
       </a>
-      <a href="https://www.instagram.com/sunandmoonat30a/" target="_blank" rel="noopener" class="social-tile fade-in" data-href="#">
+      <a href="https://www.instagram.com/sunandmoon30a/" target="_blank" rel="noopener" class="social-tile fade-in" data-href="#">
         <img src="photos/blue-moon/001.jpg" alt="Blue Moon front porch">
         <div class="social-tile-overlay"><span>Front porch mornings at Blue Moon</span></div>
       </a>
-      <a href="https://www.instagram.com/sunandmoonat30a/" target="_blank" rel="noopener" class="social-tile fade-in" data-href="#">
+      <a href="https://www.instagram.com/sunandmoon30a/" target="_blank" rel="noopener" class="social-tile fade-in" data-href="#">
         <img src="photos/blue-moon/010.jpg" alt="Inside Blue Moon">
         <div class="social-tile-overlay"><span>Living room set up for movie night</span></div>
       </a>
-      <a href="https://www.instagram.com/sunandmoonat30a/" target="_blank" rel="noopener" class="social-tile fade-in" data-href="#">
+      <a href="https://www.instagram.com/sunandmoon30a/" target="_blank" rel="noopener" class="social-tile fade-in" data-href="#">
         <img src="photos/golden-sun/005.jpg" alt="Golden Sun porch">
         <div class="social-tile-overlay"><span>That deck. That fan. That breeze.</span></div>
       </a>
-      <a href="https://www.instagram.com/sunandmoonat30a/" target="_blank" rel="noopener" class="social-tile fade-in" data-href="#">
+      <a href="https://www.instagram.com/sunandmoon30a/" target="_blank" rel="noopener" class="social-tile fade-in" data-href="#">
         <img src="photos/blue-moon/040.jpg" alt="Blue Moon detail">
         <div class="social-tile-overlay"><span>Coastal details · 30A vibes</span></div>
       </a>
-      <a href="https://www.instagram.com/sunandmoonat30a/" target="_blank" rel="noopener" class="social-tile fade-in" data-href="#">
+      <a href="https://www.instagram.com/sunandmoon30a/" target="_blank" rel="noopener" class="social-tile fade-in" data-href="#">
         <img src="images/sunset-seagrove.jpg" alt="Sunset at Seagrove Beach">
         <div class="social-tile-overlay"><span>Why we named it Sun &amp; Moon</span></div>
       </a>
     </div>
 
     <div class="social-cta fade-in">
-      <a href="https://www.instagram.com/sunandmoonat30a/" target="_blank" rel="noopener">Follow @sunandmoonat30a →</a>
+      <a href="https://www.instagram.com/sunandmoon30a/" target="_blank" rel="noopener">Follow @sunandmoon30a →</a>
     </div>
   </div>
 </section>
@@ -1243,11 +1328,11 @@
     <h2 class="section-title">Crystal Court · Seagrove Beach, FL</h2>
     <div class="divider"></div>
     <p class="section-body">
-      Both cottages sit on a quiet residential lane in Seagrove Beach — minutes from Seaside, WaterColor, Grayton, and Alys Beach by bike or car. The closest beach access is a three-minute walk.
+      Both cottages sit on a quiet residential lane in Seagrove Beach — minutes from Seaside, WaterColor, Grayton, and Alys Beach by car. The closest beach access is a three-minute walk, just across Scenic 30A.
     </p>
     <ul class="location-list">
       <li><span>Beach Access (Seagrove)</span><span>3 min walk</span></li>
-      <li><span>Seaside, FL</span><span>1.8 mi · 8 min bike</span></li>
+      <li><span>Seaside, FL</span><span>1.8 mi · 5 min drive</span></li>
       <li><span>WaterColor</span><span>2.4 mi · 9 min drive</span></li>
       <li><span>Grayton Beach State Park</span><span>4.1 mi · 10 min drive</span></li>
       <li><span>Alys Beach</span><span>6.8 mi · 15 min drive</span></li>
@@ -1271,7 +1356,7 @@
     </div>
     <div class="review-card fade-in">
       <div class="review-stars">★★★★★</div>
-      <p class="review-text">"From the moment we arrived, everything was flawless. Blue Moon's porch, the bikes, the easy beach walk — every detail felt thought through. We barely left Seagrove. Absolute perfection on the Emerald Coast."</p>
+      <p class="review-text">"From the moment we arrived, everything was flawless. Blue Moon's porch, the community pool, the easy beach walk — every detail felt thought through. We barely left Seagrove. Absolute perfection on the Emerald Coast."</p>
       <div class="review-author">— J. &amp; M. Calloway · Nashville, TN</div>
     </div>
     <div class="review-card fade-in">
@@ -1302,41 +1387,35 @@
     <div class="book-grid">
       <!-- Sequence: SUN ← BOTH → MOON. Mirrors the brand "Sun & Moon" left-to-right. -->
       <div class="book-card sun fade-in">
-        <div class="book-card-logowrap">
-          <img class="book-card-logo" src="images/logos/sun.png" alt="Golden Sun">
-        </div>
+        <img class="book-card-logo" src="images/logos/sun.png" alt="Golden Sun">
         <div class="book-card-name">Golden Sun</div>
         <div class="book-card-sub">53 Crystal Court</div>
-        <div class="book-card-stats">3 BR · 3 BA · Sleeps 8</div>
-        <p class="book-card-desc">Bright, south-facing cottage with wraparound living, vaulted ceilings, and three king bedrooms.</p>
+        <div class="book-card-stats">3 BR · 2 BA · Sleeps 8</div>
+        <p class="book-card-desc">Bright, stylish cottage with two king bedrooms, a queen, fireplace, and covered back patio with gas grill.</p>
         <a href="https://www.vacayrentalnetwork.com/property/golden-sun-503319" target="_blank" rel="noopener">Check Golden Sun Dates</a>
       </div>
 
       <div class="book-card featured fade-in">
-        <div class="book-card-logowrap">
-          <img class="book-card-logo" src="images/logos/sunmoon-white.png" alt="Sun &amp; Moon at 30A">
-        </div>
+        <img class="book-card-logo" src="images/logos/sunmoon-color.png" alt="Sun &amp; Moon at 30A">
         <div class="book-card-name">Sun &amp; Moon Together</div>
         <div class="book-card-sub">Full Property · 53 + 65 Crystal Court</div>
-        <div class="book-card-stats">6 BR · 6 BA · Sleeps 16</div>
+        <div class="book-card-stats">6 BR · 4 BA · Sleeps 16</div>
         <p class="book-card-desc">Two cottages, one address. The right call for reunions, milestone trips, weddings, and big-family getaways.</p>
         <a href="https://www.vacayrentalnetwork.com/property/sun-and-moon-at-30a-507559" target="_blank" rel="noopener">Reserve the Full Property</a>
       </div>
 
       <div class="book-card moon fade-in">
-        <div class="book-card-logowrap">
-          <img class="book-card-logo" src="images/logos/moon.png" alt="Blue Moon">
-        </div>
+        <img class="book-card-logo" src="images/logos/moon.png" alt="Blue Moon">
         <div class="book-card-name">Blue Moon</div>
         <div class="book-card-sub">65 Crystal Court</div>
-        <div class="book-card-stats">3 BR · 3 BA · Sleeps 8</div>
-        <p class="book-card-desc">A quiet coastal cottage built for slow mornings and Gulf-side evenings. Ideal for one family or a small group.</p>
+        <div class="book-card-stats">3 BR · 2 BA · Sleeps 8</div>
+        <p class="book-card-desc">A quiet coastal cottage with three king bedrooms, fireplace, and a private back patio with gas grill. Ideal for one family or a small group.</p>
         <a href="https://www.vacayrentalnetwork.com/property/blue-moon-prime-30a-location-3-minute-walk-to-the--232268" target="_blank" rel="noopener">Check Blue Moon Dates</a>
       </div>
     </div>
 
     <div class="book-note">
-      Have questions, planning a wedding, or need a custom package for 10+ guests? <a href="mailto:hello@sunandmoonat30a.com">Get in touch directly</a>.
+      Have questions, planning a wedding, or need a custom package for 10+ guests? <a href="mailto:experience@sunandmoon30a.com">Get in touch directly</a>.
     </div>
   </div>
 </section>
@@ -1385,9 +1464,9 @@
   <div class="footer-bottom">
     <span>© 2026 Sun &amp; Moon at 30A · Seagrove Beach, Florida · All rights reserved.</span>
     <div class="footer-social-links">
-      <a href="https://www.instagram.com/sunandmoonat30a/" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://www.instagram.com/sunandmoon30a/" target="_blank" rel="noopener">Instagram</a>
       <a href="https://www.vacayrentalnetwork.com/property/sun-and-moon-at-30a-507559" target="_blank" rel="noopener">VacayRentalNetwork</a>
-      <a href="mailto:hello@sunandmoonat30a.com">Contact</a>
+      <a href="mailto:experience@sunandmoon30a.com">Contact</a>
     </div>
   </div>
 </footer>

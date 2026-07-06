@@ -1,0 +1,6 @@
+{
+  "_comment": "Copy this file to deploy.config.json and fill in your values. deploy.config.json is git-ignored so your token is never committed or published.",
+  "api_token": "PASTE_CLOUDFLARE_API_TOKEN_HERE",
+  "account_id": "PASTE_32_CHAR_ACCOUNT_ID_HERE",
+  "project_name": "sun-and-moon-30a"
+}

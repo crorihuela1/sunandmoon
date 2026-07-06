@@ -50,9 +50,10 @@ Each subsequent edit only needs the `wrangler pages deploy` line.
 2. Cloudflare Pages → Connect to Git → pick the repo → Build command: (none) → Output dir: `/`
 3. Every push to `main` triggers an automatic deploy.
 
-## Custom domain (sunandmoonat30a.com)
+## Custom domain (sunandmoon30a.com)
 
 After the first deploy, in your Cloudflare Pages project:
-- Custom domains → Set up a custom domain → enter `sunandmoonat30a.com`
+- Custom domains → Set up a custom domain → enter `sunandmoon30a.com`
 - Cloudflare will tell you what nameserver / CNAME records to set at your registrar
 - Propagation takes 5–30 minutes; SSL is automatic
+
