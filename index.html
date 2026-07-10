@@ -92,43 +92,45 @@
     }
     .hero-bg { position: absolute; inset: 0; }
 
-    /* Crossfade rotation: 4 slides × 8s = 32s cycle.
-       Each slide visible ~6s, crossfade 1.4s. */
+    /* Crossfade rotation: 5 slides × 8s = 40s cycle.
+       Each slide visible ~6.6s, crossfade 1.4s. */
     .hero-slide {
       position: absolute; inset: 0;
       opacity: 0;
-      animation: heroFade 32s ease-in-out infinite;
+      animation: heroFade 40s ease-in-out infinite;
     }
     .hero-slide img {
       position: absolute; inset: 0;
       width: 100%; height: 100%;
       object-fit: cover;
       transform-origin: center 50%;
-      animation: heroKenBurns 32s ease-in-out infinite;
+      animation: heroKenBurns 40s ease-in-out infinite;
     }
     /* per-slide best object-position */
     .hero-slide.s1 img { object-position: center 55%; }
-    .hero-slide.s2 img { object-position: center 45%; }
-    .hero-slide.s3 img { object-position: center 50%; }
-    .hero-slide.s4 img { object-position: center 48%; }
-    /* Stagger 25% apart */
+    .hero-slide.s2 img { object-position: center 62%; }
+    .hero-slide.s3 img { object-position: center 45%; }
+    .hero-slide.s4 img { object-position: center 50%; }
+    .hero-slide.s5 img { object-position: center 48%; }
+    /* Stagger 20% apart */
     .hero-slide.s1, .hero-slide.s1 img { animation-delay:   0s; }
-    .hero-slide.s2, .hero-slide.s2 img { animation-delay: -24s; }
-    .hero-slide.s3, .hero-slide.s3 img { animation-delay: -16s; }
-    .hero-slide.s4, .hero-slide.s4 img { animation-delay:  -8s; }
+    .hero-slide.s2, .hero-slide.s2 img { animation-delay: -32s; }
+    .hero-slide.s3, .hero-slide.s3 img { animation-delay: -24s; }
+    .hero-slide.s4, .hero-slide.s4 img { animation-delay: -16s; }
+    .hero-slide.s5, .hero-slide.s5 img { animation-delay:  -8s; }
 
     @keyframes heroFade {
-      0%   { opacity: 0; }
-      4%   { opacity: 1; }
-      25%  { opacity: 1; }
-      29%  { opacity: 0; }
-      100% { opacity: 0; }
+      0%    { opacity: 0; }
+      3.5%  { opacity: 1; }
+      20%   { opacity: 1; }
+      23.5% { opacity: 0; }
+      100%  { opacity: 0; }
     }
     @keyframes heroKenBurns {
-      0%   { transform: scale(1.0)  translate(0%, 0%); }
-      29%  { transform: scale(1.08) translate(-1.2%, -0.6%); }
-      30%  { transform: scale(1.0)  translate(0%, 0%); }
-      100% { transform: scale(1.0)  translate(0%, 0%); }
+      0%    { transform: scale(1.0)  translate(0%, 0%); }
+      23.5% { transform: scale(1.08) translate(-1.2%, -0.6%); }
+      24.5% { transform: scale(1.0)  translate(0%, 0%); }
+      100%  { transform: scale(1.0)  translate(0%, 0%); }
     }
 
     .hero-bg::after {
@@ -154,18 +156,19 @@
       content: ''; position: absolute; inset: 0;
       background: rgba(255,255,255,0.85);
       transform-origin: left;
-      animation: heroDotFill 32s linear infinite;
+      animation: heroDotFill 40s linear infinite;
     }
     .hero-dots span:nth-child(1)::after { animation-delay:   0s; }
-    .hero-dots span:nth-child(2)::after { animation-delay: -24s; }
-    .hero-dots span:nth-child(3)::after { animation-delay: -16s; }
-    .hero-dots span:nth-child(4)::after { animation-delay:  -8s; }
+    .hero-dots span:nth-child(2)::after { animation-delay: -32s; }
+    .hero-dots span:nth-child(3)::after { animation-delay: -24s; }
+    .hero-dots span:nth-child(4)::after { animation-delay: -16s; }
+    .hero-dots span:nth-child(5)::after { animation-delay:  -8s; }
     @keyframes heroDotFill {
-      0%   { transform: scaleX(0); opacity: 0; }
-      4%   { transform: scaleX(0); opacity: 1; }
-      25%  { transform: scaleX(1); opacity: 1; }
-      29%  { transform: scaleX(1); opacity: 0; }
-      100% { transform: scaleX(0); opacity: 0; }
+      0%    { transform: scaleX(0); opacity: 0; }
+      3.5%  { transform: scaleX(0); opacity: 1; }
+      20%   { transform: scaleX(1); opacity: 1; }
+      23.5% { transform: scaleX(1); opacity: 0; }
+      100%  { transform: scaleX(0); opacity: 0; }
     }
 
     /* Slide caption (bottom-left) */
@@ -178,18 +181,19 @@
     }
     .hero-caption span {
       display: block; opacity: 0;
-      animation: heroCapFade 32s ease-in-out infinite;
+      animation: heroCapFade 40s ease-in-out infinite;
     }
     .hero-caption span:nth-child(1) { animation-delay:   0s; position: relative; }
-    .hero-caption span:nth-child(2) { animation-delay: -24s; position: absolute; top: 0; left: 0; }
-    .hero-caption span:nth-child(3) { animation-delay: -16s; position: absolute; top: 0; left: 0; }
-    .hero-caption span:nth-child(4) { animation-delay:  -8s; position: absolute; top: 0; left: 0; }
+    .hero-caption span:nth-child(2) { animation-delay: -32s; position: absolute; top: 0; left: 0; }
+    .hero-caption span:nth-child(3) { animation-delay: -24s; position: absolute; top: 0; left: 0; }
+    .hero-caption span:nth-child(4) { animation-delay: -16s; position: absolute; top: 0; left: 0; }
+    .hero-caption span:nth-child(5) { animation-delay:  -8s; position: absolute; top: 0; left: 0; }
     @keyframes heroCapFade {
-      0%   { opacity: 0; }
-      4%   { opacity: 0.85; }
-      25%  { opacity: 0.85; }
-      29%  { opacity: 0; }
-      100% { opacity: 0; }
+      0%    { opacity: 0; }
+      3.5%  { opacity: 0.85; }
+      20%   { opacity: 0.85; }
+      23.5% { opacity: 0; }
+      100%  { opacity: 0; }
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -372,17 +376,49 @@
 
     /* ── GALLERY ─────────────────────────────────────── */
     #gallery { padding: 0; background: var(--white); }
-    .gallery-header { text-align: center; padding: 100px 48px 56px; }
+    .gallery-header { text-align: center; padding: 100px 48px 72px; }
+
+    /* One branded band per cottage */
+    .house-gallery { padding: 72px 48px 80px; }
+    .house-gallery.sun  { background: linear-gradient(180deg, var(--white) 0%, #FBF3E2 22%, #F8EDD6 100%); }
+    .house-gallery.moon { background: linear-gradient(180deg, var(--white) 0%, #EAF2F6 22%, var(--foam) 100%); }
+
+    .house-head {
+      max-width: 1600px; margin: 0 auto 12px;
+      display: flex; align-items: center; gap: 20px;
+    }
+    .house-head .house-icon { width: 46px; height: 46px; flex-shrink: 0; }
+    .house-name {
+      font-size: clamp(28px, 3.2vw, 44px); font-weight: 400;
+      letter-spacing: -0.01em; color: var(--deep); line-height: 1.1;
+      white-space: nowrap;
+    }
+    .house-rule { flex: 1; height: 1px; }
+    .sun  .house-rule { background: linear-gradient(to right, var(--sun), transparent); }
+    .moon .house-rule { background: linear-gradient(to right, var(--moon), transparent); }
+    .house-addr {
+      font-family: -apple-system, sans-serif; font-size: 11px;
+      letter-spacing: 0.24em; text-transform: uppercase; white-space: nowrap;
+    }
+    .sun  .house-addr { color: var(--sun-deep); }
+    .moon .house-addr { color: var(--moon-deep); }
+    .house-tag {
+      max-width: 1600px; margin: 0 auto 32px; padding-left: 66px;
+      font-size: 16px; font-style: italic; color: var(--muted);
+    }
+
     .gallery-grid {
-      display: grid; grid-template-columns: repeat(4, 1fr); gap: 4px;
-      grid-auto-flow: dense;       /* fills the top-right gap when wide cells overflow */
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 5px;
+      grid-auto-flow: dense;
       max-width: 1600px; margin: 0 auto;
     }
     .gallery-cell {
       position: relative; overflow: hidden; cursor: pointer;
       aspect-ratio: 4/3; background: var(--sand2);
     }
-    .gallery-cell.tall { grid-row: span 2; aspect-ratio: 4/6; }
+    .gallery-cell.feature { grid-column: span 2; grid-row: span 2; }
+    /* Blue Moon mirrors the layout: feature sits on the right */
+    .moon .gallery-cell.feature { grid-column: 2 / span 2; }
     .gallery-cell.wide { grid-column: span 2; aspect-ratio: 8/3; }
     .gallery-cell img {
       width: 100%; height: 100%; object-fit: cover;
@@ -400,8 +436,16 @@
       font-family: -apple-system, sans-serif; font-size: 11px;
       letter-spacing: 0.18em; text-transform: uppercase; color: white;
     }
+    .house-gallery-cta { max-width: 1600px; margin: 28px auto 0; text-align: right; }
+    .house-gallery-cta a {
+      font-family: -apple-system, sans-serif; font-size: 11px;
+      letter-spacing: 0.18em; text-transform: uppercase;
+      padding-bottom: 4px; text-decoration: none;
+    }
+    .sun  .house-gallery-cta a { color: var(--sun-deep);  border-bottom: 1px solid var(--sun); }
+    .moon .house-gallery-cta a { color: var(--moon-deep); border-bottom: 1px solid var(--moon); }
     .gallery-footer {
-      text-align: center; padding: 40px 48px 100px;
+      text-align: center; padding: 56px 48px 100px;
     }
     .gallery-footer a {
       font-family: -apple-system, sans-serif; font-size: 11px;
@@ -886,7 +930,6 @@
 
     /* ── RESPONSIVE ──────────────────────────────────── */
     @media (max-width: 1100px) {
-      .gallery-grid { grid-template-columns: repeat(3, 1fr); }
       .social-grid { grid-template-columns: repeat(4, 1fr); }
       .book-grid { grid-template-columns: 1fr; }
       .area-top { grid-template-columns: 1fr; gap: 40px; }
@@ -900,8 +943,14 @@
       section { padding: 72px 24px; }
       #about, #location { grid-template-columns: 1fr; gap: 40px; padding: 72px 24px; }
       .props-grid { grid-template-columns: 1fr; }
+      .house-gallery { padding: 56px 24px 64px; }
+      .house-head { gap: 14px; flex-wrap: wrap; }
+      .house-head .house-icon { width: 36px; height: 36px; }
+      .house-addr { letter-spacing: 0.18em; }
+      .house-tag { padding-left: 0; margin-bottom: 24px; }
+      .house-gallery-cta { text-align: center; }
       .gallery-grid { grid-template-columns: repeat(2, 1fr); }
-      .gallery-cell.tall { grid-row: span 1; aspect-ratio: 4/3; }
+      .gallery-cell.feature, .moon .gallery-cell.feature { grid-column: span 2; grid-row: span 1; }
       .gallery-cell.wide { grid-column: span 2; aspect-ratio: 4/3; }
       .amenities-grid { grid-template-columns: repeat(2, 1fr); }
       .reviews-grid { grid-template-columns: 1fr; }
@@ -952,9 +1001,10 @@
 <section class="hero" id="home">
   <div class="hero-bg">
     <div class="hero-slide s1"><img src="images/sunset-seagrove.jpg"                                            alt="Sunset on Seagrove Beach"                  loading="eager"  decoding="async" fetchpriority="high"></div>
-    <div class="hero-slide s2"><img src="images/aerial-30a.jpg"                            alt="Aerial view of a 30A coastal dune lake"    loading="lazy"   decoding="async"></div>
-    <div class="hero-slide s3"><img src="photos/blue-moon/001.jpg"  alt="Blue Moon · 65 Crystal Court"              loading="lazy"   decoding="async"></div>
-    <div class="hero-slide s4"><img src="photos/golden-sun/001.jpg" alt="Golden Sun · 53 Crystal Court"             loading="lazy"   decoding="async"></div>
+    <div class="hero-slide s2"><img src="images/both-cottages.jpg"  alt="Golden Sun and Blue Moon cottages side by side on Crystal Court" loading="lazy" decoding="async"></div>
+    <div class="hero-slide s3"><img src="images/aerial-30a.jpg"                            alt="Aerial view of a 30A coastal dune lake"    loading="lazy"   decoding="async"></div>
+    <div class="hero-slide s4"><img src="photos/blue-moon/001.jpg"  alt="Blue Moon · 65 Crystal Court"              loading="lazy"   decoding="async"></div>
+    <div class="hero-slide s5"><img src="photos/golden-sun/001.jpg" alt="Golden Sun · 53 Crystal Court"             loading="lazy"   decoding="async"></div>
   </div>
   <div class="hero-content fade-in visible">
     <img src="images/logos/sunmoon-white.png" alt="Sun &amp; Moon at 30A" class="hero-logo">
@@ -971,13 +1021,14 @@
 
   <div class="hero-caption" aria-hidden="true">
     <span>Seagrove Sunset</span>
+    <span>Two Cottages · One Address</span>
     <span>30A from above · Coastal Dune Lake</span>
     <span>Blue Moon · 65 Crystal Court</span>
     <span>Golden Sun · 53 Crystal Court</span>
   </div>
 
   <div class="hero-dots" aria-hidden="true">
-    <span></span><span></span><span></span><span></span>
+    <span></span><span></span><span></span><span></span><span></span>
   </div>
 </section>
 
@@ -1047,7 +1098,7 @@
         </div>
         <div class="prop-actions">
           <a href="https://www.vacayrentalnetwork.com/property/golden-sun-503319" target="_blank" rel="noopener" class="prop-btn primary">Check Availability</a>
-          <a href="#gallery" class="prop-btn">View Gallery</a>
+          <a href="#gallery-sun" class="prop-btn">View Gallery</a>
         </div>
       </div>
     </div>
@@ -1072,7 +1123,7 @@
         </div>
         <div class="prop-actions">
           <a href="https://www.vacayrentalnetwork.com/property/blue-moon-prime-30a-location-3-minute-walk-to-the--232268" target="_blank" rel="noopener" class="prop-btn primary">Check Availability</a>
-          <a href="#gallery" class="prop-btn">View Gallery</a>
+          <a href="#gallery-moon" class="prop-btn">View Gallery</a>
         </div>
       </div>
     </div>
@@ -1094,55 +1145,86 @@
     <div class="section-label">Gallery</div>
     <h2 class="section-title">Step inside.</h2>
     <p class="section-body" style="margin:16px auto 0;text-align:center;">
-      A look at the Blue Moon and Golden Sun cottages — interiors, porches, and the Seagrove light that makes 30A unmistakable.
+      Two cottages, two moods — Golden Sun's warm, bright ease and Blue Moon's calm, coastal quiet. Each in the Seagrove light that makes 30A unmistakable.
     </p>
   </div>
-  <div class="gallery-grid">
-    <div class="gallery-cell tall fade-in" data-full="photos/blue-moon/001.jpg">
-      <img src="photos/blue-moon/001.jpg" alt="Blue Moon front exterior">
-      <div class="gallery-overlay"><span>Blue Moon · Front Porch</span></div>
+
+  <!-- GOLDEN SUN -->
+  <div class="house-gallery sun" id="gallery-sun">
+    <div class="house-head fade-in">
+      <img class="house-icon" src="images/logos/sun.png" alt="Golden Sun icon">
+      <h3 class="house-name">Golden Sun</h3>
+      <div class="house-rule"></div>
+      <div class="house-addr">53 Crystal Court</div>
     </div>
-    <div class="gallery-cell fade-in" data-full="photos/golden-sun/001.jpg">
-      <img src="photos/golden-sun/001.jpg" alt="Golden Sun at sunset">
-      <div class="gallery-overlay"><span>Golden Sun · Sunset</span></div>
+    <p class="house-tag fade-in">Made for early risers, slow coffees, and lingering sunset evenings.</p>
+    <div class="gallery-grid">
+      <div class="gallery-cell feature fade-in" data-full="photos/golden-sun/001.jpg">
+        <img src="photos/golden-sun/001.jpg" alt="Golden Sun at sunset — 53 Crystal Court, Seagrove Beach">
+        <div class="gallery-overlay"><span>Golden Sun · Sunset</span></div>
+      </div>
+      <div class="gallery-cell fade-in" data-full="photos/golden-sun/005.jpg">
+        <img src="photos/golden-sun/005.jpg" alt="Golden Sun front deck">
+        <div class="gallery-overlay"><span>Golden Sun · Front Deck</span></div>
+      </div>
+      <div class="gallery-cell fade-in" data-full="photos/golden-sun/015.jpg">
+        <img src="photos/golden-sun/015.jpg" alt="Golden Sun kitchen">
+        <div class="gallery-overlay"><span>Golden Sun · Kitchen</span></div>
+      </div>
+      <div class="gallery-cell wide fade-in" data-full="photos/golden-sun/030.jpg">
+        <img src="photos/golden-sun/030.jpg" alt="Golden Sun bedrooms">
+        <div class="gallery-overlay"><span>Golden Sun · Bedrooms</span></div>
+      </div>
+      <div class="gallery-cell fade-in" data-full="photos/golden-sun/045.jpg">
+        <img src="photos/golden-sun/045.jpg" alt="Golden Sun outdoor living">
+        <div class="gallery-overlay"><span>Golden Sun · Outdoor</span></div>
+      </div>
     </div>
-    <div class="gallery-cell fade-in" data-full="photos/golden-sun/005.jpg">
-      <img src="photos/golden-sun/005.jpg" alt="Golden Sun deck">
-      <div class="gallery-overlay"><span>Golden Sun · Front Deck</span></div>
-    </div>
-    <div class="gallery-cell wide fade-in" data-full="photos/blue-moon/010.jpg">
-      <img src="photos/blue-moon/010.jpg" alt="Blue Moon living room">
-      <div class="gallery-overlay"><span>Blue Moon · Living</span></div>
-    </div>
-    <div class="gallery-cell fade-in" data-full="photos/golden-sun/015.jpg">
-      <img src="photos/golden-sun/015.jpg" alt="Golden Sun interior">
-      <div class="gallery-overlay"><span>Golden Sun · Kitchen</span></div>
-    </div>
-    <div class="gallery-cell fade-in" data-full="photos/blue-moon/020.jpg">
-      <img src="photos/blue-moon/020.jpg" alt="Blue Moon bedroom">
-      <div class="gallery-overlay"><span>Blue Moon · Suites</span></div>
-    </div>
-    <div class="gallery-cell tall fade-in" data-full="photos/golden-sun/030.jpg">
-      <img src="photos/golden-sun/030.jpg" alt="Golden Sun detail">
-      <div class="gallery-overlay"><span>Golden Sun · Bedrooms</span></div>
-    </div>
-    <div class="gallery-cell fade-in" data-full="photos/blue-moon/040.jpg">
-      <img src="photos/blue-moon/040.jpg" alt="Blue Moon outdoor">
-      <div class="gallery-overlay"><span>Blue Moon · Outdoor</span></div>
-    </div>
-    <div class="gallery-cell fade-in" data-full="photos/blue-moon/060.jpg">
-      <img src="photos/blue-moon/060.jpg" alt="Blue Moon detail">
-      <div class="gallery-overlay"><span>Blue Moon · Details</span></div>
-    </div>
-    <div class="gallery-cell fade-in" data-full="photos/golden-sun/045.jpg">
-      <img src="photos/golden-sun/045.jpg" alt="Golden Sun outdoor">
-      <div class="gallery-overlay"><span>Golden Sun · Outdoor</span></div>
-    </div>
-    <div class="gallery-cell wide fade-in" data-full="photos/blue-moon/080.jpg">
-      <img src="photos/blue-moon/080.jpg" alt="Blue Moon evening">
-      <div class="gallery-overlay"><span>Blue Moon · Evening</span></div>
+    <div class="house-gallery-cta fade-in">
+      <a href="https://www.vacayrentalnetwork.com/property/golden-sun-503319" target="_blank" rel="noopener">All Golden Sun photos &amp; availability →</a>
     </div>
   </div>
+
+  <!-- BLUE MOON -->
+  <div class="house-gallery moon" id="gallery-moon">
+    <div class="house-head fade-in">
+      <img class="house-icon" src="images/logos/moon.png" alt="Blue Moon icon">
+      <h3 class="house-name">Blue Moon</h3>
+      <div class="house-rule"></div>
+      <div class="house-addr">65 Crystal Court</div>
+    </div>
+    <p class="house-tag fade-in">Built around easy days, slow evenings, and the quietest beach path in Seagrove.</p>
+    <div class="gallery-grid">
+      <div class="gallery-cell fade-in" data-full="photos/blue-moon/010.jpg">
+        <img src="photos/blue-moon/010.jpg" alt="Blue Moon living room">
+        <div class="gallery-overlay"><span>Blue Moon · Living</span></div>
+      </div>
+      <div class="gallery-cell feature fade-in" data-full="photos/blue-moon/001.jpg">
+        <img src="photos/blue-moon/001.jpg" alt="Blue Moon front exterior — 65 Crystal Court, Seagrove Beach">
+        <div class="gallery-overlay"><span>Blue Moon · Front Porch</span></div>
+      </div>
+      <div class="gallery-cell fade-in" data-full="photos/blue-moon/020.jpg">
+        <img src="photos/blue-moon/020.jpg" alt="Blue Moon bedroom suites">
+        <div class="gallery-overlay"><span>Blue Moon · Suites</span></div>
+      </div>
+      <div class="gallery-cell fade-in" data-full="photos/blue-moon/040.jpg">
+        <img src="photos/blue-moon/040.jpg" alt="Blue Moon outdoor patio">
+        <div class="gallery-overlay"><span>Blue Moon · Outdoor</span></div>
+      </div>
+      <div class="gallery-cell fade-in" data-full="photos/blue-moon/060.jpg">
+        <img src="photos/blue-moon/060.jpg" alt="Blue Moon interior details">
+        <div class="gallery-overlay"><span>Blue Moon · Details</span></div>
+      </div>
+      <div class="gallery-cell fade-in" data-full="photos/blue-moon/080.jpg">
+        <img src="photos/blue-moon/080.jpg" alt="Blue Moon in the evening">
+        <div class="gallery-overlay"><span>Blue Moon · Evening</span></div>
+      </div>
+    </div>
+    <div class="house-gallery-cta fade-in">
+      <a href="https://www.vacayrentalnetwork.com/property/blue-moon-prime-30a-location-3-minute-walk-to-the--232268" target="_blank" rel="noopener">All Blue Moon photos &amp; availability →</a>
+    </div>
+  </div>
+
   <div class="gallery-footer">
     <a href="https://www.vacayrentalnetwork.com/property/sun-and-moon-at-30a-507559" target="_blank" rel="noopener">View the full photo set on VacayRentalNetwork →</a>
   </div>
