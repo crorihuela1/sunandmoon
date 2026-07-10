@@ -853,6 +853,61 @@
     }
     .book-note a { color: var(--brown); text-decoration: underline; }
 
+    /* ── CONTACT ─────────────────────────────────────── */
+    #contact { background: var(--white); padding: 100px 48px; }
+    .contact-inner { max-width: 720px; margin: 0 auto; text-align: center; }
+    .contact-form {
+      margin-top: 40px; text-align: left;
+      background: var(--sand); border: 1px solid var(--border);
+      padding: 40px; border-radius: 4px;
+    }
+    .contact-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 18px;
+    }
+    .contact-field { display: flex; flex-direction: column; gap: 6px; }
+    .contact-field.full { grid-column: 1 / -1; }
+    .contact-field label {
+      font-family: -apple-system, sans-serif; font-size: 10px;
+      letter-spacing: 0.22em; text-transform: uppercase; color: var(--brown);
+    }
+    .contact-field input,
+    .contact-field select,
+    .contact-field textarea {
+      font-family: Georgia, serif; font-size: 15px; color: var(--text);
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: 3px; padding: 12px 14px; width: 100%;
+    }
+    .contact-field textarea { min-height: 130px; resize: vertical; }
+    .contact-field input:focus,
+    .contact-field select:focus,
+    .contact-field textarea:focus {
+      outline: none; border-color: var(--tan);
+      box-shadow: 0 0 0 3px rgba(201,184,154,0.25);
+    }
+    /* honeypot — hidden from humans, filled by bots */
+    .contact-hp { position: absolute; left: -9999px; top: -9999px; }
+    .contact-submit {
+      margin-top: 24px; width: 100%;
+      background: var(--deep); color: white; border: none; cursor: pointer;
+      font-family: -apple-system, sans-serif; font-size: 12px;
+      letter-spacing: 0.2em; text-transform: uppercase;
+      padding: 16px 20px; border-radius: 3px; transition: background 0.2s;
+    }
+    .contact-submit:hover { background: var(--brown); }
+    .contact-submit:disabled { opacity: 0.5; cursor: wait; }
+    .contact-status {
+      margin-top: 18px; text-align: center; display: none;
+      font-family: -apple-system, sans-serif; font-size: 13px; line-height: 1.6;
+    }
+    .contact-status.ok    { display: block; color: var(--sun-deep); }
+    .contact-status.error { display: block; color: #a04a3a; }
+    .contact-direct {
+      margin-top: 22px; text-align: center;
+      font-family: -apple-system, sans-serif; font-size: 12px;
+      color: var(--muted); letter-spacing: 0.04em;
+    }
+    .contact-direct a { color: var(--brown); text-decoration: underline; }
+
     /* ── FOOTER ──────────────────────────────────────── */
     footer {
       background: var(--deep); color: rgba(255,255,255,0.5);
@@ -953,6 +1008,8 @@
       .gallery-cell.feature, .moon .gallery-cell.feature { grid-column: span 2; grid-row: span 1; }
       .gallery-cell.wide { grid-column: span 2; aspect-ratio: 4/3; }
       .amenities-grid { grid-template-columns: repeat(2, 1fr); }
+      .contact-grid { grid-template-columns: 1fr; }
+      .contact-form { padding: 24px; }
       .reviews-grid { grid-template-columns: 1fr; }
       .footer-top { grid-template-columns: 1fr 1fr; }
       .intro-bar { gap: 24px; }
@@ -993,6 +1050,7 @@
     <li><a href="#partners">Partners</a></li>
     <li><a href="#social">@sunandmoon30a</a></li>
     <li><a href="#reviews">Reviews</a></li>
+    <li><a href="#contact">Contact</a></li>
   </ul>
   <a href="#book" class="nav-book">Check Availability</a>
 </nav>
@@ -1497,7 +1555,62 @@
     </div>
 
     <div class="book-note">
-      Have questions, planning a wedding, or need a custom package for 10+ guests? <a href="mailto:experience@sunandmoon30a.com">Get in touch directly</a>.
+      Have questions, planning a wedding, or need a custom package for 10+ guests? <a href="#contact">Get in touch directly</a>.
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="contact-inner">
+    <div class="fade-in">
+      <div class="section-label">Contact</div>
+      <h2 class="section-title">Ask us anything.</h2>
+      <div class="divider" style="margin:24px auto;"></div>
+      <p class="section-body" style="margin:0 auto;text-align:center;">
+        Questions about dates, the cottages, weddings, or bringing the whole family? Send us a note — it goes straight to our inbox and we reply personally.
+      </p>
+    </div>
+
+    <form class="contact-form fade-in" id="contactForm" novalidate>
+      <div class="contact-grid">
+        <div class="contact-field">
+          <label for="cf-name">Name</label>
+          <input id="cf-name" name="name" type="text" autocomplete="name" required>
+        </div>
+        <div class="contact-field">
+          <label for="cf-email">Email</label>
+          <input id="cf-email" name="email" type="email" autocomplete="email" required>
+        </div>
+        <div class="contact-field">
+          <label for="cf-interest">Which cottage?</label>
+          <select id="cf-interest" name="property_interest">
+            <option value="not-sure">Not sure yet</option>
+            <option value="golden-sun">Golden Sun · 53 Crystal Court</option>
+            <option value="blue-moon">Blue Moon · 65 Crystal Court</option>
+            <option value="both">Both — full property</option>
+          </select>
+        </div>
+        <div class="contact-field">
+          <label for="cf-dates">Dates (optional)</label>
+          <input id="cf-dates" name="dates" type="text" placeholder="e.g. Oct 3 – 7">
+        </div>
+        <div class="contact-field full">
+          <label for="cf-message">Message</label>
+          <textarea id="cf-message" name="message" required></textarea>
+        </div>
+        <!-- honeypot: humans never see or fill this -->
+        <div class="contact-hp" aria-hidden="true">
+          <label for="cf-website">Website</label>
+          <input id="cf-website" name="website" type="text" tabindex="-1" autocomplete="off">
+        </div>
+      </div>
+      <button type="submit" class="contact-submit" id="contactSubmit">Send Message</button>
+      <div class="contact-status" id="contactStatus" role="status"></div>
+    </form>
+
+    <div class="contact-direct fade-in">
+      Prefer email? Write to us at <a href="mailto:experience@sunandmoon30a.com">experience@sunandmoon30a.com</a>.
     </div>
   </div>
 </section>
@@ -1530,6 +1643,7 @@
         <li><a href="#location">Getting Here</a></li>
         <li><a href="#reviews">Guest Reviews</a></li>
         <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#contact">Contact Us</a></li>
       </ul>
     </div>
     <div class="footer-col">
@@ -1595,6 +1709,43 @@
   }
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') { lb.classList.remove('open'); lbImg.src = ''; }
+  });
+
+  // Contact form → tracking worker (stores inquiry + notifies experience@)
+  const contactForm = document.getElementById('contactForm');
+  const contactStatus = document.getElementById('contactStatus');
+  const contactSubmit = document.getElementById('contactSubmit');
+  contactForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    contactStatus.className = 'contact-status';
+
+    const data = Object.fromEntries(new FormData(contactForm).entries());
+    if (!data.name || !data.email || !data.message) {
+      contactStatus.textContent = 'Please fill in your name, email, and message.';
+      contactStatus.classList.add('error');
+      return;
+    }
+
+    contactSubmit.disabled = true;
+    contactSubmit.textContent = 'Sending…';
+    try {
+      const resp = await fetch('https://track.sunandmoon30a.com/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+      });
+      const result = await resp.json();
+      if (!resp.ok || !result.ok) throw new Error(result.error || 'request failed');
+      contactForm.reset();
+      contactSubmit.textContent = 'Message Sent';
+      contactStatus.textContent = 'Thank you! Your note is on its way to experience@sunandmoon30a.com — we’ll reply personally, usually within a day.';
+      contactStatus.classList.add('ok');
+    } catch (err) {
+      contactSubmit.disabled = false;
+      contactSubmit.textContent = 'Send Message';
+      contactStatus.innerHTML = 'Something went wrong sending your message. Please email us directly at <a href="mailto:experience@sunandmoon30a.com">experience@sunandmoon30a.com</a>.';
+      contactStatus.classList.add('error');
+    }
   });
 </script>
 </body>
