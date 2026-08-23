@@ -29,6 +29,11 @@ calendars (iCal / Google Calendar)          config/apis.yaml (API registry)
    unit calendars (iCal export URLs and/or Google Calendar IDs). The engine
    computes open windows for *each unit and for both together*, and scores them
    (weekends, holidays, near-term gaps score highest) so promotion is intentional.
+   Every feed is normalised to the property's timezone (`property.timezone`,
+   default `America/Chicago`) before it becomes a night, so an all-day OTA
+   export and a UTC-timestamped booking-engine export describe the same stay.
+   If a feed cannot be read, that unit is reported as *availability unknown* —
+   never as open — so a calendar outage can't advertise a sold night.
 3. **Content engine** — generates a queue of posts from the brand pillars in
    `config/brand.yaml`, targeted at the highest-value open dates and at the
    events/experiences hosted at the property.
@@ -48,6 +53,8 @@ cp .env.example .env            # fill in secrets as APIs are activated
 python -m sunmoon_social plan   # build today's content queue (no posting)
 python -m sunmoon_social publish --dry-run
 python -m sunmoon_social digest --dry-run
+
+python -m unittest discover -s tests -t .   # date-handling regressions
 ```
 
 ## Activating a platform
@@ -62,9 +69,11 @@ Short version:
 
 ## Things to plug in (current gaps)
 
-- **sunandmoon30a.com does not resolve in public DNS yet** (checked 2026-06-10).
-  When the site is live, set its booking-calendar iCal URL(s) in
-  `config/calendars.yaml`.
+- **No calendar source is wired up yet**, so both units report *availability
+  unknown* every run and nothing gets promoted. sunandmoon30a.com resolves now
+  (checked 2026-08-23); set the booking engine's iCal export URL — and the
+  Airbnb/VRBO export for the same listing — in `config/calendars.yaml`. Listing
+  both is what keeps the site and the OTA showing the same dates.
 - No "Sun"/"Moon" calendars exist in the connected Google account yet. Either
   create them (and share with the engine), or use the iCal export URLs from the
   booking platform (Airbnb/VRBO/Lodgify/OwnerRez all provide one per listing).

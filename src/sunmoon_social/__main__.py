@@ -5,9 +5,8 @@ from __future__ import annotations
 import argparse
 import json
 import sys
-from datetime import date
 
-from .availability import detect_new_bookings
+from .availability import detect_new_bookings, local_today
 from .config import QUEUE_DIR, active_platforms, load_apis, missing_secrets
 from .content_engine import build_queue
 from .notifier import booking_alerts, daily_digest
@@ -15,7 +14,7 @@ from .publishers import publish_queue
 
 
 def _load_or_build_queue() -> dict:
-    path = QUEUE_DIR / f"{date.today().isoformat()}.json"
+    path = QUEUE_DIR / f"{local_today().isoformat()}.json"
     if path.exists():
         return json.loads(path.read_text())
     return cmd_plan()
@@ -23,7 +22,8 @@ def _load_or_build_queue() -> dict:
 
 def cmd_plan() -> dict:
     queue = build_queue()
-    queue["new_bookings"] = detect_new_bookings(queue.get("busy_map", {}))
+    queue["new_bookings"] = detect_new_bookings(
+        queue.get("busy_map", {}), queue.get("unknown_units", []))
     (QUEUE_DIR / f"{queue['date']}.json").write_text(json.dumps(queue, indent=2))
     print(f"Queue built for {queue['date']}: {len(queue['posts'])} posts, "
           f"pillar={queue['pillar_of_day']}, "

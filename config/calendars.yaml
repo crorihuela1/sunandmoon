@@ -4,8 +4,18 @@
 # merged, so cross-listing (site + Airbnb + VRBO) stays consistent.
 # Booked nights appear as BUSY events; everything else is open.
 #
-# >>> ACTION NEEDED: sunandmoon30a.com has no public DNS yet (2026-06-10).
-# >>> When the site/booking engine is live, paste its iCal export URLs below.
+# >>> ACTION NEEDED: no calendar source is wired up yet, so the engine treats
+# >>> both units as "availability unknown" and promotes nothing. sunandmoon30a.com
+# >>> does resolve now (checked 2026-08-23); paste the booking engine's iCal
+# >>> export URL and the matching Airbnb/VRBO export below to turn sync on.
+
+# Nights are counted in the property's local timezone. Feeds disagree about how
+# they express a stay — OTAs export all-day dates, booking engines often export
+# UTC datetimes — and reading a UTC timestamp as a calendar date shifts a night
+# by one whenever check-in/check-out crosses midnight UTC. Everything is
+# normalised to this zone before it becomes a night.
+property:
+  timezone: America/Chicago   # 30A / Walton County, FL
 
 units:
   sun:

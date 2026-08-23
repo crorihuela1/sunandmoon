@@ -24,6 +24,9 @@ jobs:
       - name: Install
         run: pip install -r requirements.txt
 
+      - name: Date-handling regression tests
+        run: python -m unittest discover -s tests -t .
+
       - name: Plan, publish, notify
         working-directory: src
         env:

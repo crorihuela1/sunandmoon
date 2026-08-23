@@ -9,9 +9,10 @@ platforms whose API status is `active`.
 from __future__ import annotations
 
 import json
-from datetime import date, datetime
+from datetime import date, datetime, timezone
 
-from .availability import OpenWindow, PropertyEvent, open_windows, upcoming_events
+from .availability import (OpenWindow, PropertyEvent, local_today, open_windows,
+                            upcoming_events)
 from .config import QUEUE_DIR, active_platforms, load_apis, load_brand
 
 
@@ -65,7 +66,7 @@ def _availability_post(brand: dict, w: OpenWindow, seed: int) -> dict:
 def _event_post(brand: dict, ev: PropertyEvent, seed: int) -> dict:
     b = brand["brand"]
     when = ev.start.strftime("%A, %B %-d")
-    days_out = (ev.start.date() - date.today()).days
+    days_out = (ev.start.date() - local_today()).days
     lead = f"{days_out} days out: " if 0 < days_out <= 7 else ""
     copy = (
         f"{lead}{ev.title} at {b['name']} — {when}. "
@@ -88,11 +89,11 @@ def _evergreen_post(brand: dict, pillar: dict, seed: int) -> dict:
 
 
 def build_queue(for_date: date | None = None) -> dict:
-    for_date = for_date or date.today()
+    for_date = for_date or local_today()
     brand = load_brand()
     apis = load_apis()
     active = active_platforms(apis)
-    windows, busy_map = open_windows()
+    windows, busy_map, unknown_units = open_windows()
     events = upcoming_events()
     seed = for_date.toordinal()
 
@@ -128,7 +129,7 @@ def build_queue(for_date: date | None = None) -> dict:
 
     queue = {
         "date": for_date.isoformat(),
-        "generated_at": datetime.utcnow().isoformat() + "Z",
+        "generated_at": datetime.now(timezone.utc).isoformat(),
         "pillar_of_day": todays_pillar["key"],
         "active_platforms": sorted(active),
         "inactive_platforms": sorted(set((apis.get("platforms") or {})) - set(active)),
@@ -137,6 +138,7 @@ def build_queue(for_date: date | None = None) -> dict:
         "new_bookings": [],  # filled by main after diffing state
         "posts": posts,
         "busy_map": busy_map,
+        "unknown_units": unknown_units,
     }
     QUEUE_DIR.mkdir(parents=True, exist_ok=True)
     (QUEUE_DIR / f"{for_date.isoformat()}.json").write_text(json.dumps(queue, indent=2))

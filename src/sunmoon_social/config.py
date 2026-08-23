@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import os
+from functools import lru_cache
 from pathlib import Path
 
 import yaml
@@ -15,7 +16,11 @@ ACTIVE = "active"
 STATUSES = ("planned", "applied", "keys_received", "vetted", "active", "paused")
 
 
+@lru_cache(maxsize=None)
 def _load(name: str) -> dict:
+    """Cached for the life of the process: a single CLI run reads these files
+    many times (once per calendar event, for the property timezone) and they do
+    not change underneath it."""
     path = CONFIG_DIR / name
     with open(path, "r", encoding="utf-8") as fh:
         return yaml.safe_load(fh) or {}

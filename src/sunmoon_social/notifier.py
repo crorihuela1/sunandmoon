@@ -9,9 +9,10 @@ from __future__ import annotations
 
 import os
 import smtplib
-from datetime import date, datetime, timedelta
+from datetime import datetime, timedelta, timezone
 from email.message import EmailMessage
 
+from .availability import local_today
 from .config import load_brand, load_notifications
 
 
@@ -63,11 +64,12 @@ def booking_alerts(queue: dict, dry_run: bool = True) -> list[dict]:
                 "Confirm guest details in the booking platform and prep the experience plan.\n",
                 dry_run))
     hours = cfg.get("alerts", {}).get("imminent_checkin_hours", 48)
-    cutoff = (date.today() + timedelta(days=hours / 24)).isoformat()
+    today = local_today()
+    cutoff = (today + timedelta(days=hours / 24)).isoformat()
     for unit, blocks in queue.get("busy_map", {}).items():
         house = _house(unit)
         for start, end in blocks:
-            if date.today().isoformat() <= start <= cutoff:
+            if today.isoformat() <= start <= cutoff:
                 results.append(_send(
                     f"[Sun & Moon 30A] Imminent check-in — {house} arrives {start}",
                     f"Guest checks in to {house} on {start} (out {end}).\n"
@@ -89,12 +91,14 @@ def daily_digest(queue: dict, publish_results: list[dict], dry_run: bool = True)
     for w in queue.get("open_windows", [])[:5]:
         lines.append(f"  {w['score']:>3} | {w['unit']:<5} | {w['start']} → {w['end']} ({w['nights']} nights)")
     if not queue.get("open_windows"):
-        lines.append("  (no calendar sources configured yet — see config/calendars.yaml)")
+        lines.append("  (none — see the availability note below)")
+    for unit in queue.get("unknown_units", []):
+        lines.append(f"  ! {_house(unit)}: availability unknown this run — calendar source missing or unreadable. Nothing was promoted for it; check config/calendars.yaml and the run log.")
     lines.append("")
     lines.append("Publish results:")
     for r in publish_results or [{"platform": "-", "status": "nothing queued"}]:
         lines.append(f"  {r.get('platform', '-'):<24} {r.get('status')}"
                      + (f" — {r['reason']}" if r.get("reason") else ""))
     lines.append("")
-    lines.append(f"Generated {datetime.utcnow().isoformat()}Z by the Sun & Moon 30A content engine.")
+    lines.append(f"Generated {datetime.now(timezone.utc).isoformat()} by the Sun & Moon 30A content engine.")
     return _send(f"[Sun & Moon 30A] Daily digest — {queue['date']}", "\n".join(lines), dry_run)
