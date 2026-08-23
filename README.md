@@ -62,9 +62,16 @@ Short version:
 
 ## Things to plug in (current gaps)
 
-- **sunandmoon30a.com does not resolve in public DNS yet** (checked 2026-06-10).
-  When the site is live, set its booking-calendar iCal URL(s) in
-  `config/calendars.yaml`.
+- **The engine has published nothing since 2026-06-16.** Every daily run builds
+  an empty queue because no calendar source and no `active` platform is
+  configured — the two items below. A no-op run now prints `!!` warnings in the
+  workflow log instead of exiting quietly green.
+- **No calendar is wired up**, so availability is unknown and no availability
+  post can be generated. Set at least one iCal URL in `config/calendars.yaml`.
+  sunandmoon30a.com *does* resolve in public DNS (checked 2026-08-23; the
+  earlier "no DNS yet" note was stale), but the site could not be reached from
+  CI to confirm it exposes a calendar feed. Airbnb/VRBO/Lodgify/OwnerRez each
+  provide one iCal export URL per listing and work equally well.
 - No "Sun"/"Moon" calendars exist in the connected Google account yet. Either
   create them (and share with the engine), or use the iCal export URLs from the
   booking platform (Airbnb/VRBO/Lodgify/OwnerRez all provide one per listing).

@@ -4,8 +4,13 @@
 # merged, so cross-listing (site + Airbnb + VRBO) stays consistent.
 # Booked nights appear as BUSY events; everything else is open.
 #
-# >>> ACTION NEEDED: sunandmoon30a.com has no public DNS yet (2026-06-10).
-# >>> When the site/booking engine is live, paste its iCal export URLs below.
+# >>> ACTION NEEDED: no calendar source is wired up, so the engine has produced
+# >>> zero availability posts every day since 2026-06-16. Paste at least one
+# >>> iCal export URL below to turn it on.
+# >>> (sunandmoon30a.com DOES resolve in public DNS as of 2026-08-23 — the old
+# >>> "no DNS yet" note was stale. The site itself was not reachable from CI to
+# >>> confirm whether it exposes a calendar feed; Airbnb/VRBO/Lodgify/OwnerRez
+# >>> each give you one iCal URL per listing and work just as well here.)
 
 units:
   sun:
@@ -43,3 +48,6 @@ scoring:
   near_term_bonus: 2       # open nights within 14 days get urgency
   gap_night_bonus: 2       # 1-2 night gaps between bookings — fill them
   min_window_nights: 1
+  max_promote_nights: 7    # never advertise a stay longer than this. A 50-night
+                           # vacancy is not a booking prompt; the engine trims a
+                           # long empty span to its best stay-sized slice.

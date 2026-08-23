@@ -9,16 +9,25 @@ platforms whose API status is `active`.
 from __future__ import annotations
 
 import json
-from datetime import date, datetime
+from datetime import date, datetime, timedelta
 
 from .availability import OpenWindow, PropertyEvent, open_windows, upcoming_events
 from .config import QUEUE_DIR, active_platforms, load_apis, load_brand
 
 
 def _fmt_window(w: OpenWindow) -> str:
-    same_month = w.start.month == w.end.month
+    """Render the nights a guest actually sleeps over.
+
+    `w.end` is the exclusive checkout day, so rendering it as the end of the
+    range advertises one more night than is on offer ("Aug 26–29" for a 3-night
+    stay). Guests read a date range inclusively — so show the last *night*.
+    """
+    last_night = w.end - timedelta(days=1)
+    if last_night == w.start:
+        return w.start.strftime("%b %-d")
+    same_month = (w.start.month, w.start.year) == (last_night.month, last_night.year)
     end_fmt = "%-d" if same_month else "%b %-d"
-    return f"{w.start.strftime('%b %-d')}–{w.end.strftime(end_fmt)}"
+    return f"{w.start.strftime('%b %-d')}–{last_night.strftime(end_fmt)}"
 
 
 def _hashtags(brand: dict, n_rotating: int = 3, seed: int = 0) -> str:
@@ -54,8 +63,9 @@ def _availability_post(brand: dict, w: OpenWindow, seed: int) -> dict:
     unit = _unit_meta(brand, w.unit)
     nights = f"{w.nights} night{'s' if w.nights != 1 else ''}"
     copy = (
-        f"{unit['label']} just opened up {_fmt_window(w)} — {nights} of "
-        f"{unit.get('angle', 'sky-to-sky calm')}. {_rate_line(brand, w.unit)} "
+        f"{unit['label']} is open {_fmt_window(w)} — {nights} of "
+        f"{unit.get('angle', 'sky-to-sky calm')}, checkout {w.end.strftime('%b %-d')}. "
+        f"{_rate_line(brand, w.unit)} "
         f"Dates this good don't sit long. Book at {b['booking_url']}"
     ).replace("  ", " ").strip()
     return {"pillar": "availability_spotlight", "unit": w.unit, "window": w.to_dict(),

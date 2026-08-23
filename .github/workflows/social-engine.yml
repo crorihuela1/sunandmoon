@@ -24,6 +24,11 @@ jobs:
       - name: Install
         run: pip install -r requirements.txt
 
+      - name: Tests
+        env:
+          PYTHONPATH: src
+        run: pytest tests/ -q
+
       - name: Plan, publish, notify
         working-directory: src
         env:

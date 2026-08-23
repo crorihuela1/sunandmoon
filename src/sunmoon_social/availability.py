@@ -106,20 +106,53 @@ def _unit_busy(sources: list[dict], horizon_days: int) -> list[tuple[date, date]
     return busy
 
 
+def _night_score(day: date, scoring: dict) -> int:
+    """Promotional value of a single night."""
+    score = 0
+    if day.weekday() in (4, 5):
+        score += scoring.get("weekend_bonus", 3)
+    if day in US_HOLIDAYS_2026:
+        score += scoring.get("holiday_bonus", 5)
+    if (day - date.today()).days <= 14:
+        score += scoring.get("near_term_bonus", 2)
+    return score
+
+
 def _score(window: OpenWindow, scoring: dict, has_neighbors: bool) -> int:
     score = 0
     day = window.start
     while day < window.end:
-        if day.weekday() in (4, 5):
-            score += scoring.get("weekend_bonus", 3)
-        if day in US_HOLIDAYS_2026:
-            score += scoring.get("holiday_bonus", 5)
-        if (day - date.today()).days <= 14:
-            score += scoring.get("near_term_bonus", 2)
+        score += _night_score(day, scoring)
         day += timedelta(days=1)
     if window.nights <= 2 and has_neighbors:
         score += scoring.get("gap_night_bonus", 2)
     return score
+
+
+def _promotable(window: OpenWindow, scoring: dict, has_neighbors: bool) -> OpenWindow:
+    """Trim a long open span down to the best stay-sized window to promote.
+
+    A 50-night empty stretch is not a booking prompt. We slide a window of at
+    most `max_promote_nights` across the span and keep the densest slice, so the
+    copy advertises a stay a guest can actually picture (and the upcoming
+    weekend beats a random midweek run inside the same span).
+    """
+    cap = max(1, scoring.get("max_promote_nights", 7))
+    if window.nights <= cap:
+        window.score = _score(window, scoring, has_neighbors)
+        return window
+
+    best: OpenWindow | None = None
+    best_density = -1.0
+    span = (window.end - window.start).days
+    for offset in range(span - cap + 1):
+        start = window.start + timedelta(days=offset)
+        cand = OpenWindow(unit=window.unit, start=start, end=start + timedelta(days=cap))
+        cand.score = _score(cand, scoring, has_neighbors)
+        density = cand.score / cand.nights
+        if density > best_density:  # ties keep the earliest slice
+            best, best_density = cand, density
+    return best or window
 
 
 def open_windows() -> tuple[list[OpenWindow], dict[str, list]]:
@@ -137,8 +170,9 @@ def open_windows() -> tuple[list[OpenWindow], dict[str, list]]:
                    if s.get("url") or s.get("calendar_id")]
         if not sources:
             # No calendar wired up yet: availability is unknown, never claim
-            # the unit is open. The digest will flag the missing config.
-            busy_map[unit] = []
+            # the unit is open. Leaving the unit *out* of busy_map keeps
+            # "unknown" distinct from "observed, zero bookings" — which is what
+            # lets detect_new_bookings tell a first observation from real news.
             continue
         busy = sorted(_unit_busy(sources, horizon))
         busy_map[unit] = [[s.isoformat(), e.isoformat()] for s, e in busy]
@@ -147,12 +181,13 @@ def open_windows() -> tuple[list[OpenWindow], dict[str, list]]:
             if s > cursor:
                 w = OpenWindow(unit=unit, start=cursor, end=min(s, end_horizon))
                 if w.nights >= scoring.get("min_window_nights", 1):
-                    w.score = _score(w, scoring, has_neighbors=bool(busy))
-                    windows.append(w)
+                    windows.append(_promotable(w, scoring, has_neighbors=bool(busy)))
             cursor = max(cursor, e)
             if cursor >= end_horizon:
                 break
-    windows.sort(key=lambda w: w.score, reverse=True)
+    # Rank by value *per night*, not total: a raw sum always crowns the longest
+    # (emptiest, least urgent) stretch and buries the weekend gap worth filling.
+    windows.sort(key=lambda w: (-(w.score / max(1, w.nights)), w.start))
     return windows, busy_map
 
 
@@ -182,17 +217,31 @@ def upcoming_events() -> list[PropertyEvent]:
 
 
 def detect_new_bookings(busy_map: dict[str, list]) -> list[dict]:
-    """Diff current busy blocks against the last run; new blocks = new bookings."""
+    """Diff current busy blocks against the last run; new blocks = new bookings.
+
+    The first run against a freshly wired-up calendar is a baseline, not news:
+    every existing reservation would otherwise fire a "new booking" email at
+    once. We record that baseline silently and only alert on what appears after
+    it. Blocks whose check-in has already passed are never "new" either — a feed
+    that backfills history shouldn't page the owner about last month.
+    """
     STATE_DIR.mkdir(parents=True, exist_ok=True)
     state_file = STATE_DIR / "known_busy.json"
-    known = {}
-    if state_file.exists():
-        known = json.loads(state_file.read_text())
+    known = json.loads(state_file.read_text()) if state_file.exists() else {}
+
     new = []
+    today = date.today().isoformat()
     for unit, blocks in busy_map.items():
-        seen = {tuple(b) for b in known.get(unit, [])}
+        if unit not in known:
+            continue  # first sight of this unit's calendar: baseline, not news
+        seen = {tuple(b) for b in known[unit]}
         for block in blocks:
-            if tuple(block) not in seen:
-                new.append({"unit": unit, "start": block[0], "end": block[1]})
-    state_file.write_text(json.dumps(busy_map, indent=2))
+            if tuple(block) in seen or block[0] < today:
+                continue
+            new.append({"unit": unit, "start": block[0], "end": block[1]})
+
+    # Persist only units we actually observed, so an unconfigured unit never
+    # gets a baseline it didn't earn.
+    known.update(busy_map)
+    state_file.write_text(json.dumps(known, indent=2))
     return new

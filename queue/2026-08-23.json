@@ -1,6 +1,6 @@
 {
   "date": "2026-08-23",
-  "generated_at": "2026-08-23T13:25:02.416623Z",
+  "generated_at": "2026-08-23T18:02:09.478872Z",
   "pillar_of_day": "availability_spotlight",
   "active_platforms": [],
   "inactive_platforms": [
@@ -19,8 +19,5 @@
   "upcoming_events": [],
   "new_bookings": [],
   "posts": [],
-  "busy_map": {
-    "sun": [],
-    "moon": []
-  }
+  "busy_map": {}
 }

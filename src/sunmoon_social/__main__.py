@@ -8,7 +8,8 @@ import sys
 from datetime import date
 
 from .availability import detect_new_bookings
-from .config import QUEUE_DIR, active_platforms, load_apis, missing_secrets
+from .config import (QUEUE_DIR, active_platforms, load_apis, load_calendars,
+                     missing_secrets)
 from .content_engine import build_queue
 from .notifier import booking_alerts, daily_digest
 from .publishers import publish_queue
@@ -21,6 +22,28 @@ def _load_or_build_queue() -> dict:
     return cmd_plan()
 
 
+def _warn_unconfigured(queue: dict) -> None:
+    """Make a do-nothing run loud.
+
+    The engine ran green and published nothing for months because both halves
+    were unconfigured and neither said so above a whisper. A no-op run is a
+    problem, not a success — print it where the workflow log will show it.
+    """
+    cal = load_calendars()
+    unwired = [unit for unit, ucfg in (cal.get("units") or {}).items()
+               if not [s for s in (ucfg.get("sources") or [])
+                       if s.get("url") or s.get("calendar_id")]]
+    if unwired:
+        print(f"  !! no calendar source for: {', '.join(sorted(unwired))} — "
+              "availability is unknown, so no availability posts can be built. "
+              "Add an iCal URL in config/calendars.yaml.")
+    if not queue["active_platforms"]:
+        print("  !! no platform API is `active` in config/apis.yaml — "
+              "nothing will be published anywhere until one is activated.")
+    if not queue["posts"]:
+        print("  !! this run produced 0 posts.")
+
+
 def cmd_plan() -> dict:
     queue = build_queue()
     queue["new_bookings"] = detect_new_bookings(queue.get("busy_map", {}))
@@ -29,6 +52,7 @@ def cmd_plan() -> dict:
           f"pillar={queue['pillar_of_day']}, "
           f"{len(queue['open_windows'])} open windows, "
           f"{len(queue['new_bookings'])} new bookings")
+    _warn_unconfigured(queue)
     return queue
 
 
