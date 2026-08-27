@@ -50,6 +50,13 @@ def _send(subject: str, body: str, dry_run: bool) -> dict:
     return {"status": "sent", "subject": subject}
 
 
+def _divergences_by_unit(queue: dict) -> dict[str, list[dict]]:
+    grouped: dict[str, list[dict]] = {}
+    for d in queue.get("calendar_divergences", []):
+        grouped.setdefault(d["unit"], []).append(d)
+    return grouped
+
+
 def booking_alerts(queue: dict, dry_run: bool = True) -> list[dict]:
     """One email per newly detected booking, plus imminent check-in reminders."""
     cfg = load_notifications()
@@ -62,6 +69,19 @@ def booking_alerts(queue: dict, dry_run: bool = True) -> list[dict]:
                 f"A new booking appeared on the {house} calendar.\n\n"
                 f"  Check-in:  {booking['start']}\n  Check-out: {booking['end']}\n\n"
                 "Confirm guest details in the booking platform and prep the experience plan.\n",
+                dry_run))
+    if cfg.get("alerts", {}).get("calendar_divergence", True):
+        for unit, nights in _divergences_by_unit(queue).items():
+            house = _house(unit)
+            lines = [f"  {n['night']}: busy on {', '.join(n['busy_on'])}"
+                     f" / open on {', '.join(n['open_on'])}" for n in nights]
+            results.append(_send(
+                f"[Sun & Moon 30A] Calendar mismatch — {house}, {len(nights)} night(s)",
+                f"The calendars for {house} disagree about these nights:\n\n"
+                + "\n".join(lines)
+                + "\n\nWhichever feed is behind is showing the wrong availability to "
+                  "guests. Re-sync the listing that is out of date before these nights "
+                  "get sold twice — or sold to nobody.\n",
                 dry_run))
     hours = cfg.get("alerts", {}).get("imminent_checkin_hours", 48)
     today = local_today()
@@ -94,6 +114,12 @@ def daily_digest(queue: dict, publish_results: list[dict], dry_run: bool = True)
         lines.append("  (none — see the availability note below)")
     for unit in queue.get("unknown_units", []):
         lines.append(f"  ! {_house(unit)}: availability unknown this run — calendar source missing or unreadable. Nothing was promoted for it; check config/calendars.yaml and the run log.")
+    lines.append("")
+    divergences = queue.get("calendar_divergences", [])
+    lines.append(f"Calendar agreement: {'OK — all feeds agree' if not divergences else str(len(divergences)) + ' night(s) in dispute'}")
+    for d in divergences[:10]:
+        lines.append(f"  ! {_house(d['unit'])} {d['night']}: busy on {', '.join(d['busy_on'])}"
+                     f" / open on {', '.join(d['open_on'])}")
     lines.append("")
     lines.append("Publish results:")
     for r in publish_results or [{"platform": "-", "status": "nothing queued"}]:

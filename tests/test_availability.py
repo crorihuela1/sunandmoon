@@ -149,7 +149,7 @@ class OpenWindowTests(unittest.TestCase):
         with mock.patch.object(av, "load_calendars",
                                return_value=self._cfg([{"type": "ical", "url": "http://x"}])), \
              mock.patch.object(av.requests, "get", side_effect=RuntimeError("boom")):
-            windows, busy_map, unknown = av.open_windows()
+            windows, busy_map, unknown, _ = av.open_windows()
         self.assertEqual(windows, [])
         self.assertEqual(unknown, ["sun"])
         self.assertEqual(busy_map, {"sun": []})
@@ -157,7 +157,7 @@ class OpenWindowTests(unittest.TestCase):
     def test_unconfigured_unit_is_unknown_not_wide_open(self):
         with mock.patch.object(av, "load_calendars",
                                return_value=self._cfg([{"type": "ical", "url": ""}])):
-            windows, _, unknown = av.open_windows()
+            windows, _, unknown, _ = av.open_windows()
         self.assertEqual(windows, [])
         self.assertEqual(unknown, ["sun"])
 
@@ -169,11 +169,118 @@ class OpenWindowTests(unittest.TestCase):
         with mock.patch.object(av, "load_calendars",
                                return_value=self._cfg([{"type": "ical", "url": "http://x"}])), \
              mock.patch.object(av.requests, "get", return_value=_Resp(raw)):
-            windows, busy_map, unknown = av.open_windows()
+            windows, busy_map, unknown, _ = av.open_windows()
         self.assertEqual(unknown, [])
         self.assertEqual(busy_map["sun"], [[start.isoformat(), end.isoformat()]])
         spans = sorted((w.start, w.end) for w in windows)
         self.assertEqual(spans, [(today, start), (end, today + timedelta(days=30))])
+
+
+class DivergenceTests(unittest.TestCase):
+    """The whole point of listing the site feed and the vacay-network feed
+    together: notice when they stop agreeing."""
+
+    def _reads(self, a_blocks, b_blocks, a_ok=True, b_ok=True):
+        return [av.SourceRead("ical:sunandmoon30a.com", a_blocks, a_ok),
+                av.SourceRead("ical:vacay-network", b_blocks, b_ok)]
+
+    def test_agreeing_feeds_report_nothing(self):
+        stay = [(date(2026, 9, 4), date(2026, 9, 7))]
+        diffs = av.divergences_for("sun", self._reads(stay, list(stay)),
+                                   date(2026, 9, 1), date(2026, 10, 1))
+        self.assertEqual(diffs, [])
+
+    def test_night_sold_on_one_feed_only_is_reported(self):
+        diffs = av.divergences_for(
+            "sun",
+            self._reads([(date(2026, 9, 4), date(2026, 9, 7))],
+                        [(date(2026, 9, 4), date(2026, 9, 6))]),
+            date(2026, 9, 1), date(2026, 10, 1))
+        self.assertEqual([d.night for d in diffs], [date(2026, 9, 6)])
+        self.assertEqual(diffs[0].busy_on, ["ical:sunandmoon30a.com"])
+        self.assertEqual(diffs[0].open_on, ["ical:vacay-network"])
+
+    def test_divergences_outside_the_horizon_are_ignored(self):
+        diffs = av.divergences_for(
+            "sun",
+            self._reads([(date(2027, 1, 4), date(2027, 1, 7))], []),
+            date(2026, 9, 1), date(2026, 10, 1))
+        self.assertEqual(diffs, [])
+
+    def test_unreadable_feed_is_not_treated_as_disagreement(self):
+        diffs = av.divergences_for(
+            "sun",
+            self._reads([(date(2026, 9, 4), date(2026, 9, 7))], [], b_ok=False),
+            date(2026, 9, 1), date(2026, 10, 1))
+        self.assertEqual(diffs, [])
+
+    def test_single_source_has_nothing_to_compare(self):
+        reads = [av.SourceRead("ical:only", [(date(2026, 9, 4), date(2026, 9, 7))], True)]
+        self.assertEqual(av.divergences_for("sun", reads, date(2026, 9, 1), date(2026, 10, 1)), [])
+
+    def test_open_windows_surfaces_divergence_between_two_feeds(self):
+        today = av.local_today()
+        start, end = today + timedelta(days=5), today + timedelta(days=8)
+        site = ical(f"BEGIN:VEVENT\nUID:a\nDTSTART;VALUE=DATE:{start:%Y%m%d}\n"
+                    f"DTEND;VALUE=DATE:{end:%Y%m%d}\nEND:VEVENT\n")
+        vacay = ical(f"BEGIN:VEVENT\nUID:b\nDTSTART;VALUE=DATE:{start:%Y%m%d}\n"
+                     f"DTEND;VALUE=DATE:{end - timedelta(days=1):%Y%m%d}\nEND:VEVENT\n")
+        cfg = {"property": {"timezone": "America/Chicago"},
+               "units": {"sun": {"label": "Golden Sun", "sources": [
+                   {"type": "ical", "url": "https://sunandmoon30a.com/sun.ics"},
+                   {"type": "ical", "url": "https://vacay.example/sun.ics"}]}},
+               "scoring": {"horizon_days": 30, "min_window_nights": 1}}
+        with mock.patch.object(av, "load_calendars", return_value=cfg), \
+             mock.patch.object(av.requests, "get",
+                               side_effect=[_Resp(site), _Resp(vacay)]):
+            _, _, unknown, diffs = av.open_windows()
+        self.assertEqual(unknown, [])
+        self.assertEqual([d.night for d in diffs], [end - timedelta(days=1)])
+
+
+class MergeTests(unittest.TestCase):
+    def test_duplicate_stay_from_two_feeds_becomes_one_block(self):
+        stay = (date(2026, 9, 4), date(2026, 9, 7))
+        self.assertEqual(av.merge_overlapping([stay, stay]), [stay])
+
+    def test_feeds_that_disagree_merge_to_the_conservative_union(self):
+        self.assertEqual(
+            av.merge_overlapping([(date(2026, 9, 4), date(2026, 9, 7)),
+                                  (date(2026, 9, 4), date(2026, 9, 6))]),
+            [(date(2026, 9, 4), date(2026, 9, 7))])
+
+    def test_back_to_back_stays_stay_separate(self):
+        # Checkout and the next check-in on the same day are two arrivals.
+        blocks = [(date(2026, 9, 1), date(2026, 9, 4)),
+                  (date(2026, 9, 4), date(2026, 9, 6))]
+        self.assertEqual(av.merge_overlapping(blocks), blocks)
+
+    def test_one_stay_reported_once_end_to_end(self):
+        today = av.local_today()
+        start, end = today + timedelta(days=5), today + timedelta(days=8)
+        feed = ical(f"BEGIN:VEVENT\nUID:x\nDTSTART;VALUE=DATE:{start:%Y%m%d}\n"
+                    f"DTEND;VALUE=DATE:{end:%Y%m%d}\nEND:VEVENT\n")
+        cfg = {"property": {"timezone": "America/Chicago"},
+               "units": {"sun": {"label": "Golden Sun", "sources": [
+                   {"type": "ical", "url": "https://sunandmoon30a.com/sun.ics"},
+                   {"type": "ical", "url": "https://vacay.example/sun.ics"}]}},
+               "scoring": {"horizon_days": 30, "min_window_nights": 1}}
+        with mock.patch.object(av, "load_calendars", return_value=cfg), \
+             mock.patch.object(av.requests, "get",
+                               side_effect=[_Resp(feed), _Resp(feed)]):
+            _, busy_map, _, diffs = av.open_windows()
+        self.assertEqual(busy_map["sun"], [[start.isoformat(), end.isoformat()]])
+        self.assertEqual(diffs, [])
+
+
+class SourceLabelTests(unittest.TestCase):
+    def test_labels(self):
+        self.assertEqual(av.source_label({"type": "ical", "url": "https://vacay.example/a.ics"}),
+                         "ical:vacay.example")
+        self.assertEqual(av.source_label({"type": "google_calendar", "calendar_id": "x@g"}),
+                         "google:x@g")
+        self.assertEqual(av.source_label({"type": "ical", "url": "https://x/a.ics",
+                                          "label": "Vacay network"}), "Vacay network")
 
 
 class ClockTests(unittest.TestCase):

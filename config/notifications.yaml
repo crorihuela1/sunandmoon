@@ -21,5 +21,6 @@ email:
 
 alerts:
   new_booking: true        # busy block appeared since last run
+  calendar_divergence: true # the site feed and the vacay/OTA feed disagree about a night
   imminent_checkin_hours: 48
   daily_digest: true       # what was published + current open windows

@@ -33,14 +33,18 @@ calendars (iCal / Google Calendar)          config/apis.yaml (API registry)
    default `America/Chicago`) before it becomes a night, so an all-day OTA
    export and a UTC-timestamped booking-engine export describe the same stay.
    If a feed cannot be read, that unit is reported as *availability unknown* —
-   never as open — so a calendar outage can't advertise a sold night.
+   never as open — so a calendar outage can't advertise a sold night. List every
+   listing for a unit and the engine cross-checks them: any night the site feed
+   and the vacay-network feed disagree about is reported (email alert + daily
+   digest + `sunmoon_social sync`) instead of being merged away silently.
 3. **Content engine** — generates a queue of posts from the brand pillars in
    `config/brand.yaml`, targeted at the highest-value open dates and at the
    events/experiences hosted at the property.
 4. **Publishers** — one thin adapter per platform API. Dry-run by default;
    set `SOCIAL_LIVE=true` to post for real.
 5. **Notifier** — emails imminent info (new bookings detected as new busy blocks,
-   plus a daily digest of what was published and what's open) to
+   calendar mismatches between a unit's listings, plus a daily digest of what
+   was published and what's open) to
    `experience@sunandmoon30a.com` with a CC (see `config/notifications.yaml`).
 6. **Automation** — `.github/workflows/social-engine.yml` runs the whole loop
    daily with zero manual intervention.
@@ -53,6 +57,8 @@ cp .env.example .env            # fill in secrets as APIs are activated
 python -m sunmoon_social plan   # build today's content queue (no posting)
 python -m sunmoon_social publish --dry-run
 python -m sunmoon_social digest --dry-run
+
+python -m sunmoon_social sync   # do the site and the vacay listing agree?
 
 python -m unittest discover -s tests -t .   # date-handling regressions
 ```
@@ -73,7 +79,9 @@ Short version:
   unknown* every run and nothing gets promoted. sunandmoon30a.com resolves now
   (checked 2026-08-23); set the booking engine's iCal export URL — and the
   Airbnb/VRBO export for the same listing — in `config/calendars.yaml`. Listing
-  both is what keeps the site and the OTA showing the same dates.
+  both is what keeps the site and the vacay listing showing the same dates —
+  and `python -m sunmoon_social sync` will tell you straight away whether they do
+  (exit code 0 = the feeds agree).
 - No "Sun"/"Moon" calendars exist in the connected Google account yet. Either
   create them (and share with the engine), or use the iCal export URLs from the
   booking platform (Airbnb/VRBO/Lodgify/OwnerRez all provide one per listing).

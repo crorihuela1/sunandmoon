@@ -1,8 +1,14 @@
 # Availability + events sources for Sun & Moon 30A.
 #
 # Each unit can have any mix of sources; busy blocks from all of them are
-# merged, so cross-listing (site + Airbnb + VRBO) stays consistent.
+# merged, so cross-listing (site + vacay network + Airbnb/VRBO) stays consistent.
 # Booked nights appear as BUSY events; everything else is open.
+#
+# List every listing for a unit. With two or more readable feeds the engine
+# cross-checks them and reports any night they disagree about, instead of
+# quietly merging the disagreement away. `label` is what those reports call the
+# feed, so give each one a name you will recognise in an email at 7am.
+# Check a feed the moment you paste it:  python -m sunmoon_social sync
 #
 # >>> ACTION NEEDED: no calendar source is wired up yet, so the engine treats
 # >>> both units as "availability unknown" and promotes nothing. sunandmoon30a.com
@@ -22,18 +28,22 @@ units:
     label: Golden Sun
     sources:
       - type: ical
+        label: sunandmoon30a.com booking engine
         url: ""            # e.g. https://sunandmoon30a.com/calendar/sun.ics
       - type: ical
-        url: ""            # e.g. Airbnb iCal export for the Golden Sun listing
+        label: vacay network listing
+        url: ""            # the rental-network iCal export for the Golden Sun listing
       - type: google_calendar
         calendar_id: ""    # optional, if availability is kept in Google Calendar
   moon:
     label: Blue Moon
     sources:
       - type: ical
+        label: sunandmoon30a.com booking engine
         url: ""            # e.g. https://sunandmoon30a.com/calendar/moon.ics
       - type: ical
-        url: ""            # e.g. Airbnb iCal export for the Blue Moon listing
+        label: vacay network listing
+        url: ""            # the rental-network iCal export for the Blue Moon listing
       - type: google_calendar
         calendar_id: ""
 

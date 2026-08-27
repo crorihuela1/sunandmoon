@@ -93,7 +93,7 @@ def build_queue(for_date: date | None = None) -> dict:
     brand = load_brand()
     apis = load_apis()
     active = active_platforms(apis)
-    windows, busy_map, unknown_units = open_windows()
+    windows, busy_map, unknown_units, divergences = open_windows()
     events = upcoming_events()
     seed = for_date.toordinal()
 
@@ -139,6 +139,7 @@ def build_queue(for_date: date | None = None) -> dict:
         "posts": posts,
         "busy_map": busy_map,
         "unknown_units": unknown_units,
+        "calendar_divergences": [d.to_dict() for d in divergences],
     }
     QUEUE_DIR.mkdir(parents=True, exist_ok=True)
     (QUEUE_DIR / f"{for_date.isoformat()}.json").write_text(json.dumps(queue, indent=2))

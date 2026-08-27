@@ -53,6 +53,14 @@ jobs:
           python -m sunmoon_social publish --live
           python -m sunmoon_social digest --live
 
+      # Reports feed-by-feed availability and any night the listings disagree
+      # about. Informational: a mismatch is the owner's to resolve in the
+      # booking platforms, so it must not fail the publishing run.
+      - name: Calendar sync report
+        continue-on-error: true
+        working-directory: src
+        run: python -m sunmoon_social sync
+
       - name: Persist state & queue
         run: |
           git config user.name "sunmoon-engine"

@@ -164,6 +164,68 @@ def _gcal_edge(edge: dict | None) -> date | None:
     return _local_date(datetime.fromisoformat(raw.replace("Z", "+00:00")))
 
 
+def source_label(src: dict) -> str:
+    """A short, human name for a feed, so divergence reports say which one."""
+    if src.get("label"):
+        return str(src["label"])
+    if src.get("type") == "google_calendar":
+        return f"google:{src.get('calendar_id', '?')}"
+    url = str(src.get("url", "?"))
+    host = url.split("//", 1)[-1].split("/", 1)[0]
+    return f"ical:{host or url}"
+
+
+@dataclass
+class SourceRead:
+    """One calendar feed's answer for one unit."""
+    label: str
+    blocks: list[tuple[date, date]]
+    ok: bool
+
+    def nights(self) -> set[date]:
+        out: set[date] = set()
+        for s, e in self.blocks:
+            day = s
+            while day < e:
+                out.add(day)
+                day += timedelta(days=1)
+        return out
+
+
+@dataclass
+class Divergence:
+    """A night the feeds disagree about — the site says one thing, the vacay
+    listing says another. Left unreported, this is how a double booking or a
+    silently withheld night happens."""
+    unit: str
+    night: date
+    busy_on: list[str]
+    open_on: list[str]
+
+    def to_dict(self) -> dict:
+        return {"unit": self.unit, "night": self.night.isoformat(),
+                "busy_on": self.busy_on, "open_on": self.open_on}
+
+
+def read_sources(sources: list[dict], horizon_days: int) -> list[SourceRead]:
+    """Read every feed for a unit separately, so the merged view and the
+    cross-feed comparison come out of one fetch."""
+    reads: list[SourceRead] = []
+    for src in sources or []:
+        kind = src.get("type")
+        label = source_label(src)
+        try:
+            if kind == "ical" and src.get("url"):
+                reads.append(SourceRead(label, _fetch_ical_busy(src["url"]), True))
+            elif kind == "google_calendar" and src.get("calendar_id"):
+                reads.append(SourceRead(
+                    label, _fetch_gcal_busy(src["calendar_id"], horizon_days), True))
+        except Exception as exc:  # one broken feed must not silence the others
+            print(f"  ! calendar source failed ({kind}): {exc}")
+            reads.append(SourceRead(label, [], False))
+    return reads
+
+
 def _unit_busy(sources: list[dict], horizon_days: int) -> tuple[list[tuple[date, date]], bool]:
     """Busy blocks for a unit, plus whether *every* source was read successfully.
 
@@ -171,18 +233,45 @@ def _unit_busy(sources: list[dict], horizon_days: int) -> tuple[list[tuple[date,
     how sold nights get advertised, so the caller treats a partial read as
     unknown availability rather than as availability.
     """
-    busy, complete = [], True
-    for src in sources or []:
-        kind = src.get("type")
-        try:
-            if kind == "ical" and src.get("url"):
-                busy.extend(_fetch_ical_busy(src["url"]))
-            elif kind == "google_calendar" and src.get("calendar_id"):
-                busy.extend(_fetch_gcal_busy(src["calendar_id"], horizon_days))
-        except Exception as exc:  # one broken feed must not silence the others
-            print(f"  ! calendar source failed ({kind}): {exc}")
-            complete = False
-    return busy, complete
+    reads = read_sources(sources, horizon_days)
+    busy = [b for r in reads for b in r.blocks]
+    return busy, all(r.ok for r in reads)
+
+
+def merge_overlapping(blocks: list[tuple[date, date]]) -> list[tuple[date, date]]:
+    """Collapse blocks that overlap into one.
+
+    The same reservation arrives once per feed (site + vacay network), and two
+    copies of one stay used to read as two bookings — two "new booking" emails
+    for one guest. Blocks that merely *touch* are left alone: a checkout and the
+    next guest's check-in on the same day are two stays, and collapsing them
+    would swallow the second arrival.
+    """
+    merged: list[tuple[date, date]] = []
+    for s, e in sorted(blocks):
+        if merged and s < merged[-1][1]:
+            prev_s, prev_e = merged[-1]
+            merged[-1] = (prev_s, max(prev_e, e))
+        else:
+            merged.append((s, e))
+    return merged
+
+
+def divergences_for(unit: str, reads: list[SourceRead], today: date, horizon: date) -> list[Divergence]:
+    """Nights inside the horizon that some readable feed calls busy and another
+    calls open. Merging hides this; bookings depend on it."""
+    usable = [r for r in reads if r.ok]
+    if len(usable) < 2:
+        return []                      # nothing to compare against
+    per_source = {r.label: r.nights() for r in usable}
+    contested = set().union(*per_source.values())
+    out = []
+    for night in sorted(n for n in contested if today <= n < horizon):
+        busy_on = sorted(label for label, nights in per_source.items() if night in nights)
+        open_on = sorted(label for label in per_source if label not in busy_on)
+        if busy_on and open_on:
+            out.append(Divergence(unit, night, busy_on, open_on))
+    return out
 
 
 def _score(window: OpenWindow, scoring: dict, has_neighbors: bool, today: date) -> int:
@@ -201,9 +290,10 @@ def _score(window: OpenWindow, scoring: dict, has_neighbors: bool, today: date) 
     return score
 
 
-def open_windows() -> tuple[list[OpenWindow], dict[str, list], list[str]]:
-    """Scored open windows per unit, the raw busy map (for booking alerts), and
-    the units whose availability could not be established this run."""
+def open_windows() -> tuple[list[OpenWindow], dict[str, list], list[str], list[Divergence]]:
+    """Scored open windows per unit, the raw busy map (for booking alerts), the
+    units whose availability could not be established this run, and the nights
+    the unit's feeds disagree about."""
     cfg = load_calendars()
     scoring = cfg.get("scoring", {})
     horizon = scoring.get("horizon_days", 60)
@@ -213,6 +303,7 @@ def open_windows() -> tuple[list[OpenWindow], dict[str, list], list[str]]:
     windows: list[OpenWindow] = []
     busy_map: dict[str, list] = {}
     unknown: list[str] = []
+    divergences: list[Divergence] = []
     for unit, ucfg in (cfg.get("units") or {}).items():
         sources = [s for s in (ucfg.get("sources") or [])
                    if s.get("url") or s.get("calendar_id")]
@@ -222,10 +313,11 @@ def open_windows() -> tuple[list[OpenWindow], dict[str, list], list[str]]:
             busy_map[unit] = []
             unknown.append(unit)
             continue
-        busy, complete = _unit_busy(sources, horizon)
-        busy = sorted(busy)
+        reads = read_sources(sources, horizon)
+        divergences.extend(divergences_for(unit, reads, today, end_horizon))
+        busy = merge_overlapping([b for r in reads for b in r.blocks])
         busy_map[unit] = [[s.isoformat(), e.isoformat()] for s, e in busy]
-        if not complete:
+        if not all(r.ok for r in reads):
             # Partial read: keep what we learned for the alerting diff, but do
             # not turn the gaps into "book these nights" copy.
             unknown.append(unit)
@@ -241,7 +333,7 @@ def open_windows() -> tuple[list[OpenWindow], dict[str, list], list[str]]:
             if cursor >= end_horizon:
                 break
     windows.sort(key=lambda w: w.score, reverse=True)
-    return windows, busy_map, unknown
+    return windows, busy_map, unknown, divergences
 
 
 def upcoming_events() -> list[PropertyEvent]:
