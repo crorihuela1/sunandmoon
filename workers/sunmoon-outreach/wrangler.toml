@@ -5,10 +5,13 @@ name = "sunmoon-outreach"
 main = "src/index.js"
 compatibility_date = "2026-09-01"
 
-[triggers]
-# 13:00 UTC = 9am America/New_York (EDT), weekdays only.
-# The old sender never sent on weekends; this matches that.
-crons = ["0 13 * * 1-5"]
+# Cron is driven by .github/workflows/outreach-sender.yml instead: this
+# Cloudflare account is on Workers Free, capped at 5 cron triggers per
+# account, and is already at that limit. Re-enable this block if you move to
+# Workers Paid - the worker refuses to send twice in one UTC day, so the two
+# schedules cannot double-send.
+# [triggers]
+# crons = ["0 13 * * 1-5"]
 
 [vars]
 DAILY_CAP = "25"

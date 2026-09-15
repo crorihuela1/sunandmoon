@@ -367,13 +367,35 @@ async function sendOne(env, row, { dryRun }) {
   }
 }
 
-async function runDailySend(env, { dryRunOverride, capOverride } = {}) {
+/**
+ * Has this sender already sent anything today (UTC)?
+ *
+ * The daily run can be driven from more than one place — a Cloudflare cron
+ * trigger, the GitHub Actions schedule, or a manual POST /run. Without this
+ * guard, two of them firing on the same day would send two batches. Pass
+ * force=1 to override (e.g. a deliberate second wave).
+ */
+async function alreadySentToday(env) {
+  const midnight = new Date();
+  midnight.setUTCHours(0, 0, 0, 0);
+  const rows = await sbSelect(
+    env,
+    `/rest/v1/outreach?status=eq.sent&sent_at=gte.${midnight.toISOString()}&select=id&limit=1`
+  );
+  return rows.length > 0;
+}
+
+async function runDailySend(env, { dryRunOverride, capOverride, force = false } = {}) {
   const started = new Date().toISOString();
   const cap = capOverride ?? num(env.DAILY_CAP) ?? DEFAULTS.DAILY_CAP;
   const dryRun = dryRunOverride ?? String(env.DRY_RUN ?? "true").toLowerCase() !== "false";
 
   if (!dryRun && !env.RESEND_API_KEY) {
     return { started, error: "RESEND_API_KEY not set — refusing to run live" };
+  }
+
+  if (!dryRun && !force && (await alreadySentToday(env))) {
+    return { started, skipped: "already sent today", dryRun, cap, sent: 0 };
   }
 
   const picks = await pickRecipients(env, cap);
@@ -442,7 +464,8 @@ export default {
     if (url.pathname === "/run" && request.method === "POST") {
       if (!authed(env, url)) return json(404, { error: "not found" });
       const capOverride = num(url.searchParams.get("cap")) ?? undefined;
-      return json(200, await runDailySend(env, { capOverride }));
+      const force = url.searchParams.get("force") === "1";
+      return json(200, await runDailySend(env, { capOverride, force }));
     }
 
     return json(404, { error: "not found" });

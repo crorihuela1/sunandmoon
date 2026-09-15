@@ -1,0 +1,96 @@
+# Drives the sunmoon-outreach worker on a schedule.
+#
+# The Cloudflare account is on the Workers Free plan, which caps cron triggers
+# at 5 per account and is already at that limit, so the worker's own cron could
+# not be attached. This workflow calls its /run endpoint instead.
+#
+# The worker refuses to send twice in the same UTC day unless force=1, so if a
+# native Cloudflare cron is ever added back, the two cannot double-send.
+name: outreach-sender
+
+on:
+  schedule:
+    - cron: "0 13 * * 1-5"   # 09:00 America/New_York (EDT), weekdays
+  workflow_dispatch:
+    inputs:
+      cap:
+        description: "Max first-touch emails to send this run"
+        required: false
+        default: ""
+      force:
+        description: "Send even if a batch already went out today"
+        type: boolean
+        required: false
+        default: false
+
+concurrency:
+  group: outreach-sender
+  cancel-in-progress: false
+
+jobs:
+  send:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger the outreach worker
+        env:
+          WORKER_URL: https://sunmoon-outreach.corihuela.workers.dev
+          ADMIN_TOKEN: ${{ secrets.OUTREACH_ADMIN_TOKEN }}
+          CAP: ${{ inputs.cap }}
+          FORCE: ${{ inputs.force }}
+        run: |
+          set -euo pipefail
+
+          if [ -z "${ADMIN_TOKEN}" ]; then
+            echo "::error::OUTREACH_ADMIN_TOKEN repository secret is not set."
+            exit 1
+          fi
+
+          # Plain if-blocks: `[ ... ] && x=y` returns non-zero when the test
+          # fails, which under `set -e` would kill the job on a normal
+          # scheduled run (where cap is empty).
+          url="${WORKER_URL}/run?token=${ADMIN_TOKEN}"
+          if [ -n "${CAP}" ]; then
+            url="${url}&cap=${CAP}"
+          fi
+          if [ "${FORCE}" = "true" ]; then
+            url="${url}&force=1"
+          fi
+
+          # Never echo $url — it carries the token.
+          echo "Calling ${WORKER_URL}/run"
+
+          http_code=$(curl -sS -o response.json -w '%{http_code}' -X POST "${url}")
+          echo "HTTP ${http_code}"
+          echo "--- response ---"
+          cat response.json
+          echo
+
+          if [ "${http_code}" != "200" ]; then
+            echo "::error::Worker returned HTTP ${http_code}"
+            exit 1
+          fi
+
+          # Surface a run summary in the job log and the Actions summary tab.
+          python3 - <<'PY' >> "$GITHUB_STEP_SUMMARY"
+          import json
+          d = json.load(open("response.json"))
+          if d.get("skipped"):
+              print(f"**Skipped** — {d['skipped']}")
+          elif d.get("error"):
+              print(f"**Error** — {d['error']}")
+          else:
+              print(f"| metric | value |\n|---|---|")
+              for k in ("dryRun", "cap", "eligible", "sent", "failed"):
+                  if k in d:
+                      print(f"| {k} | {d[k]} |")
+              for r in d.get("results", []):
+                  if r.get("ok") is False:
+                      print(f"\n- FAILED {r.get('company')}: {r.get('error')}")
+          PY
+
+          # Fail the job if the worker reported send failures.
+          failed=$(python3 -c "import json;print(json.load(open('response.json')).get('failed',0))")
+          if [ "${failed}" != "0" ]; then
+            echo "::error::${failed} send(s) failed — see response above"
+            exit 1
+          fi
