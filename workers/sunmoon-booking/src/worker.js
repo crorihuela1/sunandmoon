@@ -3222,7 +3222,8 @@ var worker_default = {
             session_id: sid,
             event: qt.available ? "date_search" : "no_availability",
             property_id: propRow?.id || null,
-            metadata: { property: params.property, checkIn: qt.checkIn, checkOut: qt.checkOut }
+            partner_slug: qt.partner?.slug || null,
+            metadata: { property: params.property, checkIn: qt.checkIn, checkOut: qt.checkOut, partner: qt.partner?.slug || null }
           }, { "Prefer": "return=minimal" }).catch(() => {
           }));
         }
