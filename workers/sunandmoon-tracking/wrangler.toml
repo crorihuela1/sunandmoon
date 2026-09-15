@@ -1,0 +1,16 @@
+# track.sunandmoon30a.com — open pixel (/o/<outreach_id>), click redirect
+# (/c/<short_code>), website contact form (/contact), ops dashboard (/ops/<OPS_TOKEN>).
+# Recovered from the deployed Cloudflare bundle on 2026-09-15. See docs/RECOVERY.md.
+name = "sunandmoon-tracking"
+main = "src/tracking_worker.js"
+compatibility_date = "2026-06-01"
+
+[vars]
+PROJECT_ID = ""              # Supabase project uuid used to tag rows
+
+# Cloudflare Email Routing send binding used for contact-form notifications.
+[[send_email]]
+name = "SEND_EMAIL"
+
+# Secrets — set with `wrangler secret put <NAME>`:
+#   SUPABASE_URL, SUPABASE_SERVICE_KEY, OPS_TOKEN

@@ -1,0 +1,17 @@
+# book.sunandmoon30a.com — guest booking flow (quotes, Stripe, reservations).
+# Recovered from the deployed Cloudflare bundle on 2026-09-15. See docs/RECOVERY.md.
+name = "sunmoon-booking"
+main = "src/worker.js"
+compatibility_date = "2026-08-01"
+
+[vars]
+PROJECT_ID = ""              # Supabase project uuid used to tag rows
+NOTIFY_MINDY_ENABLED = "false"
+SMS_ENABLED = "false"
+
+# Secrets — set with `wrangler secret put <NAME>`, never commit:
+#   SUPABASE_URL, SUPABASE_SERVICE_KEY
+#   STRIPE_SECRET_KEY, STRIPE_PUBLISHABLE_KEY, STRIPE_WEBHOOK_SECRET
+#   ADMIN_TOKEN, WEBHOOK_SECRET, WEBHOOK_HMAC_SECRET
+#   NOTIFY_OWNER_EMAIL, NOTIFY_OWNER_SMS, ADMIN_ALERT_PHONE
+#   VACAY_CONTACT_EMAIL, VACAY_CONTACT_PHONE
