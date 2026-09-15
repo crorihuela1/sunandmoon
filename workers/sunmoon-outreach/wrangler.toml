@@ -17,7 +17,7 @@ TRACK_BASE = "https://track.sunandmoon30a.com"
 BOOK_BASE = "https://book.sunandmoon30a.com"
 FROM_EMAIL = "cristian@sunandmoon30a.com"
 REPLY_TO = "experience@sunandmoon30a.com"
-PROJECT_ID = ""              # Supabase project uuid used to tag rows
+PROJECT_ID = "310c4ae6-eec9-47b7-9e22-b95a6dc69365"              # Supabase project uuid used to tag rows
 HERO_IMAGE_URL = ""          # optional; omitted from the email when blank
 
 # Secrets — set with `wrangler secret put <NAME>`, never commit:

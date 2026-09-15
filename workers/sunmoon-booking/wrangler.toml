@@ -5,7 +5,7 @@ main = "src/worker.js"
 compatibility_date = "2026-08-01"
 
 [vars]
-PROJECT_ID = ""              # Supabase project uuid used to tag rows
+PROJECT_ID = "310c4ae6-eec9-47b7-9e22-b95a6dc69365"              # Supabase project uuid used to tag rows
 NOTIFY_MINDY_ENABLED = "false"
 SMS_ENABLED = "false"
 

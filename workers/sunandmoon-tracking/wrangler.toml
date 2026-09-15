@@ -6,7 +6,7 @@ main = "src/tracking_worker.js"
 compatibility_date = "2026-06-01"
 
 [vars]
-PROJECT_ID = ""              # Supabase project uuid used to tag rows
+PROJECT_ID = "310c4ae6-eec9-47b7-9e22-b95a6dc69365"              # Supabase project uuid used to tag rows
 
 # Cloudflare Email Routing send binding used for contact-form notifications.
 [[send_email]]
