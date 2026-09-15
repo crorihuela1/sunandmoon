@@ -105,11 +105,40 @@ const num = (v) => (v == null || v === "" || isNaN(Number(v)) ? null : Number(v)
 /* -------------------------------------------------------------- templating */
 
 /**
+ * `companies.metadata.market_metro` holds snake_case slugs ("new_orleans",
+ * "alabama_college_towns", "30a"). Those must never reach a subject line or
+ * email body verbatim. Anything not listed falls back to title-casing the
+ * slug, so a new metro degrades to "Some Metro" rather than "some_metro".
+ */
+const METRO_LABELS = {
+  "30a": "30A",
+  alabama_college_towns: "Alabama",
+  florida_drive: "Florida",
+  greenville_sc: "Greenville",
+  jackson_ms: "Jackson",
+  new_orleans: "New Orleans",
+  raleigh_durham: "Raleigh-Durham",
+  tampa_orlando: "Tampa and Orlando",
+};
+
+function metroLabel(row) {
+  const slug = String(row.market_metro || "").trim().toLowerCase();
+  if (slug && METRO_LABELS[slug]) return METRO_LABELS[slug];
+  if (slug) {
+    return slug
+      .split("_")
+      .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
+      .join(" ");
+  }
+  return row.city || null;
+}
+
+/**
  * Segment-specific opening. Keys are `segments.slug` prefixes; the observed
  * Jun/Jul 2026 emails used the same structure with the angle swapped.
  */
 function segmentAngle(segmentSlug, row) {
-  const metro = row.market_metro || row.city || null;
+  const metro = metroLabel(row);
   const s = String(segmentSlug || "");
   if (s.includes("feeder")) {
     return metro
@@ -161,9 +190,15 @@ ${ratingSentence(row)}
 <img src="${esc(pixelUrl)}" width="1" height="1" alt="" style="display:none">
 </body></html>`;
 
-  const subject = `Sun & Moon at 30A — partnership idea for ${row.market_metro || row.city || "30A"} ${
-    String(row.segment_slug || "").includes("bachelorette") ? "bachelorette groups" : "destination weddings"
-  }`;
+  const who = String(row.segment_slug || "").includes("bachelorette")
+    ? "bachelorette groups"
+    : "destination weddings";
+  const where = metroLabel(row);
+  // "30A destination weddings" reads oddly for planners already on 30A.
+  const subject =
+    !where || where === "30A"
+      ? `Sun & Moon at 30A — partnership idea for your ${who}`
+      : `Sun & Moon at 30A — partnership idea for ${where} ${who}`;
 
   return { subject: subject.slice(0, 180), html };
 }
@@ -254,16 +289,29 @@ async function pickRecipients(env, cap) {
   );
 
   const picks = [];
+  const skipped = [];
   const seenCompany = new Set();
   for (const row of ready) {
     const email = String(row.email || "").toLowerCase();
     if (!email || suppressed.has(email)) continue;
     if (seenCompany.has(row.company_id)) continue; // one contact per company per wave
+
+    // Segmentation has mis-filed a few non-US businesses as 30A "local"
+    // (Cabo, Cancún, Puerto Peñasco all carry market_metro='30a'). Sending
+    // them "you plan weddings right here on 30A" is worse than not sending.
+    // US states are two uppercase letters; Mexican ones look like "B.C.S.".
+    if (!/^[A-Z]{2}$/.test(String(row.state || ""))) {
+      skipped.push({ company: row.company_name, state: row.state, reason: "non-US state" });
+      seenCompany.add(row.company_id);
+      continue;
+    }
+
     seenCompany.add(row.company_id);
     picks.push(row);
     if (picks.length >= cap) break;
   }
-  return picks;
+  if (skipped.length) console.log("outreach skipped", JSON.stringify(skipped));
+  return { picks, skipped };
 }
 
 async function sendOne(env, row, { dryRun }) {
@@ -398,7 +446,7 @@ async function runDailySend(env, { dryRunOverride, capOverride, force = false } 
     return { started, skipped: "already sent today", dryRun, cap, sent: 0 };
   }
 
-  const picks = await pickRecipients(env, cap);
+  const { picks, skipped } = await pickRecipients(env, cap);
   const results = [];
   for (const row of picks) {
     try {
@@ -416,6 +464,7 @@ async function runDailySend(env, { dryRunOverride, capOverride, force = false } 
     eligible: picks.length,
     sent: results.filter((r) => r.ok).length,
     failed: results.filter((r) => r.ok === false).length,
+    skipped,
     results,
   };
   console.log("outreach run", JSON.stringify({ ...summary, results: undefined }));
