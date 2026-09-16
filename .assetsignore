@@ -1,0 +1,6 @@
+# Files kept in the repo but not published to the website.
+README.md
+.gitignore
+.assetsignore
+wrangler.jsonc
+_archive/
