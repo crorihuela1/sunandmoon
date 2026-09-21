@@ -588,7 +588,7 @@
       font-family: -apple-system, sans-serif; font-size: 10px;
       letter-spacing: 0.18em; color: rgba(255,255,255,0.4); margin-top: 6px;
     }
-    .event-featured-body { line-height: 1.5; }
+    .event-featured-body { line-height: 1.5; min-width: 0; }
     .event-featured-eyebrow {
       font-family: -apple-system, sans-serif; font-size: 10px;
       letter-spacing: 0.22em; text-transform: uppercase;
@@ -617,9 +617,10 @@
       background: white; padding: 24px 28px;
       display: grid; grid-template-columns: 80px 1fr;
       gap: 20px; align-items: center;
-      border: 1px solid var(--border); transition: background 0.2s;
+      border: 1px solid var(--border); transition: background 0.2s, transform 0.2s;
+      text-decoration: none; color: inherit;
     }
-    .event-card:hover { background: var(--sand2); }
+    .event-card:hover { background: var(--sand2); transform: translateY(-1px); }
     .event-date {
       display: flex; flex-direction: column; align-items: center;
       padding: 10px 6px; background: var(--foam);
@@ -637,6 +638,7 @@
       font-family: -apple-system, sans-serif; font-size: 10px;
       color: var(--muted); margin-top: 2px;
     }
+    .event-info { min-width: 0; }
     .event-info-name {
       font-size: 17px; color: var(--deep); margin-bottom: 4px; line-height: 1.3;
     }
@@ -1014,9 +1016,21 @@
       .footer-top { grid-template-columns: 1fr 1fr; }
       .intro-bar { gap: 24px; }
       .amenities-top { grid-template-columns: 1fr; gap: 16px; }
+      .area-top { margin-bottom: 56px; }
+      .events-band { padding: 56px 0; margin: 0 -24px; border-radius: 0; }
+      .events-inner { padding: 0 24px; }
+      .events-header .section-title { font-size: clamp(28px, 7vw, 36px); }
       .events-grid { grid-template-columns: 1fr; }
-      .event-featured { grid-template-columns: auto 1fr; }
-      .event-featured-cta { grid-column: 1 / -1; }
+      .event-featured { grid-template-columns: 1fr; gap: 20px; padding: 24px; }
+      .event-featured-date {
+        flex-direction: row; align-items: baseline; gap: 10px;
+        justify-self: start; min-width: 0; padding: 10px 14px;
+      }
+      .event-featured-date .month, .event-featured-date .year { margin: 0; }
+      .event-featured-date .day { font-size: 28px; }
+      .event-featured-name { font-size: 22px; }
+      .event-card { grid-template-columns: 72px 1fr; gap: 14px; padding: 20px; }
+      .event-date .day { font-size: 22px; white-space: nowrap; }
       .social-grid { grid-template-columns: repeat(3, 1fr); }
     }
   </style>
@@ -1341,6 +1355,87 @@
             See What's Happening on 30A →
           </a>
         </div>
+      </div>
+    </div>
+
+    <!-- Homepage events band. Content mirrors events.html; keep the two in
+         sync when refreshing events (same START/END markers as events.html). -->
+    <div class="events-band fade-in" id="events">
+      <div class="events-inner">
+        <div class="events-header">
+          <div>
+            <div class="section-label">What's Happening on 30A</div>
+            <h2 class="section-title" style="margin-bottom:0;">Plan your stay around the good stuff.</h2>
+          </div>
+          <div class="events-meta">Updated every other day · <a href="events.html" style="color:var(--brown);text-decoration:none;">Full calendar →</a></div>
+        </div>
+
+        <!-- HOME_FEATURED_EVENT_START -->
+        <div class="event-featured">
+          <div class="event-featured-date">
+            <span class="month">Sep</span>
+            <span class="day">25-27</span>
+            <span class="year">2026</span>
+          </div>
+          <div class="event-featured-body">
+            <div class="event-featured-eyebrow">Featured · Free · Seafood · Live Music</div>
+            <div class="event-featured-name">Destin Seafood Festival · Destin Harbor Boardwalk</div>
+            <div class="event-featured-meta">Three days on the harbor boardwalk — 75+ food, art and retail vendors, five music stages, a Kids Zone, and Saturday-night fireworks. Gulf shrimp, crab and grouper straight off the boats · about a 35-min drive west.</div>
+          </div>
+          <div class="event-featured-cta">
+            <a href="https://www.destinseafoodfest.com/" target="_blank" rel="noopener">Event Info →</a>
+          </div>
+        </div>
+        <!-- HOME_FEATURED_EVENT_END -->
+
+        <!-- HOME_EVENT_LIST_START -->
+        <div class="events-grid">
+          <a href="https://www.dcwaf.org/harvest-festival/" target="_blank" rel="noopener" class="event-card">
+            <div class="event-date">
+              <span class="month">Oct</span>
+              <span class="day">15-18</span>
+              <span class="span">2026</span>
+            </div>
+            <div class="event-info">
+              <div class="event-info-name">Harvest Wine &amp; Food Festival · WaterColor</div>
+              <div class="event-info-meta">Four days of winemaker dinners and the Grand Tasting in Cerulean Park · 10-min drive west</div>
+            </div>
+          </a>
+          <a href="https://baytownebeerfestival.com/" target="_blank" rel="noopener" class="event-card">
+            <div class="event-date">
+              <span class="month">Oct</span>
+              <span class="day">16-17</span>
+              <span class="span">2026</span>
+            </div>
+            <div class="event-info">
+              <div class="event-info-name">Baytowne Beer Festival · Baytowne Wharf</div>
+              <div class="event-info-meta">Bonfires and bourbon Friday, Grand Craft Beer Tasting Saturday · 25-min drive west</div>
+            </div>
+          </a>
+          <a href="https://seasidefl.com/event/annual-halloweener-derby-dachshund-race-dog-costume-contest/" target="_blank" rel="noopener" class="event-card">
+            <div class="event-date">
+              <span class="month">Oct</span>
+              <span class="day">24</span>
+              <span class="span">2026</span>
+            </div>
+            <div class="event-info">
+              <div class="event-info-name">Halloweener Derby &amp; Oktoberfest · Seaside</div>
+              <div class="event-info-meta">Dachshund races and a costume contest at the Seaside Amphitheater · free · 5-min walk</div>
+            </div>
+          </a>
+          <a href="https://seasideseeingred.com/" target="_blank" rel="noopener" class="event-card">
+            <div class="event-date">
+              <span class="month">Nov</span>
+              <span class="day">5-8</span>
+              <span class="span">2026</span>
+            </div>
+            <div class="event-info">
+              <div class="event-info-name">Seeing Red Wine Festival · Seaside</div>
+              <div class="event-info-meta">Vintners dinner, Battle of the Somms, and the Grand Tasting in Central Square · 5-min walk</div>
+            </div>
+          </a>
+        </div>
+        <!-- HOME_EVENT_LIST_END -->
       </div>
     </div>
   </div>
