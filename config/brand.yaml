@@ -1,0 +1,115 @@
+# Sun & Moon 30A — brand system for generated content.
+
+brand:
+  name: Sun & Moon 30A
+  website: https://sunandmoon30a.com
+  booking_url: https://book.sunandmoon30a.com
+  tagline: "Where every stay turns with the sky."
+  voice:
+    - warm, unhurried, a little celestial — sunrise-to-starlight imagery
+    - concrete and sensory (what guests see, taste, hear), never salesy filler
+    - always ends with one clear call to action (book, save the date, link in bio)
+  units:
+    - key: sun
+      label: Golden Sun
+      angle: bright mornings, golden-hour decks, coffee at sunrise
+    - key: moon
+      label: Blue Moon
+      angle: stargazing, firepit nights, slow evenings, deep quiet
+    - key: full
+      label: The whole property
+      angle: both cottages together — six bedrooms, one address, room for sixteen
+
+# Verified facts the copywriter may use. Keep this honest: anything not here
+# (or in the daily brief) is off-limits for generated copy.
+facts:
+  - Two cottages, one address, on Crystal Court in Seagrove Beach — a quiet residential lane just off Scenic 30A.
+  - Golden Sun (53 Crystal Court) — 3 bedrooms, 2 baths, sleeps 8; two king bedrooms plus a queen, fireplace, covered back patio with gas grill.
+  - Blue Moon (65 Crystal Court) — 3 bedrooms, 2 baths, sleeps 8; three king bedrooms (one with an en-suite jetted tub), fireplace, private back patio with gas grill.
+  - Booked together, the full property is 6 bedrooms, 4 baths, and sleeps 16 — built for reunions, milestone trips, and weddings.
+  - Closest beach access (Pelayo) is a 3-minute walk, just across Scenic 30A.
+  - A quiet community pool is steps from both cottages.
+  - Seaside is 1.8 miles / 5 minutes by car; WaterColor 2.4 miles / 9 minutes.
+  - Beach chairs, umbrella and a beach wagon are provided; fully equipped kitchens; smart TVs in every bedroom.
+  - Book direct at book.sunandmoon30a.com — live availability, real prices, instant confirmation.
+
+# Public photos on the website (Instagram needs a public JPEG URL, ≤ 8 MB,
+# aspect ratio between 4:5 and 1.91:1 — images/aerial-30a.jpg is 1.92:1 and
+# gets rejected, so it's not listed). Rotated by date so consecutive days
+# don't repeat the same shot.
+media:
+  base_url: https://sunandmoon30a.com
+  sun:
+    - photos/golden-sun/001.jpg
+    - photos/golden-sun/005.jpg
+    - photos/golden-sun/015.jpg
+    - photos/golden-sun/030.jpg
+    - photos/golden-sun/045.jpg
+  moon:
+    - photos/blue-moon/001.jpg
+    - photos/blue-moon/010.jpg
+    - photos/blue-moon/020.jpg
+    - photos/blue-moon/040.jpg
+    - photos/blue-moon/060.jpg
+    - photos/blue-moon/080.jpg
+  full:
+    - images/both-cottages.jpg
+    - images/sunset-seagrove.jpg
+  events:
+    - images/sunset-seagrove.jpg
+    - images/both-cottages.jpg
+    - photos/golden-sun/005.jpg
+    - photos/blue-moon/010.jpg
+
+hashtags:
+  always: ["#SunAndMoon30A", "#StayWithTheSky"]
+  rotating:
+    - "#30A"
+    - "#30Aliving"
+    - "#Seaside30A"
+    - "#Seagrove"
+    - "#EmeraldCoast"
+    - "#FloridaPanhandle"
+    - "#WeekendGetaway"
+    - "#VacationRental"
+    - "#BeachHouse"
+    - "#GulfCoast"
+
+max_auto_posts_per_day: 2   # per platform; evergreen human-photo prompts don't count
+
+# Content pillars: the engine cycles through these methodically so the feed
+# builds a brand instead of repeating one note. Weights set the mix.
+pillars:
+  - key: availability_spotlight
+    weight: 4
+    goal: bookings
+    description: >
+      Promote specific open dates from the live booking calendar — highest-scored
+      windows first (weekends, holidays, gap nights). Paired with a local event
+      whenever one lands on those dates.
+  - key: local_events
+    weight: 3
+    goal: bookings + brand
+    description: >
+      Festivals and happenings along 30A (from events.html) — announce,
+      countdown, and point at the cottage that's open that weekend.
+  - key: local_guide
+    weight: 1
+    goal: brand + SEO
+    description: Area highlights — trails, restaurants, seasonal happenings near the property.
+  - key: behind_the_scenes
+    weight: 1
+    goal: brand
+    description: Host story, prep rituals, design details of each cottage.
+  - key: guest_love
+    weight: 1
+    goal: trust
+    description: Reviews, UGC reposts (with permission), guest stories.
+
+# Intentional fee/rate promotion. Leave a rate null to omit pricing from copy.
+rates:
+  currency: USD
+  sun: null        # e.g. 189 — nightly rate to feature in availability posts
+  moon: null
+  full: null
+  promo_note: null # e.g. "Midweek stays 15% off in June"
