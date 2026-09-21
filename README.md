@@ -27,6 +27,12 @@ This is a self-contained, ready-to-deploy build of the Sun & Moon at 30A website
 
 Total: ~11 MB, 21 files. Fully static — no backend, no build step.
 
+Not published to the site (excluded via `.assetsignore`): `src/`, `config/`,
+`docs/`, `state/`, `queue/`, `.github/` — the **social content engine** that
+posts to Instagram and Facebook every morning. See
+[docs/social-engine.md](docs/social-engine.md) for how it works and the
+go-live checklist.
+
 ## Deploy to Cloudflare Pages
 
 ### Option A — Direct upload (no setup, fastest one-time deploy)

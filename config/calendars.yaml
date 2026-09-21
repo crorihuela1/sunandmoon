@@ -1,0 +1,53 @@
+# Availability + events sources for Sun & Moon 30A.
+#
+# Each unit can have any mix of sources; busy blocks from all of them are
+# merged. Booked nights are BUSY; everything else inside the horizon is open.
+#
+# The primary source is the site's own booking engine, which serves live
+# Vacay availability publicly (no key needed):
+#   https://book.sunandmoon30a.com/availability?property=<slug>&months=<n>
+# `blocked[].to` is the last blocked night (inclusive) — handled in code.
+
+units:
+  sun:
+    label: Golden Sun
+    sources:
+      - type: booking_api
+        url: https://book.sunandmoon30a.com/availability
+        property: golden-sun
+  moon:
+    label: Blue Moon
+    sources:
+      - type: booking_api
+        url: https://book.sunandmoon30a.com/availability
+        property: blue-moon
+  full:
+    # Both cottages together (sleeps 16). Only promoted when its window
+    # coincides with a top-scored Sun or Moon window; never alerted on
+    # (it's derived from the two cottages).
+    label: The whole property
+    derived: true
+    sources:
+      - type: booking_api
+        url: https://book.sunandmoon30a.com/availability
+        property: full-property
+
+# Local 30A events. events.html is maintained by the events-refresh routine
+# and is read straight from the repo checkout, so the social engine always
+# promotes the same events the website shows.
+events:
+  sources:
+    - type: site_events
+      path: events.html
+    # - type: ical
+    #   url: https://example.com/on-site-events.ics
+
+scoring:
+  horizon_days: 75         # how far ahead to look for open windows
+  weekend_bonus: 3         # Fri/Sat nights are the money nights
+  holiday_bonus: 5
+  near_term_bonus: 2       # open nights within 14 days get urgency
+  gap_night_bonus: 2       # 1-2 night gaps between bookings — fill them
+  event_bonus: 4           # a stay wrapped around a local event
+  min_window_nights: 2     # don't promote single-night gaps
+  max_stay_nights: 7       # longer openings are sliced into weekends / event stays

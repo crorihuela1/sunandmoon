@@ -1,0 +1,90 @@
+# Daily, zero-touch run of the Sun & Moon 30A content engine.
+#
+# Every run: reads live availability + 30A events, builds today's briefs,
+# has Claude write the captions, then publishes and emails the digest.
+# Nothing posts or emails for real until the repository VARIABLE
+# SOCIAL_LIVE is "true" and the platform secrets exist — until then every
+# step is a visible dry-run in this log.
+#
+# Scheduled workflows only run from the default branch (main).
+name: social-engine
+
+on:
+  schedule:
+    - cron: "0 13 * * *"   # 9:00 AM America/New_York during EDT (8:00 AM in EST)
+  workflow_dispatch:
+    inputs:
+      live:
+        description: "Publish for real (still requires SOCIAL_LIVE=true and secrets)"
+        type: boolean
+        default: true
+
+permissions:
+  contents: write
+
+concurrency:
+  group: social-engine
+  cancel-in-progress: false
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install
+        run: pip install -r requirements.txt
+
+      - name: Status
+        working-directory: src
+        env:
+          META_ACCESS_TOKEN: ${{ secrets.META_ACCESS_TOKEN }}
+          IG_BUSINESS_ACCOUNT_ID: ${{ secrets.IG_BUSINESS_ACCOUNT_ID }}
+          FB_PAGE_ID: ${{ secrets.FB_PAGE_ID }}
+        run: |
+          echo "SOCIAL_LIVE=${{ vars.SOCIAL_LIVE }}"
+          python -m sunmoon_social status
+
+      - name: Plan, publish, notify
+        working-directory: src
+        env:
+          SOCIAL_LIVE: ${{ vars.SOCIAL_LIVE }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          GOOGLE_CALENDAR_API_KEY: ${{ secrets.GOOGLE_CALENDAR_API_KEY }}
+          SMTP_HOST: ${{ secrets.SMTP_HOST }}
+          SMTP_PORT: ${{ secrets.SMTP_PORT }}
+          SMTP_USER: ${{ secrets.SMTP_USER }}
+          SMTP_PASS: ${{ secrets.SMTP_PASS }}
+          META_ACCESS_TOKEN: ${{ secrets.META_ACCESS_TOKEN }}
+          IG_BUSINESS_ACCOUNT_ID: ${{ secrets.IG_BUSINESS_ACCOUNT_ID }}
+          FB_PAGE_ID: ${{ secrets.FB_PAGE_ID }}
+          THREADS_ACCESS_TOKEN: ${{ secrets.THREADS_ACCESS_TOKEN }}
+          THREADS_USER_ID: ${{ secrets.THREADS_USER_ID }}
+          X_API_KEY: ${{ secrets.X_API_KEY }}
+          X_API_SECRET: ${{ secrets.X_API_SECRET }}
+          X_ACCESS_TOKEN: ${{ secrets.X_ACCESS_TOKEN }}
+          X_ACCESS_SECRET: ${{ secrets.X_ACCESS_SECRET }}
+          PINTEREST_ACCESS_TOKEN: ${{ secrets.PINTEREST_ACCESS_TOKEN }}
+          PINTEREST_BOARD_ID: ${{ secrets.PINTEREST_BOARD_ID }}
+          BUFFER_ACCESS_TOKEN: ${{ secrets.BUFFER_ACCESS_TOKEN }}
+        run: |
+          LIVE_FLAG=""
+          if [ "${{ github.event_name }}" = "schedule" ] || [ "${{ inputs.live }}" = "true" ]; then LIVE_FLAG="--live"; fi
+          python -m sunmoon_social plan
+          python -m sunmoon_social publish $LIVE_FLAG
+          python -m sunmoon_social digest $LIVE_FLAG
+
+      - name: Persist state & queue
+        run: |
+          git config user.name "sunmoon-engine"
+          git config user.email "alerts@sunandmoon30a.com"
+          git add state/ queue/ || true
+          git diff --cached --quiet || git commit -m "engine: state for $(date -u +%F) [skip ci]"
+          git pull --rebase --autostash origin ${{ github.ref_name }}
+          git push

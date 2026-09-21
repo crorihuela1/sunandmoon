@@ -4,3 +4,12 @@ README.md
 .assetsignore
 wrangler.jsonc
 _archive/
+# social content engine — never serve these
+.github/
+src/
+config/
+docs/
+state/
+queue/
+requirements.txt
+.env.example
