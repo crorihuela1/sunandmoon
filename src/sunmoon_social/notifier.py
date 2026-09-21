@@ -7,14 +7,15 @@ other workers already use it), otherwise plain SMTP.
 
 from __future__ import annotations
 
+import json
 import os
 import smtplib
-
-import requests
 from datetime import date, datetime, timedelta
 from email.message import EmailMessage
 
-from .config import load_brand, load_notifications
+import requests
+
+from .config import STATE_DIR, load_brand, load_calendars, load_notifications
 
 
 def _house(unit_key: str) -> str:
