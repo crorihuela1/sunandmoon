@@ -10,6 +10,7 @@ from datetime import date
 from .availability import detect_new_bookings
 from .config import QUEUE_DIR, active_platforms, load_apis, missing_secrets
 from .content_engine import build_queue
+from .copywriter import MODEL
 from .notifier import booking_alerts, daily_digest
 from .publishers import publish_queue
 
@@ -51,6 +52,24 @@ def cmd_digest(live: bool) -> None:
     print(f"  digest: {daily_digest(queue, results, dry_run=not live)}")
 
 
+def _check_copywriter() -> str:
+    """Validate ANTHROPIC_API_KEY with a cheap read-only call (no generation)."""
+    import os
+    if not os.environ.get("ANTHROPIC_API_KEY"):
+        return "no key — captions fall back to template copy"
+    try:
+        import anthropic
+    except ImportError:
+        return "anthropic SDK not installed"
+    try:
+        anthropic.Anthropic().models.retrieve(MODEL)
+        return f"LIVE ({MODEL})"
+    except anthropic.AuthenticationError:
+        return "KEY INVALID — captions fall back to template copy"
+    except Exception as exc:  # network, permissions, unknown model
+        return f"unreachable: {type(exc).__name__}"
+
+
 def cmd_status() -> None:
     apis = load_apis()
     active = active_platforms(apis)
@@ -60,6 +79,7 @@ def cmd_status() -> None:
             flag = "LIVE" if key in active and not missing_secrets(cfg) else (
                 "active, secrets missing" if key in active else cfg["status"])
             print(f"  {key:<26} {flag}")
+    print(f"\nCopywriter: {_check_copywriter()}")
 
 
 def main() -> int:

@@ -43,6 +43,7 @@ jobs:
       - name: Status
         working-directory: src
         env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           META_ACCESS_TOKEN: ${{ secrets.META_ACCESS_TOKEN }}
           IG_BUSINESS_ACCOUNT_ID: ${{ secrets.IG_BUSINESS_ACCOUNT_ID }}
           FB_PAGE_ID: ${{ secrets.FB_PAGE_ID }}
