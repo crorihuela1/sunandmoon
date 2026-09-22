@@ -6,7 +6,7 @@ import requests
 
 from .base import Publisher
 
-GRAPH = "https://graph.facebook.com/v23.0"
+GRAPH = "https://graph.facebook.com/v26.0"
 THREADS = "https://graph.threads.net/v1.0"
 
 
