@@ -67,12 +67,21 @@ def _unit_meta(brand: dict, key: str) -> dict:
     return {"key": key, "label": key.title(), "angle": ""}
 
 
-def _media(brand: dict, pool: str, seed: int) -> str:
+def _media(brand: dict, pool: str, seed: int) -> dict:
+    """Pick a photo and return its url plus its hand-written alt text.
+
+    Alt text is authored in brand.yaml against the real image — the copywriter
+    never sees the photo and must not describe it.
+    """
     media = brand.get("media", {}) or {}
-    files = media.get(pool) or media.get("events") or []
-    if not files:
-        return ""
-    return media.get("base_url", "").rstrip("/") + "/" + files[seed % len(files)].lstrip("/")
+    entries = media.get(pool) or media.get("events") or []
+    if not entries:
+        return {"media_url": "", "alt_text": "", "photo_shows": ""}
+    e = entries[seed % len(entries)]
+    base = media.get("base_url", "").rstrip("/")
+    return {"media_url": f"{base}/{e['file'].lstrip('/')}",
+            "alt_text": e.get("alt", ""),
+            "photo_shows": e.get("shows", "")}
 
 
 # --------------------------------------------------------------------------- #
@@ -104,7 +113,7 @@ def _availability_brief(brand: dict, w: OpenWindow, seed: int, event: PropertyEv
         "event": event.to_dict() if event else None,
         "event_summary": _fmt_event(event) if event else None,
         "rate": rate or None,
-        "media_url": _media(brand, w.unit, seed),
+        **_media(brand, w.unit, seed),
         "copy": {"instagram": ig, "facebook": fb},
         "hashtags": _hashtags(brand, seed=seed),
     }
@@ -130,7 +139,7 @@ def _event_brief(brand: dict, ev: PropertyEvent, seed: int, window: OpenWindow |
         "unit_label": _unit_meta(brand, window.unit)["label"] if window else None,
         "open_dates": _fmt_window(window) if window else None,
         "window": window.to_dict() if window else None,
-        "media_url": _media(brand, window.unit if window else "events", seed),
+        **_media(brand, window.unit if window else "events", seed),
         "copy": {"instagram": ig, "facebook": fb},
         "hashtags": _hashtags(brand, seed=seed),
     }
@@ -146,7 +155,7 @@ def _evergreen_brief(brand: dict, pillar: dict, seed: int) -> dict:
         "id": f"evergreen-{pillar['key']}-{seed}",
         "pillar": pillar["key"],
         "prompt": prompts.get(pillar["key"], pillar.get("description", "")),
-        "media_url": _media(brand, "events", seed),
+        **_media(brand, "events", seed),
         "copy": {"instagram": prompts.get(pillar["key"], ""), "facebook": prompts.get(pillar["key"], "")},
         "hashtags": _hashtags(brand, seed=seed),
         "needs_human_media": True,
@@ -272,14 +281,14 @@ def build_queue(for_date: date | None = None) -> dict:
     auto = [b for b in briefs if not b.get("needs_human_media")]
     if auto:
         written = write_captions({"posts": [
-            {k: v for k, v in b.items() if k not in ("copy", "media_url")} for b in auto]}, brand)
+            {k: v for k, v in b.items() if k not in ("copy", "media_url", "alt_text")}
+            for b in auto]}, brand)
         for b in auto:
             w = (written or {}).get(b["id"])
             if w:
                 b["copy"] = {"instagram": w["instagram"], "facebook": w["facebook"]}
                 b["hashtags"] = w["hashtags"]
-                b["alt_text"] = w["alt_text"]
-                b["copy_source"] = "claude"
+                b["copy_source"] = "claude"   # alt_text stays the authored one
             else:
                 b["copy_source"] = "template"
 

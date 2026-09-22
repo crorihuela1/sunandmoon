@@ -25,9 +25,8 @@ SCHEMA = {
                     "instagram": {"type": "string"},
                     "facebook": {"type": "string"},
                     "hashtags": {"type": "string"},
-                    "alt_text": {"type": "string"},
                 },
-                "required": ["id", "instagram", "facebook", "hashtags", "alt_text"],
+                "required": ["id", "instagram", "facebook", "hashtags"],
                 "additionalProperties": False,
             },
         }
@@ -64,11 +63,11 @@ Rules:
 - Amenities: name only what the facts list states. If you are not certain the property has something, leave it out. Never upgrade an indoor fireplace into an outdoor firepit, a patio into a deck, or a community pool into a private one.
 - No emojis except at most one, and only if it earns its place. No exclamation-point stacking. No "don't miss out" clichés.
 - hashtags: 6–10 tags, space-separated, always including the brand's fixed tags given in the brief.
-- alt_text: one plain sentence describing the photo for screen readers."""
+- Each brief says what the photo shows ("photo_shows"). Do not describe the image, but do not contradict it either — don't write about the porch over a kitchen photo. You never see the image, so never claim details of it."""
 
 
 def write_captions(brief: dict, brand: dict) -> dict[str, dict] | None:
-    """Return {post_id: {instagram, facebook, hashtags, alt_text}} or None on any failure."""
+    """Return {post_id: {instagram, facebook, hashtags}} or None on any failure."""
     if not os.environ.get("ANTHROPIC_API_KEY"):
         print("  copywriter: ANTHROPIC_API_KEY not set — using template copy")
         return None

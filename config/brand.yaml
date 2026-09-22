@@ -36,33 +36,66 @@ facts:
   - Beach chairs, umbrella and a beach wagon are provided.
   - Book direct at book.sunandmoon30a.com — live availability, real prices, instant confirmation.
 
-# Public photos on the website (Instagram needs a public JPEG URL, ≤ 8 MB,
-# aspect ratio between 4:5 and 1.91:1 — images/aerial-30a.jpg is 1.92:1 and
-# gets rejected, so it's not listed). Rotated by date so consecutive days
-# don't repeat the same shot.
+# Public photos on the website. Each entry carries hand-written alt text that
+# matches the actual image — the copywriter never sees the photo, so it must
+# not invent a description. `shows` tells the copywriter what is in frame so
+# the caption and the image agree.
+# Instagram requires a public JPEG, <= 8 MB, aspect ratio between 4:5 and
+# 1.91:1 — images/aerial-30a.jpg is 1.92:1 and is therefore not listed.
 media:
   base_url: https://sunandmoon30a.com
   sun:
-    - photos/golden-sun/001.jpg
-    - photos/golden-sun/005.jpg
-    - photos/golden-sun/015.jpg
-    - photos/golden-sun/030.jpg
-    - photos/golden-sun/045.jpg
+    - file: photos/golden-sun/001.jpg
+      shows: the cottage exterior at dusk
+      alt: Golden Sun cottage at dusk, warm light in the windows, tall palms in the foreground.
+    - file: photos/golden-sun/005.jpg
+      shows: the covered front porch
+      alt: The covered front porch at Golden Sun, with a cushioned wicker sofa and a ceiling fan.
+    - file: photos/golden-sun/030.jpg
+      shows: a king bedroom
+      alt: A king bedroom at Golden Sun with white bedding, a wall-mounted TV and a woven pendant light.
+    - file: photos/golden-sun/045.jpg
+      shows: an aerial of the neighbourhood
+      alt: Aerial view of Golden Sun and the surrounding Seagrove streets, with the Gulf beyond.
   moon:
-    - photos/blue-moon/001.jpg
-    - photos/blue-moon/010.jpg
-    - photos/blue-moon/020.jpg
-    - photos/blue-moon/040.jpg
-    - photos/blue-moon/060.jpg
-    - photos/blue-moon/080.jpg
+    - file: photos/blue-moon/001.jpg
+      shows: the cottage front
+      alt: The white front facade of Blue Moon cottage, with columns and a palm beside the walk.
+    - file: photos/blue-moon/010.jpg
+      shows: the open living room
+      alt: Blue Moon's open living room, pale sofas and armchairs in a bright coastal space.
+    - file: photos/blue-moon/020.jpg
+      shows: the kitchen
+      alt: Blue Moon's kitchen with white cabinets and a stainless range and refrigerator.
+    - file: photos/blue-moon/040.jpg
+      shows: an aerial over Seagrove to the Gulf
+      alt: Aerial view over Seagrove rooftops to the Gulf, the cottages among the streets below.
+    - file: photos/blue-moon/060.jpg
+      shows: the kitchen looking through to a bedroom
+      alt: Blue Moon's kitchen looking through to a bedroom, pendant lights over the counter.
+    - file: photos/blue-moon/080.jpg
+      shows: an aerial of both cottages
+      alt: Aerial view of the two cottages and their metal roofs among the Seagrove streets.
   full:
-    - images/both-cottages.jpg
-    - images/sunset-seagrove.jpg
+    - file: images/both-cottages.jpg
+      shows: both cottages from the street
+      alt: Golden Sun and Blue Moon side by side on Crystal Court, seen from the street under palms.
+    - file: images/sunset-seagrove.jpg
+      shows: the beach at sunset
+      alt: An adult and child silhouetted on the beach at sunset, the sun low over the Gulf.
   events:
-    - images/sunset-seagrove.jpg
-    - images/both-cottages.jpg
-    - photos/golden-sun/005.jpg
-    - photos/blue-moon/010.jpg
+    - file: images/sunset-seagrove.jpg
+      shows: the beach at sunset
+      alt: An adult and child silhouetted on the beach at sunset, the sun low over the Gulf.
+    - file: images/both-cottages.jpg
+      shows: both cottages from the street
+      alt: Golden Sun and Blue Moon side by side on Crystal Court, seen from the street under palms.
+    - file: photos/golden-sun/001.jpg
+      shows: the cottage exterior at dusk
+      alt: Golden Sun cottage at dusk, warm light in the windows, tall palms in the foreground.
+    - file: photos/blue-moon/010.jpg
+      shows: the open living room
+      alt: Blue Moon's open living room, pale sofas and armchairs in a bright coastal space.
 
 hashtags:
   always: ["#SunAndMoon30A", "#StayWithTheSky"]
