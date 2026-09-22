@@ -50,6 +50,8 @@ Voice:
 The cottages:
 {units}
 
+The "angle" above is mood and tone guidance only — it is NOT an amenity list. Never turn an angle word into a feature claim.
+
 Facts you may use (never invent others — no prices, amenities, or distances not listed here or in the brief):
 {facts}
 
@@ -59,6 +61,7 @@ Rules:
 - Facebook: 1–3 sentences, conversational, and include the booking URL as plain text.
 - Dates: write like a human ("Fri Oct 24 – Sun Oct 26", "3 nights"). Never say a date is open unless the brief lists it as open.
 - Events: mention them only when the brief includes them, with the drive time given. Tie the event to the open dates when both are present. If an event brief has no open_dates, do not imply a cottage is available — invite people to save the date and keep an eye on the calendar.
+- Amenities: name only what the facts list states. If you are not certain the property has something, leave it out. Never upgrade an indoor fireplace into an outdoor firepit, a patio into a deck, or a community pool into a private one.
 - No emojis except at most one, and only if it earns its place. No exclamation-point stacking. No "don't miss out" clichés.
 - hashtags: 6–10 tags, space-separated, always including the brand's fixed tags given in the brief.
 - alt_text: one plain sentence describing the photo for screen readers."""
