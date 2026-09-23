@@ -5,7 +5,8 @@ from __future__ import annotations
 import argparse
 import json
 import sys
-from datetime import date
+from datetime import date, datetime, timedelta
+from pathlib import Path
 
 from .availability import detect_new_bookings
 from .config import QUEUE_DIR, active_platforms, load_apis, missing_secrets
@@ -70,6 +71,26 @@ def _check_copywriter() -> str:
         return f"unreachable: {type(exc).__name__}"
 
 
+def cmd_preview(days: int, out_path: str) -> None:
+    """Build the next N days of content without publishing anything.
+
+    Writes one JSON payload for review. Point SUNMOON_QUEUE_DIR at a scratch
+    directory so the real queue/ history is not rewritten with future dates.
+    """
+    payload = {"generated_at": datetime.utcnow().isoformat() + "Z", "days": []}
+    for i in range(days):
+        day = date.today() + timedelta(days=i)
+        queue = build_queue(for_date=day)
+        payload["days"].append(queue)
+        photos = [b["media_url"].rsplit("/", 1)[-1] for b in queue["briefs"]]
+        print(f"  {day}  {queue['pillar_of_day']:<22} "
+              f"{len(queue['briefs'])} briefs  photos: {', '.join(photos) or '-'}")
+    out = Path(out_path)
+    out.parent.mkdir(parents=True, exist_ok=True)
+    out.write_text(json.dumps(payload, indent=2))
+    print(f"\nWrote {out} ({days} days)")
+
+
 def cmd_status() -> None:
     apis = load_apis()
     active = active_platforms(apis)
@@ -84,7 +105,9 @@ def cmd_status() -> None:
 
 def main() -> int:
     parser = argparse.ArgumentParser(prog="sunmoon_social")
-    parser.add_argument("command", choices=["plan", "publish", "digest", "status"])
+    parser.add_argument("command", choices=["plan", "publish", "digest", "status", "preview"])
+    parser.add_argument("--days", type=int, default=7, help="preview: how many days to build")
+    parser.add_argument("--out", default="preview/next-days.json", help="preview: output path")
     parser.add_argument("--live", action="store_true",
                         help="actually post/email (also requires SOCIAL_LIVE=true)")
     parser.add_argument("--dry-run", action="store_true", help="explicit no-op flag (default)")
@@ -98,6 +121,8 @@ def main() -> int:
         cmd_digest(live=args.live)
     elif args.command == "status":
         cmd_status()
+    elif args.command == "preview":
+        cmd_preview(days=args.days, out_path=args.out)
     return 0
 
 

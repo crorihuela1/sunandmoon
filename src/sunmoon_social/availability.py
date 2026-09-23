@@ -212,23 +212,34 @@ def promotable_stays(windows: list[OpenWindow], events: list["PropertyEvent"] | 
         cands[key] = st
 
     for w in windows:
-        if w.nights <= max_n:
-            add(w.unit, w.start, w.end, "gap" if w.nights <= 3 else "short_stay")
+        # The whole opening, when it is already a postable length.
+        if min_n <= w.nights <= max_n:
+            add(w.unit, w.start, w.end, "gap" if w.nights <= min_n + 1 else "short_stay")
+        # Weekend-anchored stays inside a longer opening. Anchored on Thursday
+        # or Friday and never shorter than min_n, so a "weekend" is a real
+        # 3-night stay (Fri/Sat/Sun), not a 2-night one.
         day = w.start
         while day < w.end:
-            if day.weekday() == 4:  # Friday
-                add(w.unit, day, min(day + timedelta(days=2), w.end), "weekend")
-                add(w.unit, day, min(day + timedelta(days=3), w.end), "long_weekend")
-            if day.weekday() == 3:  # Thursday
-                add(w.unit, day, min(day + timedelta(days=3), w.end), "long_weekend")
+            if day.weekday() in (3, 4):          # Thu or Fri
+                for length in (min_n, min_n + 1):
+                    end = day + timedelta(days=length)
+                    if end <= w.end:
+                        add(w.unit, day, end,
+                            "weekend" if day.weekday() == 4 and length == min_n else "long_weekend")
             day += timedelta(days=1)
+        # Stays wrapped around a local event, padded out to min_n when the
+        # event itself is shorter than a postable stay.
         for ev in events or []:
             if ev.recurring:
                 continue
             ev_s, ev_e = ev.start.date(), (ev.end or ev.start).date()
             start = max(w.start, ev_s - timedelta(days=1))
             end = min(w.end, ev_e + timedelta(days=1))
-            if end - start >= timedelta(days=min_n):
+            if (end - start).days < min_n:       # extend forward, then backward
+                end = min(w.end, start + timedelta(days=min_n))
+                if (end - start).days < min_n:
+                    start = max(w.start, end - timedelta(days=min_n))
+            if (end - start).days >= min_n:
                 add(w.unit, start, end, "event_stay", ev.title)
     stays = sorted(cands.values(), key=lambda s: (s.score, -abs(s.nights - 3)), reverse=True)
     return stays

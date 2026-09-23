@@ -49,5 +49,5 @@ scoring:
   near_term_bonus: 2       # open nights within 14 days get urgency
   gap_night_bonus: 2       # 1-2 night gaps between bookings — fill them
   event_bonus: 4           # a stay wrapped around a local event
-  min_window_nights: 2     # don't promote single-night gaps
+  min_window_nights: 3     # never promote a stay shorter than three nights
   max_stay_nights: 7       # longer openings are sliced into weekends / event stays

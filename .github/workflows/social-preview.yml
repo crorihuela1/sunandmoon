@@ -1,0 +1,51 @@
+# Build the next N days of social content WITHOUT publishing anything, and
+# commit the result for review. Nothing here posts, emails, or touches the
+# real queue/ history — SUNMOON_QUEUE_DIR is redirected to scratch.
+name: social-preview
+
+on:
+  workflow_dispatch:
+    inputs:
+      days:
+        description: "How many days to build"
+        default: "7"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: social-preview
+  cancel-in-progress: true
+
+jobs:
+  preview:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install
+        run: pip install -r requirements.txt
+
+      - name: Build preview
+        working-directory: src
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          SUNMOON_QUEUE_DIR: ${{ runner.temp }}/preview-queue
+        run: |
+          python -m sunmoon_social preview \
+            --days "${{ inputs.days }}" \
+            --out ../preview/next-days.json
+
+      - name: Commit the preview
+        run: |
+          git config user.name "sunmoon-engine"
+          git config user.email "alerts@sunandmoon30a.com"
+          git add preview/
+          git diff --cached --quiet || git commit -m "preview: next ${{ inputs.days }} days [skip ci]"
+          git pull --rebase --autostash origin ${{ github.ref_name }}
+          git push
