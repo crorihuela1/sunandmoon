@@ -16,8 +16,8 @@
   },
   {
     "platform": "meta_facebook",
-    "status": "error",
-    "reason": "400 OAuthException code 190/463: Error validating access token: Session has expired on Tuesday, 22-Sep-26 14:00:00 PDT. The current time is Tuesday, 22-Sep-26 17:02:31 PDT."
+    "status": "published",
+    "id": "122125227333399910"
   },
   {
     "platform": "meta_facebook",
@@ -26,7 +26,7 @@
   },
   {
     "platform": "meta_facebook",
-    "status": "error",
-    "reason": "400 OAuthException code 190/463: Error validating access token: Session has expired on Tuesday, 22-Sep-26 14:00:00 PDT. The current time is Tuesday, 22-Sep-26 17:02:31 PDT."
+    "status": "published",
+    "id": "122125227387399910"
   }
 ]
