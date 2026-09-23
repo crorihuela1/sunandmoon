@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-09-23T01:36:56.575234Z",
+  "generated_at": "2026-09-23T01:49:04.897734Z",
   "days": [
     {
       "date": "2026-09-23",
-      "generated_at": "2026-09-23T01:37:11.165489Z",
+      "generated_at": "2026-09-23T01:49:22.813822Z",
       "pillar_of_day": "local_guide",
       "active_platforms": [
         "meta_facebook",
@@ -235,7 +235,7 @@
           "title": "Central Square Cinema",
           "start": "2026-09-25T00:00:00",
           "end": null,
-          "description": "Through Oct 30 \u00b7 Fri 8 PM \u00b7 Free family movies on the big screen at the Seaside Amphitheater, Fridays at 8 PM \u2014 The Bad Guys 2 (Sept 18), Scoob! (Sept 25), Air Bud (Oct 2), Hoppers (Oct 9), Hotel Transylvania (Oct 16), Coco (Oct 23), and a Halloween feature (Oct 30) \u00b7 bring a blanket and the kids \u00b7 5-min walk or drive",
+          "description": "Through Oct 30 \u00b7 Fri 8 PM \u00b7 Free family movies on the big screen at the Seaside Amphitheater, Fridays at 8 PM \u2014 Scoob! (Sept 25), Air Bud (Oct 2), Hoppers (Oct 9), Hotel Transylvania (Oct 16), Coco (Oct 23), and a Halloween feature (Oct 30) \u00b7 bring a blanket and the kids \u00b7 5-min walk or drive",
           "location": "Free Movies Under the Stars",
           "url": "https://seasidefl.com/events/",
           "recurring": "Fri"
@@ -275,19 +275,19 @@
           "alt_text": "Blue Moon's kitchen looking through to a bedroom, pendant lights over the counter.",
           "photo_shows": "the kitchen looking through to a bedroom",
           "copy": {
-            "instagram": "Blue Moon is open Fri Oct 23 \u2013 Sun 25, three nights.\n\nCoffee in a fully stocked kitchen, three king bedrooms waiting down the hall.\n\nEvenings go slow here \u2014 fireplace lit, the lane outside gone quiet.\n\nDates are live now, link in bio.",
-            "facebook": "Blue Moon has Fri Oct 23 \u2013 Sun 25 open, three nights in Seagrove with three king bedrooms, a full kitchen and a fireplace for the quiet part of the evening. Live dates and instant confirmation at https://book.sunandmoon30a.com"
+            "instagram": "Blue Moon is open Fri Oct 23 \u2013 Sun 25, three nights.\n\nCoffee in a fully stocked kitchen, three king bedrooms down the hall, a fireplace for when the evening cools.\n\nPelayo beach access is a 3-minute walk across Scenic 30A.\n\nLink in bio to book direct.",
+            "facebook": "Blue Moon has three nights open, Fri Oct 23 \u2013 Sun 25: three king bedrooms, a fully equipped kitchen, a living-room fireplace for the cool evenings, and Pelayo beach access a 3-minute walk across Scenic 30A. Live dates and instant confirmation at book.sunandmoon30a.com"
           },
-          "hashtags": "#SunAndMoon30A #StayWithTheSky #Seaside30A #Seagrove #EmeraldCoast #FloridaPanhandle #30A #BlueMoonCottage",
+          "hashtags": "#SunAndMoon30A #StayWithTheSky #Seaside30A #Seagrove #EmeraldCoast #FloridaPanhandle #30AVacation #BlueMoonCottage",
           "copy_source": "claude"
         },
         {
           "id": "evergreen-local_guide-739882",
           "pillar": "local_guide",
           "prompt": "Share one nearby thing guests ask about (a trail, a table, a beach access) and tie it back to staying at the cottages.",
-          "media_url": "https://sunandmoon30a.com/photos/golden-sun/001.jpg",
-          "alt_text": "Golden Sun cottage at dusk, warm light in the windows, tall palms in the foreground.",
-          "photo_shows": "the cottage exterior at dusk",
+          "media_url": "https://sunandmoon30a.com/images/aerial-30a.jpg",
+          "alt_text": "Aerial view of the 30A shoreline with a coastal dune lake meeting the white sand.",
+          "photo_shows": "the coast and a coastal dune lake from the air",
           "copy": {
             "instagram": "Share one nearby thing guests ask about (a trail, a table, a beach access) and tie it back to staying at the cottages.",
             "facebook": "Share one nearby thing guests ask about (a trail, a table, a beach access) and tie it back to staying at the cottages."
@@ -320,14 +320,14 @@
             "kind": "event_stay",
             "event_title": "Destin Seafood Festival"
           },
-          "media_url": "https://sunandmoon30a.com/photos/blue-moon/080.jpg",
-          "alt_text": "Aerial view of the two cottages and their metal roofs among the Seagrove streets.",
-          "photo_shows": "an aerial of both cottages",
+          "media_url": "https://sunandmoon30a.com/images/both-cottages.jpg",
+          "alt_text": "Golden Sun and Blue Moon side by side on Crystal Court, seen from the street under palms.",
+          "photo_shows": "both cottages from the street",
           "copy": {
-            "instagram": "Destin Seafood Festival runs Sep 25\u201327 on the harbor boardwalk \u2014 about 35 minutes west.\n\nGulf shrimp, crab and grouper off the boats, five music stages, free to walk in.\n\nBlue Moon is open Sat Sep 26 \u2013 Mon 28, three nights on our quiet lane in Seagrove.\n\nCome back salty, grill on the back patio, let the evening go long. Book in bio.",
-            "facebook": "The Destin Seafood Festival takes over the harbor boardwalk Sep 25\u201327 \u2014 shrimp, crab and grouper straight off the boats, about a 35-minute drive west \u2014 and Blue Moon is open Sat Sep 26 \u2013 Mon 28 for three nights. Quiet lane in Seagrove, beach access three minutes away: https://book.sunandmoon30a.com"
+            "instagram": "Destin Seafood Festival runs Sep 25\u201327 on the harbor boardwalk \u2014 Gulf shrimp, crab and grouper off the boats, five music stages, about a 35-minute drive west.\n\nBlue Moon is open Sat Sep 26 \u2013 Mon 28, three nights.\n\nCome home to a quiet lane in Seagrove, three king bedrooms and a private back patio.\n\nLink in bio to book.",
+            "facebook": "The Destin Seafood Festival takes over the harbor boardwalk Sep 25\u201327 \u2014 shrimp, crab and grouper straight off the boats, five music stages, about a 35-minute drive west \u2014 and Blue Moon is open Sat Sep 26 \u2013 Mon 28 for three nights. Quiet lane in Seagrove, three king bedrooms, private back patio: book.sunandmoon30a.com"
           },
-          "hashtags": "#SunAndMoon30A #StayWithTheSky #Seaside30A #Seagrove #EmeraldCoast #FloridaPanhandle #DestinSeafoodFestival #30ALocal",
+          "hashtags": "#SunAndMoon30A #StayWithTheSky #Seaside30A #Seagrove #EmeraldCoast #FloridaPanhandle #DestinSeafoodFestival #30ATravel",
           "copy_source": "claude"
         }
       ],
@@ -355,18 +355,18 @@
           "media_url": "https://sunandmoon30a.com/photos/blue-moon/060.jpg",
           "alt_text": "Blue Moon's kitchen looking through to a bedroom, pendant lights over the counter.",
           "photo_shows": "the kitchen looking through to a bedroom",
-          "hashtags": "#SunAndMoon30A #StayWithTheSky #Seaside30A #Seagrove #EmeraldCoast #FloridaPanhandle #30A #BlueMoonCottage",
+          "hashtags": "#SunAndMoon30A #StayWithTheSky #Seaside30A #Seagrove #EmeraldCoast #FloridaPanhandle #30AVacation #BlueMoonCottage",
           "copy_source": "claude",
-          "copy": "Blue Moon is open Fri Oct 23 \u2013 Sun 25, three nights.\n\nCoffee in a fully stocked kitchen, three king bedrooms waiting down the hall.\n\nEvenings go slow here \u2014 fireplace lit, the lane outside gone quiet.\n\nDates are live now, link in bio."
+          "copy": "Blue Moon is open Fri Oct 23 \u2013 Sun 25, three nights.\n\nCoffee in a fully stocked kitchen, three king bedrooms down the hall, a fireplace for when the evening cools.\n\nPelayo beach access is a 3-minute walk across Scenic 30A.\n\nLink in bio to book direct."
         },
         {
           "platform": "meta_instagram",
           "id": "evergreen-local_guide-739882",
           "pillar": "local_guide",
           "prompt": "Share one nearby thing guests ask about (a trail, a table, a beach access) and tie it back to staying at the cottages.",
-          "media_url": "https://sunandmoon30a.com/photos/golden-sun/001.jpg",
-          "alt_text": "Golden Sun cottage at dusk, warm light in the windows, tall palms in the foreground.",
-          "photo_shows": "the cottage exterior at dusk",
+          "media_url": "https://sunandmoon30a.com/images/aerial-30a.jpg",
+          "alt_text": "Aerial view of the 30A shoreline with a coastal dune lake meeting the white sand.",
+          "photo_shows": "the coast and a coastal dune lake from the air",
           "hashtags": "#SunAndMoon30A #StayWithTheSky #Seaside30A #Seagrove #EmeraldCoast #FloridaPanhandle",
           "needs_human_media": true,
           "copy": "Share one nearby thing guests ask about (a trail, a table, a beach access) and tie it back to staying at the cottages."
@@ -397,12 +397,12 @@
             "kind": "event_stay",
             "event_title": "Destin Seafood Festival"
           },
-          "media_url": "https://sunandmoon30a.com/photos/blue-moon/080.jpg",
-          "alt_text": "Aerial view of the two cottages and their metal roofs among the Seagrove streets.",
-          "photo_shows": "an aerial of both cottages",
-          "hashtags": "#SunAndMoon30A #StayWithTheSky #Seaside30A #Seagrove #EmeraldCoast #FloridaPanhandle #DestinSeafoodFestival #30ALocal",
+          "media_url": "https://sunandmoon30a.com/images/both-cottages.jpg",
+          "alt_text": "Golden Sun and Blue Moon side by side on Crystal Court, seen from the street under palms.",
+          "photo_shows": "both cottages from the street",
+          "hashtags": "#SunAndMoon30A #StayWithTheSky #Seaside30A #Seagrove #EmeraldCoast #FloridaPanhandle #DestinSeafoodFestival #30ATravel",
           "copy_source": "claude",
-          "copy": "Destin Seafood Festival runs Sep 25\u201327 on the harbor boardwalk \u2014 about 35 minutes west.\n\nGulf shrimp, crab and grouper off the boats, five music stages, free to walk in.\n\nBlue Moon is open Sat Sep 26 \u2013 Mon 28, three nights on our quiet lane in Seagrove.\n\nCome back salty, grill on the back patio, let the evening go long. Book in bio."
+          "copy": "Destin Seafood Festival runs Sep 25\u201327 on the harbor boardwalk \u2014 Gulf shrimp, crab and grouper off the boats, five music stages, about a 35-minute drive west.\n\nBlue Moon is open Sat Sep 26 \u2013 Mon 28, three nights.\n\nCome home to a quiet lane in Seagrove, three king bedrooms and a private back patio.\n\nLink in bio to book."
         },
         {
           "platform": "meta_facebook",
@@ -427,18 +427,18 @@
           "media_url": "https://sunandmoon30a.com/photos/blue-moon/060.jpg",
           "alt_text": "Blue Moon's kitchen looking through to a bedroom, pendant lights over the counter.",
           "photo_shows": "the kitchen looking through to a bedroom",
-          "hashtags": "#SunAndMoon30A #StayWithTheSky #Seaside30A #Seagrove #EmeraldCoast #FloridaPanhandle #30A #BlueMoonCottage",
+          "hashtags": "#SunAndMoon30A #StayWithTheSky #Seaside30A #Seagrove #EmeraldCoast #FloridaPanhandle #30AVacation #BlueMoonCottage",
           "copy_source": "claude",
-          "copy": "Blue Moon has Fri Oct 23 \u2013 Sun 25 open, three nights in Seagrove with three king bedrooms, a full kitchen and a fireplace for the quiet part of the evening. Live dates and instant confirmation at https://book.sunandmoon30a.com"
+          "copy": "Blue Moon has three nights open, Fri Oct 23 \u2013 Sun 25: three king bedrooms, a fully equipped kitchen, a living-room fireplace for the cool evenings, and Pelayo beach access a 3-minute walk across Scenic 30A. Live dates and instant confirmation at book.sunandmoon30a.com"
         },
         {
           "platform": "meta_facebook",
           "id": "evergreen-local_guide-739882",
           "pillar": "local_guide",
           "prompt": "Share one nearby thing guests ask about (a trail, a table, a beach access) and tie it back to staying at the cottages.",
-          "media_url": "https://sunandmoon30a.com/photos/golden-sun/001.jpg",
-          "alt_text": "Golden Sun cottage at dusk, warm light in the windows, tall palms in the foreground.",
-          "photo_shows": "the cottage exterior at dusk",
+          "media_url": "https://sunandmoon30a.com/images/aerial-30a.jpg",
+          "alt_text": "Aerial view of the 30A shoreline with a coastal dune lake meeting the white sand.",
+          "photo_shows": "the coast and a coastal dune lake from the air",
           "hashtags": "#SunAndMoon30A #StayWithTheSky #Seaside30A #Seagrove #EmeraldCoast #FloridaPanhandle",
           "needs_human_media": true,
           "copy": "Share one nearby thing guests ask about (a trail, a table, a beach access) and tie it back to staying at the cottages."
@@ -469,12 +469,12 @@
             "kind": "event_stay",
             "event_title": "Destin Seafood Festival"
           },
-          "media_url": "https://sunandmoon30a.com/photos/blue-moon/080.jpg",
-          "alt_text": "Aerial view of the two cottages and their metal roofs among the Seagrove streets.",
-          "photo_shows": "an aerial of both cottages",
-          "hashtags": "#SunAndMoon30A #StayWithTheSky #Seaside30A #Seagrove #EmeraldCoast #FloridaPanhandle #DestinSeafoodFestival #30ALocal",
+          "media_url": "https://sunandmoon30a.com/images/both-cottages.jpg",
+          "alt_text": "Golden Sun and Blue Moon side by side on Crystal Court, seen from the street under palms.",
+          "photo_shows": "both cottages from the street",
+          "hashtags": "#SunAndMoon30A #StayWithTheSky #Seaside30A #Seagrove #EmeraldCoast #FloridaPanhandle #DestinSeafoodFestival #30ATravel",
           "copy_source": "claude",
-          "copy": "The Destin Seafood Festival takes over the harbor boardwalk Sep 25\u201327 \u2014 shrimp, crab and grouper straight off the boats, about a 35-minute drive west \u2014 and Blue Moon is open Sat Sep 26 \u2013 Mon 28 for three nights. Quiet lane in Seagrove, beach access three minutes away: https://book.sunandmoon30a.com"
+          "copy": "The Destin Seafood Festival takes over the harbor boardwalk Sep 25\u201327 \u2014 shrimp, crab and grouper straight off the boats, five music stages, about a 35-minute drive west \u2014 and Blue Moon is open Sat Sep 26 \u2013 Mon 28 for three nights. Quiet lane in Seagrove, three king bedrooms, private back patio: book.sunandmoon30a.com"
         }
       ],
       "busy_map": {
@@ -528,7 +528,7 @@
     },
     {
       "date": "2026-09-24",
-      "generated_at": "2026-09-23T01:37:23.876742Z",
+      "generated_at": "2026-09-23T01:49:34.206881Z",
       "pillar_of_day": "availability_spotlight",
       "active_platforms": [
         "meta_facebook",
@@ -760,7 +760,7 @@
           "title": "Central Square Cinema",
           "start": "2026-09-25T00:00:00",
           "end": null,
-          "description": "Through Oct 30 \u00b7 Fri 8 PM \u00b7 Free family movies on the big screen at the Seaside Amphitheater, Fridays at 8 PM \u2014 The Bad Guys 2 (Sept 18), Scoob! (Sept 25), Air Bud (Oct 2), Hoppers (Oct 9), Hotel Transylvania (Oct 16), Coco (Oct 23), and a Halloween feature (Oct 30) \u00b7 bring a blanket and the kids \u00b7 5-min walk or drive",
+          "description": "Through Oct 30 \u00b7 Fri 8 PM \u00b7 Free family movies on the big screen at the Seaside Amphitheater, Fridays at 8 PM \u2014 Scoob! (Sept 25), Air Bud (Oct 2), Hoppers (Oct 9), Hotel Transylvania (Oct 16), Coco (Oct 23), and a Halloween feature (Oct 30) \u00b7 bring a blanket and the kids \u00b7 5-min walk or drive",
           "location": "Free Movies Under the Stars",
           "url": "https://seasidefl.com/events/",
           "recurring": "Fri"
@@ -800,8 +800,8 @@
           "alt_text": "Aerial view of Golden Sun and the surrounding Seagrove streets, with the Gulf beyond.",
           "photo_shows": "an aerial of the neighbourhood",
           "copy": {
-            "instagram": "Thanksgiving week is open at Golden Sun \u2014 Thu Nov 26 \u2013 Sun 29, four nights.\n\nCoffee on the covered back patio, the grill going, sunset light down a quiet lane on Crystal Court.\n\nThree bedrooms, sleeps eight, and the beach walk-over is three minutes away.\n\nBook direct \u2014 link in bio.",
-            "facebook": "Golden Sun has Thanksgiving open \u2014 Thu Nov 26 through Sun Nov 29, four nights on Crystal Court in Seagrove, with the Pelayo beach access a three-minute walk across Scenic 30A. Three bedrooms, sleeps eight, covered back patio with a gas grill for the overflow cooking: book direct at https://book.sunandmoon30a.com"
+            "instagram": "Thanksgiving on Crystal Court: Thu Nov 26 \u2013 Sun 29, four nights in Golden Sun.\n\nCoffee on the covered back patio while the morning warms up, the grill going later, three bedrooms for eight.\n\nPelayo beach access is a 3-minute walk across Scenic 30A.\n\nBook direct \u2014 link in bio.",
+            "facebook": "Golden Sun is open Thu Nov 26 \u2013 Sun 29, four nights over Thanksgiving: three bedrooms, sleeps eight, a covered back patio with a gas grill, and the Pelayo beach access a 3-minute walk across Scenic 30A. Live dates and instant confirmation at https://book.sunandmoon30a.com"
           },
           "hashtags": "#SunAndMoon30A #StayWithTheSky #Seagrove #EmeraldCoast #FloridaPanhandle #WeekendGetaway",
           "copy_source": "claude"
@@ -837,8 +837,8 @@
           "alt_text": "The white front facade of Blue Moon cottage, with columns and a palm beside the walk.",
           "photo_shows": "the cottage front",
           "copy": {
-            "instagram": "Blue Moon is open Sat Sep 26 \u2013 Thu Oct 1, six nights.\n\nThe Destin Seafood Festival runs Sep 25\u201327 along the harbor boardwalk, about 35 minutes west \u2014 Gulf shrimp, crab and grouper off the boats.\n\nThen back to Crystal Court for a slow evening by the fireplace and a sky full of stars.\n\nBook direct \u2014 link in bio.",
-            "facebook": "Blue Moon is open Sat Sep 26 \u2013 Thu Oct 1 (six nights), which lines up with the Destin Seafood Festival Sep 25\u201327 on the harbor boardwalk, about a 35-minute drive west. Come home to three king bedrooms, a fireplace and a quiet lane in Seagrove \u2014 book direct at https://book.sunandmoon30a.com"
+            "instagram": "Blue Moon is open Sat Sep 26 \u2013 Thu Oct 1, six nights.\n\nThe Destin Seafood Festival runs Sep 25\u201327 along the harbor boardwalk, about a 35-minute drive west \u2014 Gulf shrimp and grouper straight off the boats.\n\nThen back to Crystal Court for a quiet evening by the fireplace.\n\nBook direct \u2014 link in bio.",
+            "facebook": "Six nights open in Blue Moon, Sat Sep 26 \u2013 Thu Oct 1 \u2014 good timing for the Destin Seafood Festival on the harbor boardwalk Sep 25\u201327, about a 35-minute drive west, with the quiet of Crystal Court and a living-room fireplace waiting when you get back. Real prices and instant confirmation at https://book.sunandmoon30a.com"
           },
           "hashtags": "#SunAndMoon30A #StayWithTheSky #EmeraldCoast #FloridaPanhandle #WeekendGetaway #VacationRental",
           "copy_source": "claude"
@@ -870,7 +870,7 @@
           "photo_shows": "an aerial of the neighbourhood",
           "hashtags": "#SunAndMoon30A #StayWithTheSky #Seagrove #EmeraldCoast #FloridaPanhandle #WeekendGetaway",
           "copy_source": "claude",
-          "copy": "Thanksgiving week is open at Golden Sun \u2014 Thu Nov 26 \u2013 Sun 29, four nights.\n\nCoffee on the covered back patio, the grill going, sunset light down a quiet lane on Crystal Court.\n\nThree bedrooms, sleeps eight, and the beach walk-over is three minutes away.\n\nBook direct \u2014 link in bio."
+          "copy": "Thanksgiving on Crystal Court: Thu Nov 26 \u2013 Sun 29, four nights in Golden Sun.\n\nCoffee on the covered back patio while the morning warms up, the grill going later, three bedrooms for eight.\n\nPelayo beach access is a 3-minute walk across Scenic 30A.\n\nBook direct \u2014 link in bio."
         },
         {
           "platform": "meta_instagram",
@@ -905,7 +905,7 @@
           "photo_shows": "the cottage front",
           "hashtags": "#SunAndMoon30A #StayWithTheSky #EmeraldCoast #FloridaPanhandle #WeekendGetaway #VacationRental",
           "copy_source": "claude",
-          "copy": "Blue Moon is open Sat Sep 26 \u2013 Thu Oct 1, six nights.\n\nThe Destin Seafood Festival runs Sep 25\u201327 along the harbor boardwalk, about 35 minutes west \u2014 Gulf shrimp, crab and grouper off the boats.\n\nThen back to Crystal Court for a slow evening by the fireplace and a sky full of stars.\n\nBook direct \u2014 link in bio."
+          "copy": "Blue Moon is open Sat Sep 26 \u2013 Thu Oct 1, six nights.\n\nThe Destin Seafood Festival runs Sep 25\u201327 along the harbor boardwalk, about a 35-minute drive west \u2014 Gulf shrimp and grouper straight off the boats.\n\nThen back to Crystal Court for a quiet evening by the fireplace.\n\nBook direct \u2014 link in bio."
         },
         {
           "platform": "meta_facebook",
@@ -932,7 +932,7 @@
           "photo_shows": "an aerial of the neighbourhood",
           "hashtags": "#SunAndMoon30A #StayWithTheSky #Seagrove #EmeraldCoast #FloridaPanhandle #WeekendGetaway",
           "copy_source": "claude",
-          "copy": "Golden Sun has Thanksgiving open \u2014 Thu Nov 26 through Sun Nov 29, four nights on Crystal Court in Seagrove, with the Pelayo beach access a three-minute walk across Scenic 30A. Three bedrooms, sleeps eight, covered back patio with a gas grill for the overflow cooking: book direct at https://book.sunandmoon30a.com"
+          "copy": "Golden Sun is open Thu Nov 26 \u2013 Sun 29, four nights over Thanksgiving: three bedrooms, sleeps eight, a covered back patio with a gas grill, and the Pelayo beach access a 3-minute walk across Scenic 30A. Live dates and instant confirmation at https://book.sunandmoon30a.com"
         },
         {
           "platform": "meta_facebook",
@@ -967,7 +967,7 @@
           "photo_shows": "the cottage front",
           "hashtags": "#SunAndMoon30A #StayWithTheSky #EmeraldCoast #FloridaPanhandle #WeekendGetaway #VacationRental",
           "copy_source": "claude",
-          "copy": "Blue Moon is open Sat Sep 26 \u2013 Thu Oct 1 (six nights), which lines up with the Destin Seafood Festival Sep 25\u201327 on the harbor boardwalk, about a 35-minute drive west. Come home to three king bedrooms, a fireplace and a quiet lane in Seagrove \u2014 book direct at https://book.sunandmoon30a.com"
+          "copy": "Six nights open in Blue Moon, Sat Sep 26 \u2013 Thu Oct 1 \u2014 good timing for the Destin Seafood Festival on the harbor boardwalk Sep 25\u201327, about a 35-minute drive west, with the quiet of Crystal Court and a living-room fireplace waiting when you get back. Real prices and instant confirmation at https://book.sunandmoon30a.com"
         }
       ],
       "busy_map": {
@@ -1021,7 +1021,7 @@
     },
     {
       "date": "2026-09-25",
-      "generated_at": "2026-09-23T01:37:33.877508Z",
+      "generated_at": "2026-09-23T01:49:43.705026Z",
       "pillar_of_day": "local_events",
       "active_platforms": [
         "meta_facebook",
@@ -1253,7 +1253,7 @@
           "title": "Central Square Cinema",
           "start": "2026-09-25T00:00:00",
           "end": null,
-          "description": "Through Oct 30 \u00b7 Fri 8 PM \u00b7 Free family movies on the big screen at the Seaside Amphitheater, Fridays at 8 PM \u2014 The Bad Guys 2 (Sept 18), Scoob! (Sept 25), Air Bud (Oct 2), Hoppers (Oct 9), Hotel Transylvania (Oct 16), Coco (Oct 23), and a Halloween feature (Oct 30) \u00b7 bring a blanket and the kids \u00b7 5-min walk or drive",
+          "description": "Through Oct 30 \u00b7 Fri 8 PM \u00b7 Free family movies on the big screen at the Seaside Amphitheater, Fridays at 8 PM \u2014 Scoob! (Sept 25), Air Bud (Oct 2), Hoppers (Oct 9), Hotel Transylvania (Oct 16), Coco (Oct 23), and a Halloween feature (Oct 30) \u00b7 bring a blanket and the kids \u00b7 5-min walk or drive",
           "location": "Free Movies Under the Stars",
           "url": "https://seasidefl.com/events/",
           "recurring": "Fri"
@@ -1295,14 +1295,14 @@
             "kind": "event_stay",
             "event_title": "Destin Seafood Festival"
           },
-          "media_url": "https://sunandmoon30a.com/photos/blue-moon/010.jpg",
-          "alt_text": "Blue Moon's open living room, pale sofas and armchairs in a bright coastal space.",
-          "photo_shows": "the open living room",
+          "media_url": "https://sunandmoon30a.com/images/sunset-seagrove.jpg",
+          "alt_text": "An adult and child silhouetted on the beach at sunset, the sun low over the Gulf.",
+          "photo_shows": "the beach at sunset",
           "copy": {
-            "instagram": "Gulf shrimp, crab and grouper straight off the boats \u2014 the Destin Seafood Festival runs Sep 25\u201327 along the harbor boardwalk, about a 35-minute drive west.\n\nBlue Moon is open Sat Sep 26 \u2013 Mon 28, three nights.\n\nHarbor music and fireworks Saturday, then a quiet living room and three king bedrooms waiting back on Crystal Court.\n\nBook direct \u2014 link in bio.",
-            "facebook": "The Destin Seafood Festival takes over the harbor boardwalk Sep 25\u201327 \u2014 more than 75 vendors, five music stages, and Saturday closing under fireworks, about a 35-minute drive west of us. Blue Moon is open Sat Sep 26 \u2013 Mon 28 (3 nights), so you can spend the day on the harbor and come home to a quiet lane three minutes from the Pelayo beach access. Live availability and instant confirmation at https://book.sunandmoon30a.com"
+            "instagram": "Gulf shrimp, crab and grouper straight off the boats \u2014 the Destin Seafood Festival runs Sept 25\u201327 along the harbor boardwalk, about 35 minutes west.\n\nBlue Moon is open Sat Sep 26 \u2013 Mon 28, three nights.\n\nHarbor music stages by day, deep quiet and a king bed by night.\n\nBook direct \u2014 link in bio.",
+            "facebook": "The Destin Seafood Festival takes over the harbor boardwalk Sept 25\u201327 (free to attend, 75+ vendors, five music stages, fireworks Saturday night) \u2014 about a 35-minute drive west of us. Blue Moon is open Sat Sep 26 \u2013 Mon 28, three nights, with three king bedrooms and a private back patio to come home to when the harbor winds down. Live availability and instant confirmation at https://book.sunandmoon30a.com"
           },
-          "hashtags": "#SunAndMoon30A #StayWithTheSky #EmeraldCoast #FloridaPanhandle #WeekendGetaway #VacationRental #DestinSeafoodFestival #SeagroveBeach",
+          "hashtags": "#SunAndMoon30A #StayWithTheSky #EmeraldCoast #FloridaPanhandle #WeekendGetaway #VacationRental #DestinSeafoodFestival #SeagroveBeach #30A",
           "copy_source": "claude"
         }
       ],
@@ -1333,12 +1333,12 @@
             "kind": "event_stay",
             "event_title": "Destin Seafood Festival"
           },
-          "media_url": "https://sunandmoon30a.com/photos/blue-moon/010.jpg",
-          "alt_text": "Blue Moon's open living room, pale sofas and armchairs in a bright coastal space.",
-          "photo_shows": "the open living room",
-          "hashtags": "#SunAndMoon30A #StayWithTheSky #EmeraldCoast #FloridaPanhandle #WeekendGetaway #VacationRental #DestinSeafoodFestival #SeagroveBeach",
+          "media_url": "https://sunandmoon30a.com/images/sunset-seagrove.jpg",
+          "alt_text": "An adult and child silhouetted on the beach at sunset, the sun low over the Gulf.",
+          "photo_shows": "the beach at sunset",
+          "hashtags": "#SunAndMoon30A #StayWithTheSky #EmeraldCoast #FloridaPanhandle #WeekendGetaway #VacationRental #DestinSeafoodFestival #SeagroveBeach #30A",
           "copy_source": "claude",
-          "copy": "Gulf shrimp, crab and grouper straight off the boats \u2014 the Destin Seafood Festival runs Sep 25\u201327 along the harbor boardwalk, about a 35-minute drive west.\n\nBlue Moon is open Sat Sep 26 \u2013 Mon 28, three nights.\n\nHarbor music and fireworks Saturday, then a quiet living room and three king bedrooms waiting back on Crystal Court.\n\nBook direct \u2014 link in bio."
+          "copy": "Gulf shrimp, crab and grouper straight off the boats \u2014 the Destin Seafood Festival runs Sept 25\u201327 along the harbor boardwalk, about 35 minutes west.\n\nBlue Moon is open Sat Sep 26 \u2013 Mon 28, three nights.\n\nHarbor music stages by day, deep quiet and a king bed by night.\n\nBook direct \u2014 link in bio."
         },
         {
           "platform": "meta_facebook",
@@ -1366,12 +1366,12 @@
             "kind": "event_stay",
             "event_title": "Destin Seafood Festival"
           },
-          "media_url": "https://sunandmoon30a.com/photos/blue-moon/010.jpg",
-          "alt_text": "Blue Moon's open living room, pale sofas and armchairs in a bright coastal space.",
-          "photo_shows": "the open living room",
-          "hashtags": "#SunAndMoon30A #StayWithTheSky #EmeraldCoast #FloridaPanhandle #WeekendGetaway #VacationRental #DestinSeafoodFestival #SeagroveBeach",
+          "media_url": "https://sunandmoon30a.com/images/sunset-seagrove.jpg",
+          "alt_text": "An adult and child silhouetted on the beach at sunset, the sun low over the Gulf.",
+          "photo_shows": "the beach at sunset",
+          "hashtags": "#SunAndMoon30A #StayWithTheSky #EmeraldCoast #FloridaPanhandle #WeekendGetaway #VacationRental #DestinSeafoodFestival #SeagroveBeach #30A",
           "copy_source": "claude",
-          "copy": "The Destin Seafood Festival takes over the harbor boardwalk Sep 25\u201327 \u2014 more than 75 vendors, five music stages, and Saturday closing under fireworks, about a 35-minute drive west of us. Blue Moon is open Sat Sep 26 \u2013 Mon 28 (3 nights), so you can spend the day on the harbor and come home to a quiet lane three minutes from the Pelayo beach access. Live availability and instant confirmation at https://book.sunandmoon30a.com"
+          "copy": "The Destin Seafood Festival takes over the harbor boardwalk Sept 25\u201327 (free to attend, 75+ vendors, five music stages, fireworks Saturday night) \u2014 about a 35-minute drive west of us. Blue Moon is open Sat Sep 26 \u2013 Mon 28, three nights, with three king bedrooms and a private back patio to come home to when the harbor winds down. Live availability and instant confirmation at https://book.sunandmoon30a.com"
         }
       ],
       "busy_map": {
@@ -1425,7 +1425,7 @@
     },
     {
       "date": "2026-09-26",
-      "generated_at": "2026-09-23T01:37:43.957061Z",
+      "generated_at": "2026-09-23T01:49:50.490661Z",
       "pillar_of_day": "behind_the_scenes",
       "active_platforms": [
         "meta_facebook",
@@ -1657,7 +1657,7 @@
           "title": "Central Square Cinema",
           "start": "2026-09-25T00:00:00",
           "end": null,
-          "description": "Through Oct 30 \u00b7 Fri 8 PM \u00b7 Free family movies on the big screen at the Seaside Amphitheater, Fridays at 8 PM \u2014 The Bad Guys 2 (Sept 18), Scoob! (Sept 25), Air Bud (Oct 2), Hoppers (Oct 9), Hotel Transylvania (Oct 16), Coco (Oct 23), and a Halloween feature (Oct 30) \u00b7 bring a blanket and the kids \u00b7 5-min walk or drive",
+          "description": "Through Oct 30 \u00b7 Fri 8 PM \u00b7 Free family movies on the big screen at the Seaside Amphitheater, Fridays at 8 PM \u2014 Scoob! (Sept 25), Air Bud (Oct 2), Hoppers (Oct 9), Hotel Transylvania (Oct 16), Coco (Oct 23), and a Halloween feature (Oct 30) \u00b7 bring a blanket and the kids \u00b7 5-min walk or drive",
           "location": "Free Movies Under the Stars",
           "url": "https://seasidefl.com/events/",
           "recurring": "Fri"
@@ -1693,23 +1693,23 @@
           "event": null,
           "event_summary": null,
           "rate": null,
-          "media_url": "https://sunandmoon30a.com/images/sunset-seagrove.jpg",
-          "alt_text": "An adult and child silhouetted on the beach at sunset, the sun low over the Gulf.",
-          "photo_shows": "the beach at sunset",
+          "media_url": "https://sunandmoon30a.com/images/both-cottages.jpg",
+          "alt_text": "Golden Sun and Blue Moon side by side on Crystal Court, seen from the street under palms.",
+          "photo_shows": "both cottages from the street",
           "copy": {
-            "instagram": "Thu Oct 29 \u2013 Sat Oct 31 is open across both cottages.\n\nSix bedrooms, one address on Crystal Court, room for sixteen.\n\nThree minutes on foot to the Pelayo beach access, so everyone can wander down for the last of the light.\n\nThree nights, one gathering \u2014 book direct, link in bio.",
-            "facebook": "Both cottages are open together Thu Oct 29 \u2013 Sat Oct 31: six bedrooms, four baths, and room for sixteen at one address in Seagrove Beach, with the Pelayo beach walkover three minutes away. Grab the three nights at book.sunandmoon30a.com \u2014 live availability and instant confirmation."
+            "instagram": "Thu Oct 29 \u2013 Sat 31 is open across both cottages.\n\nSix bedrooms, four baths, one address on Crystal Court \u2014 room for sixteen.\n\nPelayo beach access is a three-minute walk, and the quiet community pool is steps from either door.\n\nGather everyone. Book direct, link in bio.",
+            "facebook": "Both cottages are open together Thu Oct 29 \u2013 Sat 31 (3 nights) \u2014 six bedrooms, four baths, sleeps sixteen, all on one quiet lane in Seagrove Beach with the beach access a three-minute walk across Scenic 30A. Live availability and instant confirmation at https://book.sunandmoon30a.com"
           },
-          "hashtags": "#SunAndMoon30A #StayWithTheSky #FloridaPanhandle #WeekendGetaway #VacationRental #BeachHouse #30A #SeagroveBeach",
+          "hashtags": "#SunAndMoon30A #StayWithTheSky #FloridaPanhandle #WeekendGetaway #VacationRental #BeachHouse #SeagroveBeach #30A",
           "copy_source": "claude"
         },
         {
           "id": "evergreen-behind_the_scenes-739885",
           "pillar": "behind_the_scenes",
           "prompt": "Show the ritual: how the cottages get ready for guests \u2014 one detail, one photo, one sentence of why it matters.",
-          "media_url": "https://sunandmoon30a.com/images/both-cottages.jpg",
-          "alt_text": "Golden Sun and Blue Moon side by side on Crystal Court, seen from the street under palms.",
-          "photo_shows": "both cottages from the street",
+          "media_url": "https://sunandmoon30a.com/images/aerial-30a.jpg",
+          "alt_text": "Aerial view of the 30A shoreline with a coastal dune lake meeting the white sand.",
+          "photo_shows": "the coast and a coastal dune lake from the air",
           "copy": {
             "instagram": "Show the ritual: how the cottages get ready for guests \u2014 one detail, one photo, one sentence of why it matters.",
             "facebook": "Show the ritual: how the cottages get ready for guests \u2014 one detail, one photo, one sentence of why it matters."
@@ -1739,21 +1739,21 @@
           "event": null,
           "event_summary": null,
           "rate": null,
-          "media_url": "https://sunandmoon30a.com/images/sunset-seagrove.jpg",
-          "alt_text": "An adult and child silhouetted on the beach at sunset, the sun low over the Gulf.",
-          "photo_shows": "the beach at sunset",
-          "hashtags": "#SunAndMoon30A #StayWithTheSky #FloridaPanhandle #WeekendGetaway #VacationRental #BeachHouse #30A #SeagroveBeach",
+          "media_url": "https://sunandmoon30a.com/images/both-cottages.jpg",
+          "alt_text": "Golden Sun and Blue Moon side by side on Crystal Court, seen from the street under palms.",
+          "photo_shows": "both cottages from the street",
+          "hashtags": "#SunAndMoon30A #StayWithTheSky #FloridaPanhandle #WeekendGetaway #VacationRental #BeachHouse #SeagroveBeach #30A",
           "copy_source": "claude",
-          "copy": "Thu Oct 29 \u2013 Sat Oct 31 is open across both cottages.\n\nSix bedrooms, one address on Crystal Court, room for sixteen.\n\nThree minutes on foot to the Pelayo beach access, so everyone can wander down for the last of the light.\n\nThree nights, one gathering \u2014 book direct, link in bio."
+          "copy": "Thu Oct 29 \u2013 Sat 31 is open across both cottages.\n\nSix bedrooms, four baths, one address on Crystal Court \u2014 room for sixteen.\n\nPelayo beach access is a three-minute walk, and the quiet community pool is steps from either door.\n\nGather everyone. Book direct, link in bio."
         },
         {
           "platform": "meta_instagram",
           "id": "evergreen-behind_the_scenes-739885",
           "pillar": "behind_the_scenes",
           "prompt": "Show the ritual: how the cottages get ready for guests \u2014 one detail, one photo, one sentence of why it matters.",
-          "media_url": "https://sunandmoon30a.com/images/both-cottages.jpg",
-          "alt_text": "Golden Sun and Blue Moon side by side on Crystal Court, seen from the street under palms.",
-          "photo_shows": "both cottages from the street",
+          "media_url": "https://sunandmoon30a.com/images/aerial-30a.jpg",
+          "alt_text": "Aerial view of the 30A shoreline with a coastal dune lake meeting the white sand.",
+          "photo_shows": "the coast and a coastal dune lake from the air",
           "hashtags": "#SunAndMoon30A #StayWithTheSky #FloridaPanhandle #WeekendGetaway #VacationRental #BeachHouse",
           "needs_human_media": true,
           "copy": "Show the ritual: how the cottages get ready for guests \u2014 one detail, one photo, one sentence of why it matters."
@@ -1778,21 +1778,21 @@
           "event": null,
           "event_summary": null,
           "rate": null,
-          "media_url": "https://sunandmoon30a.com/images/sunset-seagrove.jpg",
-          "alt_text": "An adult and child silhouetted on the beach at sunset, the sun low over the Gulf.",
-          "photo_shows": "the beach at sunset",
-          "hashtags": "#SunAndMoon30A #StayWithTheSky #FloridaPanhandle #WeekendGetaway #VacationRental #BeachHouse #30A #SeagroveBeach",
+          "media_url": "https://sunandmoon30a.com/images/both-cottages.jpg",
+          "alt_text": "Golden Sun and Blue Moon side by side on Crystal Court, seen from the street under palms.",
+          "photo_shows": "both cottages from the street",
+          "hashtags": "#SunAndMoon30A #StayWithTheSky #FloridaPanhandle #WeekendGetaway #VacationRental #BeachHouse #SeagroveBeach #30A",
           "copy_source": "claude",
-          "copy": "Both cottages are open together Thu Oct 29 \u2013 Sat Oct 31: six bedrooms, four baths, and room for sixteen at one address in Seagrove Beach, with the Pelayo beach walkover three minutes away. Grab the three nights at book.sunandmoon30a.com \u2014 live availability and instant confirmation."
+          "copy": "Both cottages are open together Thu Oct 29 \u2013 Sat 31 (3 nights) \u2014 six bedrooms, four baths, sleeps sixteen, all on one quiet lane in Seagrove Beach with the beach access a three-minute walk across Scenic 30A. Live availability and instant confirmation at https://book.sunandmoon30a.com"
         },
         {
           "platform": "meta_facebook",
           "id": "evergreen-behind_the_scenes-739885",
           "pillar": "behind_the_scenes",
           "prompt": "Show the ritual: how the cottages get ready for guests \u2014 one detail, one photo, one sentence of why it matters.",
-          "media_url": "https://sunandmoon30a.com/images/both-cottages.jpg",
-          "alt_text": "Golden Sun and Blue Moon side by side on Crystal Court, seen from the street under palms.",
-          "photo_shows": "both cottages from the street",
+          "media_url": "https://sunandmoon30a.com/images/aerial-30a.jpg",
+          "alt_text": "Aerial view of the 30A shoreline with a coastal dune lake meeting the white sand.",
+          "photo_shows": "the coast and a coastal dune lake from the air",
           "hashtags": "#SunAndMoon30A #StayWithTheSky #FloridaPanhandle #WeekendGetaway #VacationRental #BeachHouse",
           "needs_human_media": true,
           "copy": "Show the ritual: how the cottages get ready for guests \u2014 one detail, one photo, one sentence of why it matters."
@@ -1849,7 +1849,7 @@
     },
     {
       "date": "2026-09-27",
-      "generated_at": "2026-09-23T01:37:57.631149Z",
+      "generated_at": "2026-09-23T01:50:03.279253Z",
       "pillar_of_day": "availability_spotlight",
       "active_platforms": [
         "meta_facebook",
@@ -2081,7 +2081,7 @@
           "title": "Central Square Cinema",
           "start": "2026-09-25T00:00:00",
           "end": null,
-          "description": "Through Oct 30 \u00b7 Fri 8 PM \u00b7 Free family movies on the big screen at the Seaside Amphitheater, Fridays at 8 PM \u2014 The Bad Guys 2 (Sept 18), Scoob! (Sept 25), Air Bud (Oct 2), Hoppers (Oct 9), Hotel Transylvania (Oct 16), Coco (Oct 23), and a Halloween feature (Oct 30) \u00b7 bring a blanket and the kids \u00b7 5-min walk or drive",
+          "description": "Through Oct 30 \u00b7 Fri 8 PM \u00b7 Free family movies on the big screen at the Seaside Amphitheater, Fridays at 8 PM \u2014 Scoob! (Sept 25), Air Bud (Oct 2), Hoppers (Oct 9), Hotel Transylvania (Oct 16), Coco (Oct 23), and a Halloween feature (Oct 30) \u00b7 bring a blanket and the kids \u00b7 5-min walk or drive",
           "location": "Free Movies Under the Stars",
           "url": "https://seasidefl.com/events/",
           "recurring": "Fri"
@@ -2129,10 +2129,10 @@
           "alt_text": "Blue Moon's kitchen with white cabinets and a stainless range and refrigerator.",
           "photo_shows": "the kitchen",
           "copy": {
-            "instagram": "Blue Moon is open Fri Oct 23 \u2013 Sun 25, three nights.\n\nSaturday morning the dachshunds run at Seaside's Halloweener Derby, 10 AM\u20132 PM, Oktoberfest food alongside \u2014 five minutes by car.\n\nBack by dark for a fire in the living room and a sky full of stars.\n\nBook direct, link in bio.",
-            "facebook": "Blue Moon has three nights open, Fri Oct 23 \u2013 Sun 25 \u2014 which puts you five minutes from Seaside for the Halloweener Derby and Oktoberfest on Saturday, 10 AM\u20132 PM, dachshund races and an all-breeds costume contest, free to watch. Coffee in the kitchen before the races, fireplace and deep quiet after. Live dates and instant confirmation at https://book.sunandmoon30a.com"
+            "instagram": "Blue Moon is open Fri Oct 23 \u2013 Sun 25, three nights.\n\nSaturday morning, the Halloweener Derby and Oktoberfest run 10\u20132 at the Seaside Amphitheater \u2014 dachshund races, all-breeds costume contest, five minutes by car.\n\nCoffee made in the full kitchen first, quiet back at the cottage after.\n\nLink in bio to book.",
+            "facebook": "Blue Moon has Fri Oct 23 \u2013 Sun 25 open (3 nights), which lines up with the Halloweener Derby and Oktoberfest at the Seaside Amphitheater on Saturday the 24th, 10 AM\u20132 PM \u2014 dachshund races, a costume contest, and Seaside is five minutes by car. Fill the kitchen, walk three minutes to the beach at Pelayo, and let the evenings go slow by the fireplace: book.sunandmoon30a.com"
           },
-          "hashtags": "#SunAndMoon30A #StayWithTheSky #WeekendGetaway #VacationRental #BeachHouse #GulfCoast #Seaside30A #SeagroveBeach",
+          "hashtags": "#SunAndMoon30A #StayWithTheSky #WeekendGetaway #VacationRental #BeachHouse #GulfCoast #SeasideFL #30AEvents",
           "copy_source": "claude"
         },
         {
@@ -2154,12 +2154,12 @@
           "event": null,
           "event_summary": null,
           "rate": null,
-          "media_url": "https://sunandmoon30a.com/photos/golden-sun/005.jpg",
-          "alt_text": "The covered front porch at Golden Sun, with a cushioned wicker sofa and a ceiling fan.",
-          "photo_shows": "the covered front porch",
+          "media_url": "https://sunandmoon30a.com/photos/golden-sun/001.jpg",
+          "alt_text": "Golden Sun cottage at dusk, warm light in the windows, tall palms in the foreground.",
+          "photo_shows": "the cottage exterior at dusk",
           "copy": {
-            "instagram": "Golden Sun is open Thu Nov 26 \u2013 Sun 29. Four nights over Thanksgiving.\n\nThree bedrooms, sleeps eight, a full kitchen for the whole spread.\n\nPelayo beach access is a three-minute walk across Scenic 30A, and the light goes gold by late afternoon.\n\nBook direct, link in bio.",
-            "facebook": "Golden Sun has four nights open over Thanksgiving, Thu Nov 26 \u2013 Sun 29 \u2014 three bedrooms, sleeps eight, a fully equipped kitchen, and Pelayo beach access a three-minute walk across Scenic 30A. Morning coffee outside, a fire in the living room once the sun drops. Real prices and instant confirmation at https://book.sunandmoon30a.com"
+            "instagram": "Golden Sun is open Thu Nov 26 \u2013 Sun 29, four nights over the holiday weekend.\n\nSleeps 8, three bedrooms, a fireplace for the cool evenings and a covered back patio with a gas grill.\n\nPelayo beach access is a three-minute walk across Scenic 30A.\n\nLink in bio to book.",
+            "facebook": "Golden Sun has Thu Nov 26 \u2013 Sun 29 open \u2014 four nights, sleeps 8, with a full kitchen for the big meal, a fireplace for after, and a covered back patio with a gas grill. The beach at Pelayo is a three-minute walk across Scenic 30A: book.sunandmoon30a.com"
           },
           "hashtags": "#SunAndMoon30A #StayWithTheSky #VacationRental #BeachHouse #GulfCoast #30A #SeagroveBeach #Thanksgiving",
           "copy_source": "claude"
@@ -2197,9 +2197,9 @@
           "media_url": "https://sunandmoon30a.com/photos/blue-moon/020.jpg",
           "alt_text": "Blue Moon's kitchen with white cabinets and a stainless range and refrigerator.",
           "photo_shows": "the kitchen",
-          "hashtags": "#SunAndMoon30A #StayWithTheSky #WeekendGetaway #VacationRental #BeachHouse #GulfCoast #Seaside30A #SeagroveBeach",
+          "hashtags": "#SunAndMoon30A #StayWithTheSky #WeekendGetaway #VacationRental #BeachHouse #GulfCoast #SeasideFL #30AEvents",
           "copy_source": "claude",
-          "copy": "Blue Moon is open Fri Oct 23 \u2013 Sun 25, three nights.\n\nSaturday morning the dachshunds run at Seaside's Halloweener Derby, 10 AM\u20132 PM, Oktoberfest food alongside \u2014 five minutes by car.\n\nBack by dark for a fire in the living room and a sky full of stars.\n\nBook direct, link in bio."
+          "copy": "Blue Moon is open Fri Oct 23 \u2013 Sun 25, three nights.\n\nSaturday morning, the Halloweener Derby and Oktoberfest run 10\u20132 at the Seaside Amphitheater \u2014 dachshund races, all-breeds costume contest, five minutes by car.\n\nCoffee made in the full kitchen first, quiet back at the cottage after.\n\nLink in bio to book."
         },
         {
           "platform": "meta_instagram",
@@ -2221,12 +2221,12 @@
           "event": null,
           "event_summary": null,
           "rate": null,
-          "media_url": "https://sunandmoon30a.com/photos/golden-sun/005.jpg",
-          "alt_text": "The covered front porch at Golden Sun, with a cushioned wicker sofa and a ceiling fan.",
-          "photo_shows": "the covered front porch",
+          "media_url": "https://sunandmoon30a.com/photos/golden-sun/001.jpg",
+          "alt_text": "Golden Sun cottage at dusk, warm light in the windows, tall palms in the foreground.",
+          "photo_shows": "the cottage exterior at dusk",
           "hashtags": "#SunAndMoon30A #StayWithTheSky #VacationRental #BeachHouse #GulfCoast #30A #SeagroveBeach #Thanksgiving",
           "copy_source": "claude",
-          "copy": "Golden Sun is open Thu Nov 26 \u2013 Sun 29. Four nights over Thanksgiving.\n\nThree bedrooms, sleeps eight, a full kitchen for the whole spread.\n\nPelayo beach access is a three-minute walk across Scenic 30A, and the light goes gold by late afternoon.\n\nBook direct, link in bio."
+          "copy": "Golden Sun is open Thu Nov 26 \u2013 Sun 29, four nights over the holiday weekend.\n\nSleeps 8, three bedrooms, a fireplace for the cool evenings and a covered back patio with a gas grill.\n\nPelayo beach access is a three-minute walk across Scenic 30A.\n\nLink in bio to book."
         },
         {
           "platform": "meta_facebook",
@@ -2259,9 +2259,9 @@
           "media_url": "https://sunandmoon30a.com/photos/blue-moon/020.jpg",
           "alt_text": "Blue Moon's kitchen with white cabinets and a stainless range and refrigerator.",
           "photo_shows": "the kitchen",
-          "hashtags": "#SunAndMoon30A #StayWithTheSky #WeekendGetaway #VacationRental #BeachHouse #GulfCoast #Seaside30A #SeagroveBeach",
+          "hashtags": "#SunAndMoon30A #StayWithTheSky #WeekendGetaway #VacationRental #BeachHouse #GulfCoast #SeasideFL #30AEvents",
           "copy_source": "claude",
-          "copy": "Blue Moon has three nights open, Fri Oct 23 \u2013 Sun 25 \u2014 which puts you five minutes from Seaside for the Halloweener Derby and Oktoberfest on Saturday, 10 AM\u20132 PM, dachshund races and an all-breeds costume contest, free to watch. Coffee in the kitchen before the races, fireplace and deep quiet after. Live dates and instant confirmation at https://book.sunandmoon30a.com"
+          "copy": "Blue Moon has Fri Oct 23 \u2013 Sun 25 open (3 nights), which lines up with the Halloweener Derby and Oktoberfest at the Seaside Amphitheater on Saturday the 24th, 10 AM\u20132 PM \u2014 dachshund races, a costume contest, and Seaside is five minutes by car. Fill the kitchen, walk three minutes to the beach at Pelayo, and let the evenings go slow by the fireplace: book.sunandmoon30a.com"
         },
         {
           "platform": "meta_facebook",
@@ -2283,12 +2283,12 @@
           "event": null,
           "event_summary": null,
           "rate": null,
-          "media_url": "https://sunandmoon30a.com/photos/golden-sun/005.jpg",
-          "alt_text": "The covered front porch at Golden Sun, with a cushioned wicker sofa and a ceiling fan.",
-          "photo_shows": "the covered front porch",
+          "media_url": "https://sunandmoon30a.com/photos/golden-sun/001.jpg",
+          "alt_text": "Golden Sun cottage at dusk, warm light in the windows, tall palms in the foreground.",
+          "photo_shows": "the cottage exterior at dusk",
           "hashtags": "#SunAndMoon30A #StayWithTheSky #VacationRental #BeachHouse #GulfCoast #30A #SeagroveBeach #Thanksgiving",
           "copy_source": "claude",
-          "copy": "Golden Sun has four nights open over Thanksgiving, Thu Nov 26 \u2013 Sun 29 \u2014 three bedrooms, sleeps eight, a fully equipped kitchen, and Pelayo beach access a three-minute walk across Scenic 30A. Morning coffee outside, a fire in the living room once the sun drops. Real prices and instant confirmation at https://book.sunandmoon30a.com"
+          "copy": "Golden Sun has Thu Nov 26 \u2013 Sun 29 open \u2014 four nights, sleeps 8, with a full kitchen for the big meal, a fireplace for after, and a covered back patio with a gas grill. The beach at Pelayo is a three-minute walk across Scenic 30A: book.sunandmoon30a.com"
         }
       ],
       "busy_map": {
@@ -2342,7 +2342,7 @@
     },
     {
       "date": "2026-09-28",
-      "generated_at": "2026-09-23T01:38:06.072005Z",
+      "generated_at": "2026-09-23T01:50:12.359248Z",
       "pillar_of_day": "guest_love",
       "active_platforms": [
         "meta_facebook",
@@ -2574,7 +2574,7 @@
           "title": "Central Square Cinema",
           "start": "2026-09-25T00:00:00",
           "end": null,
-          "description": "Through Oct 30 \u00b7 Fri 8 PM \u00b7 Free family movies on the big screen at the Seaside Amphitheater, Fridays at 8 PM \u2014 The Bad Guys 2 (Sept 18), Scoob! (Sept 25), Air Bud (Oct 2), Hoppers (Oct 9), Hotel Transylvania (Oct 16), Coco (Oct 23), and a Halloween feature (Oct 30) \u00b7 bring a blanket and the kids \u00b7 5-min walk or drive",
+          "description": "Through Oct 30 \u00b7 Fri 8 PM \u00b7 Free family movies on the big screen at the Seaside Amphitheater, Fridays at 8 PM \u2014 Scoob! (Sept 25), Air Bud (Oct 2), Hoppers (Oct 9), Hotel Transylvania (Oct 16), Coco (Oct 23), and a Halloween feature (Oct 30) \u00b7 bring a blanket and the kids \u00b7 5-min walk or drive",
           "location": "Free Movies Under the Stars",
           "url": "https://seasidefl.com/events/",
           "recurring": "Fri"
@@ -2610,12 +2610,12 @@
           "event": null,
           "event_summary": null,
           "rate": null,
-          "media_url": "https://sunandmoon30a.com/photos/golden-sun/030.jpg",
-          "alt_text": "A king bedroom at Golden Sun with white bedding, a wall-mounted TV and a woven pendant light.",
-          "photo_shows": "a king bedroom",
+          "media_url": "https://sunandmoon30a.com/photos/golden-sun/005.jpg",
+          "alt_text": "The covered front porch at Golden Sun, with a cushioned wicker sofa and a ceiling fan.",
+          "photo_shows": "the covered front porch",
           "copy": {
-            "instagram": "Golden Sun is open Thu Nov 26 \u2013 Sun 29, four nights over Thanksgiving.\n\nTwo king bedrooms plus a queen, sleeps eight, and slow bright mornings before anyone thinks about the oven.\n\nBeach access is a 3-minute walk across Scenic 30A.\n\nBook direct \u2014 link in bio.",
-            "facebook": "Golden Sun has Thanksgiving open: Thu Nov 26 \u2013 Sun 29, four nights in Seagrove Beach, with two king bedrooms plus a queen, a fully equipped kitchen, and Pelayo beach access a 3-minute walk away. Live dates and instant confirmation at https://book.sunandmoon30a.com"
+            "instagram": "Golden Sun is open Thu Nov 26 \u2013 Sun 29. Four nights over Thanksgiving.\n\nCoffee before anyone else is up, the quiet of Crystal Court, then a three-minute walk across 30A to Pelayo for the last of the afternoon light.\n\nThree bedrooms, sleeps 8, fireplace for the cool evenings.\n\nBook direct \u2014 link in bio.",
+            "facebook": "Golden Sun has Thanksgiving open: Thu Nov 26 \u2013 Sun 29, four nights on a quiet lane in Seagrove Beach, three minutes on foot from the Pelayo beach access. Three bedrooms, sleeps 8, with a fireplace for the evenings and a gas grill out back \u2014 book direct at https://book.sunandmoon30a.com"
           },
           "hashtags": "#SunAndMoon30A #StayWithTheSky #VacationRental #BeachHouse #GulfCoast #30A #SeagroveBeach #Thanksgiving",
           "copy_source": "claude"
@@ -2624,9 +2624,9 @@
           "id": "evergreen-guest_love-739887",
           "pillar": "guest_love",
           "prompt": "Repost a recent review or guest photo (with permission). Let their words carry it; add only a thank-you.",
-          "media_url": "https://sunandmoon30a.com/photos/golden-sun/001.jpg",
-          "alt_text": "Golden Sun cottage at dusk, warm light in the windows, tall palms in the foreground.",
-          "photo_shows": "the cottage exterior at dusk",
+          "media_url": "https://sunandmoon30a.com/images/sunset-seagrove.jpg",
+          "alt_text": "An adult and child silhouetted on the beach at sunset, the sun low over the Gulf.",
+          "photo_shows": "the beach at sunset",
           "copy": {
             "instagram": "Repost a recent review or guest photo (with permission). Let their words carry it; add only a thank-you.",
             "facebook": "Repost a recent review or guest photo (with permission). Let their words carry it; add only a thank-you."
@@ -2656,21 +2656,21 @@
           "event": null,
           "event_summary": null,
           "rate": null,
-          "media_url": "https://sunandmoon30a.com/photos/golden-sun/030.jpg",
-          "alt_text": "A king bedroom at Golden Sun with white bedding, a wall-mounted TV and a woven pendant light.",
-          "photo_shows": "a king bedroom",
+          "media_url": "https://sunandmoon30a.com/photos/golden-sun/005.jpg",
+          "alt_text": "The covered front porch at Golden Sun, with a cushioned wicker sofa and a ceiling fan.",
+          "photo_shows": "the covered front porch",
           "hashtags": "#SunAndMoon30A #StayWithTheSky #VacationRental #BeachHouse #GulfCoast #30A #SeagroveBeach #Thanksgiving",
           "copy_source": "claude",
-          "copy": "Golden Sun is open Thu Nov 26 \u2013 Sun 29, four nights over Thanksgiving.\n\nTwo king bedrooms plus a queen, sleeps eight, and slow bright mornings before anyone thinks about the oven.\n\nBeach access is a 3-minute walk across Scenic 30A.\n\nBook direct \u2014 link in bio."
+          "copy": "Golden Sun is open Thu Nov 26 \u2013 Sun 29. Four nights over Thanksgiving.\n\nCoffee before anyone else is up, the quiet of Crystal Court, then a three-minute walk across 30A to Pelayo for the last of the afternoon light.\n\nThree bedrooms, sleeps 8, fireplace for the cool evenings.\n\nBook direct \u2014 link in bio."
         },
         {
           "platform": "meta_instagram",
           "id": "evergreen-guest_love-739887",
           "pillar": "guest_love",
           "prompt": "Repost a recent review or guest photo (with permission). Let their words carry it; add only a thank-you.",
-          "media_url": "https://sunandmoon30a.com/photos/golden-sun/001.jpg",
-          "alt_text": "Golden Sun cottage at dusk, warm light in the windows, tall palms in the foreground.",
-          "photo_shows": "the cottage exterior at dusk",
+          "media_url": "https://sunandmoon30a.com/images/sunset-seagrove.jpg",
+          "alt_text": "An adult and child silhouetted on the beach at sunset, the sun low over the Gulf.",
+          "photo_shows": "the beach at sunset",
           "hashtags": "#SunAndMoon30A #StayWithTheSky #VacationRental #BeachHouse #GulfCoast #30A",
           "needs_human_media": true,
           "copy": "Repost a recent review or guest photo (with permission). Let their words carry it; add only a thank-you."
@@ -2695,21 +2695,21 @@
           "event": null,
           "event_summary": null,
           "rate": null,
-          "media_url": "https://sunandmoon30a.com/photos/golden-sun/030.jpg",
-          "alt_text": "A king bedroom at Golden Sun with white bedding, a wall-mounted TV and a woven pendant light.",
-          "photo_shows": "a king bedroom",
+          "media_url": "https://sunandmoon30a.com/photos/golden-sun/005.jpg",
+          "alt_text": "The covered front porch at Golden Sun, with a cushioned wicker sofa and a ceiling fan.",
+          "photo_shows": "the covered front porch",
           "hashtags": "#SunAndMoon30A #StayWithTheSky #VacationRental #BeachHouse #GulfCoast #30A #SeagroveBeach #Thanksgiving",
           "copy_source": "claude",
-          "copy": "Golden Sun has Thanksgiving open: Thu Nov 26 \u2013 Sun 29, four nights in Seagrove Beach, with two king bedrooms plus a queen, a fully equipped kitchen, and Pelayo beach access a 3-minute walk away. Live dates and instant confirmation at https://book.sunandmoon30a.com"
+          "copy": "Golden Sun has Thanksgiving open: Thu Nov 26 \u2013 Sun 29, four nights on a quiet lane in Seagrove Beach, three minutes on foot from the Pelayo beach access. Three bedrooms, sleeps 8, with a fireplace for the evenings and a gas grill out back \u2014 book direct at https://book.sunandmoon30a.com"
         },
         {
           "platform": "meta_facebook",
           "id": "evergreen-guest_love-739887",
           "pillar": "guest_love",
           "prompt": "Repost a recent review or guest photo (with permission). Let their words carry it; add only a thank-you.",
-          "media_url": "https://sunandmoon30a.com/photos/golden-sun/001.jpg",
-          "alt_text": "Golden Sun cottage at dusk, warm light in the windows, tall palms in the foreground.",
-          "photo_shows": "the cottage exterior at dusk",
+          "media_url": "https://sunandmoon30a.com/images/sunset-seagrove.jpg",
+          "alt_text": "An adult and child silhouetted on the beach at sunset, the sun low over the Gulf.",
+          "photo_shows": "the beach at sunset",
           "hashtags": "#SunAndMoon30A #StayWithTheSky #VacationRental #BeachHouse #GulfCoast #30A",
           "needs_human_media": true,
           "copy": "Repost a recent review or guest photo (with permission). Let their words carry it; add only a thank-you."
@@ -2766,7 +2766,7 @@
     },
     {
       "date": "2026-09-29",
-      "generated_at": "2026-09-23T01:38:17.399541Z",
+      "generated_at": "2026-09-23T01:50:23.514854Z",
       "pillar_of_day": "local_events",
       "active_platforms": [
         "meta_facebook",
@@ -2998,7 +2998,7 @@
           "title": "Central Square Cinema",
           "start": "2026-09-25T00:00:00",
           "end": null,
-          "description": "Through Oct 30 \u00b7 Fri 8 PM \u00b7 Free family movies on the big screen at the Seaside Amphitheater, Fridays at 8 PM \u2014 The Bad Guys 2 (Sept 18), Scoob! (Sept 25), Air Bud (Oct 2), Hoppers (Oct 9), Hotel Transylvania (Oct 16), Coco (Oct 23), and a Halloween feature (Oct 30) \u00b7 bring a blanket and the kids \u00b7 5-min walk or drive",
+          "description": "Through Oct 30 \u00b7 Fri 8 PM \u00b7 Free family movies on the big screen at the Seaside Amphitheater, Fridays at 8 PM \u2014 Scoob! (Sept 25), Air Bud (Oct 2), Hoppers (Oct 9), Hotel Transylvania (Oct 16), Coco (Oct 23), and a Halloween feature (Oct 30) \u00b7 bring a blanket and the kids \u00b7 5-min walk or drive",
           "location": "Free Movies Under the Stars",
           "url": "https://seasidefl.com/events/",
           "recurring": "Fri"
@@ -3040,14 +3040,14 @@
             "kind": "event_stay",
             "event_title": "Harvest Wine & Food Festival"
           },
-          "media_url": "https://sunandmoon30a.com/photos/blue-moon/040.jpg",
-          "alt_text": "Aerial view over Seagrove rooftops to the Gulf, the cottages among the streets below.",
-          "photo_shows": "an aerial over Seagrove to the Gulf",
+          "media_url": "https://sunandmoon30a.com/images/aerial-30a.jpg",
+          "alt_text": "Aerial view of the 30A shoreline with a coastal dune lake meeting the white sand.",
+          "photo_shows": "the coast and a coastal dune lake from the air",
           "copy": {
-            "instagram": "The Harvest Wine & Food Festival lands in WaterColor Oct 15\u201318 \u2014 four days of winemaker dinners and the Grand Tasting in Cerulean Park, a 10-minute drive west.\n\nSave that one to the calendar.\n\nBefore then, Blue Moon has three nights open: Tue Sep 29 \u2013 Thu Oct 1. Three king bedrooms, quiet evenings, the Gulf a three-minute walk across Scenic 30A.\n\nBook direct \u2014 link in bio.",
-            "facebook": "WaterColor's Harvest Wine & Food Festival runs Oct 15\u201318 this year, about a 10-minute drive west \u2014 worth marking on the calendar. If you'd rather come early, Blue Moon has three nights open Tue Sep 29 \u2013 Thu Oct 1: three king bedrooms, a private back patio, and the Pelayo beach access a 3-minute walk away. Live dates and instant confirmation at https://book.sunandmoon30a.com"
+            "instagram": "Harvest Wine & Food Festival returns to WaterColor Oct 15\u201318 \u2014 Grand Tasting Saturday the 17th in Cerulean Park, 1\u20134 PM, a 9-minute drive east.\n\nMark it on the calendar now.\n\nBefore then, Blue Moon has three quiet nights open: Tue Sep 29 \u2013 Thu Oct 1. Three king bedrooms, a fireplace for the first cool evening, the beach three minutes up the lane.\n\nBook the September nights or watch the calendar for October \u2014 link in bio.",
+            "facebook": "The 10th annual Harvest Wine & Food Festival runs Oct 15\u201318 in WaterColor, a 9-minute drive away, with the Grand Tasting Saturday the 17th from 1\u20134 PM in Cerulean Park \u2014 worth putting on the calendar early. Ahead of it, Blue Moon has three nights open, Tue Sep 29 \u2013 Thu Oct 1: three king bedrooms, a living-room fireplace, and Pelayo beach access a 3-minute walk across Scenic 30A. Live dates and instant confirmation at https://book.sunandmoon30a.com"
           },
-          "hashtags": "#SunAndMoon30A #StayWithTheSky #BeachHouse #GulfCoast #30A #30Aliving #SeagroveBeach #HarvestWineAndFoodFestival #WaterColorFL",
+          "hashtags": "#SunAndMoon30A #StayWithTheSky #BeachHouse #GulfCoast #30A #30Aliving #WaterColorFL #HarvestWineAndFoodFestival #SeagroveBeach",
           "copy_source": "claude"
         }
       ],
@@ -3078,12 +3078,12 @@
             "kind": "event_stay",
             "event_title": "Harvest Wine & Food Festival"
           },
-          "media_url": "https://sunandmoon30a.com/photos/blue-moon/040.jpg",
-          "alt_text": "Aerial view over Seagrove rooftops to the Gulf, the cottages among the streets below.",
-          "photo_shows": "an aerial over Seagrove to the Gulf",
-          "hashtags": "#SunAndMoon30A #StayWithTheSky #BeachHouse #GulfCoast #30A #30Aliving #SeagroveBeach #HarvestWineAndFoodFestival #WaterColorFL",
+          "media_url": "https://sunandmoon30a.com/images/aerial-30a.jpg",
+          "alt_text": "Aerial view of the 30A shoreline with a coastal dune lake meeting the white sand.",
+          "photo_shows": "the coast and a coastal dune lake from the air",
+          "hashtags": "#SunAndMoon30A #StayWithTheSky #BeachHouse #GulfCoast #30A #30Aliving #WaterColorFL #HarvestWineAndFoodFestival #SeagroveBeach",
           "copy_source": "claude",
-          "copy": "The Harvest Wine & Food Festival lands in WaterColor Oct 15\u201318 \u2014 four days of winemaker dinners and the Grand Tasting in Cerulean Park, a 10-minute drive west.\n\nSave that one to the calendar.\n\nBefore then, Blue Moon has three nights open: Tue Sep 29 \u2013 Thu Oct 1. Three king bedrooms, quiet evenings, the Gulf a three-minute walk across Scenic 30A.\n\nBook direct \u2014 link in bio."
+          "copy": "Harvest Wine & Food Festival returns to WaterColor Oct 15\u201318 \u2014 Grand Tasting Saturday the 17th in Cerulean Park, 1\u20134 PM, a 9-minute drive east.\n\nMark it on the calendar now.\n\nBefore then, Blue Moon has three quiet nights open: Tue Sep 29 \u2013 Thu Oct 1. Three king bedrooms, a fireplace for the first cool evening, the beach three minutes up the lane.\n\nBook the September nights or watch the calendar for October \u2014 link in bio."
         },
         {
           "platform": "meta_facebook",
@@ -3111,12 +3111,12 @@
             "kind": "event_stay",
             "event_title": "Harvest Wine & Food Festival"
           },
-          "media_url": "https://sunandmoon30a.com/photos/blue-moon/040.jpg",
-          "alt_text": "Aerial view over Seagrove rooftops to the Gulf, the cottages among the streets below.",
-          "photo_shows": "an aerial over Seagrove to the Gulf",
-          "hashtags": "#SunAndMoon30A #StayWithTheSky #BeachHouse #GulfCoast #30A #30Aliving #SeagroveBeach #HarvestWineAndFoodFestival #WaterColorFL",
+          "media_url": "https://sunandmoon30a.com/images/aerial-30a.jpg",
+          "alt_text": "Aerial view of the 30A shoreline with a coastal dune lake meeting the white sand.",
+          "photo_shows": "the coast and a coastal dune lake from the air",
+          "hashtags": "#SunAndMoon30A #StayWithTheSky #BeachHouse #GulfCoast #30A #30Aliving #WaterColorFL #HarvestWineAndFoodFestival #SeagroveBeach",
           "copy_source": "claude",
-          "copy": "WaterColor's Harvest Wine & Food Festival runs Oct 15\u201318 this year, about a 10-minute drive west \u2014 worth marking on the calendar. If you'd rather come early, Blue Moon has three nights open Tue Sep 29 \u2013 Thu Oct 1: three king bedrooms, a private back patio, and the Pelayo beach access a 3-minute walk away. Live dates and instant confirmation at https://book.sunandmoon30a.com"
+          "copy": "The 10th annual Harvest Wine & Food Festival runs Oct 15\u201318 in WaterColor, a 9-minute drive away, with the Grand Tasting Saturday the 17th from 1\u20134 PM in Cerulean Park \u2014 worth putting on the calendar early. Ahead of it, Blue Moon has three nights open, Tue Sep 29 \u2013 Thu Oct 1: three king bedrooms, a living-room fireplace, and Pelayo beach access a 3-minute walk across Scenic 30A. Live dates and instant confirmation at https://book.sunandmoon30a.com"
         }
       ],
       "busy_map": {
