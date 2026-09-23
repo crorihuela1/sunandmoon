@@ -17,7 +17,7 @@ import json
 from datetime import date, datetime, timedelta
 
 from .availability import OpenWindow, PropertyEvent, open_windows, promotable_stays, upcoming_events
-from .config import QUEUE_DIR, active_platforms, load_apis, load_brand
+from .config import QUEUE_DIR, STATE_DIR, active_platforms, load_apis, load_brand
 from .copywriter import write_captions
 
 
@@ -67,32 +67,60 @@ def _unit_meta(brand: dict, key: str) -> dict:
     return {"key": key, "label": key.title(), "angle": ""}
 
 
-def _media(brand: dict, pool: str, seed: int, used: set | None = None) -> dict:
+RECENT_PHOTOS = "recent_photos.json"
+RECENT_KEEP = 12          # roughly a week of posts
+
+
+def _load_recent() -> list[str]:
+    f = STATE_DIR / RECENT_PHOTOS
+    if not f.exists():
+        return []
+    try:
+        return json.loads(f.read_text())
+    except (ValueError, OSError):
+        return []
+
+
+def _save_recent(recent: list[str]) -> None:
+    STATE_DIR.mkdir(parents=True, exist_ok=True)
+    (STATE_DIR / RECENT_PHOTOS).write_text(json.dumps(recent[:RECENT_KEEP], indent=2))
+
+
+def _media(brand: dict, pool: str, seed: int, used: set | None = None,
+           recent: list[str] | None = None) -> dict:
     """Pick a photo and return its url plus its hand-written alt text.
 
     Alt text is authored in brand.yaml against the real image — the copywriter
     never sees the photo and must not describe it.
 
     `used` carries the files already claimed by earlier briefs in the same run,
-    so two posts on one day never share a photo. Selection still starts at a
-    date-derived offset, so the same slot varies day to day. If a pool is
-    exhausted it falls back to the events pool, then to repeating rather than
-    posting with no image at all.
+    so two posts on one day never share a photo. `recent` is the files used on
+    previous days (most recent first, persisted in state/), so the choice also
+    avoids repeating across the week; when every candidate has been used
+    recently it takes the least recently used one. If a pool is exhausted it
+    falls back to the events pool, then to repeating rather than posting with
+    no image at all.
     """
     media = brand.get("media", {}) or {}
     base = media.get("base_url", "").rstrip("/")
     used = used if used is not None else set()
+
+    recent = recent if recent is not None else []
 
     def pick(entries):
         if not entries:
             return None
         n = len(entries)
         offset = seed % n
-        for i in range(n):                       # first unused, from the offset
-            e = entries[(offset + i) % n]
-            if e["file"] not in used:
-                return e
-        return entries[offset]                   # pool exhausted: allow a repeat
+        ordered = [entries[(offset + i) % n] for i in range(n)]
+        free = [e for e in ordered if e["file"] not in used]
+        if not free:                             # pool exhausted today
+            return ordered[0]
+        # index in `recent`: 0 = used most recently, missing = not used lately
+        fresh = [e for e in free if e["file"] not in recent]
+        if fresh:
+            return fresh[0]
+        return max(free, key=lambda e: recent.index(e["file"]))
 
     e = pick(media.get(pool) or []) or pick(media.get("events") or [])
     if not e:
@@ -108,7 +136,7 @@ def _media(brand: dict, pool: str, seed: int, used: set | None = None) -> dict:
 # --------------------------------------------------------------------------- #
 
 def _availability_brief(brand: dict, w: OpenWindow, seed: int, event: PropertyEvent | None = None,
-                        used: set | None = None) -> dict:
+                        used: set | None = None, recent: list[str] | None = None) -> dict:
     b = brand["brand"]
     unit = _unit_meta(brand, w.unit)
     dates = _fmt_window(w)
@@ -133,14 +161,14 @@ def _availability_brief(brand: dict, w: OpenWindow, seed: int, event: PropertyEv
         "event": event.to_dict() if event else None,
         "event_summary": _fmt_event(event) if event else None,
         "rate": rate or None,
-        **_media(brand, w.unit, seed, used),
+        **_media(brand, w.unit, seed, used, recent),
         "copy": {"instagram": ig, "facebook": fb},
         "hashtags": _hashtags(brand, seed=seed),
     }
 
 
 def _event_brief(brand: dict, ev: PropertyEvent, seed: int, window: OpenWindow | None = None,
-                 used: set | None = None) -> dict:
+                 used: set | None = None, recent: list[str] | None = None) -> dict:
     b = brand["brand"]
     when = _fmt_event(ev)
     days_out = (ev.start.date() - date.today()).days
@@ -160,13 +188,14 @@ def _event_brief(brand: dict, ev: PropertyEvent, seed: int, window: OpenWindow |
         "unit_label": _unit_meta(brand, window.unit)["label"] if window else None,
         "open_dates": _fmt_window(window) if window else None,
         "window": window.to_dict() if window else None,
-        **_media(brand, window.unit if window else "events", seed, used),
+        **_media(brand, window.unit if window else "events", seed, used, recent),
         "copy": {"instagram": ig, "facebook": fb},
         "hashtags": _hashtags(brand, seed=seed),
     }
 
 
-def _evergreen_brief(brand: dict, pillar: dict, seed: int, used: set | None = None) -> dict:
+def _evergreen_brief(brand: dict, pillar: dict, seed: int, used: set | None = None,
+                     recent: list[str] | None = None) -> dict:
     prompts = {
         "local_guide": "Share one nearby thing guests ask about (a trail, a table, a beach access) and tie it back to staying at the cottages.",
         "behind_the_scenes": "Show the ritual: how the cottages get ready for guests — one detail, one photo, one sentence of why it matters.",
@@ -176,7 +205,7 @@ def _evergreen_brief(brand: dict, pillar: dict, seed: int, used: set | None = No
         "id": f"evergreen-{pillar['key']}-{seed}",
         "pillar": pillar["key"],
         "prompt": prompts.get(pillar["key"], pillar.get("description", "")),
-        **_media(brand, "events", seed, used),
+        **_media(brand, "events", seed, used, recent),
         "copy": {"instagram": prompts.get(pillar["key"], ""), "facebook": prompts.get(pillar["key"], "")},
         "hashtags": _hashtags(brand, seed=seed),
         "needs_human_media": True,
@@ -264,28 +293,29 @@ def build_queue(for_date: date | None = None) -> dict:
 
     briefs: list[dict] = []
     used_photos: set[str] = set()   # no two posts in a day share a photo
+    recent_photos = _load_recent()  # nor repeat what the last week already used
     chosen = _pick_stays(stays, seed)
     if todays_pillar["key"] == "availability_spotlight" and chosen:
         for i, st in enumerate(chosen):
-            briefs.append(_availability_brief(brand, st, seed + i, event=_event_for(st), used=used_photos))
+            briefs.append(_availability_brief(brand, st, seed + i, event=_event_for(st), used=used_photos, recent=recent_photos))
     elif todays_pillar["key"] == "local_events" and dated_events:
         ev = dated_events[seed % min(3, len(dated_events))]  # rotate through the next three
         st = next((s for s in stays if s.unit != "full" and s.event_title == ev.title), None)
-        briefs.append(_event_brief(brand, ev, seed, window=st, used=used_photos))
+        briefs.append(_event_brief(brand, ev, seed, window=st, used=used_photos, recent=recent_photos))
     elif chosen:
         # Evergreen pillar but we have real dates: lead with dates anyway
         # (the evergreen prompt still lands in the digest as a human to-do).
-        briefs.append(_availability_brief(brand, chosen[0], seed, used=used_photos))
-        briefs.append(_evergreen_brief(brand, todays_pillar, seed, used=used_photos))
+        briefs.append(_availability_brief(brand, chosen[0], seed, used=used_photos, recent=recent_photos))
+        briefs.append(_evergreen_brief(brand, todays_pillar, seed, used=used_photos, recent=recent_photos))
     else:
-        briefs.append(_evergreen_brief(brand, todays_pillar, seed, used=used_photos))
+        briefs.append(_evergreen_brief(brand, todays_pillar, seed, used=used_photos, recent=recent_photos))
 
     # Inside the final week before a dated event, a countdown always rides along.
     if todays_pillar["key"] != "local_events":
         for ev in dated_events:
             if 0 < (ev.start.date() - for_date).days <= 7 and not any(b.get("event") and b["event"]["title"] == ev.title for b in briefs):
                 st = next((s for s in stays if s.unit != "full" and s.event_title == ev.title), None)
-                briefs.append(_event_brief(brand, ev, seed, window=st, used=used_photos))
+                briefs.append(_event_brief(brand, ev, seed, window=st, used=used_photos, recent=recent_photos))
                 break
 
     # Never more than two auto-published posts a day per platform.
@@ -340,4 +370,8 @@ def build_queue(for_date: date | None = None) -> dict:
     }
     QUEUE_DIR.mkdir(parents=True, exist_ok=True)
     (QUEUE_DIR / f"{for_date.isoformat()}.json").write_text(json.dumps(queue, indent=2))
+    todays = [b["media_url"].rsplit("/", 1)[-1] and b["media_url"] for b in briefs]
+    todays = [u.replace(brand.get("media", {}).get("base_url", "").rstrip("/") + "/", "")
+              for u in todays if u]
+    _save_recent(todays + [f for f in recent_photos if f not in todays])
     return queue

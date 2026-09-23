@@ -36,6 +36,7 @@ jobs:
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           SUNMOON_QUEUE_DIR: ${{ runner.temp }}/preview-queue
+          SUNMOON_STATE_DIR: ${{ runner.temp }}/preview-state
         run: |
           python -m sunmoon_social preview \
             --days "${{ inputs.days }}" \
