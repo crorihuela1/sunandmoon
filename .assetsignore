@@ -15,3 +15,20 @@ preview/
 tools/
 requirements.txt
 .env.example
+
+# recovered backend/automation tree — source and business data, never public
+referral-os/
+booking-os/
+daily-briefings/
+sunmoon-gmail-mcp-server/
+postiz/
+workers/
+
+# local-only: staging and secrets. wrangler uploads from the filesystem, not
+# from git, so .gitignore does NOT keep these off the website — this does.
+_inbox/
+_secrets/
+.env
+.env.bak-*
+.dev.vars
+
