@@ -158,6 +158,9 @@ PY
 
 # every link the EVENT blocks point at still resolves
 # (scoped to event cards + the featured CTA — do not sweep booking/partner links)
+# NOTE: in the cloud runner outbound curl may be blocked by the egress proxy.
+# If every URL comes back 000, the check is unavailable, not failing — skip it
+# and instead confirm each link appeared verbatim in your search results.
 { grep -h 'class="event-card"' events.html index.html
   grep -h -A2 'class="event-featured-cta"' events.html index.html
 } | grep -o 'href="https://[^"]*"' | sed 's/href="//;s/"//' | sort -u |
@@ -169,6 +172,20 @@ done
 
 The tag check must report empty `unclosed` and `mismatched` for both files. A `DEAD`
 link must be fixed or its event dropped before committing.
+
+Render both pages and look at them before committing — the runner has Chromium:
+
+```bash
+CHROME=$(find /opt/pw-browsers -maxdepth 3 -name chrome -type f | head -1)
+"$CHROME" --headless --no-sandbox --screenshot=/tmp/events.png \
+  --window-size=1280,2400 "file://$PWD/events.html"
+"$CHROME" --headless --no-sandbox --screenshot=/tmp/home.png \
+  --window-size=1280,2400 "file://$PWD/index.html"
+```
+
+Then `Read` both PNGs and actually look at them. On the homepage shot, check the
+events band sits between the 30A Area copy and Local Partners, and that the four
+cards are evenly filled.
 
 ## Commit
 
