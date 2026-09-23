@@ -2,3 +2,12 @@
 __pycache__/
 *.pyc
 .venv/
+
+# Secrets recovered alongside the source — never commit these
+.env.bak-*
+.dev.vars
+.wrangler/
+
+# Local staging of recovered files
+_inbox/
+_secrets/

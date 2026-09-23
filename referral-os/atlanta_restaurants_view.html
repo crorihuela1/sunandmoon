@@ -1,0 +1,575 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Atlanta Restaurants — B2B Target View</title>
+<style>
+  :root { --ink:#1b1b1b; --line:#e7e3da; --bg:#faf8f3; --card:#fff; --accent:#c2410c; }
+  * { box-sizing:border-box; }
+  body { margin:0; font:15px/1.5 -apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+         color:var(--ink); background:var(--bg); }
+  .wrap { max-width:1180px; margin:0 auto; padding:28px 22px 64px; }
+  h1 { font-size:24px; margin:0 0 2px; }
+  .sub { color:#6b675e; margin:0 0 18px; }
+  .banner { background:#fff7ed; border:1px solid #fed7aa; color:#7c2d12; padding:10px 14px;
+             border-radius:10px; font-size:13px; margin-bottom:18px; }
+  .banner code { background:#ffedd5; padding:1px 5px; border-radius:4px; }
+  .cards { display:flex; gap:12px; flex-wrap:wrap; margin-bottom:20px; }
+  .card { background:var(--card); border:1px solid var(--line); border-radius:12px;
+           padding:14px 16px; min-width:120px; flex:1; }
+  .card .k { font-size:12px; color:#6b675e; text-transform:uppercase; letter-spacing:.04em; }
+  .card .v { font-size:26px; font-weight:700; margin-top:2px; }
+  .controls { display:flex; gap:8px; flex-wrap:wrap; margin-bottom:12px; align-items:center; }
+  .controls input, .controls select { padding:7px 10px; border:1px solid var(--line);
+           border-radius:8px; background:#fff; font-size:14px; }
+  table { width:100%; border-collapse:collapse; background:#fff; border:1px solid var(--line);
+           border-radius:12px; overflow:hidden; }
+  th, td { padding:9px 11px; text-align:left; border-bottom:1px solid var(--line); vertical-align:top; }
+  th { background:#f3efe6; font-size:12px; text-transform:uppercase; letter-spacing:.03em; color:#5b574e;
+        position:sticky; top:0; cursor:pointer; }
+  td.num, td.score { text-align:right; font-variant-numeric:tabular-nums; }
+  td.score { font-weight:700; }
+  .name { font-weight:600; }
+  .hood { font-weight:400; color:#8a857b; font-size:12px; }
+  .dollars { color:var(--accent); font-weight:700; letter-spacing:1px; }
+  .muted { color:#9a958b; font-size:12px; }
+  .menu { font-weight:600; }
+  .gap { color:#b91c1c; font-weight:600; font-size:12px; }
+  .pitch { color:#3f3b34; font-size:13px; max-width:340px; }
+  .tierdot { display:inline-block; width:22px; height:22px; line-height:22px; text-align:center;
+              border-radius:50%; color:#fff; font-weight:700; font-size:12px; }
+  tr:hover td { background:#fcfbf7; }
+  .foot { margin-top:18px; color:#8a857b; font-size:12px; }
+</style></head><body><div class="wrap">
+  <h1>🍽️ Atlanta Restaurants — B2B Target View</h1>
+  <p class="sub">Referral OS · project <code>atlanta-restaurants-b2b</code> · generated Jun 17, 2026</p>
+  
+      <div class="banner">
+        <b>SAMPLE VIEW</b> — representative Atlanta restaurants for illustration, scored with the
+        exact formula in <code>schema/007_restaurant_views.sql</code>. This is <b>not</b> a live Google
+        pull. Run <code>ingest_atlanta_restaurants.py</code> then <code>generate_sample_view.py --from-db</code>
+        on your machine to populate with real data.
+      </div>
+  <div class="cards">
+    <div class="card"><div class="k">Restaurants</div><div class="v">40</div></div>
+    <div class="card"><div class="k">Tier A targets</div><div class="v" style="color:#1a7f4b">16</div></div>
+    <div class="card"><div class="k">Tier B</div><div class="v" style="color:#b8860b">24</div></div>
+    <div class="card"><div class="k">Tier C</div><div class="v" style="color:#8a8a8a">0</div></div>
+    <div class="card"><div class="k">Menu pricing</div><div class="v">25</div></div>
+    <div class="card"><div class="k">No website (gap)</div><div class="v" style="color:#b91c1c">6</div></div>
+  </div>
+  <div class="controls">
+    <input id="q" placeholder="Search name…" oninput="filt()">
+    <select id="tier" onchange="filt()"><option value="">All tiers</option>
+      <option>A</option><option>B</option><option>C</option></select>
+    <select id="seg" onchange="filt()"><option value="">All segments</option>
+      <option value="independent-fine-dining">Fine Dining</option><option value="independent-full-service">Full-Service</option><option value="cafe-bakery-brunch">Café / Bakery</option><option value="bar-brewery-nightlife">Bar / Brewery</option><option value="quick-service-counter">Quick-Service</option><option value="no-website-opportunity">No-Website</option></select>
+    <span class="muted" id="count"></span>
+  </div>
+  <table id="tbl"><thead><tr>
+    <th>#</th><th>Tier</th><th onclick="sortBy(2)">Fit ▾</th><th>Restaurant</th><th>Segment</th>
+    <th>$</th><th onclick="sortBy(6)">Rating</th><th>Menu pricing</th><th>Web</th><th>Recommended pitch angle</th>
+  </tr></thead><tbody>
+        <tr data-tier="A" data-seg="independent-fine-dining">
+          <td class="num">1</td>
+          <td><span class="tierdot" style="background:#1a7f4b">A</span></td>
+          <td class="score">88</td>
+          <td class="name">Hayakawa<div class="hood">Buckhead</div></td>
+          <td>Fine Dining</td>
+          <td class="dollars">$$$$</td>
+          <td>4.8★ <span class="muted">(410)</span></td>
+          <td><span class="muted">—</span></td>
+          <td><span class="gap">no site</span></td>
+          <td class="pitch">Hayakawa has 410 Google reviews but no website — lead with the &quot;you&#x27;re invisible to anyone who searches you&quot; gap.</td>
+        </tr>
+        <tr data-tier="A" data-seg="independent-full-service">
+          <td class="num">2</td>
+          <td><span class="tierdot" style="background:#1a7f4b">A</span></td>
+          <td class="score">87</td>
+          <td class="name">The Busy Bee Cafe<div class="hood">Vine City</div></td>
+          <td>Full-Service</td>
+          <td class="dollars">$$</td>
+          <td>4.5★ <span class="muted">(3960)</span></td>
+          <td><span class="muted">—</span></td>
+          <td><span class="gap">no site</span></td>
+          <td class="pitch">The Busy Bee Cafe has 3960 Google reviews but no website — lead with the &quot;you&#x27;re invisible to anyone who searches you&quot; gap.</td>
+        </tr>
+        <tr data-tier="A" data-seg="independent-full-service">
+          <td class="num">3</td>
+          <td><span class="tierdot" style="background:#1a7f4b">A</span></td>
+          <td class="score">87</td>
+          <td class="name">El Tesoro<div class="hood">Edgewood</div></td>
+          <td>Full-Service</td>
+          <td class="dollars">$$</td>
+          <td>4.6★ <span class="muted">(540)</span></td>
+          <td><span class="muted">—</span></td>
+          <td><span class="gap">no site</span></td>
+          <td class="pitch">El Tesoro has 540 Google reviews but no website — lead with the &quot;you&#x27;re invisible to anyone who searches you&quot; gap.</td>
+        </tr>
+        <tr data-tier="A" data-seg="independent-fine-dining">
+          <td class="num">4</td>
+          <td><span class="tierdot" style="background:#1a7f4b">A</span></td>
+          <td class="score">85</td>
+          <td class="name">Kevin Rathbun Steak<div class="hood">Inman Park</div></td>
+          <td>Fine Dining</td>
+          <td class="dollars">$$$$</td>
+          <td>4.6★ <span class="muted">(1620)</span></td>
+          <td><span class="muted">—</span></td>
+          <td><a href="https://kevinrathbunsteak.com" target="_blank">site</a></td>
+          <td class="pitch">Kevin Rathbun Steak is an upscale room ($$$$) — premium ROI framing, owner has budget.</td>
+        </tr>
+        <tr data-tier="A" data-seg="independent-fine-dining">
+          <td class="num">5</td>
+          <td><span class="tierdot" style="background:#1a7f4b">A</span></td>
+          <td class="score">85</td>
+          <td class="name">Bones Restaurant<div class="hood">Buckhead</div></td>
+          <td>Fine Dining</td>
+          <td class="dollars">$$$$</td>
+          <td>4.6★ <span class="muted">(1540)</span></td>
+          <td><span class="muted">—</span></td>
+          <td><a href="https://bonesrestaurant.com" target="_blank">site</a></td>
+          <td class="pitch">Bones Restaurant is an upscale room ($$$$) — premium ROI framing, owner has budget.</td>
+        </tr>
+        <tr data-tier="A" data-seg="independent-fine-dining">
+          <td class="num">6</td>
+          <td><span class="tierdot" style="background:#1a7f4b">A</span></td>
+          <td class="score">85</td>
+          <td class="name">Bacchanalia<div class="hood">Westside</div></td>
+          <td>Fine Dining</td>
+          <td class="dollars">$$$$</td>
+          <td>4.6★ <span class="muted">(1180)</span></td>
+          <td><span class="menu">$45–$115</span><span class="muted"> · avg $73 · 18 items</span></td>
+          <td><a href="https://bacchanalia.com" target="_blank">site</a></td>
+          <td class="pitch">Bacchanalia is an upscale room ($$$$) — premium ROI framing, owner has budget.</td>
+        </tr>
+        <tr data-tier="A" data-seg="independent-fine-dining">
+          <td class="num">7</td>
+          <td><span class="tierdot" style="background:#1a7f4b">A</span></td>
+          <td class="score">85</td>
+          <td class="name">Marcel<div class="hood">Westside</div></td>
+          <td>Fine Dining</td>
+          <td class="dollars">$$$$</td>
+          <td>4.5★ <span class="muted">(890)</span></td>
+          <td><span class="menu">$41–$120</span><span class="muted"> · avg $81 · 30 items</span></td>
+          <td><a href="https://marcel.com" target="_blank">site</a></td>
+          <td class="pitch">Marcel is an upscale room ($$$$) — premium ROI framing, owner has budget.</td>
+        </tr>
+        <tr data-tier="A" data-seg="independent-fine-dining">
+          <td class="num">8</td>
+          <td><span class="tierdot" style="background:#1a7f4b">A</span></td>
+          <td class="score">85</td>
+          <td class="name">Aria<div class="hood">Buckhead</div></td>
+          <td>Fine Dining</td>
+          <td class="dollars">$$$$</td>
+          <td>4.5★ <span class="muted">(870)</span></td>
+          <td><span class="menu">$46–$115</span><span class="muted"> · avg $79 · 16 items</span></td>
+          <td><a href="https://aria.com" target="_blank">site</a></td>
+          <td class="pitch">Aria is an upscale room ($$$$) — premium ROI framing, owner has budget.</td>
+        </tr>
+        <tr data-tier="A" data-seg="independent-fine-dining">
+          <td class="num">9</td>
+          <td><span class="tierdot" style="background:#1a7f4b">A</span></td>
+          <td class="score">85</td>
+          <td class="name">Estrellita<div class="hood">Decatur</div></td>
+          <td>Fine Dining</td>
+          <td class="dollars">$$$</td>
+          <td>4.7★ <span class="muted">(150)</span></td>
+          <td><span class="muted">—</span></td>
+          <td><span class="gap">no site</span></td>
+          <td class="pitch">Estrellita has 150 Google reviews but no website — lead with the &quot;you&#x27;re invisible to anyone who searches you&quot; gap.</td>
+        </tr>
+        <tr data-tier="A" data-seg="independent-full-service">
+          <td class="num">10</td>
+          <td><span class="tierdot" style="background:#1a7f4b">A</span></td>
+          <td class="score">82</td>
+          <td class="name">The Optimist<div class="hood">Westside</div></td>
+          <td>Full-Service</td>
+          <td class="dollars">$$$</td>
+          <td>4.5★ <span class="muted">(3410)</span></td>
+          <td><span class="menu">$22–$47</span><span class="muted"> · avg $35 · 22 items</span></td>
+          <td><a href="https://theoptimist.com" target="_blank">site</a></td>
+          <td class="pitch">The Optimist is an upscale room ($$$) — premium ROI framing, owner has budget.</td>
+        </tr>
+        <tr data-tier="A" data-seg="independent-full-service">
+          <td class="num">11</td>
+          <td><span class="tierdot" style="background:#1a7f4b">A</span></td>
+          <td class="score">82</td>
+          <td class="name">Miller Union<div class="hood">Westside</div></td>
+          <td>Full-Service</td>
+          <td class="dollars">$$$</td>
+          <td>4.6★ <span class="muted">(2230)</span></td>
+          <td><span class="menu">$22–$47</span><span class="muted"> · avg $33 · 33 items</span></td>
+          <td><a href="https://millerunion.com" target="_blank">site</a></td>
+          <td class="pitch">Miller Union is an upscale room ($$$) — premium ROI framing, owner has budget.</td>
+        </tr>
+        <tr data-tier="A" data-seg="independent-full-service">
+          <td class="num">12</td>
+          <td><span class="tierdot" style="background:#1a7f4b">A</span></td>
+          <td class="score">82</td>
+          <td class="name">Gunshow<div class="hood">Glenwood Park</div></td>
+          <td>Full-Service</td>
+          <td class="dollars">$$$</td>
+          <td>4.5★ <span class="muted">(1870)</span></td>
+          <td><span class="menu">$22–$47</span><span class="muted"> · avg $38 · 26 items</span></td>
+          <td><a href="https://gunshow.com" target="_blank">site</a></td>
+          <td class="pitch">Gunshow is an upscale room ($$$) — premium ROI framing, owner has budget.</td>
+        </tr>
+        <tr data-tier="A" data-seg="independent-full-service">
+          <td class="num">13</td>
+          <td><span class="tierdot" style="background:#1a7f4b">A</span></td>
+          <td class="score">82</td>
+          <td class="name">Delbar<div class="hood">Inman Park</div></td>
+          <td>Full-Service</td>
+          <td class="dollars">$$$</td>
+          <td>4.6★ <span class="muted">(990)</span></td>
+          <td><span class="menu">$22–$47</span><span class="muted"> · avg $33 · 27 items</span></td>
+          <td><a href="https://delbar.com" target="_blank">site</a></td>
+          <td class="pitch">Delbar is an upscale room ($$$) — premium ROI framing, owner has budget.</td>
+        </tr>
+        <tr data-tier="A" data-seg="independent-full-service">
+          <td class="num">14</td>
+          <td><span class="tierdot" style="background:#1a7f4b">A</span></td>
+          <td class="score">82</td>
+          <td class="name">BoccaLupo<div class="hood">Inman Park</div></td>
+          <td>Full-Service</td>
+          <td class="dollars">$$$</td>
+          <td>4.6★ <span class="muted">(680)</span></td>
+          <td><span class="muted">—</span></td>
+          <td><a href="https://boccalupo.com" target="_blank">site</a></td>
+          <td class="pitch">BoccaLupo is an upscale room ($$$) — premium ROI framing, owner has budget.</td>
+        </tr>
+        <tr data-tier="A" data-seg="quick-service-counter">
+          <td class="num">15</td>
+          <td><span class="tierdot" style="background:#1a7f4b">A</span></td>
+          <td class="score">75</td>
+          <td class="name">Pho Dai Loi #2<div class="hood">Buford Highway</div></td>
+          <td>Quick-Service</td>
+          <td class="dollars">$</td>
+          <td>4.5★ <span class="muted">(880)</span></td>
+          <td><span class="muted">—</span></td>
+          <td><span class="gap">no site</span></td>
+          <td class="pitch">Pho Dai Loi #2 has 880 Google reviews but no website — lead with the &quot;you&#x27;re invisible to anyone who searches you&quot; gap.</td>
+        </tr>
+        <tr data-tier="A" data-seg="independent-full-service">
+          <td class="num">16</td>
+          <td><span class="tierdot" style="background:#1a7f4b">A</span></td>
+          <td class="score">75</td>
+          <td class="name">La Casa del Sabor<div class="hood">Buford Highway</div></td>
+          <td>Full-Service</td>
+          <td class="dollars">$$</td>
+          <td>4.7★ <span class="muted">(210)</span></td>
+          <td><span class="muted">—</span></td>
+          <td><span class="gap">no site</span></td>
+          <td class="pitch">La Casa del Sabor has 210 Google reviews but no website — lead with the &quot;you&#x27;re invisible to anyone who searches you&quot; gap.</td>
+        </tr>
+        <tr data-tier="B" data-seg="independent-fine-dining">
+          <td class="num">17</td>
+          <td><span class="tierdot" style="background:#b8860b">B</span></td>
+          <td class="score">73</td>
+          <td class="name">Staplehouse<div class="hood">Old Fourth Ward</div></td>
+          <td>Fine Dining</td>
+          <td class="dollars">$$$$</td>
+          <td>4.7★ <span class="muted">(980)</span></td>
+          <td><span class="menu">$38–$118</span><span class="muted"> · avg $84 · 34 items</span></td>
+          <td><a href="https://staplehouse.com" target="_blank">site</a></td>
+          <td class="pitch">Staplehouse is an upscale room ($$$$) — premium ROI framing, owner has budget.</td>
+        </tr>
+        <tr data-tier="B" data-seg="independent-fine-dining">
+          <td class="num">18</td>
+          <td><span class="tierdot" style="background:#b8860b">B</span></td>
+          <td class="score">73</td>
+          <td class="name">Lazy Betty<div class="hood">Edgewood</div></td>
+          <td>Fine Dining</td>
+          <td class="dollars">$$$$</td>
+          <td>4.7★ <span class="muted">(640)</span></td>
+          <td><span class="menu">$44–$116</span><span class="muted"> · avg $83 · 18 items</span></td>
+          <td><a href="https://lazybetty.com" target="_blank">site</a></td>
+          <td class="pitch">Lazy Betty is an upscale room ($$$$) — premium ROI framing, owner has budget.</td>
+        </tr>
+        <tr data-tier="B" data-seg="independent-fine-dining">
+          <td class="num">19</td>
+          <td><span class="tierdot" style="background:#b8860b">B</span></td>
+          <td class="score">73</td>
+          <td class="name">Mujo<div class="hood">Westside</div></td>
+          <td>Fine Dining</td>
+          <td class="dollars">$$$$</td>
+          <td>4.8★ <span class="muted">(220)</span></td>
+          <td><span class="menu">$46–$119</span><span class="muted"> · avg $90 · 18 items</span></td>
+          <td><a href="https://mujo.com" target="_blank">site</a></td>
+          <td class="pitch">Mujo is an upscale room ($$$$) — premium ROI framing, owner has budget.</td>
+        </tr>
+        <tr data-tier="B" data-seg="quick-service-counter">
+          <td class="num">20</td>
+          <td><span class="tierdot" style="background:#b8860b">B</span></td>
+          <td class="score">72</td>
+          <td class="name">Slutty Vegan<div class="hood">West End</div></td>
+          <td>Quick-Service</td>
+          <td class="dollars">$$</td>
+          <td>4.3★ <span class="muted">(6200)</span></td>
+          <td><span class="menu">$12–$27</span><span class="muted"> · avg $19 · 34 items</span></td>
+          <td><a href="https://sluttyvegan.com" target="_blank">site</a></td>
+          <td class="pitch">Slutty Vegan does real volume (6200 reviews) — efficiency/scale pitch.</td>
+        </tr>
+        <tr data-tier="B" data-seg="independent-full-service">
+          <td class="num">21</td>
+          <td><span class="tierdot" style="background:#b8860b">B</span></td>
+          <td class="score">72</td>
+          <td class="name">Fox Bros. Bar-B-Q<div class="hood">Candler Park</div></td>
+          <td>Full-Service</td>
+          <td class="dollars">$$</td>
+          <td>4.6★ <span class="muted">(5240)</span></td>
+          <td><span class="menu">$12–$28</span><span class="muted"> · avg $21 · 24 items</span></td>
+          <td><a href="https://foxbrosbar-b-q.com" target="_blank">site</a></td>
+          <td class="pitch">Fox Bros. Bar-B-Q does real volume (5240 reviews) — efficiency/scale pitch.</td>
+        </tr>
+        <tr data-tier="B" data-seg="bar-brewery-nightlife">
+          <td class="num">22</td>
+          <td><span class="tierdot" style="background:#b8860b">B</span></td>
+          <td class="score">72</td>
+          <td class="name">New Realm Brewing<div class="hood">Old Fourth Ward</div></td>
+          <td>Bar / Brewery</td>
+          <td class="dollars">$$</td>
+          <td>4.6★ <span class="muted">(4010)</span></td>
+          <td><span class="menu">$14–$28</span><span class="muted"> · avg $22 · 15 items</span></td>
+          <td><a href="https://newrealmbrewing.com" target="_blank">site</a></td>
+          <td class="pitch">New Realm Brewing does real volume (4010 reviews) — efficiency/scale pitch.</td>
+        </tr>
+        <tr data-tier="B" data-seg="bar-brewery-nightlife">
+          <td class="num">23</td>
+          <td><span class="tierdot" style="background:#b8860b">B</span></td>
+          <td class="score">72</td>
+          <td class="name">Ladybird Grove<div class="hood">Old Fourth Ward</div></td>
+          <td>Bar / Brewery</td>
+          <td class="dollars">$$</td>
+          <td>4.4★ <span class="muted">(2640)</span></td>
+          <td><span class="menu">$12–$27</span><span class="muted"> · avg $20 · 23 items</span></td>
+          <td><a href="https://ladybirdgrove.com" target="_blank">site</a></td>
+          <td class="pitch">Ladybird Grove does real volume (2640 reviews) — efficiency/scale pitch.</td>
+        </tr>
+        <tr data-tier="B" data-seg="quick-service-counter">
+          <td class="num">24</td>
+          <td><span class="tierdot" style="background:#b8860b">B</span></td>
+          <td class="score">72</td>
+          <td class="name">Gus&#x27;s Fried Chicken<div class="hood">Downtown</div></td>
+          <td>Quick-Service</td>
+          <td class="dollars">$$</td>
+          <td>4.4★ <span class="muted">(2380)</span></td>
+          <td><span class="menu">$12–$27</span><span class="muted"> · avg $20 · 25 items</span></td>
+          <td><a href="https://gussfriedchicken.com" target="_blank">site</a></td>
+          <td class="pitch">Gus&#x27;s Fried Chicken does real volume (2380 reviews) — efficiency/scale pitch.</td>
+        </tr>
+        <tr data-tier="B" data-seg="cafe-bakery-brunch">
+          <td class="num">25</td>
+          <td><span class="tierdot" style="background:#b8860b">B</span></td>
+          <td class="score">72</td>
+          <td class="name">Buttermilk Kitchen<div class="hood">Buckhead</div></td>
+          <td>Café / Bakery</td>
+          <td class="dollars">$$</td>
+          <td>4.5★ <span class="muted">(2110)</span></td>
+          <td><span class="menu">$12–$27</span><span class="muted"> · avg $20 · 27 items</span></td>
+          <td><a href="https://buttermilkkitchen.com" target="_blank">site</a></td>
+          <td class="pitch">Buttermilk Kitchen does real volume (2110 reviews) — efficiency/scale pitch.</td>
+        </tr>
+        <tr data-tier="B" data-seg="bar-brewery-nightlife">
+          <td class="num">26</td>
+          <td><span class="tierdot" style="background:#b8860b">B</span></td>
+          <td class="score">72</td>
+          <td class="name">Argosy<div class="hood">East Atlanta</div></td>
+          <td>Bar / Brewery</td>
+          <td class="dollars">$$</td>
+          <td>4.5★ <span class="muted">(1990)</span></td>
+          <td><span class="menu">$13–$25</span><span class="muted"> · avg $19 · 16 items</span></td>
+          <td><a href="https://argosy.com" target="_blank">site</a></td>
+          <td class="pitch">Argosy does real volume (1990 reviews) — efficiency/scale pitch.</td>
+        </tr>
+        <tr data-tier="B" data-seg="independent-full-service">
+          <td class="num">27</td>
+          <td><span class="tierdot" style="background:#b8860b">B</span></td>
+          <td class="score">72</td>
+          <td class="name">Daddy D&#x27;z BBQ<div class="hood">Cabbagetown</div></td>
+          <td>Full-Service</td>
+          <td class="dollars">$$</td>
+          <td>4.4★ <span class="muted">(1760)</span></td>
+          <td><span class="muted">—</span></td>
+          <td><a href="https://daddydzbbq.com" target="_blank">site</a></td>
+          <td class="pitch">Daddy D&#x27;z BBQ does real volume (1760 reviews) — efficiency/scale pitch.</td>
+        </tr>
+        <tr data-tier="B" data-seg="cafe-bakery-brunch">
+          <td class="num">28</td>
+          <td><span class="tierdot" style="background:#b8860b">B</span></td>
+          <td class="score">72</td>
+          <td class="name">Bread &amp; Butterfly<div class="hood">Inman Park</div></td>
+          <td>Café / Bakery</td>
+          <td class="dollars">$$</td>
+          <td>4.4★ <span class="muted">(1180)</span></td>
+          <td><span class="menu">$12–$27</span><span class="muted"> · avg $19 · 23 items</span></td>
+          <td><a href="https://bread&amp;butterfly.com" target="_blank">site</a></td>
+          <td class="pitch">Bread &amp; Butterfly does real volume (1180 reviews) — efficiency/scale pitch.</td>
+        </tr>
+        <tr data-tier="B" data-seg="independent-full-service">
+          <td class="num">29</td>
+          <td><span class="tierdot" style="background:#b8860b">B</span></td>
+          <td class="score">72</td>
+          <td class="name">Nina &amp; Rafi<div class="hood">Old Fourth Ward</div></td>
+          <td>Full-Service</td>
+          <td class="dollars">$$</td>
+          <td>4.4★ <span class="muted">(930)</span></td>
+          <td><span class="muted">—</span></td>
+          <td><a href="https://nina&amp;rafi.com" target="_blank">site</a></td>
+          <td class="pitch">Nina &amp; Rafi does real volume (930 reviews) — efficiency/scale pitch.</td>
+        </tr>
+        <tr data-tier="B" data-seg="independent-full-service">
+          <td class="num">30</td>
+          <td><span class="tierdot" style="background:#b8860b">B</span></td>
+          <td class="score">72</td>
+          <td class="name">Banshee<div class="hood">East Atlanta</div></td>
+          <td>Full-Service</td>
+          <td class="dollars">$$</td>
+          <td>4.6★ <span class="muted">(760)</span></td>
+          <td><span class="menu">$14–$27</span><span class="muted"> · avg $20 · 29 items</span></td>
+          <td><a href="https://banshee.com" target="_blank">site</a></td>
+          <td class="pitch">Banshee does real volume (760 reviews) — efficiency/scale pitch.</td>
+        </tr>
+        <tr data-tier="B" data-seg="bar-brewery-nightlife">
+          <td class="num">31</td>
+          <td><span class="tierdot" style="background:#b8860b">B</span></td>
+          <td class="score">72</td>
+          <td class="name">9 Mile Station<div class="hood">Old Fourth Ward</div></td>
+          <td>Bar / Brewery</td>
+          <td class="dollars">$$</td>
+          <td>4.3★ <span class="muted">(710)</span></td>
+          <td><span class="menu">$13–$28</span><span class="muted"> · avg $22 · 18 items</span></td>
+          <td><a href="https://9milestation.com" target="_blank">site</a></td>
+          <td class="pitch">9 Mile Station does real volume (710 reviews) — efficiency/scale pitch.</td>
+        </tr>
+        <tr data-tier="B" data-seg="independent-full-service">
+          <td class="num">32</td>
+          <td><span class="tierdot" style="background:#b8860b">B</span></td>
+          <td class="score">72</td>
+          <td class="name">Poor Hendrix<div class="hood">East Lake</div></td>
+          <td>Full-Service</td>
+          <td class="dollars">$$</td>
+          <td>4.4★ <span class="muted">(620)</span></td>
+          <td><span class="muted">—</span></td>
+          <td><a href="https://poorhendrix.com" target="_blank">site</a></td>
+          <td class="pitch">Poor Hendrix does real volume (620 reviews) — efficiency/scale pitch.</td>
+        </tr>
+        <tr data-tier="B" data-seg="independent-full-service">
+          <td class="num">33</td>
+          <td><span class="tierdot" style="background:#b8860b">B</span></td>
+          <td class="score">70</td>
+          <td class="name">Talat Market<div class="hood">Summerhill</div></td>
+          <td>Full-Service</td>
+          <td class="dollars">$$$</td>
+          <td>4.7★ <span class="muted">(410)</span></td>
+          <td><span class="menu">$22–$47</span><span class="muted"> · avg $34 · 27 items</span></td>
+          <td><a href="https://talatmarket.com" target="_blank">site</a></td>
+          <td class="pitch">Talat Market is an upscale room ($$$) — premium ROI framing, owner has budget.</td>
+        </tr>
+        <tr data-tier="B" data-seg="quick-service-counter">
+          <td class="num">34</td>
+          <td><span class="tierdot" style="background:#b8860b">B</span></td>
+          <td class="score">60</td>
+          <td class="name">Taqueria del Sol<div class="hood">Westside</div></td>
+          <td>Quick-Service</td>
+          <td class="dollars">$</td>
+          <td>4.5★ <span class="muted">(4120)</span></td>
+          <td><span class="menu">$8–$16</span><span class="muted"> · avg $12 · 24 items</span></td>
+          <td><a href="https://taqueriadelsol.com" target="_blank">site</a></td>
+          <td class="pitch">Taqueria del Sol does real volume (4120 reviews) — efficiency/scale pitch.</td>
+        </tr>
+        <tr data-tier="B" data-seg="bar-brewery-nightlife">
+          <td class="num">35</td>
+          <td><span class="tierdot" style="background:#b8860b">B</span></td>
+          <td class="score">60</td>
+          <td class="name">Monday Night Brewing<div class="hood">Westside</div></td>
+          <td>Bar / Brewery</td>
+          <td class="dollars">$$</td>
+          <td>4.7★ <span class="muted">(3120)</span></td>
+          <td><span class="muted">—</span></td>
+          <td><a href="https://mondaynightbrewing.com" target="_blank">site</a></td>
+          <td class="pitch">Monday Night Brewing does real volume (3120 reviews) — efficiency/scale pitch.</td>
+        </tr>
+        <tr data-tier="B" data-seg="cafe-bakery-brunch">
+          <td class="num">36</td>
+          <td><span class="tierdot" style="background:#b8860b">B</span></td>
+          <td class="score">60</td>
+          <td class="name">Home grown GA<div class="hood">Reynoldstown</div></td>
+          <td>Café / Bakery</td>
+          <td class="dollars">$</td>
+          <td>4.6★ <span class="muted">(2980)</span></td>
+          <td><span class="muted">—</span></td>
+          <td><a href="https://homegrownga.com" target="_blank">site</a></td>
+          <td class="pitch">Home grown GA does real volume (2980 reviews) — efficiency/scale pitch.</td>
+        </tr>
+        <tr data-tier="B" data-seg="quick-service-counter">
+          <td class="num">37</td>
+          <td><span class="tierdot" style="background:#b8860b">B</span></td>
+          <td class="score">60</td>
+          <td class="name">Rreal Tacos<div class="hood">Midtown</div></td>
+          <td>Quick-Service</td>
+          <td class="dollars">$</td>
+          <td>4.5★ <span class="muted">(1620)</span></td>
+          <td><span class="menu">$8–$16</span><span class="muted"> · avg $12 · 20 items</span></td>
+          <td><a href="https://rrealtacos.com" target="_blank">site</a></td>
+          <td class="pitch">Rreal Tacos does real volume (1620 reviews) — efficiency/scale pitch.</td>
+        </tr>
+        <tr data-tier="B" data-seg="cafe-bakery-brunch">
+          <td class="num">38</td>
+          <td><span class="tierdot" style="background:#b8860b">B</span></td>
+          <td class="score">60</td>
+          <td class="name">Octane Coffee<div class="hood">Grant Park</div></td>
+          <td>Café / Bakery</td>
+          <td class="dollars">$</td>
+          <td>4.4★ <span class="muted">(1430)</span></td>
+          <td><span class="muted">—</span></td>
+          <td><a href="https://octanecoffee.com" target="_blank">site</a></td>
+          <td class="pitch">Octane Coffee does real volume (1430 reviews) — efficiency/scale pitch.</td>
+        </tr>
+        <tr data-tier="B" data-seg="cafe-bakery-brunch">
+          <td class="num">39</td>
+          <td><span class="tierdot" style="background:#b8860b">B</span></td>
+          <td class="score">60</td>
+          <td class="name">Little Tart Bakeshop<div class="hood">Summerhill</div></td>
+          <td>Café / Bakery</td>
+          <td class="dollars">$$</td>
+          <td>4.7★ <span class="muted">(920)</span></td>
+          <td><span class="menu">$14–$24</span><span class="muted"> · avg $19 · 19 items</span></td>
+          <td><a href="https://littletartbakeshop.com" target="_blank">site</a></td>
+          <td class="pitch">Little Tart Bakeshop does real volume (920 reviews) — efficiency/scale pitch.</td>
+        </tr>
+        <tr data-tier="B" data-seg="quick-service-counter">
+          <td class="num">40</td>
+          <td><span class="tierdot" style="background:#b8860b">B</span></td>
+          <td class="score">58</td>
+          <td class="name">Hops &amp; Hominy Counter<div class="hood">West End</div></td>
+          <td>Quick-Service</td>
+          <td class="dollars">$</td>
+          <td>4.2★ <span class="muted">(120)</span></td>
+          <td><span class="menu">$9–$16</span><span class="muted"> · avg $11 · 14 items</span></td>
+          <td><a href="https://hops&amp;hominycounter.com" target="_blank">site</a></td>
+          <td class="pitch">Hops &amp; Hominy Counter — standard intro; lead with a local Atlanta proof point.</td>
+        </tr></tbody></table>
+  <p class="foot">Fit score = ability-to-pay ($-tier) + scale (reviews) + quality window (4.0–4.6★) + digital gap (no site).
+     Identical formula in SQL view <code>v_atlanta_restaurant_targets</code>.</p>
+</div>
+<script>
+  function filt() {
+    const q=document.getElementById('q').value.toLowerCase();
+    const t=document.getElementById('tier').value, s=document.getElementById('seg').value;
+    let shown=0;
+    document.querySelectorAll('#tbl tbody tr').forEach(tr=>{
+      const okQ=tr.querySelector('.name').textContent.toLowerCase().includes(q);
+      const okT=!t||tr.dataset.tier===t; const okS=!s||tr.dataset.seg===s;
+      const show=okQ&&okT&&okS; tr.style.display=show?'':'none'; if(show)shown++;
+    });
+    document.getElementById('count').textContent=shown+' shown';
+  }
+  function sortBy(col) {
+    const tb=document.querySelector('#tbl tbody');
+    const rows=[...tb.rows].filter(r=>r.style.display!=='none');
+    const num=v=>parseFloat(v.replace(/[^0-9.]/g,''))||0;
+    rows.sort((a,b)=>num(b.cells[col].textContent)-num(a.cells[col].textContent));
+    rows.forEach(r=>tb.appendChild(r));
+  }
+  filt();
+</script>
+</body></html>

@@ -1,0 +1,74 @@
+# Sun & Moon Booking OS — Cloudflare Worker config
+#
+# NOT DEPLOYED YET (owner: verify Stripe test-mode checkout first). To go live:
+#   1. cd booking-os
+#   2. Set secrets (never commit these):
+#      npx wrangler secret put SUPABASE_URL          # https://iwxzishzszducqwxfmbd.supabase.co
+#      npx wrangler secret put SUPABASE_SERVICE_KEY  # service-role key (referral-os/.env)
+#      npx wrangler secret put ADMIN_TOKEN           # openssl rand -hex 12
+#      npx wrangler secret put WEBHOOK_SECRET        # shared with Vacay (interim header auth)
+#      npx wrangler secret put WEBHOOK_HMAC_SECRET   # optional: Vacay HMAC signing secret
+#      npx wrangler secret put STRIPE_SECRET_KEY         # (checkout increment)
+#      npx wrangler secret put STRIPE_WEBHOOK_SECRET     # (checkout increment)
+#      npx wrangler secret put TWILIO_ACCOUNT_SID        # (when SMS number lands)
+#      npx wrangler secret put TWILIO_AUTH_TOKEN
+#      npx wrangler secret put TWILIO_FROM_NUMBER
+#   3. npx wrangler deploy
+#   4. Admin dashboard: https://book.sunandmoon30a.com/admin/<ADMIN_TOKEN>
+#
+# Local testing (no deploy): npx wrangler dev  → http://localhost:8787
+#   (reads secrets from .dev.vars in this folder; see .env.example)
+
+name = "sunmoon-booking"
+main = "worker.js"
+compatibility_date = "2026-05-01"
+
+# Static assets (property photos) — served directly at /img/* before the
+# worker runs; deploys together with the worker via `wrangler deploy`.
+[assets]
+directory = "./public"
+
+[observability]
+enabled = true
+
+# Sync cadence:
+#   */15 * * * *   → availability + rate poll (interim primary; webhook safety net)
+#   10 11,23 * * * → twice-daily FULL validation vs live Vacay (runs forever)
+#                    (11:00 & 23:00 UTC ≈ 6am & 6pm Central)
+[triggers]
+# */15 sync = ONE property per tick (subrequest-bounded rotation)
+# validation = one property per slot (:10/:30/:50), twice daily; balance
+# charges ride the :10 slot only
+crons = ["*/15 * * * *", "10 11,23 * * *", "30 11,23 * * *", "50 11,23 * * *"]
+
+[[routes]]
+pattern = "book.sunandmoon30a.com"
+zone_name = "sunandmoon30a.com"
+custom_domain = true
+# Referral (next phase): wildcard so {partner}.sunandmoon30a.com resolves to
+# the same worker — the worker already reads the partner slug from the subdomain.
+# [[routes]]
+# pattern = "*.sunandmoon30a.com/*"
+# zone_name = "sunandmoon30a.com"
+
+[vars]
+PROJECT_ID = "310c4ae6-eec9-47b7-9e22-b95a6dc69365"
+
+# Owner notifications (comma-separated emails all receive every owner alert)
+NOTIFY_OWNER_EMAIL = "corihuela@gmail.com,experience@sunandmoon30a.com"
+
+# SMS paused until the Twilio number clears compliance (owner, 2026-08-11).
+# Flip to "true" to resume text notifications; emails are unaffected.
+SMS_ENABLED = "false"
+NOTIFY_OWNER_SMS   = "3057753405"
+ADMIN_ALERT_PHONE  = "3057753405"      # sync-drift + failed-charge SMS alerts
+
+# Phase-1 two-way availability — Mindy at Vacay.
+# BLANK = she receives nothing (testing mode). Fill BOTH when ready to notify
+# her on confirmed bookings so Vacay can block the dates on their side.
+VACAY_CONTACT_EMAIL = ""               # e.g. "mindy@vacayrentalnetwork.com"
+VACAY_CONTACT_PHONE = ""               # e.g. "8501234567"
+
+# Legacy toggle (superseded by VACAY_CONTACT_* above; kept for the old path)
+NOTIFY_MINDY_EMAIL   = "mindy@vacayrentalnetwork.com"
+NOTIFY_MINDY_ENABLED = "false"

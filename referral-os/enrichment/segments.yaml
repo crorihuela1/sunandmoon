@@ -1,0 +1,222 @@
+# =====================================================================
+# Segment definitions — canonical source of truth.
+#
+# This is what 002_seed.sql is generated from; keep them in sync.
+# The Python pipeline reads this file to drive ZoomInfo build_list calls.
+# =====================================================================
+
+project: sun-moon-30a
+
+# Geographies referenced by segments below. DRY.
+geographies:
+  emerald_coast: &emerald
+    states: [FL]
+    metros: [Panama City, Pensacola, Fort Walton Beach, Destin, Santa Rosa Beach,
+             Miramar Beach, Seagrove, Seaside, Rosemary Beach, Watercolor]
+  drive_market: &drive
+    metros: [Birmingham, Atlanta, Nashville, New Orleans, Memphis, Jackson, Knoxville, Chattanooga]
+  southeast_consumer: &southeast
+    states: [AL, GA, TN, LA, MS, TX, FL]
+
+segments:
+  # ----- TIER 1: highest-leverage referral types -----
+  - slug: wedding-planner-local
+    name: Wedding Planners — 30A / Emerald Coast
+    tier: 1
+    target_count: 120
+    expected_referral_value_usd: 4200
+    expected_conversion_rate: 0.15
+    zoominfo_query:
+      industries: [Event Planning Services, Hospitality]
+      keywords: [wedding planner, wedding coordinator]
+      <<: *emerald
+      employee_min: 1
+      employee_max: 50
+
+  - slug: wedding-planner-feeder
+    name: Wedding Planners — Drive-Market Feeders
+    tier: 1
+    target_count: 250
+    expected_referral_value_usd: 4500
+    expected_conversion_rate: 0.08
+    zoominfo_query:
+      industries: [Event Planning Services]
+      keywords: [destination wedding, wedding planner]
+      <<: *drive
+      employee_min: 1
+      employee_max: 50
+
+  - slug: corp-retreat-planner
+    name: Corporate Retreat / Offsite Planners
+    tier: 1
+    target_count: 200
+    expected_referral_value_usd: 3800
+    expected_conversion_rate: 0.05
+    zoominfo_query:
+      keywords: [corporate retreat, executive offsite, team offsite, leadership retreat]
+      <<: *drive
+      employee_min: 2
+      employee_max: 200
+
+  # ----- TIER 2: high frequency / mid-leverage -----
+  - slug: travel-advisor
+    name: Travel Advisors (Virtuoso, Signature, indie)
+    tier: 2
+    target_count: 300
+    expected_referral_value_usd: 2800
+    expected_conversion_rate: 0.10
+    zoominfo_query:
+      industries: [Travel Agencies, Travel Arrangements]
+      keywords: [travel advisor, travel agent, family travel]
+      <<: *southeast
+
+  - slug: family-reunion-planner
+    name: Family Reunion / Multi-Gen Travel Planners
+    tier: 2
+    target_count: 150
+    expected_referral_value_usd: 5200
+    expected_conversion_rate: 0.06
+    zoominfo_query:
+      keywords: [family reunion, multi-generational travel, group travel]
+      <<: *southeast
+
+  - slug: golf-cart-rental
+    name: Golf Cart Rental Companies — 30A
+    tier: 2
+    target_count: 25
+    expected_referral_value_usd: 600
+    expected_conversion_rate: 0.30
+    zoominfo_query:
+      keywords: [golf cart rental, LSV rental, beach cart]
+      <<: *emerald
+
+  - slug: bike-rental
+    name: Bike Rental / Beach Service Companies
+    tier: 2
+    target_count: 30
+    expected_referral_value_usd: 400
+    expected_conversion_rate: 0.35
+    zoominfo_query:
+      keywords: [bike rental, beach service, beach chair rental, umbrella rental]
+      <<: *emerald
+
+  # ----- TIER 3: brand alignment / guest experience -----
+  - slug: photographer-family
+    name: Family / Vacation Photographers
+    tier: 3
+    target_count: 80
+    expected_referral_value_usd: 700
+    expected_conversion_rate: 0.25
+    zoominfo_query:
+      industries: [Photography]
+      keywords: [family photographer, vacation photographer, beach photography]
+      <<: *emerald
+
+  - slug: wedding-photographer
+    name: Wedding Photographers — Destination 30A
+    tier: 3
+    target_count: 100
+    expected_referral_value_usd: 1100
+    expected_conversion_rate: 0.12
+    zoominfo_query:
+      industries: [Photography]
+      keywords: [wedding photographer, engagement photographer]
+      <<: *southeast
+
+  - slug: private-chef
+    name: Private Chefs / In-Home Catering
+    tier: 3
+    target_count: 60
+    expected_referral_value_usd: 1800
+    expected_conversion_rate: 0.15
+    zoominfo_query:
+      industries: [Personal Chef, Catering]
+      keywords: [private chef, personal chef, in-home catering]
+      <<: *emerald
+
+  - slug: yoga-instructor
+    name: Yoga / Wellness Instructors — In-home & Beach
+    tier: 3
+    target_count: 40
+    expected_referral_value_usd: 250
+    expected_conversion_rate: 0.20
+    zoominfo_query:
+      keywords: [yoga instructor, beach yoga, private yoga, wellness coach]
+      <<: *emerald
+
+  # ----- TIER 4: complementary lodging -----
+  - slug: boutique-hotel-30a
+    name: Boutique Hotels & Inns — 30A overflow partners
+    tier: 4
+    target_count: 30
+    expected_referral_value_usd: 3200
+    expected_conversion_rate: 0.04
+    zoominfo_query:
+      industries: [Hotels and Motels, Bed and Breakfast]
+      <<: *emerald
+
+  - slug: concierge-service
+    name: Concierge / Lifestyle Services — 30A
+    tier: 4
+    target_count: 25
+    expected_referral_value_usd: 2100
+    expected_conversion_rate: 0.10
+    zoominfo_query:
+      keywords: [concierge service, lifestyle management, vacation concierge]
+      <<: *emerald
+
+  # ----- TIER 5: long-tail / opportunistic -----
+  - slug: restaurant-30a
+    name: Restaurants — 30A flagship spots
+    tier: 5
+    target_count: 80
+    expected_referral_value_usd: 200
+    expected_conversion_rate: 0.40
+    zoominfo_query:
+      industries: [Restaurants, Full-Service Restaurants]
+      <<: *emerald
+
+  - slug: realtor-30a
+    name: Real Estate Agents — 30A
+    tier: 5
+    target_count: 200
+    expected_referral_value_usd: 2500
+    expected_conversion_rate: 0.05
+    zoominfo_query:
+      industries: [Real Estate, Real Estate Agents and Brokers]
+      <<: *emerald
+
+  - slug: event-venue
+    name: Event Venues — 30A & adjacent
+    tier: 5
+    target_count: 50
+    expected_referral_value_usd: 2900
+    expected_conversion_rate: 0.06
+    zoominfo_query:
+      keywords: [event venue, wedding venue, beach venue]
+      <<: *emerald
+
+  - slug: florist-30a
+    name: Florists — Wedding & Event
+    tier: 5
+    target_count: 40
+    expected_referral_value_usd: 1400
+    expected_conversion_rate: 0.08
+    zoominfo_query:
+      industries: [Florists]
+      <<: *emerald
+
+# Titles to pull as decision-maker contacts inside each company.
+# Used after companies are loaded — Phase 2 of the pipeline.
+decision_maker_titles:
+  - Owner
+  - Founder
+  - Co-Founder
+  - President
+  - CEO
+  - Managing Director
+  - Director of Sales
+  - Director of Marketing
+  - VP Sales
+  - VP Marketing
+  - Partner
