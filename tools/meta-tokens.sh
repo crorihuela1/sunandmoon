@@ -64,24 +64,33 @@ echo
 echo "Copy any USER token to the clipboard (short-lived from the Graph API"
 echo "Explorer is fine — this script extends it properly)."
 echo
-printf 'Press Enter once copied, or type "m" to paste manually: '
-read -rs MODE
-echo
+# Read ONLY from the clipboard. Pasting a 200+ character token into a `read`
+# prompt is unreliable: some terminals deliver it in chunks, so `read` takes
+# part of it and the remainder spills to the shell — which both corrupts the
+# token and prints it in the clear. There is deliberately no paste prompt.
+echo "Reading the clipboard..."
+USER_TOKEN=$(pbpaste 2>/dev/null | tr -d '[:space:]')
+if [ -z "$USER_TOKEN" ]; then
+  warn "  clipboard is empty."
+  printf '  Type or paste the token here instead (hidden): '
+  read -rs USER_TOKEN
+  echo
+fi
 
-case "$MODE" in
-  EAA*) echo "  (token detected at this prompt — using it; it was not displayed)"
-        USER_TOKEN="$MODE" ;;
-  m|M)  printf '  token (hidden): '; read -rs USER_TOKEN; echo ;;
-  *)    USER_TOKEN=$(pbpaste 2>/dev/null | tr -d '\r\n')
-        [ -n "$USER_TOKEN" ] || die "clipboard is empty — copy a token, then re-run."
-        echo "  read ${#USER_TOKEN} characters from the clipboard" ;;
-esac
 USER_TOKEN=$(printf '%s' "$USER_TOKEN" | tr -d '[:space:]')
 [ -n "${USER_TOKEN:-}" ] || die "no token entered"
 case "$USER_TOKEN" in
   EAA*) ;;
   *) warn "  ⚠ does not start with 'EAA' — that may not be a Meta token." ;;
 esac
+# A doubled paste concatenates the token with itself; Meta then calls it
+# malformed, which is a confusing way to learn your clipboard misbehaved.
+OCCURRENCES=$(printf '%s' "$USER_TOKEN" | grep -o 'EAA' | wc -l | tr -d ' ')
+if [ "$OCCURRENCES" -gt 1 ]; then
+  die "the token appears ${OCCURRENCES}x in one string — the copy was duplicated.
+   Re-copy it (a single clean copy) and run again."
+fi
+echo "  read ${#USER_TOKEN} characters"
 echo
 
 bold "1. User token"
