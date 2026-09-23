@@ -19,7 +19,12 @@ class Publisher:
         copy = post["copy"]
         if isinstance(copy, dict):  # a brief that was never fanned out per platform
             copy = copy.get("instagram") or copy.get("facebook") or ""
-        return f"{copy}\n\n{post.get('hashtags', '')}".strip()
+        credit = post.get("photo_credit")
+        parts = [copy]
+        if credit:
+            parts.append(f"Photo: {credit}")
+        parts.append(post.get("hashtags", ""))
+        return "\n\n".join(x for x in parts if x).strip()
 
     def publish(self, post: dict) -> dict:
         raise NotImplementedError

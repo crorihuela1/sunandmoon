@@ -60,6 +60,10 @@ def _rate_line(brand: dict, unit_key: str) -> str:
     return " ".join(parts)
 
 
+def _has_pool(brand: dict, name: str) -> bool:
+    return bool((brand.get("media", {}) or {}).get(name))
+
+
 def _unit_meta(brand: dict, key: str) -> dict:
     for u in brand.get("brand", {}).get("units", []):
         if u.get("key") == key:
@@ -84,6 +88,29 @@ def _load_recent() -> list[str]:
 def _save_recent(recent: list[str]) -> None:
     STATE_DIR.mkdir(parents=True, exist_ok=True)
     (STATE_DIR / RECENT_PHOTOS).write_text(json.dumps(recent[:RECENT_KEEP], indent=2))
+
+
+def _event_media(brand: dict, ev: PropertyEvent | None) -> dict | None:
+    """A rights-cleared image for this specific event, if one is configured.
+
+    Matched on a substring of the event title. Entries live under `event_media`
+    in brand.yaml, which documents what may legitimately go there.
+    """
+    if not ev:
+        return None
+    entries = brand.get("event_media") or []
+    if isinstance(entries, dict):        # `event_media: {}` when none configured
+        return None
+    title = (ev.title or "").lower()
+    base = (brand.get("media", {}) or {}).get("base_url", "").rstrip("/")
+    for e in entries:
+        m = str(e.get("match", "")).lower()
+        if m and m in title:
+            return {"media_url": f"{base}/{e['file'].lstrip('/')}",
+                    "alt_text": e.get("alt", ""),
+                    "photo_shows": e.get("shows", ""),
+                    "photo_credit": e.get("credit") or None}
+    return None
 
 
 def _media(brand: dict, pool: str, seed: int, used: set | None = None,
@@ -188,7 +215,9 @@ def _event_brief(brand: dict, ev: PropertyEvent, seed: int, window: OpenWindow |
         "unit_label": _unit_meta(brand, window.unit)["label"] if window else None,
         "open_dates": _fmt_window(window) if window else None,
         "window": window.to_dict() if window else None,
-        **_media(brand, window.unit if window else "events", seed, used, recent),
+        **(_event_media(brand, ev)
+           or _media(brand, "local" if _has_pool(brand, "local") else (window.unit if window else "events"),
+                     seed, used, recent)),
         "copy": {"instagram": ig, "facebook": fb},
         "hashtags": _hashtags(brand, seed=seed),
     }
@@ -205,7 +234,7 @@ def _evergreen_brief(brand: dict, pillar: dict, seed: int, used: set | None = No
         "id": f"evergreen-{pillar['key']}-{seed}",
         "pillar": pillar["key"],
         "prompt": prompts.get(pillar["key"], pillar.get("description", "")),
-        **_media(brand, "events", seed, used, recent),
+        **_media(brand, "local" if _has_pool(brand, "local") else "events", seed, used, recent),
         "copy": {"instagram": prompts.get(pillar["key"], ""), "facebook": prompts.get(pillar["key"], "")},
         "hashtags": _hashtags(brand, seed=seed),
         "needs_human_media": True,

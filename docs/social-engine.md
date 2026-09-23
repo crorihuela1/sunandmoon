@@ -184,6 +184,53 @@ Workers Builds will see a push and redeploy the (unchanged) site. Harmless,
 but to skip it: Cloudflare dashboard → the `sunandmoonhome` Worker → Settings
 → Builds → **Build watch paths** → exclude `state/*`, `queue/*`.
 
+## Images: what may be used, and where they come from
+
+Every image the engine posts must be one this business has the right to use
+commercially. Photos on other people's Instagram or Facebook are their
+copyright — reposting one to market paid stays is infringement, however it is
+credited, so the engine never sources images that way.
+
+Legitimate sources, best first:
+
+1. **The property photoshoot.** `photos/` holds a sample (001, 010, 020, 040…)
+   of what was clearly a much larger set. The rest of those originals are the
+   cheapest and most on-brand images available — drop them into the pools in
+   `config/brand.yaml`.
+2. **Your own photos of public places** — the beach, the dune lakes, the bike
+   path. One caveat: **SEASIDE® prohibits commercial photography inside its
+   commercial district** without a permit, which covers a shoot intended for
+   marketing. Request one at seasidefl.com/photography-requests, or shoot
+   outside the district.
+3. **Event organisers.** Most want partners promoting their event and will
+   share promotional images on request. Ask for written permission covering
+   social use, and record any required credit.
+4. **Visit South Walton** (visitsouthwalton.com/media-kit) keeps a photo and
+   video library of the destination, including events. The public page does not
+   state whether lodging partners may use it in their own marketing — ask
+   SouthWalton@TurnerPR.com before assuming, and keep the reply.
+5. **Guest photos, with written permission.** This is what the `guest_love`
+   pillar is for. A DM saying "yes, you can use it" is enough; keep it.
+6. **Licensed stock** (Unsplash and Pexels allow commercial use without
+   attribution). Two caveats: the licence covers the photographer's copyright
+   only — not trademarks, private property, or recognisable people in frame,
+   which matters for a place like Seaside — and a stock beach shot is weaker
+   brand material than a real photo of the cottages.
+
+### Wiring images in
+
+| Pool in `config/brand.yaml` | Used for |
+|---|---|
+| `media.sun` / `media.moon` / `media.full` | availability posts for that unit |
+| `media.local` | event and local-guide posts (area shots, not interiors) |
+| `media.events` | fallback when no local pool exists |
+| `event_media` | a specific event, matched on its title |
+
+`event_media` entries take an optional `credit`, appended to the caption as
+`Photo: <credit>` when the source requires attribution. Each entry also needs
+hand-written `alt` text describing the actual image — the copywriter never sees
+the photo and must not describe it.
+
 ## Adding a platform
 
 See `docs/api-activation-checklist.md`. Short version: create the app, add

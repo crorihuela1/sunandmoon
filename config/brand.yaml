@@ -83,6 +83,18 @@ media:
     - file: images/sunset-seagrove.jpg
       shows: the beach at sunset
       alt: An adult and child silhouetted on the beach at sunset, the sun low over the Gulf.
+  # Area shots — the 30A world rather than the cottages. Preferred for event
+  # and local-guide posts, where a kitchen photo reads as a mismatch.
+  local:
+    - file: images/sunset-seagrove.jpg
+      shows: the beach at sunset
+      alt: An adult and child silhouetted on the beach at sunset, the sun low over the Gulf.
+    - file: images/aerial-30a.jpg
+      shows: the coast and a coastal dune lake from the air
+      alt: Aerial view of the 30A shoreline with a coastal dune lake meeting the white sand.
+    - file: images/both-cottages.jpg
+      shows: both cottages from the street
+      alt: Golden Sun and Blue Moon side by side on Crystal Court, seen from the street under palms.
   events:
     - file: images/sunset-seagrove.jpg
       shows: the beach at sunset
@@ -110,6 +122,26 @@ hashtags:
     - "#VacationRental"
     - "#BeachHouse"
     - "#GulfCoast"
+
+# Rights-cleared imagery for specific 30A events, matched on a substring of the
+# event title as it appears in events.html. An event post uses the first match
+# here, then falls back to `media.local`, then to the cottage pool.
+#
+# ONLY list an image this business may use commercially:
+#   - photographed by you — but note SEASIDE bars commercial photography in its
+#     commercial district without a permit (seasidefl.com/photography-requests)
+#   - supplied by the event organiser for partner promotion (ask — most say yes)
+#   - licensed stock, or a guest photo with written permission
+# Never a photo lifted from someone's Instagram or Facebook: that is their
+# copyright, and reposting it to market paid stays is infringement.
+#
+# `credit` is optional and is appended to the caption when the source requires it.
+event_media: {}
+#   - match: Seafood Festival
+#     file: photos/local/destin-seafood.jpg
+#     shows: boats and stalls along the harbor boardwalk
+#     alt: Crowds along the Destin harbor boardwalk at a seafood festival, boats moored alongside.
+#     credit: Destin Seafood Festival
 
 max_auto_posts_per_day: 2   # per platform; evergreen human-photo prompts don't count
 
