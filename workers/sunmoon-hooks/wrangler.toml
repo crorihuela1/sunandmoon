@@ -1,0 +1,22 @@
+# Hostaway webhook receiver + iCal reconciliation + direct-booking requests.
+# NOTE: this worker uses Cloudflare D1, NOT Supabase. Separate datastore.
+# Recovered from the deployed Cloudflare bundle on 2026-09-15. See docs/RECOVERY.md.
+name = "sunmoon-hooks"
+main = "src/index.js"
+compatibility_date = "2026-07-01"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "sunmoon-db"
+database_id = "45fe48d6-b68d-4e5c-950b-01b86db09de4"
+
+[triggers]
+crons = ["17 */6 * * *"]     # iCal reconciliation; adjust to taste
+
+[vars]
+SITE_ORIGIN = "https://sunandmoon30a.com"
+
+# Secrets — set with `wrangler secret put <NAME>`:
+#   RESEND_API_KEY, FROM_EMAIL, OWNER_EMAIL, VRN_EMAIL
+#   WEBHOOK_USER, WEBHOOK_PASS
+#   ICAL_URL_BLUE_MOON, ICAL_URL_GOLDEN_SUN

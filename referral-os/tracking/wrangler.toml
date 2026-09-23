@@ -1,0 +1,24 @@
+# Cloudflare Workers config for the tracking service.
+#
+# Deploy:
+#   1. `npm install -g wrangler`
+#   2. `wrangler login`
+#   3. `wrangler secret put SUPABASE_URL`
+#      `wrangler secret put SUPABASE_SERVICE_ROLE_KEY`
+#      `wrangler secret put IP_SALT`
+#      `wrangler secret put FALLBACK_REDIRECT`
+#   4. `wrangler deploy`
+#   5. Point r.sunmoon30a.com (or whatever) at this worker in DNS.
+
+name = "referral-os-tracking"
+main = "worker.js"
+compatibility_date = "2026-05-01"
+workers_dev = true
+
+[observability]
+enabled = true
+
+# Custom domain — uncomment and set after DNS is configured
+# [[routes]]
+# pattern = "r.sunmoon30a.com/*"
+# zone_name = "sunmoon30a.com"

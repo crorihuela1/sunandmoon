@@ -1,0 +1,27 @@
+# sunmoon-outreach — referral outreach sender.
+# Replaces outreach_email.py, lost when the local Mac died on 2026-08-12.
+# See docs/RECOVERY.md.
+name = "sunmoon-outreach"
+main = "src/index.js"
+compatibility_date = "2026-09-01"
+
+# Cron is driven by .github/workflows/outreach-sender.yml instead: this
+# Cloudflare account is on Workers Free, capped at 5 cron triggers per
+# account, and is already at that limit. Re-enable this block if you move to
+# Workers Paid - the worker refuses to send twice in one UTC day, so the two
+# schedules cannot double-send.
+# [triggers]
+# crons = ["0 13 * * 1-5"]
+
+[vars]
+DAILY_CAP = "25"
+DRY_RUN = "true"             # flip to "false" only when you are ready to send
+TRACK_BASE = "https://track.sunandmoon30a.com"
+BOOK_BASE = "https://book.sunandmoon30a.com"
+FROM_EMAIL = "cristian@sunandmoon30a.com"
+REPLY_TO = "experience@sunandmoon30a.com"
+PROJECT_ID = "310c4ae6-eec9-47b7-9e22-b95a6dc69365"              # Supabase project uuid used to tag rows
+HERO_IMAGE_URL = ""          # optional; omitted from the email when blank
+
+# Secrets — set with `wrangler secret put <NAME>`, never commit:
+#   SUPABASE_URL, SUPABASE_SERVICE_KEY, RESEND_API_KEY, ADMIN_TOKEN

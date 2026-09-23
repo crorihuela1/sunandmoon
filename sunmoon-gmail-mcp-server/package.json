@@ -1,0 +1,26 @@
+{
+  "name": "sunmoon-gmail-mcp-server",
+  "version": "1.0.0",
+  "description": "MCP server giving Claude read/draft/send access to the Sun & Moon 30A Gmail (Google Workspace) account with tiered send guardrails.",
+  "type": "module",
+  "main": "dist/index.js",
+  "bin": {
+    "sunmoon-gmail-mcp-server": "dist/index.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "auth": "node dist/auth.js",
+    "dev": "tsc --watch"
+  },
+  "dependencies": {
+    "@google-cloud/local-auth": "^3.0.1",
+    "@modelcontextprotocol/sdk": "^1.12.0",
+    "googleapis": "^144.0.0",
+    "zod": "^3.24.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "typescript": "^5.6.0"
+  }
+}

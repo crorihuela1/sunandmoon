@@ -1,0 +1,9 @@
+{
+  "enabled": true,
+  "_comment": "Delivers booking_notifications queued by the booking worker. Emails send from experience@ via the existing Gmail app password. SMS: with no Twilio account and no carrier gateway configured, the text for 3057753405 is delivered AS AN EMAIL to the owner inbox with an [SMS] subject so nothing is lost during testing.",
+  "sms_method": "paused",
+  "sms_gateway_domain": null,
+  "_comment_sms": "sms_method 'imessage' sends a real text from this Mac's Messages.app via the modern service/buddy form (no accounts/fees; requires the Mac awake + signed into iMessage, and Terminal granted Automation control of Messages on first run). AT&T retired its email-to-SMS gateway (txt.att.net bounces, verified 2026-07-10). For an always-on cloud path independent of this Mac, add TWILIO_ACCOUNT_SID / TWILIO_AUTH_TOKEN / TWILIO_FROM to referral-os/.env and the agent uses Twilio automatically.",
+  "max_per_run": 20,
+  "_comment_sms_pause": "SMS PAUSED by owner 2026-08-11 until the Twilio number clears compliance. The worker no longer queues sms rows (SMS_ENABLED=false in wrangler.toml); any stray sms row that does appear falls through to the email-to-owner path so nothing is lost. To resume texts: set sms_method back to 'imessage' (or configure TWILIO_*) AND flip SMS_ENABLED=true + redeploy the worker."
+}

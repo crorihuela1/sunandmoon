@@ -1,0 +1,19 @@
+﻿tier,segment,segment_name,target,current,pct_of_target
+1,bachelorette-planner,Bachelorette Party Planners & Concierges,150,350,233.3
+1,corp-retreat-planner,Corporate Retreat / Offsite Planners,200,0,0.0
+1,wedding-planner-feeder,Wedding Planners — Drive-Market Feeders,250,122,48.8
+1,wedding-planner-local,Wedding Planners — 30A / Emerald Coast,120,41,34.2
+2,bike-rental,Bike Rental / Beach Service Companies,30,0,0.0
+2,family-reunion-planner,Family Reunion / Multi-Gen Travel Planners,150,0,0.0
+2,golf-cart-rental,Golf Cart Rental Companies — 30A,25,0,0.0
+2,travel-advisor,"Travel Advisors (Virtuoso, Signature, indie)",300,0,0.0
+3,photographer-family,Family / Vacation Photographers,80,43,53.8
+3,private-chef,Private Chefs / In-Home Catering,60,14,23.3
+3,wedding-photographer,Wedding Photographers — Destination 30A,100,0,0.0
+3,yoga-instructor,Yoga / Wellness Instructors — In-home & Beach,40,0,0.0
+4,boutique-hotel-30a,Boutique Hotels & Inns — 30A overflow partners,30,0,0.0
+4,concierge-service,Concierge / Lifestyle Services — 30A,25,0,0.0
+5,event-venue,Event Venues — 30A & adjacent,50,0,0.0
+5,florist-30a,Florists — Wedding & Event,40,0,0.0
+5,realtor-30a,Real Estate Agents — 30A,200,0,0.0
+5,restaurant-30a,Restaurants — 30A flagship spots,80,0,0.0

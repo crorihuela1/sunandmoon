@@ -1,0 +1,33 @@
+# Cloudflare Worker config for the tracking service.
+# Deploy with: wrangler deploy
+# Set secrets with: wrangler secret put <NAME>
+#
+# Requires three secrets (set via `wrangler secret put`):
+#   SUPABASE_URL          — e.g. https://iwxzishzszducqwxfmbd.supabase.co
+#   SUPABASE_SERVICE_KEY  — the service-role JWT (read+write)
+#   PROJECT_ID            — uuid of the Sun & Moon project in `projects` table
+
+name = "sunandmoon-tracking"
+main = "tracking_worker.js"
+compatibility_date = "2026-05-01"
+
+# Route — once you deploy, also add the DNS record in Cloudflare:
+#   CNAME  track  sunandmoon-tracking.<your-cf-account>.workers.dev  (proxied)
+# Or use a custom route in Cloudflare → Workers Routes panel:
+#   track.sunandmoon30a.com/*  →  sunandmoon-tracking
+
+[[routes]]
+pattern = "track.sunandmoon30a.com"
+zone_name = "sunandmoon30a.com"
+custom_domain = true
+
+# Instant email notification for /contact submissions.
+# Prereqs (one-time):
+#   1. `npx wrangler login`   (current token is missing the email-sending scope)
+#   2. `npx wrangler email sending enable sunandmoon30a.com`
+#      (adds send-only DKIM/SPF DNS records — does NOT touch MX, so
+#       Google Workspace inbound mail is unaffected)
+#   3. Uncomment the binding below and `npx wrangler deploy`.
+# Until then, the inquiry-agent emails the owner on its next poll instead.
+# [[send_email]]
+# name = "SEND_EMAIL"
