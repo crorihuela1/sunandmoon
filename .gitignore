@@ -27,3 +27,12 @@ __pycache__/
 !.dev.vars.example
 .env*
 !.env.example
+
+# Secrets recovered alongside Samantha's tree — never commit these
+.env.bak-*
+.dev.vars
+.wrangler/
+
+# Local staging of recovered files
+_inbox/
+_secrets/
