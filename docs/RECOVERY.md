@@ -1,16 +1,34 @@
-# Sun & Moon 30A — systems recovery (2026-09-15)
+# Sun & Moon 30A — systems recovery (2026-09-15, corrected 2026-09-23)
+
+> **2026-09-23 — most of this document's premise was wrong.** Samantha's whole
+> project tree had been syncing to iCloud Drive the entire time, under
+> "Sun & Moon at 30a". `outreach_email.py`, the Streamlit dashboard, every
+> ingest script and two of the three original worker sources were never lost.
+> They are now committed at `referral-os/`, `booking-os/`,
+> `sunmoon-gmail-mcp-server/`, `postiz/` and `daily-briefings/`. Corrections are
+> marked inline below. What remains true: the reimplemented
+> `workers/sunmoon-outreach` works and is deployable, the partner-attribution
+> bug was real and is fixed, and `sunmoon-hooks` really does have no original.
 
 ## What happened
 
 The referral outreach sender (`outreach_email.py`) and a Streamlit analytics
 dashboard ran **only on a local Mac**. That machine was rained on and died
-around **2026-08-12**. Outreach stopped that day — the last send was
-2026-08-12 and the last partial run delivered 16 of the usual 25 first-touch
-emails.
+around **2026-08-12**.
 
-Neither the sender nor the dashboard was ever committed to git, so **that
-source is gone**. It has been reimplemented, not ported — see
-`workers/sunmoon-outreach/`.
+**Corrected 2026-09-23 — the dates here were wrong.** Sending did not stop on
+2026-08-12. The `outreach` table shows 31 sent that day, then two more partial
+runs: 14 on 2026-08-15 and 13 on 2026-08-19. It tapered off over a week rather
+than stopping dead, and 2026-08-19 is the real last send. This matters because
+the sender's "not contacted in the last 60 days" window counts from these rows.
+
+**Corrected 2026-09-23 — the source is not gone.** Neither file was committed to
+git, but both were in iCloud and are now at `referral-os/outreach_email.py`
+(37 KB) and `referral-os/dashboard/streamlit_app.py`. The reimplementation at
+`workers/sunmoon-outreach/` stands on its own merits — it is a Worker on a cron
+rather than a script on a laptop — but it is no longer the only copy, and the
+original is worth reading for the `claude-haiku-4-5` email bodies the rewrite
+deliberately dropped.
 
 Separately, four Cloudflare Workers were running the live site, booking flow,
 tracking and webhooks. None of them were in git either; the only copies were
@@ -34,8 +52,21 @@ the API returned no fetchable script, so it is **not** recovered here.
 `sunmoon-booking`, `sunandmoon-tracking` and `sunmoon-hooks` were pulled from
 the deployed Cloudflare bundles. They are **esbuild output**, not the original
 TypeScript — readable and syntactically valid (all three pass `node --check`),
-but they carry bundler artifacts (`__name`, `__defProp`) and the original
-`src/*.ts` files are still lost. Treat these as a recovery point that stops the
+but they carry bundler artifacts (`__name`, `__defProp`).
+
+**Corrected 2026-09-23 — two of the three originals are back.** They came out of
+iCloud with zero bundler artifacts:
+
+| Worker | Original source | Bundle under `workers/` |
+|---|---|---|
+| `sunandmoon-tracking` | `referral-os/workers/tracking_worker.js` — 24,474 B | 21,546 B, 19 artifacts |
+| `sunmoon-booking` | `booking-os/worker.js` — 177,973 B | 164,856 B, 67 artifacts |
+
+They are deliberately left where they landed rather than swapped over the
+bundles under `workers/`, because `wrangler.toml` points `main` at those paths
+and the substitution changes what gets deployed. Diff them, deploy to a preview,
+then promote. **`sunmoon-hooks` has no original anywhere in the tree** and its
+`src/*.ts` really is still lost. Treat these as a recovery point that stops the
 code from disappearing, not as a pristine source tree. The sourcemaps
 (`*.js.map`) referenced at the bottom of each file were not retrievable.
 
@@ -141,10 +172,56 @@ At the time of recovery: **292 companies** eligible to email (522 contacts,
 de-duped to one per company), roughly 12 business days at 25/day. A further
 ~568 companies exist with no contact email and would need enrichment.
 
+## Where the company list actually came from
+
+Not stated in the original write-up, and worth recording. Of the 1,143 companies
+in Supabase, **all 1,143 carry a `google_place_id` and `data_sources =
+["google_places"]`**, loaded 2026-05-22 → 06-17. The 901 contact emails came
+from a single `website_scrape` batch on 2026-05-30. Both scripts are now in the
+repo: the loaders are `referral-os/ingest_*.py`, the scraper is
+`referral-os/enrich_layer1_websites.py`.
+
+### The Apollo half was built and never run
+
+`referral-os/ingest_all.py` defines 17 segments across two sources — 12 via
+Google Places (supply-side, 30A hyperlocal) and 4 via Apollo (demand-side
+drive-markets). `referral-os/ingest_apollo_wedding_atlanta.py` is a standalone
+smoke test, and `.env` carries a live `APOLLO_API_KEY`.
+
+None of it ever wrote. The Apollo path sets `apollo_organization_id` and
+`data_sources = ["apollo"]`; the database has **zero** rows with either, and the
+smoke test required an explicit `--write` that was never passed.
+
+| Apollo segment | Tier | Companies |
+|---|---|---|
+| `wedding-planner-feeder` | 1 | 467 — but filled from Google Places instead |
+| `corp-retreat-planner` | 1 | **0** |
+| `travel-advisor` | 2 | **0** |
+| `family-reunion-planner` | 2 | **0** |
+
+Three demand-side segments, one of them tier 1, are coded and funded and empty.
+That is also the most promising route to the 568 companies that have no contact
+email. (`ingest_all.py`'s header says five Apollo segments; only four are
+defined.)
+
 ## What is still not in git
 
-- The Streamlit analytics dashboard that ran at `localhost:8501` (referenced in
-  the tracking worker's ops footer). Lost with the Mac. The ops dashboard at
-  `track.sunandmoon30a.com/ops/<OPS_TOKEN>` covers some of the same ground.
-- Original TypeScript sources for the three recovered workers.
+- Original TypeScript for `sunmoon-hooks`. The other two workers' sources were
+  recovered — see the corrected provenance section above.
 - The `sunandmoonhome` marketing site worker.
+- `tests/test_availability.py`, which exists only on the two
+  `origin/claude/*availability*` branches. It is the only test file in the
+  project and was written against an August `availability.py`, so it may need
+  updating before it passes.
+
+## Secrets
+
+`referral-os/.env`, four `.env.bak-*` and `booking-os/.dev.vars` came with the
+recovered tree and hold live values — Stripe, Supabase service role, Gmail app
+password, Twilio, Anthropic, Apollo, Google Places. They are kept **outside the
+repo** and are covered by both `.gitignore` and `.assetsignore`.
+
+`.assetsignore` is the one that matters most: `wrangler.jsonc` publishes assets
+from `"."`, the whole repo root, and wrangler uploads from the filesystem rather
+than from git. A gitignored directory sitting in the working tree is still
+served unless `.assetsignore` excludes it.
