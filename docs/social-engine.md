@@ -87,6 +87,21 @@ To feature a nightly rate in availability posts, set `rates.sun` / `rates.moon`
 Everything below is a one-time setup. Steps 1–2 are things only the account
 owner can do (they involve credentials).
 
+> **Use `tools/meta-tokens.sh`.** It walks the whole token dance, validates
+> what it gets, and stores the secrets — run it instead of doing steps 1.3–1.6
+> by hand:
+> ```bash
+> bash tools/meta-tokens.sh
+> ```
+>
+> **The one trap it exists to avoid:** the Access Token Debugger's "Extend
+> Access Token" button returns a long-lived *token* on a short-lived
+> *session*. The Page token derived from it reports `expires_at: 0` ("never"),
+> works when you test it, and then fails hours later with
+> `OAuthException 190 subcode 463 — Session has expired`. Only the
+> server-side `fb_exchange_token` exchange (App ID + App Secret) produces a
+> Page token whose session survives, so the script always performs it.
+
 ### 1. Meta credentials (Instagram + Facebook, one app)
 
 Prerequisites: a Facebook Page for Sun & Moon 30A, and the
