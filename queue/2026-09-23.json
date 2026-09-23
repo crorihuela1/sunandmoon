@@ -1,0 +1,525 @@
+{
+  "date": "2026-09-23",
+  "generated_at": "2026-09-23T00:00:58.482764Z",
+  "pillar_of_day": "local_guide",
+  "active_platforms": [
+    "meta_facebook",
+    "meta_instagram"
+  ],
+  "inactive_platforms": [
+    "google_business_profile",
+    "linkedin",
+    "nextdoor",
+    "pinterest",
+    "threads",
+    "tiktok",
+    "x_twitter",
+    "youtube"
+  ],
+  "open_windows": [
+    {
+      "unit": "sun",
+      "start": "2026-10-24",
+      "end": "2026-12-07",
+      "nights": 44,
+      "score": 49,
+      "kind": "window",
+      "event_title": ""
+    },
+    {
+      "unit": "moon",
+      "start": "2026-10-19",
+      "end": "2026-11-23",
+      "nights": 35,
+      "score": 35,
+      "kind": "window",
+      "event_title": ""
+    },
+    {
+      "unit": "full",
+      "start": "2026-10-24",
+      "end": "2026-11-23",
+      "nights": 30,
+      "score": 32,
+      "kind": "window",
+      "event_title": ""
+    },
+    {
+      "unit": "moon",
+      "start": "2026-09-26",
+      "end": "2026-10-02",
+      "nights": 6,
+      "score": 15,
+      "kind": "window",
+      "event_title": ""
+    },
+    {
+      "unit": "moon",
+      "start": "2026-10-07",
+      "end": "2026-10-11",
+      "nights": 4,
+      "score": 8,
+      "kind": "window",
+      "event_title": ""
+    },
+    {
+      "unit": "moon",
+      "start": "2026-11-29",
+      "end": "2026-12-07",
+      "nights": 8,
+      "score": 6,
+      "kind": "window",
+      "event_title": ""
+    },
+    {
+      "unit": "full",
+      "start": "2026-11-29",
+      "end": "2026-12-07",
+      "nights": 8,
+      "score": 6,
+      "kind": "window",
+      "event_title": ""
+    }
+  ],
+  "top_stays": [
+    {
+      "unit": "moon",
+      "start": "2026-09-26",
+      "end": "2026-10-02",
+      "nights": 6,
+      "score": 15,
+      "kind": "short_stay",
+      "event_title": ""
+    },
+    {
+      "unit": "sun",
+      "start": "2026-10-29",
+      "end": "2026-11-01",
+      "nights": 3,
+      "score": 11,
+      "kind": "long_weekend",
+      "event_title": ""
+    },
+    {
+      "unit": "sun",
+      "start": "2026-10-30",
+      "end": "2026-11-02",
+      "nights": 3,
+      "score": 11,
+      "kind": "long_weekend",
+      "event_title": ""
+    },
+    {
+      "unit": "sun",
+      "start": "2026-11-26",
+      "end": "2026-11-29",
+      "nights": 3,
+      "score": 11,
+      "kind": "long_weekend",
+      "event_title": ""
+    },
+    {
+      "unit": "moon",
+      "start": "2026-10-29",
+      "end": "2026-11-01",
+      "nights": 3,
+      "score": 11,
+      "kind": "long_weekend",
+      "event_title": ""
+    },
+    {
+      "unit": "moon",
+      "start": "2026-10-30",
+      "end": "2026-11-02",
+      "nights": 3,
+      "score": 11,
+      "kind": "long_weekend",
+      "event_title": ""
+    },
+    {
+      "unit": "full",
+      "start": "2026-10-29",
+      "end": "2026-11-01",
+      "nights": 3,
+      "score": 11,
+      "kind": "long_weekend",
+      "event_title": ""
+    },
+    {
+      "unit": "full",
+      "start": "2026-10-30",
+      "end": "2026-11-02",
+      "nights": 3,
+      "score": 11,
+      "kind": "long_weekend",
+      "event_title": ""
+    }
+  ],
+  "upcoming_events": [
+    {
+      "title": "Destin Seafood Festival",
+      "start": "2026-09-25T00:00:00",
+      "end": "2026-09-27T00:00:00",
+      "description": "Three days along the harbor boardwalk: Friday Sept 25 (4\u201310 PM), Saturday Sept 26 (10 AM\u201310 PM, closing under fireworks), and Sunday Sept 27 (10 AM\u20136 PM). Free to attend, with more than 75 food, art and retail vendors, five music stages, and a Kids Zone \u2014 Gulf shrimp, crab and grouper straight off the boats. Come early for parking and make a day of the harbor \u00b7 about a 35-min drive west.",
+      "location": "Destin Harbor Boardwalk",
+      "url": "https://www.destinseafoodfest.com/",
+      "recurring": ""
+    },
+    {
+      "title": "Harvest Wine & Food Festival",
+      "start": "2026-10-15T00:00:00",
+      "end": "2026-10-18T00:00:00",
+      "description": "10th annual \u00b7 four days in WaterColor \u2014 Celebrity Winemaker Dinners Thursday, Harvest After Dark Friday, the Grand Tasting Saturday Oct 17 in Cerulean Park (1\u20134 PM), and a Festival Brunch Sunday \u00b7 benefits DCWAF children's charities \u00b7 10-min drive west",
+      "location": "WaterColor",
+      "url": "https://www.dcwaf.org/harvest-festival/",
+      "recurring": ""
+    },
+    {
+      "title": "Baytowne Beer Festival",
+      "start": "2026-10-16T00:00:00",
+      "end": "2026-10-17T00:00:00",
+      "description": "18th annual \u00b7 Friday night (6\u20138 PM) brings football on the big screen, bourbon, and bonfires under the stars; Saturday is the Grand Craft Beer Tasting with Seltzer Lane and food pairings \u00b7 $55 pre-sale, $65 at the gate \u00b7 25-min drive west",
+      "location": "Baytowne Wharf",
+      "url": "https://baytownebeerfestival.com/",
+      "recurring": ""
+    },
+    {
+      "title": "Halloweener Derby & Oktoberfest",
+      "start": "2026-10-24T00:00:00",
+      "end": "2026-10-24T00:00:00",
+      "description": "16th annual \u00b7 Saturday Oct 24, 10 AM\u20132 PM at the Seaside Amphitheater \u00b7 dachshund races down Central Square and an all-breeds costume contest, with Oktoberfest food and drink alongside \u00b7 free to watch, bring the dog and a camera \u00b7 5-min walk or drive",
+      "location": "Seaside",
+      "url": "https://seasidefl.com/event/annual-halloweener-derby-dachshund-race-dog-costume-contest/",
+      "recurring": ""
+    },
+    {
+      "title": "Seeing Red Wine Festival",
+      "start": "2026-11-05T00:00:00",
+      "end": "2026-11-08T00:00:00",
+      "description": "34 years running \u00b7 a vintners dinner at Bud & Alley's, the Al Fresco Reserve Tasting, Battle of the Somms, the Grand Tasting in Central Square, and a Celebration of Bubbles brunch \u00b7 benefits DCWAF \u00b7 tickets on sale now \u00b7 5-min walk or drive",
+      "location": "Seaside",
+      "url": "https://seasideseeingred.com/",
+      "recurring": ""
+    },
+    {
+      "title": "Rosemary Beach Uncorked",
+      "start": "2026-11-14T00:00:00",
+      "end": "2026-11-14T00:00:00",
+      "description": "15th annual \u00b7 Saturday Nov 14, 2026, 1\u20134 PM on Barrett Square \u00b7 wines poured by vintners from around the world alongside dishes from Rosemary Beach restaurants, with live music as you stroll the cobblestone streets \u00b7 sold out \u2014 join the waitlist at rosemarybeachuncorked.com \u00b7 15-min drive east",
+      "location": "",
+      "url": "https://rosemarybeachuncorked.com/",
+      "recurring": ""
+    },
+    {
+      "title": "Sounds of Seaside Concert Series",
+      "start": "2026-09-23T00:00:00",
+      "end": null,
+      "description": "Through Oct 28 \u00b7 Wed 5\u20137 PM \u00b7 Free Wednesday-evening concerts on the Seaside Amphitheater lawn, 5\u20137 PM, running weekly through Oct 28 \u00b7 a different act each week, free and open to all ages \u00b7 bring blankets and chairs, snacks and drinks welcome \u00b7 5-min walk or drive",
+      "location": "",
+      "url": "https://www.homeownerscollection.com/seaside-events/outdoor-activities/sounds-seaside-concert-series-0",
+      "recurring": "Wed"
+    },
+    {
+      "title": "Morning Vinyasa Yoga",
+      "start": "2026-09-23T00:00:00",
+      "end": null,
+      "description": "Through Oct 31 \u00b7 Daily 8:30 AM \u00b7 Every morning at 8:30 AM on the pavilion overlooking the Gulf, weather permitting \u00b7 no preregistration, $25 drop-in by cash, check, or Venmo \u00b7 bring a mat or towel and water \u00b7 5-min walk or drive",
+      "location": "Seaside Pavilion",
+      "url": "https://seasidefl.com/neighborhood/seaside-yoga/",
+      "recurring": "Daily"
+    },
+    {
+      "title": "Central Square Cinema",
+      "start": "2026-09-25T00:00:00",
+      "end": null,
+      "description": "Through Oct 30 \u00b7 Fri 8 PM \u00b7 Free family movies on the big screen at the Seaside Amphitheater, Fridays at 8 PM \u2014 The Bad Guys 2 (Sept 18), Scoob! (Sept 25), Air Bud (Oct 2), Hoppers (Oct 9), Hotel Transylvania (Oct 16), Coco (Oct 23), and a Halloween feature (Oct 30) \u00b7 bring a blanket and the kids \u00b7 5-min walk or drive",
+      "location": "Free Movies Under the Stars",
+      "url": "https://seasidefl.com/events/",
+      "recurring": "Fri"
+    },
+    {
+      "title": "Seaside Farmers Market",
+      "start": "2026-09-26T00:00:00",
+      "end": null,
+      "description": "Year-Round \u00b7 Sat 9\u20131 \u00b7 Saturdays year-round \u00b7 9 AM\u20131 PM at the Seaside Amphitheater \u00b7 local growers, artisan cheeses and breads, craft chefs, and live acoustic music \u00b7 5-min walk or drive",
+      "location": "",
+      "url": "https://30a.com/locations/seaside-farmers-market/",
+      "recurring": "Sat"
+    }
+  ],
+  "new_bookings": [],
+  "briefs": [
+    {
+      "id": "avail-moon-2026-10-23",
+      "pillar": "availability_spotlight",
+      "unit": "moon",
+      "unit_label": "Blue Moon",
+      "unit_angle": "stargazing, slow evenings by the fireplace, deep quiet",
+      "open_dates": "Fri Oct 23 \u2013 Sat 24 (2 nights)",
+      "window": {
+        "unit": "moon",
+        "start": "2026-10-23",
+        "end": "2026-10-25",
+        "nights": 2,
+        "score": 10,
+        "kind": "event_stay",
+        "event_title": "Halloweener Derby & Oktoberfest"
+      },
+      "event": null,
+      "event_summary": null,
+      "rate": null,
+      "media_url": "https://sunandmoon30a.com/photos/blue-moon/060.jpg",
+      "alt_text": "Blue Moon's kitchen looking through to a bedroom, pendant lights over the counter.",
+      "photo_shows": "the kitchen looking through to a bedroom",
+      "copy": {
+        "instagram": "Blue Moon is open Fri Oct 23 \u2013 Sat 24, two nights.\n\nThree king bedrooms, a fully equipped kitchen, and the kind of quiet that makes late October feel longer than it is.\n\nFireplace lit, stars over Crystal Court.\n\nBook direct \u2014 link in bio.",
+        "facebook": "Blue Moon has Fri Oct 23 \u2013 Sat 24 open, two nights in Seagrove Beach with three king bedrooms, a full kitchen and a living-room fireplace for the first cool evenings. Live dates and instant confirmation at https://book.sunandmoon30a.com"
+      },
+      "hashtags": "#SunAndMoon30A #StayWithTheSky #Seaside30A #Seagrove #EmeraldCoast #FloridaPanhandle #BlueMoonCottage #30AFall",
+      "copy_source": "claude"
+    },
+    {
+      "id": "evergreen-local_guide-739882",
+      "pillar": "local_guide",
+      "prompt": "Share one nearby thing guests ask about (a trail, a table, a beach access) and tie it back to staying at the cottages.",
+      "media_url": "https://sunandmoon30a.com/photos/golden-sun/001.jpg",
+      "alt_text": "Golden Sun cottage at dusk, warm light in the windows, tall palms in the foreground.",
+      "photo_shows": "the cottage exterior at dusk",
+      "copy": {
+        "instagram": "Share one nearby thing guests ask about (a trail, a table, a beach access) and tie it back to staying at the cottages.",
+        "facebook": "Share one nearby thing guests ask about (a trail, a table, a beach access) and tie it back to staying at the cottages."
+      },
+      "hashtags": "#SunAndMoon30A #StayWithTheSky #Seaside30A #Seagrove #EmeraldCoast #FloridaPanhandle",
+      "needs_human_media": true
+    },
+    {
+      "id": "event-739882-2026-09-25-destin-seafood-festival",
+      "pillar": "local_events",
+      "event": {
+        "title": "Destin Seafood Festival",
+        "start": "2026-09-25T00:00:00",
+        "end": "2026-09-27T00:00:00",
+        "description": "Three days along the harbor boardwalk: Friday Sept 25 (4\u201310 PM), Saturday Sept 26 (10 AM\u201310 PM, closing under fireworks), and Sunday Sept 27 (10 AM\u20136 PM). Free to attend, with more than 75 food, art and retail vendors, five music stages, and a Kids Zone \u2014 Gulf shrimp, crab and grouper straight off the boats. Come early for parking and make a day of the harbor \u00b7 about a 35-min drive west.",
+        "location": "Destin Harbor Boardwalk",
+        "url": "https://www.destinseafoodfest.com/",
+        "recurring": ""
+      },
+      "event_summary": "Destin Seafood Festival, Sep 25\u201327",
+      "unit": "moon",
+      "unit_label": "Blue Moon",
+      "open_dates": "Sat Sep 26 \u2013 Sun 27 (2 nights)",
+      "window": {
+        "unit": "moon",
+        "start": "2026-09-26",
+        "end": "2026-09-28",
+        "nights": 2,
+        "score": 11,
+        "kind": "event_stay",
+        "event_title": "Destin Seafood Festival"
+      },
+      "media_url": "https://sunandmoon30a.com/photos/blue-moon/060.jpg",
+      "alt_text": "Blue Moon's kitchen looking through to a bedroom, pendant lights over the counter.",
+      "photo_shows": "the kitchen looking through to a bedroom",
+      "copy": {
+        "instagram": "The Destin Seafood Festival runs Sep 25\u201327 on the harbor boardwalk \u2014 Gulf shrimp, crab and grouper off the boats, about 35 minutes west.\n\nBlue Moon is open Sat Sep 26 \u2013 Sun 27, two nights.\n\nCome back with the smell of salt on you, coffee in the kitchen the next morning.\n\nBook direct \u2014 link in bio.",
+        "facebook": "The Destin Seafood Festival takes over the harbor boardwalk Sep 25\u201327 \u2014 free to attend, five music stages, and Gulf shrimp and grouper straight off the boats, about a 35-minute drive west. Blue Moon is open Sat Sep 26 \u2013 Sun 27, two nights, three king bedrooms and a full kitchen back in quiet Seagrove: https://book.sunandmoon30a.com"
+      },
+      "hashtags": "#SunAndMoon30A #StayWithTheSky #Seaside30A #Seagrove #EmeraldCoast #FloridaPanhandle #DestinSeafoodFestival #30ALife",
+      "copy_source": "claude"
+    }
+  ],
+  "posts": [
+    {
+      "platform": "meta_instagram",
+      "id": "avail-moon-2026-10-23",
+      "pillar": "availability_spotlight",
+      "unit": "moon",
+      "unit_label": "Blue Moon",
+      "unit_angle": "stargazing, slow evenings by the fireplace, deep quiet",
+      "open_dates": "Fri Oct 23 \u2013 Sat 24 (2 nights)",
+      "window": {
+        "unit": "moon",
+        "start": "2026-10-23",
+        "end": "2026-10-25",
+        "nights": 2,
+        "score": 10,
+        "kind": "event_stay",
+        "event_title": "Halloweener Derby & Oktoberfest"
+      },
+      "event": null,
+      "event_summary": null,
+      "rate": null,
+      "media_url": "https://sunandmoon30a.com/photos/blue-moon/060.jpg",
+      "alt_text": "Blue Moon's kitchen looking through to a bedroom, pendant lights over the counter.",
+      "photo_shows": "the kitchen looking through to a bedroom",
+      "hashtags": "#SunAndMoon30A #StayWithTheSky #Seaside30A #Seagrove #EmeraldCoast #FloridaPanhandle #BlueMoonCottage #30AFall",
+      "copy_source": "claude",
+      "copy": "Blue Moon is open Fri Oct 23 \u2013 Sat 24, two nights.\n\nThree king bedrooms, a fully equipped kitchen, and the kind of quiet that makes late October feel longer than it is.\n\nFireplace lit, stars over Crystal Court.\n\nBook direct \u2014 link in bio."
+    },
+    {
+      "platform": "meta_instagram",
+      "id": "evergreen-local_guide-739882",
+      "pillar": "local_guide",
+      "prompt": "Share one nearby thing guests ask about (a trail, a table, a beach access) and tie it back to staying at the cottages.",
+      "media_url": "https://sunandmoon30a.com/photos/golden-sun/001.jpg",
+      "alt_text": "Golden Sun cottage at dusk, warm light in the windows, tall palms in the foreground.",
+      "photo_shows": "the cottage exterior at dusk",
+      "hashtags": "#SunAndMoon30A #StayWithTheSky #Seaside30A #Seagrove #EmeraldCoast #FloridaPanhandle",
+      "needs_human_media": true,
+      "copy": "Share one nearby thing guests ask about (a trail, a table, a beach access) and tie it back to staying at the cottages."
+    },
+    {
+      "platform": "meta_instagram",
+      "id": "event-739882-2026-09-25-destin-seafood-festival",
+      "pillar": "local_events",
+      "event": {
+        "title": "Destin Seafood Festival",
+        "start": "2026-09-25T00:00:00",
+        "end": "2026-09-27T00:00:00",
+        "description": "Three days along the harbor boardwalk: Friday Sept 25 (4\u201310 PM), Saturday Sept 26 (10 AM\u201310 PM, closing under fireworks), and Sunday Sept 27 (10 AM\u20136 PM). Free to attend, with more than 75 food, art and retail vendors, five music stages, and a Kids Zone \u2014 Gulf shrimp, crab and grouper straight off the boats. Come early for parking and make a day of the harbor \u00b7 about a 35-min drive west.",
+        "location": "Destin Harbor Boardwalk",
+        "url": "https://www.destinseafoodfest.com/",
+        "recurring": ""
+      },
+      "event_summary": "Destin Seafood Festival, Sep 25\u201327",
+      "unit": "moon",
+      "unit_label": "Blue Moon",
+      "open_dates": "Sat Sep 26 \u2013 Sun 27 (2 nights)",
+      "window": {
+        "unit": "moon",
+        "start": "2026-09-26",
+        "end": "2026-09-28",
+        "nights": 2,
+        "score": 11,
+        "kind": "event_stay",
+        "event_title": "Destin Seafood Festival"
+      },
+      "media_url": "https://sunandmoon30a.com/photos/blue-moon/060.jpg",
+      "alt_text": "Blue Moon's kitchen looking through to a bedroom, pendant lights over the counter.",
+      "photo_shows": "the kitchen looking through to a bedroom",
+      "hashtags": "#SunAndMoon30A #StayWithTheSky #Seaside30A #Seagrove #EmeraldCoast #FloridaPanhandle #DestinSeafoodFestival #30ALife",
+      "copy_source": "claude",
+      "copy": "The Destin Seafood Festival runs Sep 25\u201327 on the harbor boardwalk \u2014 Gulf shrimp, crab and grouper off the boats, about 35 minutes west.\n\nBlue Moon is open Sat Sep 26 \u2013 Sun 27, two nights.\n\nCome back with the smell of salt on you, coffee in the kitchen the next morning.\n\nBook direct \u2014 link in bio."
+    },
+    {
+      "platform": "meta_facebook",
+      "id": "avail-moon-2026-10-23",
+      "pillar": "availability_spotlight",
+      "unit": "moon",
+      "unit_label": "Blue Moon",
+      "unit_angle": "stargazing, slow evenings by the fireplace, deep quiet",
+      "open_dates": "Fri Oct 23 \u2013 Sat 24 (2 nights)",
+      "window": {
+        "unit": "moon",
+        "start": "2026-10-23",
+        "end": "2026-10-25",
+        "nights": 2,
+        "score": 10,
+        "kind": "event_stay",
+        "event_title": "Halloweener Derby & Oktoberfest"
+      },
+      "event": null,
+      "event_summary": null,
+      "rate": null,
+      "media_url": "https://sunandmoon30a.com/photos/blue-moon/060.jpg",
+      "alt_text": "Blue Moon's kitchen looking through to a bedroom, pendant lights over the counter.",
+      "photo_shows": "the kitchen looking through to a bedroom",
+      "hashtags": "#SunAndMoon30A #StayWithTheSky #Seaside30A #Seagrove #EmeraldCoast #FloridaPanhandle #BlueMoonCottage #30AFall",
+      "copy_source": "claude",
+      "copy": "Blue Moon has Fri Oct 23 \u2013 Sat 24 open, two nights in Seagrove Beach with three king bedrooms, a full kitchen and a living-room fireplace for the first cool evenings. Live dates and instant confirmation at https://book.sunandmoon30a.com"
+    },
+    {
+      "platform": "meta_facebook",
+      "id": "evergreen-local_guide-739882",
+      "pillar": "local_guide",
+      "prompt": "Share one nearby thing guests ask about (a trail, a table, a beach access) and tie it back to staying at the cottages.",
+      "media_url": "https://sunandmoon30a.com/photos/golden-sun/001.jpg",
+      "alt_text": "Golden Sun cottage at dusk, warm light in the windows, tall palms in the foreground.",
+      "photo_shows": "the cottage exterior at dusk",
+      "hashtags": "#SunAndMoon30A #StayWithTheSky #Seaside30A #Seagrove #EmeraldCoast #FloridaPanhandle",
+      "needs_human_media": true,
+      "copy": "Share one nearby thing guests ask about (a trail, a table, a beach access) and tie it back to staying at the cottages."
+    },
+    {
+      "platform": "meta_facebook",
+      "id": "event-739882-2026-09-25-destin-seafood-festival",
+      "pillar": "local_events",
+      "event": {
+        "title": "Destin Seafood Festival",
+        "start": "2026-09-25T00:00:00",
+        "end": "2026-09-27T00:00:00",
+        "description": "Three days along the harbor boardwalk: Friday Sept 25 (4\u201310 PM), Saturday Sept 26 (10 AM\u201310 PM, closing under fireworks), and Sunday Sept 27 (10 AM\u20136 PM). Free to attend, with more than 75 food, art and retail vendors, five music stages, and a Kids Zone \u2014 Gulf shrimp, crab and grouper straight off the boats. Come early for parking and make a day of the harbor \u00b7 about a 35-min drive west.",
+        "location": "Destin Harbor Boardwalk",
+        "url": "https://www.destinseafoodfest.com/",
+        "recurring": ""
+      },
+      "event_summary": "Destin Seafood Festival, Sep 25\u201327",
+      "unit": "moon",
+      "unit_label": "Blue Moon",
+      "open_dates": "Sat Sep 26 \u2013 Sun 27 (2 nights)",
+      "window": {
+        "unit": "moon",
+        "start": "2026-09-26",
+        "end": "2026-09-28",
+        "nights": 2,
+        "score": 11,
+        "kind": "event_stay",
+        "event_title": "Destin Seafood Festival"
+      },
+      "media_url": "https://sunandmoon30a.com/photos/blue-moon/060.jpg",
+      "alt_text": "Blue Moon's kitchen looking through to a bedroom, pendant lights over the counter.",
+      "photo_shows": "the kitchen looking through to a bedroom",
+      "hashtags": "#SunAndMoon30A #StayWithTheSky #Seaside30A #Seagrove #EmeraldCoast #FloridaPanhandle #DestinSeafoodFestival #30ALife",
+      "copy_source": "claude",
+      "copy": "The Destin Seafood Festival takes over the harbor boardwalk Sep 25\u201327 \u2014 free to attend, five music stages, and Gulf shrimp and grouper straight off the boats, about a 35-minute drive west. Blue Moon is open Sat Sep 26 \u2013 Sun 27, two nights, three king bedrooms and a full kitchen back in quiet Seagrove: https://book.sunandmoon30a.com"
+    }
+  ],
+  "busy_map": {
+    "sun": [
+      [
+        "2026-09-23",
+        "2026-10-07"
+      ],
+      [
+        "2026-10-08",
+        "2026-10-12"
+      ],
+      [
+        "2026-10-13",
+        "2026-10-24"
+      ]
+    ],
+    "moon": [
+      [
+        "2026-09-23",
+        "2026-09-26"
+      ],
+      [
+        "2026-10-02",
+        "2026-10-07"
+      ],
+      [
+        "2026-10-11",
+        "2026-10-19"
+      ],
+      [
+        "2026-11-23",
+        "2026-11-29"
+      ]
+    ],
+    "full": [
+      [
+        "2026-09-23",
+        "2026-10-07"
+      ],
+      [
+        "2026-10-08",
+        "2026-10-24"
+      ],
+      [
+        "2026-11-23",
+        "2026-11-29"
+      ]
+    ]
+  }
+}

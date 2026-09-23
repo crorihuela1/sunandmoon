@@ -1,0 +1,32 @@
+[
+  {
+    "platform": "meta_instagram",
+    "status": "skipped",
+    "reason": "missing secrets: IG_BUSINESS_ACCOUNT_ID"
+  },
+  {
+    "platform": "meta_instagram",
+    "status": "held",
+    "reason": "needs human media/copy \u2014 see queue file"
+  },
+  {
+    "platform": "meta_instagram",
+    "status": "skipped",
+    "reason": "missing secrets: IG_BUSINESS_ACCOUNT_ID"
+  },
+  {
+    "platform": "meta_facebook",
+    "status": "error",
+    "reason": "400 Client Error: Bad Request for url: https://graph.facebook.com/v26.0/1175097335692477/photos"
+  },
+  {
+    "platform": "meta_facebook",
+    "status": "held",
+    "reason": "needs human media/copy \u2014 see queue file"
+  },
+  {
+    "platform": "meta_facebook",
+    "status": "error",
+    "reason": "400 Client Error: Bad Request for url: https://graph.facebook.com/v26.0/1175097335692477/photos"
+  }
+]
