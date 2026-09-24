@@ -57,6 +57,18 @@ media:
     - file: photos/golden-sun/045.jpg
       shows: an aerial of the neighbourhood
       alt: Aerial view of Golden Sun and the surrounding Seagrove streets, with the Gulf beyond.
+    - file: photos/golden-sun/021.jpg
+      shows: the open living room and kitchen
+      alt: Golden Sun's open living room in white and pale linen, looking through to the kitchen.
+    - file: photos/golden-sun/044.jpg
+      shows: the private back patio
+      alt: The private back patio at Golden Sun, a yellow umbrella and chairs behind a slatted wood fence.
+    - file: photos/golden-sun/053.jpg
+      shows: a king bedroom
+      alt: A king bed at Golden Sun made up in white with a grey throw, a lamp on the nightstand.
+    - file: photos/golden-sun/056.jpg
+      shows: the gas grill on the back patio
+      alt: A stainless gas grill on Golden Sun's back patio against a weathered wood fence.
   moon:
     - file: photos/blue-moon/001.jpg
       shows: the cottage front
@@ -144,6 +156,52 @@ event_media: {}
 #     credit: Destin Seafood Festival
 
 max_auto_posts_per_day: 2   # per platform; evergreen human-photo prompts don't count
+
+# What guests on 30A actually worry about, and what they come here to celebrate.
+# From market research, Sept 2026. Each worry is paired with the TRUE thing about
+# this property that answers it — the copywriter may use the answer, and must
+# never make the generic claim without it. Roughly one post in three should
+# answer a worry rather than just describe a stay.
+audience:
+  pain_points:
+    - worry: >
+        Beach access on 30A. Much of the dry sand is privately owned, and guests
+        report being funneled into a crowded public strip, or blocked by cones,
+        with empty beach either side. It is the single biggest 30A-specific
+        anxiety, and 2025's SB1622 made access a live topic again.
+      answer: >
+        The nearest access is Pelayo, a PUBLIC Walton County beach access, a
+        3-minute walk straight across Scenic 30A — no resort gate, no shuttle,
+        no private-beach question. Say "public beach access" explicitly.
+    - worry: >
+        Fee shock. Guests abandon bookings when cleaning and service fees stack
+        up at checkout, and resent fees they did not see coming.
+      answer: >
+        Booking is direct at book.sunandmoon30a.com — live availability, real
+        prices and instant confirmation, with no third-party booking fee.
+    - worry: >
+        Cleanliness is the number-one cause of a disappointing stay — 45% of
+        travellers who were let down blame it.
+      answer: >
+        The cottages hold a 5.0 average rating with 98% of guests recommending
+        them. Let the rating speak; never claim spotlessness directly.
+    - worry: >
+        Big groups get split across two houses streets apart, or crammed into
+        one that does not fit.
+      answer: >
+        Golden Sun and Blue Moon sit side by side on the same lane — six
+        bedrooms, four baths, sixteen guests, one address.
+    - worry: >
+        Crowds and parking around Seaside in season.
+      answer: >
+        Seagrove is the quiet pocket of Scenic 30A: a residential lane, a
+        community pool steps away, and Seaside reachable without moving the car.
+  celebrations:
+    - Multi-generational reunions — grandparents, parents and kids under one roof.
+    - Milestone birthdays, anniversaries and small weddings.
+    - The trip that becomes an annual tradition; returning guests booking the same week.
+    - Sunset as the evening ritual — the deck, the walk over, the last swim.
+    - A child's first time seeing the Gulf.
 
 # Content pillars: the engine cycles through these methodically so the feed
 # builds a brand instead of repeating one note. Weights set the mix.

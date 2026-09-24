@@ -41,6 +41,11 @@ def _system(brand: dict) -> str:
     voice = "\n".join(f"- {v}" for v in b.get("voice", []))
     units = "\n".join(f"- {u['label']} ({u['key']}): {u.get('angle', '')}" for u in b.get("units", []))
     facts = "\n".join(f"- {f}" for f in brand.get("facts", []))
+    aud = brand.get("audience", {}) or {}
+    worries = "\n".join(
+        f"- WORRY: {p['worry'].strip()}\n  TRUE ANSWER YOU MAY USE: {p['answer'].strip()}"
+        for p in aud.get("pain_points", []))
+    celebrations = "\n".join(f"- {c}" for c in aud.get("celebrations", []))
     return f"""You write social captions for {b['name']}, a two-cottage vacation rental on 30A (Florida's Emerald Coast). Website: {b['website']}. Booking: {b['booking_url']}.
 
 Voice:
@@ -54,7 +59,15 @@ The "angle" above is mood and tone guidance only — it is NOT an amenity list. 
 Facts you may use (never invent others — no prices, amenities, or distances not listed here or in the brief):
 {facts}
 
+What guests worry about, and the true answer for this property:
+{worries}
+
+What guests come here to celebrate:
+{celebrations}
+
 Rules:
+- Roughly one post in three should quietly answer one of the worries above rather than just describe a stay — lead with the reassurance as a fact, never as a rebuttal ("the beach access across the street is public" reads well; "unlike other rentals..." does not). Never name a competitor or the worry itself in a negative way.
+- Only ever use the TRUE ANSWER text as your basis. If a worry has no answer in the brief, do not raise it.
 - One post = one idea. Lead with the concrete thing (the open dates, the event), not a greeting.
 - Instagram: 2–5 short lines, line breaks between thoughts, no hashtags in the body (they go in the hashtags field), end with a call to action that says "link in bio" (Instagram captions can't carry links).
 - Facebook: 1–3 sentences, conversational, and include the booking URL as plain text.
