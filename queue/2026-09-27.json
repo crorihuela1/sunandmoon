@@ -1,0 +1,489 @@
+{
+  "date": "2026-09-27",
+  "generated_at": "2026-09-27T17:22:34.400737Z",
+  "pillar_of_day": "availability_spotlight",
+  "active_platforms": [
+    "meta_facebook",
+    "meta_instagram"
+  ],
+  "inactive_platforms": [
+    "google_business_profile",
+    "linkedin",
+    "nextdoor",
+    "pinterest",
+    "threads",
+    "tiktok",
+    "x_twitter",
+    "youtube"
+  ],
+  "open_windows": [
+    {
+      "unit": "sun",
+      "start": "2026-10-24",
+      "end": "2026-12-11",
+      "nights": 48,
+      "score": 49,
+      "kind": "window",
+      "event_title": ""
+    },
+    {
+      "unit": "moon",
+      "start": "2026-10-19",
+      "end": "2026-11-23",
+      "nights": 35,
+      "score": 35,
+      "kind": "window",
+      "event_title": ""
+    },
+    {
+      "unit": "full",
+      "start": "2026-10-24",
+      "end": "2026-11-23",
+      "nights": 30,
+      "score": 32,
+      "kind": "window",
+      "event_title": ""
+    },
+    {
+      "unit": "moon",
+      "start": "2026-10-07",
+      "end": "2026-10-11",
+      "nights": 4,
+      "score": 14,
+      "kind": "window",
+      "event_title": ""
+    },
+    {
+      "unit": "moon",
+      "start": "2026-09-27",
+      "end": "2026-10-02",
+      "nights": 5,
+      "score": 10,
+      "kind": "window",
+      "event_title": ""
+    },
+    {
+      "unit": "moon",
+      "start": "2026-11-29",
+      "end": "2026-12-11",
+      "nights": 12,
+      "score": 6,
+      "kind": "window",
+      "event_title": ""
+    },
+    {
+      "unit": "full",
+      "start": "2026-11-29",
+      "end": "2026-12-11",
+      "nights": 12,
+      "score": 6,
+      "kind": "window",
+      "event_title": ""
+    }
+  ],
+  "top_stays": [
+    {
+      "unit": "moon",
+      "start": "2026-10-08",
+      "end": "2026-10-11",
+      "nights": 3,
+      "score": 16,
+      "kind": "event_stay",
+      "event_title": "Bloody Mary Festival"
+    },
+    {
+      "unit": "moon",
+      "start": "2026-10-07",
+      "end": "2026-10-11",
+      "nights": 4,
+      "score": 16,
+      "kind": "gap",
+      "event_title": ""
+    },
+    {
+      "unit": "moon",
+      "start": "2026-10-07",
+      "end": "2026-10-10",
+      "nights": 3,
+      "score": 13,
+      "kind": "event_stay",
+      "event_title": "Cars of 30A"
+    },
+    {
+      "unit": "sun",
+      "start": "2026-10-29",
+      "end": "2026-11-01",
+      "nights": 3,
+      "score": 11,
+      "kind": "long_weekend",
+      "event_title": ""
+    },
+    {
+      "unit": "sun",
+      "start": "2026-10-30",
+      "end": "2026-11-02",
+      "nights": 3,
+      "score": 11,
+      "kind": "weekend",
+      "event_title": ""
+    },
+    {
+      "unit": "sun",
+      "start": "2026-11-26",
+      "end": "2026-11-29",
+      "nights": 3,
+      "score": 11,
+      "kind": "long_weekend",
+      "event_title": ""
+    },
+    {
+      "unit": "moon",
+      "start": "2026-10-29",
+      "end": "2026-11-01",
+      "nights": 3,
+      "score": 11,
+      "kind": "long_weekend",
+      "event_title": ""
+    },
+    {
+      "unit": "moon",
+      "start": "2026-10-30",
+      "end": "2026-11-02",
+      "nights": 3,
+      "score": 11,
+      "kind": "weekend",
+      "event_title": ""
+    }
+  ],
+  "upcoming_events": [
+    {
+      "title": "Cars of 30A",
+      "start": "2026-10-02T00:00:00",
+      "end": "2026-10-03T00:00:00",
+      "description": "Friday evening's Torque to Table opens with an open-air showcase along South Charles Street, then a cocktail reception and dinner (21+). Saturday, 1\u20134 PM, more than 150 rare and high-performance cars fill the streets around Lake Marilyn, with live music, art and food alongside \u00b7 10-min drive east.",
+      "location": "Alys Beach",
+      "url": "https://www.carsof30a.com/",
+      "recurring": ""
+    },
+    {
+      "title": "Bloody Mary Festival",
+      "start": "2026-10-10T00:00:00",
+      "end": "2026-10-10T00:00:00",
+      "description": "11th annual \u00b7 Saturday, 11 AM\u20132 PM \u00b7 unlimited Bloody Mary tastings from Emerald Coast restaurants and bars, live music, SEC football on the big screen and lawn games \u00b7 $65 advance, $75 at the door, 21+ \u00b7 benefits Habitat for Humanity \u00b7 25-min drive west",
+      "location": "The Market Shops",
+      "url": "https://themarketshops.com/bloody-mary-festival/",
+      "recurring": ""
+    },
+    {
+      "title": "Harvest Wine & Food Festival",
+      "start": "2026-10-15T00:00:00",
+      "end": "2026-10-18T00:00:00",
+      "description": "10th annual \u00b7 four days in WaterColor \u2014 Celebrity Winemaker Dinners Thursday, Harvest After Dark Friday, the Grand Tasting Saturday Oct 17 in Cerulean Park (1\u20134 PM), and a Festival Brunch Sunday \u00b7 benefits DCWAF children's charities \u00b7 10-min drive west",
+      "location": "WaterColor",
+      "url": "https://www.dcwaf.org/harvest-festival/",
+      "recurring": ""
+    },
+    {
+      "title": "Baytowne Beer Festival",
+      "start": "2026-10-16T00:00:00",
+      "end": "2026-10-17T00:00:00",
+      "description": "18th annual \u00b7 Friday night (6\u20138 PM) brings football on the big screen, bourbon, and bonfires under the stars; Saturday is the Grand Craft Beer Tasting with Seltzer Lane and food pairings \u00b7 $55 pre-sale, $65 at the gate \u00b7 25-min drive west",
+      "location": "Baytowne Wharf",
+      "url": "https://baytownebeerfestival.com/",
+      "recurring": ""
+    },
+    {
+      "title": "Halloweener Derby & Oktoberfest",
+      "start": "2026-10-24T00:00:00",
+      "end": "2026-10-24T00:00:00",
+      "description": "16th annual \u00b7 Saturday Oct 24, 10 AM\u20132 PM at the Seaside Amphitheater \u00b7 dachshund races down Central Square and an all-breeds costume contest, with Oktoberfest food and drink alongside \u00b7 free to watch, bring the dog and a camera \u00b7 5-min walk or drive",
+      "location": "Seaside",
+      "url": "https://seasidefl.com/event/annual-halloweener-derby-dachshund-race-dog-costume-contest/",
+      "recurring": ""
+    },
+    {
+      "title": "Seeing Red Wine Festival",
+      "start": "2026-11-05T00:00:00",
+      "end": "2026-11-08T00:00:00",
+      "description": "34 years running \u00b7 a vintners dinner at Bud & Alley's, the Al Fresco Reserve Tasting, Battle of the Somms, the Grand Tasting in Central Square, and a Celebration of Bubbles brunch \u00b7 benefits DCWAF \u00b7 tickets on sale now \u00b7 5-min walk or drive",
+      "location": "Seaside",
+      "url": "https://seasideseeingred.com/",
+      "recurring": ""
+    },
+    {
+      "title": "Rosemary Beach Uncorked",
+      "start": "2026-11-14T00:00:00",
+      "end": "2026-11-14T00:00:00",
+      "description": "15th annual \u00b7 Saturday Nov 14, 2026, 1\u20134 PM on Barrett Square \u00b7 wines poured by vintners from around the world alongside dishes from Rosemary Beach restaurants, with live music as you stroll the cobblestone streets \u00b7 sold out \u2014 join the waitlist at rosemarybeachuncorked.com \u00b7 15-min drive east",
+      "location": "",
+      "url": "https://rosemarybeachuncorked.com/",
+      "recurring": ""
+    },
+    {
+      "title": "30A Farmers' Market",
+      "start": "2026-09-27T00:00:00",
+      "end": null,
+      "description": "Year-Round \u00b7 Sun 9\u20131 \u00b7 About 30 vendors on Barrett Square every Sunday, 9 AM\u20131 PM \u2014 local produce and micro-greens, Gulf seafood off the boat, artisan breads and sweets, grass-fed beef, tupelo honey \u00b7 pet-friendly \u00b7 a great Sunday-morning outing \u00b7 15-min drive east",
+      "location": "Rosemary Beach",
+      "url": "https://www.visitsouthwalton.com/listing/30a-farmers-market-rosemary-beach/",
+      "recurring": "Sun"
+    },
+    {
+      "title": "Morning Vinyasa Yoga",
+      "start": "2026-09-27T00:00:00",
+      "end": null,
+      "description": "Through Oct 31 \u00b7 Daily 8:30 AM \u00b7 Every morning at 8:30 AM on the pavilion overlooking the Gulf, weather permitting \u00b7 no preregistration, $25 drop-in by cash, check, or Venmo \u00b7 bring a mat or towel and water \u00b7 5-min walk or drive",
+      "location": "Seaside Pavilion",
+      "url": "https://seasidefl.com/neighborhood/seaside-yoga/",
+      "recurring": "Daily"
+    },
+    {
+      "title": "Sounds of Seaside Concert Series",
+      "start": "2026-09-30T00:00:00",
+      "end": null,
+      "description": "Through Oct 28 \u00b7 Wed 5\u20137 PM \u00b7 Free Wednesday-evening concerts on the Seaside Amphitheater lawn, 5\u20137 PM, running weekly through Oct 28 \u00b7 a different act each week, free and open to all ages \u00b7 bring blankets and chairs, snacks and drinks welcome \u00b7 5-min walk or drive",
+      "location": "",
+      "url": "https://www.homeownerscollection.com/seaside-events/outdoor-activities/sounds-seaside-concert-series-0",
+      "recurring": "Wed"
+    }
+  ],
+  "new_bookings": [],
+  "briefs": [
+    {
+      "id": "avail-moon-2026-10-23",
+      "pillar": "availability_spotlight",
+      "unit": "moon",
+      "unit_label": "Blue Moon",
+      "unit_angle": "stargazing, slow evenings by the fireplace, deep quiet",
+      "open_dates": "Fri Oct 23 \u2013 Sun 25 (3 nights)",
+      "window": {
+        "unit": "moon",
+        "start": "2026-10-23",
+        "end": "2026-10-26",
+        "nights": 3,
+        "score": 10,
+        "kind": "event_stay",
+        "event_title": "Halloweener Derby & Oktoberfest"
+      },
+      "event": {
+        "title": "Halloweener Derby & Oktoberfest",
+        "start": "2026-10-24T00:00:00",
+        "end": "2026-10-24T00:00:00",
+        "description": "16th annual \u00b7 Saturday Oct 24, 10 AM\u20132 PM at the Seaside Amphitheater \u00b7 dachshund races down Central Square and an all-breeds costume contest, with Oktoberfest food and drink alongside \u00b7 free to watch, bring the dog and a camera \u00b7 5-min walk or drive",
+        "location": "Seaside",
+        "url": "https://seasidefl.com/event/annual-halloweener-derby-dachshund-race-dog-costume-contest/",
+        "recurring": ""
+      },
+      "event_summary": "Halloweener Derby & Oktoberfest, Sat Oct 24",
+      "rate": null,
+      "media_url": "https://sunandmoon30a.com/photos/blue-moon/020.jpg",
+      "alt_text": "Blue Moon's kitchen with white cabinets and a stainless range and refrigerator.",
+      "photo_shows": "the kitchen",
+      "copy": {
+        "instagram": "Blue Moon is open Fri Oct 23 \u2013 Sun 25, three nights.\n\nSaturday morning, the 16th Halloweener Derby runs at the Seaside Amphitheater, 10 AM\u20132 PM \u2014 dachshund races, an all-breeds costume contest, Oktoberfest food alongside. Seaside is five minutes by car.\n\nCome back to a fully equipped kitchen, a fireplace, and the deep quiet of Crystal Court.\n\nBook the dates \u2014 link in bio.",
+        "facebook": "Blue Moon has Fri Oct 23 \u2013 Sun 25 open, which puts you five minutes from Seaside for the 16th annual Halloweener Derby & Oktoberfest on Saturday, 10 AM\u20132 PM \u2014 dachshund races, costume contest, free to watch. Fill the kitchen, light the fireplace, and let the evening go slow: book.sunandmoon30a.com"
+      },
+      "hashtags": "#SunAndMoon30A #StayWithTheSky #WeekendGetaway #VacationRental #BeachHouse #GulfCoast #Seaside30A #HalloweenerDerby",
+      "copy_source": "claude"
+    },
+    {
+      "id": "avail-sun-2026-11-26",
+      "pillar": "availability_spotlight",
+      "unit": "sun",
+      "unit_label": "Golden Sun",
+      "unit_angle": "bright mornings, coffee on the back patio, sunset light",
+      "open_dates": "Thu Nov 26 \u2013 Sun 29 (4 nights)",
+      "window": {
+        "unit": "sun",
+        "start": "2026-11-26",
+        "end": "2026-11-30",
+        "nights": 4,
+        "score": 11,
+        "kind": "long_weekend",
+        "event_title": ""
+      },
+      "event": null,
+      "event_summary": null,
+      "rate": null,
+      "media_url": "https://sunandmoon30a.com/photos/golden-sun/056.jpg",
+      "alt_text": "A stainless gas grill on Golden Sun's back patio against a weathered wood fence.",
+      "photo_shows": "the gas grill on the back patio",
+      "copy": {
+        "instagram": "Golden Sun is open Thu Nov 26 \u2013 Sun 29. Four nights over Thanksgiving.\n\nThe gas grill on the covered back patio handles what the kitchen doesn't. Sleeps eight, two kings and a queen, fireplace for after dark.\n\nPelayo public beach access is a three-minute walk straight across Scenic 30A.\n\nHold the holiday \u2014 link in bio.",
+        "facebook": "Golden Sun has Thanksgiving open: Thu Nov 26 \u2013 Sun 29, four nights, sleeps eight \u2014 a fully equipped kitchen inside and a gas grill on the covered back patio for everything else. Real prices and instant confirmation at book.sunandmoon30a.com"
+      },
+      "hashtags": "#SunAndMoon30A #StayWithTheSky #VacationRental #BeachHouse #GulfCoast #30A #SeagroveBeach #Thanksgiving",
+      "copy_source": "claude"
+    }
+  ],
+  "posts": [
+    {
+      "platform": "meta_instagram",
+      "id": "avail-moon-2026-10-23",
+      "pillar": "availability_spotlight",
+      "unit": "moon",
+      "unit_label": "Blue Moon",
+      "unit_angle": "stargazing, slow evenings by the fireplace, deep quiet",
+      "open_dates": "Fri Oct 23 \u2013 Sun 25 (3 nights)",
+      "window": {
+        "unit": "moon",
+        "start": "2026-10-23",
+        "end": "2026-10-26",
+        "nights": 3,
+        "score": 10,
+        "kind": "event_stay",
+        "event_title": "Halloweener Derby & Oktoberfest"
+      },
+      "event": {
+        "title": "Halloweener Derby & Oktoberfest",
+        "start": "2026-10-24T00:00:00",
+        "end": "2026-10-24T00:00:00",
+        "description": "16th annual \u00b7 Saturday Oct 24, 10 AM\u20132 PM at the Seaside Amphitheater \u00b7 dachshund races down Central Square and an all-breeds costume contest, with Oktoberfest food and drink alongside \u00b7 free to watch, bring the dog and a camera \u00b7 5-min walk or drive",
+        "location": "Seaside",
+        "url": "https://seasidefl.com/event/annual-halloweener-derby-dachshund-race-dog-costume-contest/",
+        "recurring": ""
+      },
+      "event_summary": "Halloweener Derby & Oktoberfest, Sat Oct 24",
+      "rate": null,
+      "media_url": "https://sunandmoon30a.com/photos/blue-moon/020.jpg",
+      "alt_text": "Blue Moon's kitchen with white cabinets and a stainless range and refrigerator.",
+      "photo_shows": "the kitchen",
+      "hashtags": "#SunAndMoon30A #StayWithTheSky #WeekendGetaway #VacationRental #BeachHouse #GulfCoast #Seaside30A #HalloweenerDerby",
+      "copy_source": "claude",
+      "copy": "Blue Moon is open Fri Oct 23 \u2013 Sun 25, three nights.\n\nSaturday morning, the 16th Halloweener Derby runs at the Seaside Amphitheater, 10 AM\u20132 PM \u2014 dachshund races, an all-breeds costume contest, Oktoberfest food alongside. Seaside is five minutes by car.\n\nCome back to a fully equipped kitchen, a fireplace, and the deep quiet of Crystal Court.\n\nBook the dates \u2014 link in bio."
+    },
+    {
+      "platform": "meta_instagram",
+      "id": "avail-sun-2026-11-26",
+      "pillar": "availability_spotlight",
+      "unit": "sun",
+      "unit_label": "Golden Sun",
+      "unit_angle": "bright mornings, coffee on the back patio, sunset light",
+      "open_dates": "Thu Nov 26 \u2013 Sun 29 (4 nights)",
+      "window": {
+        "unit": "sun",
+        "start": "2026-11-26",
+        "end": "2026-11-30",
+        "nights": 4,
+        "score": 11,
+        "kind": "long_weekend",
+        "event_title": ""
+      },
+      "event": null,
+      "event_summary": null,
+      "rate": null,
+      "media_url": "https://sunandmoon30a.com/photos/golden-sun/056.jpg",
+      "alt_text": "A stainless gas grill on Golden Sun's back patio against a weathered wood fence.",
+      "photo_shows": "the gas grill on the back patio",
+      "hashtags": "#SunAndMoon30A #StayWithTheSky #VacationRental #BeachHouse #GulfCoast #30A #SeagroveBeach #Thanksgiving",
+      "copy_source": "claude",
+      "copy": "Golden Sun is open Thu Nov 26 \u2013 Sun 29. Four nights over Thanksgiving.\n\nThe gas grill on the covered back patio handles what the kitchen doesn't. Sleeps eight, two kings and a queen, fireplace for after dark.\n\nPelayo public beach access is a three-minute walk straight across Scenic 30A.\n\nHold the holiday \u2014 link in bio."
+    },
+    {
+      "platform": "meta_facebook",
+      "id": "avail-moon-2026-10-23",
+      "pillar": "availability_spotlight",
+      "unit": "moon",
+      "unit_label": "Blue Moon",
+      "unit_angle": "stargazing, slow evenings by the fireplace, deep quiet",
+      "open_dates": "Fri Oct 23 \u2013 Sun 25 (3 nights)",
+      "window": {
+        "unit": "moon",
+        "start": "2026-10-23",
+        "end": "2026-10-26",
+        "nights": 3,
+        "score": 10,
+        "kind": "event_stay",
+        "event_title": "Halloweener Derby & Oktoberfest"
+      },
+      "event": {
+        "title": "Halloweener Derby & Oktoberfest",
+        "start": "2026-10-24T00:00:00",
+        "end": "2026-10-24T00:00:00",
+        "description": "16th annual \u00b7 Saturday Oct 24, 10 AM\u20132 PM at the Seaside Amphitheater \u00b7 dachshund races down Central Square and an all-breeds costume contest, with Oktoberfest food and drink alongside \u00b7 free to watch, bring the dog and a camera \u00b7 5-min walk or drive",
+        "location": "Seaside",
+        "url": "https://seasidefl.com/event/annual-halloweener-derby-dachshund-race-dog-costume-contest/",
+        "recurring": ""
+      },
+      "event_summary": "Halloweener Derby & Oktoberfest, Sat Oct 24",
+      "rate": null,
+      "media_url": "https://sunandmoon30a.com/photos/blue-moon/020.jpg",
+      "alt_text": "Blue Moon's kitchen with white cabinets and a stainless range and refrigerator.",
+      "photo_shows": "the kitchen",
+      "hashtags": "#SunAndMoon30A #StayWithTheSky #WeekendGetaway #VacationRental #BeachHouse #GulfCoast #Seaside30A #HalloweenerDerby",
+      "copy_source": "claude",
+      "copy": "Blue Moon has Fri Oct 23 \u2013 Sun 25 open, which puts you five minutes from Seaside for the 16th annual Halloweener Derby & Oktoberfest on Saturday, 10 AM\u20132 PM \u2014 dachshund races, costume contest, free to watch. Fill the kitchen, light the fireplace, and let the evening go slow: book.sunandmoon30a.com"
+    },
+    {
+      "platform": "meta_facebook",
+      "id": "avail-sun-2026-11-26",
+      "pillar": "availability_spotlight",
+      "unit": "sun",
+      "unit_label": "Golden Sun",
+      "unit_angle": "bright mornings, coffee on the back patio, sunset light",
+      "open_dates": "Thu Nov 26 \u2013 Sun 29 (4 nights)",
+      "window": {
+        "unit": "sun",
+        "start": "2026-11-26",
+        "end": "2026-11-30",
+        "nights": 4,
+        "score": 11,
+        "kind": "long_weekend",
+        "event_title": ""
+      },
+      "event": null,
+      "event_summary": null,
+      "rate": null,
+      "media_url": "https://sunandmoon30a.com/photos/golden-sun/056.jpg",
+      "alt_text": "A stainless gas grill on Golden Sun's back patio against a weathered wood fence.",
+      "photo_shows": "the gas grill on the back patio",
+      "hashtags": "#SunAndMoon30A #StayWithTheSky #VacationRental #BeachHouse #GulfCoast #30A #SeagroveBeach #Thanksgiving",
+      "copy_source": "claude",
+      "copy": "Golden Sun has Thanksgiving open: Thu Nov 26 \u2013 Sun 29, four nights, sleeps eight \u2014 a fully equipped kitchen inside and a gas grill on the covered back patio for everything else. Real prices and instant confirmation at book.sunandmoon30a.com"
+    }
+  ],
+  "busy_map": {
+    "sun": [
+      [
+        "2026-09-27",
+        "2026-10-07"
+      ],
+      [
+        "2026-10-08",
+        "2026-10-12"
+      ],
+      [
+        "2026-10-13",
+        "2026-10-24"
+      ]
+    ],
+    "moon": [
+      [
+        "2026-10-02",
+        "2026-10-07"
+      ],
+      [
+        "2026-10-11",
+        "2026-10-19"
+      ],
+      [
+        "2026-11-23",
+        "2026-11-29"
+      ]
+    ],
+    "full": [
+      [
+        "2026-09-27",
+        "2026-10-07"
+      ],
+      [
+        "2026-10-08",
+        "2026-10-24"
+      ],
+      [
+        "2026-11-23",
+        "2026-11-29"
+      ]
+    ]
+  }
+}
