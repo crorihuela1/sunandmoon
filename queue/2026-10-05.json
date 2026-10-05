@@ -1,0 +1,377 @@
+{
+  "date": "2026-10-05",
+  "generated_at": "2026-10-05T20:53:43.779864Z",
+  "pillar_of_day": "local_events",
+  "active_platforms": [
+    "meta_facebook",
+    "meta_instagram"
+  ],
+  "inactive_platforms": [
+    "google_business_profile",
+    "linkedin",
+    "nextdoor",
+    "pinterest",
+    "threads",
+    "tiktok",
+    "x_twitter",
+    "youtube"
+  ],
+  "open_windows": [
+    {
+      "unit": "sun",
+      "start": "2026-10-24",
+      "end": "2026-12-19",
+      "nights": 56,
+      "score": 58,
+      "kind": "window",
+      "event_title": ""
+    },
+    {
+      "unit": "moon",
+      "start": "2026-10-19",
+      "end": "2026-11-23",
+      "nights": 35,
+      "score": 37,
+      "kind": "window",
+      "event_title": ""
+    },
+    {
+      "unit": "full",
+      "start": "2026-10-24",
+      "end": "2026-11-23",
+      "nights": 30,
+      "score": 32,
+      "kind": "window",
+      "event_title": ""
+    },
+    {
+      "unit": "moon",
+      "start": "2026-11-29",
+      "end": "2026-12-19",
+      "nights": 20,
+      "score": 15,
+      "kind": "window",
+      "event_title": ""
+    },
+    {
+      "unit": "full",
+      "start": "2026-11-29",
+      "end": "2026-12-19",
+      "nights": 20,
+      "score": 15,
+      "kind": "window",
+      "event_title": ""
+    }
+  ],
+  "top_stays": [
+    {
+      "unit": "sun",
+      "start": "2026-10-29",
+      "end": "2026-11-01",
+      "nights": 3,
+      "score": 11,
+      "kind": "long_weekend",
+      "event_title": ""
+    },
+    {
+      "unit": "sun",
+      "start": "2026-10-30",
+      "end": "2026-11-02",
+      "nights": 3,
+      "score": 11,
+      "kind": "weekend",
+      "event_title": ""
+    },
+    {
+      "unit": "sun",
+      "start": "2026-11-26",
+      "end": "2026-11-29",
+      "nights": 3,
+      "score": 11,
+      "kind": "long_weekend",
+      "event_title": ""
+    },
+    {
+      "unit": "moon",
+      "start": "2026-10-29",
+      "end": "2026-11-01",
+      "nights": 3,
+      "score": 11,
+      "kind": "long_weekend",
+      "event_title": ""
+    },
+    {
+      "unit": "moon",
+      "start": "2026-10-30",
+      "end": "2026-11-02",
+      "nights": 3,
+      "score": 11,
+      "kind": "weekend",
+      "event_title": ""
+    },
+    {
+      "unit": "full",
+      "start": "2026-10-29",
+      "end": "2026-11-01",
+      "nights": 3,
+      "score": 11,
+      "kind": "long_weekend",
+      "event_title": ""
+    },
+    {
+      "unit": "full",
+      "start": "2026-10-30",
+      "end": "2026-11-02",
+      "nights": 3,
+      "score": 11,
+      "kind": "weekend",
+      "event_title": ""
+    },
+    {
+      "unit": "sun",
+      "start": "2026-10-29",
+      "end": "2026-11-02",
+      "nights": 4,
+      "score": 11,
+      "kind": "long_weekend",
+      "event_title": ""
+    }
+  ],
+  "upcoming_events": [
+    {
+      "title": "Bloody Mary Festival",
+      "start": "2026-10-10T00:00:00",
+      "end": "2026-10-10T00:00:00",
+      "description": "Saturday, 11 AM\u20132 PM, unlimited Bloody Mary tastings from Emerald Coast restaurants and bars, plus live music, SEC football on the big screen and lawn games \u00b7 $65 advance, $75 at the door, 21+ \u00b7 benefits Habitat for Humanity of Walton County \u00b7 25-min drive west.",
+      "location": "The Market Shops",
+      "url": "https://themarketshops.com/bloody-mary-festival/",
+      "recurring": ""
+    },
+    {
+      "title": "Harvest Wine & Food Festival",
+      "start": "2026-10-15T00:00:00",
+      "end": "2026-10-18T00:00:00",
+      "description": "10th annual \u00b7 four days in WaterColor \u2014 Celebrity Winemaker Dinners Thursday, Harvest After Dark Friday, the Grand Tasting Saturday Oct 17 in Cerulean Park (1\u20134 PM), and a Festival Brunch Sunday \u00b7 benefits DCWAF children's charities \u00b7 10-min drive west",
+      "location": "WaterColor",
+      "url": "https://www.dcwaf.org/harvest-festival/",
+      "recurring": ""
+    },
+    {
+      "title": "Baytowne Beer Festival",
+      "start": "2026-10-16T00:00:00",
+      "end": "2026-10-17T00:00:00",
+      "description": "18th annual \u00b7 Friday night's Backyard Bash (6\u20138 PM) kicks off tailgate-style with bourbon and bonfires under the stars; Saturday brings a 1\u20132 PM VIP hour followed by the Grand Craft Beer Tasting, 2\u20135 PM, sampling from 200-plus craft beers \u00b7 advance tickets recommended \u00b7 25-min drive west",
+      "location": "Baytowne Wharf",
+      "url": "https://baytownebeerfestival.com/",
+      "recurring": ""
+    },
+    {
+      "title": "Halloweener Derby & Costume Contest",
+      "start": "2026-10-24T00:00:00",
+      "end": "2026-10-24T00:00:00",
+      "description": "Saturday Oct 24, 10 AM\u20132 PM at the Seaside Amphitheater \u00b7 dachshund races down Central Square and an all-breeds costume contest \u00b7 free to watch, bring the dog and a camera \u00b7 5-min walk or drive",
+      "location": "Seaside",
+      "url": "https://seasidefl.com/event/annual-halloweener-derby-dachshund-race-dog-costume-contest/",
+      "recurring": ""
+    },
+    {
+      "title": "Seeing Red Wine Festival",
+      "start": "2026-11-05T00:00:00",
+      "end": "2026-11-08T00:00:00",
+      "description": "34 years running \u00b7 a vintners dinner at Bud & Alley's, the Al Fresco Reserve Tasting, Battle of the Somms, the Grand Tasting in Central Square, and a Celebration of Bubbles brunch \u00b7 benefits DCWAF \u00b7 sold out \u2014 join the waitlist at seasideseeingred.com \u00b7 5-min walk or drive",
+      "location": "Seaside",
+      "url": "https://seasideseeingred.com/",
+      "recurring": ""
+    },
+    {
+      "title": "Rosemary Beach Uncorked",
+      "start": "2026-11-14T00:00:00",
+      "end": "2026-11-14T00:00:00",
+      "description": "15th annual \u00b7 Saturday Nov 14, 2026, 1\u20134 PM on Barrett Square \u00b7 wines poured by vintners from around the world alongside dishes from ten Rosemary Beach restaurants, with live music as you stroll the cobblestone streets \u00b7 $225 general admission, $350 VIP \u00b7 15-min drive east",
+      "location": "",
+      "url": "https://rosemarybeachuncorked.com/",
+      "recurring": ""
+    },
+    {
+      "title": "Morning Vinyasa Yoga",
+      "start": "2026-10-05T00:00:00",
+      "end": null,
+      "description": "Through Oct 31 \u00b7 Daily 8:30 AM \u00b7 Every morning at 8:30 AM on the pavilion overlooking the Gulf, weather permitting \u00b7 no preregistration, $25 drop-in by cash, check, or Venmo \u00b7 bring a mat or towel and water \u00b7 5-min walk or drive",
+      "location": "Seaside Pavilion",
+      "url": "https://seasidefl.com/neighborhood/seaside-yoga/",
+      "recurring": "Daily"
+    },
+    {
+      "title": "Sounds of Seaside Concert Series",
+      "start": "2026-10-07T00:00:00",
+      "end": null,
+      "description": "Through Oct 28 \u00b7 Wed 5\u20137 PM \u00b7 Free Wednesday-evening concerts on the Seaside Amphitheater lawn, 5\u20137 PM, running weekly through Oct 28 \u00b7 a different act each week, free and open to all ages \u00b7 bring blankets and chairs, snacks and drinks welcome \u00b7 5-min walk or drive",
+      "location": "",
+      "url": "https://www.homeownerscollection.com/seaside-events/outdoor-activities/sounds-seaside-concert-series-0",
+      "recurring": "Wed"
+    },
+    {
+      "title": "Central Square Cinema",
+      "start": "2026-10-09T00:00:00",
+      "end": null,
+      "description": "Through Oct 30 \u00b7 Fri 8 PM \u00b7 Free family movies on the big screen at the Seaside Amphitheater, Fridays at 8 PM \u2014 Hoppers (Oct 9), Hotel Transylvania (Oct 16), Coco (Oct 23), and a Halloween feature (Oct 30) \u00b7 bring a blanket and the kids \u00b7 5-min walk or drive",
+      "location": "Free Movies Under the Stars",
+      "url": "https://seasidefl.com/events/",
+      "recurring": "Fri"
+    },
+    {
+      "title": "Seaside Farmers Market",
+      "start": "2026-10-10T00:00:00",
+      "end": null,
+      "description": "Year-Round \u00b7 Sat 9\u20131 \u00b7 Saturdays year-round, 9 AM\u20131 PM at the Seaside Amphitheater, with a second Tuesday market added each June and July \u00b7 local growers, artisan cheeses and breads, craft chefs, and live acoustic music \u00b7 5-min walk or drive",
+      "location": "",
+      "url": "https://30a.com/locations/seaside-farmers-market/",
+      "recurring": "Sat"
+    }
+  ],
+  "new_bookings": [
+    {
+      "unit": "moon",
+      "start": "2027-01-05",
+      "end": "2027-01-06"
+    },
+    {
+      "unit": "full",
+      "start": "2027-01-05",
+      "end": "2027-01-06"
+    }
+  ],
+  "briefs": [
+    {
+      "id": "event-739894-2026-10-15-harvest-wine-&-food-fest",
+      "pillar": "local_events",
+      "event": {
+        "title": "Harvest Wine & Food Festival",
+        "start": "2026-10-15T00:00:00",
+        "end": "2026-10-18T00:00:00",
+        "description": "10th annual \u00b7 four days in WaterColor \u2014 Celebrity Winemaker Dinners Thursday, Harvest After Dark Friday, the Grand Tasting Saturday Oct 17 in Cerulean Park (1\u20134 PM), and a Festival Brunch Sunday \u00b7 benefits DCWAF children's charities \u00b7 10-min drive west",
+        "location": "WaterColor",
+        "url": "https://www.dcwaf.org/harvest-festival/",
+        "recurring": ""
+      },
+      "event_summary": "Harvest Wine & Food Festival, Oct 15\u201318",
+      "unit": null,
+      "unit_label": null,
+      "open_dates": null,
+      "window": null,
+      "media_url": "https://sunandmoon30a.com/images/aerial-30a.jpg",
+      "alt_text": "Aerial view of the 30A shoreline with a coastal dune lake meeting the white sand.",
+      "photo_shows": "the coast and a coastal dune lake from the air",
+      "copy": {
+        "instagram": "The Harvest Wine & Food Festival returns to WaterColor Oct 15\u201318 \u2014 ten minutes west.\n\nWinemaker dinners Thursday, Harvest After Dark Friday, the Grand Tasting Saturday afternoon in Cerulean Park, brunch to close it out Sunday.\n\nTen years in, and it still benefits DCWAF children's charities.\n\nSave the date and keep an eye on our calendar \u2014 link in bio.",
+        "facebook": "The 10th annual Harvest Wine & Food Festival lands in WaterColor Oct 15\u201318, a ten-minute drive west of our lane in Seagrove \u2014 four days of winemaker dinners, the Grand Tasting in Cerulean Park on Saturday afternoon, and a Sunday brunch, all benefiting DCWAF children's charities. Mark the dates, then check live availability for the week at https://book.sunandmoon30a.com."
+      },
+      "hashtags": "#SunAndMoon30A #StayWithTheSky #EmeraldCoast #FloridaPanhandle #WeekendGetaway #VacationRental #HarvestWineAndFood #WaterColorFL #Seagrove",
+      "copy_source": "claude"
+    }
+  ],
+  "posts": [
+    {
+      "platform": "meta_instagram",
+      "id": "event-739894-2026-10-15-harvest-wine-&-food-fest",
+      "pillar": "local_events",
+      "event": {
+        "title": "Harvest Wine & Food Festival",
+        "start": "2026-10-15T00:00:00",
+        "end": "2026-10-18T00:00:00",
+        "description": "10th annual \u00b7 four days in WaterColor \u2014 Celebrity Winemaker Dinners Thursday, Harvest After Dark Friday, the Grand Tasting Saturday Oct 17 in Cerulean Park (1\u20134 PM), and a Festival Brunch Sunday \u00b7 benefits DCWAF children's charities \u00b7 10-min drive west",
+        "location": "WaterColor",
+        "url": "https://www.dcwaf.org/harvest-festival/",
+        "recurring": ""
+      },
+      "event_summary": "Harvest Wine & Food Festival, Oct 15\u201318",
+      "unit": null,
+      "unit_label": null,
+      "open_dates": null,
+      "window": null,
+      "media_url": "https://sunandmoon30a.com/images/aerial-30a.jpg",
+      "alt_text": "Aerial view of the 30A shoreline with a coastal dune lake meeting the white sand.",
+      "photo_shows": "the coast and a coastal dune lake from the air",
+      "hashtags": "#SunAndMoon30A #StayWithTheSky #EmeraldCoast #FloridaPanhandle #WeekendGetaway #VacationRental #HarvestWineAndFood #WaterColorFL #Seagrove",
+      "copy_source": "claude",
+      "copy": "The Harvest Wine & Food Festival returns to WaterColor Oct 15\u201318 \u2014 ten minutes west.\n\nWinemaker dinners Thursday, Harvest After Dark Friday, the Grand Tasting Saturday afternoon in Cerulean Park, brunch to close it out Sunday.\n\nTen years in, and it still benefits DCWAF children's charities.\n\nSave the date and keep an eye on our calendar \u2014 link in bio."
+    },
+    {
+      "platform": "meta_facebook",
+      "id": "event-739894-2026-10-15-harvest-wine-&-food-fest",
+      "pillar": "local_events",
+      "event": {
+        "title": "Harvest Wine & Food Festival",
+        "start": "2026-10-15T00:00:00",
+        "end": "2026-10-18T00:00:00",
+        "description": "10th annual \u00b7 four days in WaterColor \u2014 Celebrity Winemaker Dinners Thursday, Harvest After Dark Friday, the Grand Tasting Saturday Oct 17 in Cerulean Park (1\u20134 PM), and a Festival Brunch Sunday \u00b7 benefits DCWAF children's charities \u00b7 10-min drive west",
+        "location": "WaterColor",
+        "url": "https://www.dcwaf.org/harvest-festival/",
+        "recurring": ""
+      },
+      "event_summary": "Harvest Wine & Food Festival, Oct 15\u201318",
+      "unit": null,
+      "unit_label": null,
+      "open_dates": null,
+      "window": null,
+      "media_url": "https://sunandmoon30a.com/images/aerial-30a.jpg",
+      "alt_text": "Aerial view of the 30A shoreline with a coastal dune lake meeting the white sand.",
+      "photo_shows": "the coast and a coastal dune lake from the air",
+      "hashtags": "#SunAndMoon30A #StayWithTheSky #EmeraldCoast #FloridaPanhandle #WeekendGetaway #VacationRental #HarvestWineAndFood #WaterColorFL #Seagrove",
+      "copy_source": "claude",
+      "copy": "The 10th annual Harvest Wine & Food Festival lands in WaterColor Oct 15\u201318, a ten-minute drive west of our lane in Seagrove \u2014 four days of winemaker dinners, the Grand Tasting in Cerulean Park on Saturday afternoon, and a Sunday brunch, all benefiting DCWAF children's charities. Mark the dates, then check live availability for the week at https://book.sunandmoon30a.com."
+    }
+  ],
+  "busy_map": {
+    "sun": [
+      [
+        "2026-10-05",
+        "2026-10-07"
+      ],
+      [
+        "2026-10-08",
+        "2026-10-12"
+      ],
+      [
+        "2026-10-13",
+        "2026-10-24"
+      ]
+    ],
+    "moon": [
+      [
+        "2026-10-05",
+        "2026-10-07"
+      ],
+      [
+        "2026-10-08",
+        "2026-10-19"
+      ],
+      [
+        "2026-11-23",
+        "2026-11-29"
+      ],
+      [
+        "2027-01-01",
+        "2027-01-06"
+      ]
+    ],
+    "full": [
+      [
+        "2026-10-05",
+        "2026-10-07"
+      ],
+      [
+        "2026-10-08",
+        "2026-10-24"
+      ],
+      [
+        "2026-11-23",
+        "2026-11-29"
+      ],
+      [
+        "2027-01-01",
+        "2027-01-06"
+      ]
+    ]
+  }
+}
