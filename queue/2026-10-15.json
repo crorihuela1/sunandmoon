@@ -1,0 +1,385 @@
+{
+  "date": "2026-10-15",
+  "generated_at": "2026-10-15T17:30:33.939338Z",
+  "pillar_of_day": "local_events",
+  "active_platforms": [
+    "meta_facebook",
+    "meta_instagram"
+  ],
+  "inactive_platforms": [
+    "google_business_profile",
+    "linkedin",
+    "nextdoor",
+    "pinterest",
+    "threads",
+    "tiktok",
+    "x_twitter",
+    "youtube"
+  ],
+  "open_windows": [
+    {
+      "unit": "sun",
+      "start": "2026-10-24",
+      "end": "2026-12-29",
+      "nights": 66,
+      "score": 89,
+      "kind": "window",
+      "event_title": ""
+    },
+    {
+      "unit": "moon",
+      "start": "2026-10-19",
+      "end": "2026-11-23",
+      "nights": 35,
+      "score": 57,
+      "kind": "window",
+      "event_title": ""
+    },
+    {
+      "unit": "full",
+      "start": "2026-10-24",
+      "end": "2026-11-23",
+      "nights": 30,
+      "score": 44,
+      "kind": "window",
+      "event_title": ""
+    },
+    {
+      "unit": "moon",
+      "start": "2026-11-29",
+      "end": "2026-12-29",
+      "nights": 30,
+      "score": 34,
+      "kind": "window",
+      "event_title": ""
+    },
+    {
+      "unit": "full",
+      "start": "2026-11-29",
+      "end": "2026-12-29",
+      "nights": 30,
+      "score": 34,
+      "kind": "window",
+      "event_title": ""
+    }
+  ],
+  "top_stays": [
+    {
+      "unit": "sun",
+      "start": "2026-12-24",
+      "end": "2026-12-27",
+      "nights": 3,
+      "score": 16,
+      "kind": "long_weekend",
+      "event_title": ""
+    },
+    {
+      "unit": "moon",
+      "start": "2026-10-23",
+      "end": "2026-10-26",
+      "nights": 3,
+      "score": 16,
+      "kind": "event_stay",
+      "event_title": "Halloweener Derby & Costume Contest"
+    },
+    {
+      "unit": "moon",
+      "start": "2026-12-24",
+      "end": "2026-12-27",
+      "nights": 3,
+      "score": 16,
+      "kind": "long_weekend",
+      "event_title": ""
+    },
+    {
+      "unit": "full",
+      "start": "2026-12-24",
+      "end": "2026-12-27",
+      "nights": 3,
+      "score": 16,
+      "kind": "long_weekend",
+      "event_title": ""
+    },
+    {
+      "unit": "sun",
+      "start": "2026-12-24",
+      "end": "2026-12-28",
+      "nights": 4,
+      "score": 16,
+      "kind": "long_weekend",
+      "event_title": ""
+    },
+    {
+      "unit": "moon",
+      "start": "2026-12-24",
+      "end": "2026-12-28",
+      "nights": 4,
+      "score": 16,
+      "kind": "long_weekend",
+      "event_title": ""
+    },
+    {
+      "unit": "full",
+      "start": "2026-12-24",
+      "end": "2026-12-28",
+      "nights": 4,
+      "score": 16,
+      "kind": "long_weekend",
+      "event_title": ""
+    },
+    {
+      "unit": "moon",
+      "start": "2026-10-22",
+      "end": "2026-10-26",
+      "nights": 4,
+      "score": 14,
+      "kind": "long_weekend",
+      "event_title": ""
+    }
+  ],
+  "upcoming_events": [
+    {
+      "title": "Harvest Wine & Food Festival",
+      "start": "2026-10-15T00:00:00",
+      "end": "2026-10-18T00:00:00",
+      "description": "10th annual, four days in WaterColor \u2014 Celebrity Winemaker Dinners Thursday, Harvest After Dark in Cerulean Park Friday, the Grand Tasting Saturday Oct 17 (1\u20134 PM), and a Festival Brunch Sunday \u00b7 benefits DCWAF's children's charities \u00b7 10-min drive west.",
+      "location": "WaterColor",
+      "url": "https://www.dcwaf.org/harvest-festival/",
+      "recurring": ""
+    },
+    {
+      "title": "Baytowne Beer Festival",
+      "start": "2026-10-16T00:00:00",
+      "end": "2026-10-17T00:00:00",
+      "description": "18th annual \u00b7 Friday night's Backyard Bash (6\u20138 PM) kicks off tailgate-style with bourbon and bonfires under the stars; Saturday brings a 1\u20132 PM VIP hour followed by the Grand Craft Beer Tasting, 2\u20135 PM, sampling from 200-plus craft beers \u00b7 advance tickets recommended \u00b7 25-min drive west",
+      "location": "Baytowne Wharf",
+      "url": "https://baytownebeerfestival.com/",
+      "recurring": ""
+    },
+    {
+      "title": "Halloweener Derby & Costume Contest",
+      "start": "2026-10-24T00:00:00",
+      "end": "2026-10-24T00:00:00",
+      "description": "Saturday Oct 24, 10 AM\u20132 PM at the Seaside Amphitheater \u00b7 dachshund races down Central Square and an all-breeds costume contest \u00b7 free to watch, bring the dog and a camera \u00b7 5-min walk or drive",
+      "location": "Seaside",
+      "url": "https://seasidefl.com/event/annual-halloweener-derby-dachshund-race-dog-costume-contest/",
+      "recurring": ""
+    },
+    {
+      "title": "Seeing Red Wine Festival",
+      "start": "2026-11-05T00:00:00",
+      "end": "2026-11-08T00:00:00",
+      "description": "A vintners dinner at Bud & Alley's, the Al Fresco Reserve Tasting, Battle of the Somms, the Grand Tasting in Central Square, and a Celebration of Bubbles brunch \u00b7 benefits DCWAF \u00b7 tickets at seasideseeingred.com \u00b7 5-min walk or drive",
+      "location": "Seaside",
+      "url": "https://seasideseeingred.com/",
+      "recurring": ""
+    },
+    {
+      "title": "WaterColor Mountainfilm on Tour",
+      "start": "2026-11-06T00:00:00",
+      "end": "2026-11-07T00:00:00",
+      "description": "26th year of the tour \u00b7 two nights of award-winning documentary shorts on adventure, environment and culture, straight from the Mountainfilm festival in Telluride, outdoors at the Marina Park Amphitheater \u00b7 gates 5:45 PM, films at 7 PM \u00b7 10-min drive west",
+      "location": "WaterColor",
+      "url": "https://www.watercolorresort.com/mountainfilm-on-tour",
+      "recurring": ""
+    },
+    {
+      "title": "Alys Beach Crafted",
+      "start": "2026-11-11T00:00:00",
+      "end": "2026-11-14T00:00:00",
+      "description": "A four-day craft and culinary weekend \u2014 the Firkin F\u00eate, the Spirited Soir\u00e9e, mixology dinners and seminars, and the Holiday Makers Market, daily 10 AM\u201310 PM \u00b7 benefits the Cultural Arts Alliance of Walton County \u00b7 15-min drive east",
+      "location": "",
+      "url": "https://alysbeachcrafted.com/",
+      "recurring": ""
+    },
+    {
+      "title": "Rosemary Beach Uncorked",
+      "start": "2026-11-14T00:00:00",
+      "end": "2026-11-14T00:00:00",
+      "description": "15th annual \u00b7 Saturday Nov 14, 2026, 1\u20134 PM on Barrett Square \u00b7 wines poured by vintners from around the world alongside dishes from ten Rosemary Beach restaurants, with live music as you stroll the cobblestone streets \u00b7 $225 general admission, $350 VIP \u00b7 15-min drive east",
+      "location": "",
+      "url": "https://rosemarybeachuncorked.com/",
+      "recurring": ""
+    },
+    {
+      "title": "Morning Vinyasa Yoga",
+      "start": "2026-10-15T00:00:00",
+      "end": null,
+      "description": "Through Oct 31 \u00b7 Daily 8:30 AM \u00b7 Every morning at 8:30 AM on the pavilion overlooking the Gulf, weather permitting \u00b7 no preregistration, $25 drop-in by cash, check, or Venmo \u00b7 bring a mat or towel and water \u00b7 5-min walk or drive",
+      "location": "Seaside Pavilion",
+      "url": "https://seasidefl.com/neighborhood/seaside-yoga/",
+      "recurring": "Daily"
+    },
+    {
+      "title": "Central Square Cinema",
+      "start": "2026-10-16T00:00:00",
+      "end": null,
+      "description": "Through Oct 30 \u00b7 Fri 8 PM \u00b7 Free family movies on the big screen at the Seaside Amphitheater, Fridays at 8 PM \u2014 Hotel Transylvania (Oct 16), Coco (Oct 23), and a Halloween feature (Oct 30) \u00b7 bring a blanket and the kids \u00b7 5-min walk or drive",
+      "location": "Free Movies Under the Stars",
+      "url": "https://seasidefl.com/events/",
+      "recurring": "Fri"
+    },
+    {
+      "title": "Seaside Farmers Market",
+      "start": "2026-10-17T00:00:00",
+      "end": null,
+      "description": "Year-Round \u00b7 Sat 9\u20131 \u00b7 Saturdays year-round, 9 AM\u20131 PM at the Seaside Amphitheater, with a second Tuesday market added each June and July \u00b7 local growers, artisan cheeses and breads, craft chefs, and live acoustic music \u00b7 5-min walk or drive",
+      "location": "",
+      "url": "https://30a.com/locations/seaside-farmers-market/",
+      "recurring": "Sat"
+    }
+  ],
+  "new_bookings": [
+    {
+      "unit": "moon",
+      "start": "2027-01-15",
+      "end": "2027-01-16"
+    },
+    {
+      "unit": "full",
+      "start": "2027-01-15",
+      "end": "2027-01-16"
+    }
+  ],
+  "briefs": [
+    {
+      "id": "event-739904-2026-10-24-halloweener-derby-&-cost",
+      "pillar": "local_events",
+      "event": {
+        "title": "Halloweener Derby & Costume Contest",
+        "start": "2026-10-24T00:00:00",
+        "end": "2026-10-24T00:00:00",
+        "description": "Saturday Oct 24, 10 AM\u20132 PM at the Seaside Amphitheater \u00b7 dachshund races down Central Square and an all-breeds costume contest \u00b7 free to watch, bring the dog and a camera \u00b7 5-min walk or drive",
+        "location": "Seaside",
+        "url": "https://seasidefl.com/event/annual-halloweener-derby-dachshund-race-dog-costume-contest/",
+        "recurring": ""
+      },
+      "event_summary": "Halloweener Derby & Costume Contest, Sat Oct 24",
+      "unit": "moon",
+      "unit_label": "Blue Moon",
+      "open_dates": "Fri Oct 23 \u2013 Sun 25 (3 nights)",
+      "window": {
+        "unit": "moon",
+        "start": "2026-10-23",
+        "end": "2026-10-26",
+        "nights": 3,
+        "score": 16,
+        "kind": "event_stay",
+        "event_title": "Halloweener Derby & Costume Contest"
+      },
+      "media_url": "https://sunandmoon30a.com/images/aerial-30a.jpg",
+      "alt_text": "Aerial view of the 30A shoreline with a coastal dune lake meeting the white sand.",
+      "photo_shows": "the coast and a coastal dune lake from the air",
+      "copy": {
+        "instagram": "Dachshunds racing down Central Square, Sat Oct 24, 10\u20132 at the Seaside Amphitheater \u2014 free to watch, costumes encouraged.\n\nSeaside is five minutes from the lane.\n\nBlue Moon is open Fri Oct 23 \u2013 Sun Oct 25, three nights, three king bedrooms, quiet evenings after a loud morning.\n\nBook direct \u2014 link in bio.",
+        "facebook": "The Halloweener Derby and all-breeds costume contest runs Saturday Oct 24, 10 AM\u20132 PM at the Seaside Amphitheater, about five minutes from our lane in Seagrove \u2014 free to watch, bring the dog and a camera. Blue Moon is open Fri Oct 23 \u2013 Sun Oct 25, three nights, sleeps eight: book direct at https://book.sunandmoon30a.com"
+      },
+      "hashtags": "#SunAndMoon30A #StayWithTheSky #EmeraldCoast #FloridaPanhandle #WeekendGetaway #VacationRental #Seaside30A #SeagroveBeach",
+      "copy_source": "claude"
+    }
+  ],
+  "posts": [
+    {
+      "platform": "meta_instagram",
+      "id": "event-739904-2026-10-24-halloweener-derby-&-cost",
+      "pillar": "local_events",
+      "event": {
+        "title": "Halloweener Derby & Costume Contest",
+        "start": "2026-10-24T00:00:00",
+        "end": "2026-10-24T00:00:00",
+        "description": "Saturday Oct 24, 10 AM\u20132 PM at the Seaside Amphitheater \u00b7 dachshund races down Central Square and an all-breeds costume contest \u00b7 free to watch, bring the dog and a camera \u00b7 5-min walk or drive",
+        "location": "Seaside",
+        "url": "https://seasidefl.com/event/annual-halloweener-derby-dachshund-race-dog-costume-contest/",
+        "recurring": ""
+      },
+      "event_summary": "Halloweener Derby & Costume Contest, Sat Oct 24",
+      "unit": "moon",
+      "unit_label": "Blue Moon",
+      "open_dates": "Fri Oct 23 \u2013 Sun 25 (3 nights)",
+      "window": {
+        "unit": "moon",
+        "start": "2026-10-23",
+        "end": "2026-10-26",
+        "nights": 3,
+        "score": 16,
+        "kind": "event_stay",
+        "event_title": "Halloweener Derby & Costume Contest"
+      },
+      "media_url": "https://sunandmoon30a.com/images/aerial-30a.jpg",
+      "alt_text": "Aerial view of the 30A shoreline with a coastal dune lake meeting the white sand.",
+      "photo_shows": "the coast and a coastal dune lake from the air",
+      "hashtags": "#SunAndMoon30A #StayWithTheSky #EmeraldCoast #FloridaPanhandle #WeekendGetaway #VacationRental #Seaside30A #SeagroveBeach",
+      "copy_source": "claude",
+      "copy": "Dachshunds racing down Central Square, Sat Oct 24, 10\u20132 at the Seaside Amphitheater \u2014 free to watch, costumes encouraged.\n\nSeaside is five minutes from the lane.\n\nBlue Moon is open Fri Oct 23 \u2013 Sun Oct 25, three nights, three king bedrooms, quiet evenings after a loud morning.\n\nBook direct \u2014 link in bio."
+    },
+    {
+      "platform": "meta_facebook",
+      "id": "event-739904-2026-10-24-halloweener-derby-&-cost",
+      "pillar": "local_events",
+      "event": {
+        "title": "Halloweener Derby & Costume Contest",
+        "start": "2026-10-24T00:00:00",
+        "end": "2026-10-24T00:00:00",
+        "description": "Saturday Oct 24, 10 AM\u20132 PM at the Seaside Amphitheater \u00b7 dachshund races down Central Square and an all-breeds costume contest \u00b7 free to watch, bring the dog and a camera \u00b7 5-min walk or drive",
+        "location": "Seaside",
+        "url": "https://seasidefl.com/event/annual-halloweener-derby-dachshund-race-dog-costume-contest/",
+        "recurring": ""
+      },
+      "event_summary": "Halloweener Derby & Costume Contest, Sat Oct 24",
+      "unit": "moon",
+      "unit_label": "Blue Moon",
+      "open_dates": "Fri Oct 23 \u2013 Sun 25 (3 nights)",
+      "window": {
+        "unit": "moon",
+        "start": "2026-10-23",
+        "end": "2026-10-26",
+        "nights": 3,
+        "score": 16,
+        "kind": "event_stay",
+        "event_title": "Halloweener Derby & Costume Contest"
+      },
+      "media_url": "https://sunandmoon30a.com/images/aerial-30a.jpg",
+      "alt_text": "Aerial view of the 30A shoreline with a coastal dune lake meeting the white sand.",
+      "photo_shows": "the coast and a coastal dune lake from the air",
+      "hashtags": "#SunAndMoon30A #StayWithTheSky #EmeraldCoast #FloridaPanhandle #WeekendGetaway #VacationRental #Seaside30A #SeagroveBeach",
+      "copy_source": "claude",
+      "copy": "The Halloweener Derby and all-breeds costume contest runs Saturday Oct 24, 10 AM\u20132 PM at the Seaside Amphitheater, about five minutes from our lane in Seagrove \u2014 free to watch, bring the dog and a camera. Blue Moon is open Fri Oct 23 \u2013 Sun Oct 25, three nights, sleeps eight: book direct at https://book.sunandmoon30a.com"
+    }
+  ],
+  "busy_map": {
+    "sun": [
+      [
+        "2026-10-15",
+        "2026-10-24"
+      ]
+    ],
+    "moon": [
+      [
+        "2026-10-15",
+        "2026-10-19"
+      ],
+      [
+        "2026-11-23",
+        "2026-11-29"
+      ],
+      [
+        "2027-01-01",
+        "2027-01-16"
+      ]
+    ],
+    "full": [
+      [
+        "2026-10-15",
+        "2026-10-24"
+      ],
+      [
+        "2026-11-23",
+        "2026-11-29"
+      ],
+      [
+        "2027-01-01",
+        "2027-01-16"
+      ]
+    ]
+  }
+}
