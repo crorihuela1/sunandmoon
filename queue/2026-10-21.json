@@ -1,0 +1,446 @@
+{
+  "date": "2026-10-21",
+  "generated_at": "2026-10-21T17:47:42.743794Z",
+  "pillar_of_day": "availability_spotlight",
+  "active_platforms": [
+    "meta_facebook",
+    "meta_instagram"
+  ],
+  "inactive_platforms": [
+    "google_business_profile",
+    "linkedin",
+    "nextdoor",
+    "pinterest",
+    "threads",
+    "tiktok",
+    "x_twitter",
+    "youtube"
+  ],
+  "open_windows": [
+    {
+      "unit": "sun",
+      "start": "2026-10-24",
+      "end": "2027-01-04",
+      "nights": 72,
+      "score": 117,
+      "kind": "window",
+      "event_title": ""
+    },
+    {
+      "unit": "moon",
+      "start": "2026-10-21",
+      "end": "2026-11-23",
+      "nights": 33,
+      "score": 65,
+      "kind": "window",
+      "event_title": ""
+    },
+    {
+      "unit": "full",
+      "start": "2026-10-24",
+      "end": "2026-11-23",
+      "nights": 30,
+      "score": 56,
+      "kind": "window",
+      "event_title": ""
+    },
+    {
+      "unit": "moon",
+      "start": "2026-11-29",
+      "end": "2027-01-01",
+      "nights": 33,
+      "score": 39,
+      "kind": "window",
+      "event_title": ""
+    },
+    {
+      "unit": "full",
+      "start": "2026-11-29",
+      "end": "2027-01-01",
+      "nights": 33,
+      "score": 39,
+      "kind": "window",
+      "event_title": ""
+    }
+  ],
+  "top_stays": [
+    {
+      "unit": "sun",
+      "start": "2026-10-29",
+      "end": "2026-11-02",
+      "nights": 4,
+      "score": 19,
+      "kind": "long_weekend",
+      "event_title": ""
+    },
+    {
+      "unit": "sun",
+      "start": "2026-10-30",
+      "end": "2026-11-03",
+      "nights": 4,
+      "score": 19,
+      "kind": "long_weekend",
+      "event_title": ""
+    },
+    {
+      "unit": "moon",
+      "start": "2026-10-29",
+      "end": "2026-11-02",
+      "nights": 4,
+      "score": 19,
+      "kind": "long_weekend",
+      "event_title": ""
+    },
+    {
+      "unit": "moon",
+      "start": "2026-10-30",
+      "end": "2026-11-03",
+      "nights": 4,
+      "score": 19,
+      "kind": "long_weekend",
+      "event_title": ""
+    },
+    {
+      "unit": "full",
+      "start": "2026-10-29",
+      "end": "2026-11-02",
+      "nights": 4,
+      "score": 19,
+      "kind": "long_weekend",
+      "event_title": ""
+    },
+    {
+      "unit": "full",
+      "start": "2026-10-30",
+      "end": "2026-11-03",
+      "nights": 4,
+      "score": 19,
+      "kind": "long_weekend",
+      "event_title": ""
+    },
+    {
+      "unit": "sun",
+      "start": "2026-10-29",
+      "end": "2026-11-01",
+      "nights": 3,
+      "score": 17,
+      "kind": "long_weekend",
+      "event_title": ""
+    },
+    {
+      "unit": "sun",
+      "start": "2026-10-30",
+      "end": "2026-11-02",
+      "nights": 3,
+      "score": 17,
+      "kind": "weekend",
+      "event_title": ""
+    }
+  ],
+  "upcoming_events": [
+    {
+      "title": "MKAF Festival of the Arts",
+      "start": "2026-10-24T00:00:00",
+      "end": "2026-10-25T00:00:00",
+      "description": "A two-day juried fine art festival at the Mattie Kelly Cultural Arts Village, Saturday 9 AM\u20135 PM and Sunday 10 AM\u20134 PM, with artists from around the region, live music and food vendors \u00b7 free to attend \u00b7 35-min drive west.",
+      "location": "Destin",
+      "url": "https://mkaf.org/arts-festival/",
+      "recurring": ""
+    },
+    {
+      "title": "Halloweener Derby & Costume Contest",
+      "start": "2026-10-24T00:00:00",
+      "end": "2026-10-24T00:00:00",
+      "description": "Saturday Oct 24, 10 AM\u20132 PM at the Seaside Amphitheater \u00b7 dachshund races down Central Square and an all-breeds costume contest \u00b7 free to watch, bring the dog and a camera \u00b7 5-min walk or drive",
+      "location": "Seaside",
+      "url": "https://seasidefl.com/event/annual-halloweener-derby-dachshund-race-dog-costume-contest/",
+      "recurring": ""
+    },
+    {
+      "title": "Seeing Red Wine Festival",
+      "start": "2026-11-05T00:00:00",
+      "end": "2026-11-08T00:00:00",
+      "description": "A vintners dinner at Bud & Alley's, the Al Fresco Reserve Tasting, Battle of the Somms, the Grand Tasting in Central Square, and a Celebration of Bubbles brunch \u00b7 benefits DCWAF \u00b7 tickets at seasideseeingred.com \u00b7 5-min walk or drive",
+      "location": "Seaside",
+      "url": "https://seasideseeingred.com/",
+      "recurring": ""
+    },
+    {
+      "title": "WaterColor Mountainfilm on Tour",
+      "start": "2026-11-06T00:00:00",
+      "end": "2026-11-07T00:00:00",
+      "description": "26th year of the tour \u00b7 two nights of award-winning documentary shorts on adventure, environment and culture, straight from the Mountainfilm festival in Telluride, outdoors at the Marina Park Amphitheater \u00b7 gates 5:45 PM, films at 7 PM \u00b7 10-min drive west",
+      "location": "WaterColor",
+      "url": "https://www.watercolorresort.com/mountainfilm-on-tour",
+      "recurring": ""
+    },
+    {
+      "title": "Alys Beach Crafted",
+      "start": "2026-11-11T00:00:00",
+      "end": "2026-11-15T00:00:00",
+      "description": "A five-day craft and culinary weekend \u2014 the Firkin F\u00eate, the Spirited Soir\u00e9e, mixology dinners and seminars, and the Holiday Makers Market, daily 10 AM\u201310 PM \u00b7 benefits the Cultural Arts Alliance of Walton County \u00b7 15-min drive east",
+      "location": "",
+      "url": "https://alysbeachcrafted.com/",
+      "recurring": ""
+    },
+    {
+      "title": "Rosemary Beach Uncorked",
+      "start": "2026-11-14T00:00:00",
+      "end": "2026-11-14T00:00:00",
+      "description": "15th annual \u00b7 Saturday Nov 14, 2026, 1\u20134 PM on Barrett Square \u00b7 wines poured by vintners from around the world alongside dishes from ten Rosemary Beach restaurants, with live music as you stroll the cobblestone streets \u00b7 $225 general admission, $350 VIP \u00b7 15-min drive east",
+      "location": "",
+      "url": "https://rosemarybeachuncorked.com/",
+      "recurring": ""
+    },
+    {
+      "title": "Sounds of Seaside Concert Series",
+      "start": "2026-10-21T00:00:00",
+      "end": null,
+      "description": "Through Nov 25 \u00b7 Wed 4\u20136 PM \u00b7 Free Wednesday-evening concerts on the Seaside Amphitheater lawn, 4\u20136 PM, running weekly through Nov 25 \u00b7 a different act each week, free and open to all ages \u00b7 bring blankets and chairs, snacks and drinks welcome \u00b7 5-min walk or drive",
+      "location": "",
+      "url": "https://www.homeownerscollection.com/seaside-events/outdoor-activities/sounds-seaside-concert-series-0",
+      "recurring": "Wed"
+    },
+    {
+      "title": "Morning Vinyasa Yoga",
+      "start": "2026-10-21T00:00:00",
+      "end": null,
+      "description": "Through Oct 31 \u00b7 Daily 8:30 AM \u00b7 Every morning at 8:30 AM on the pavilion overlooking the Gulf, weather permitting \u00b7 no preregistration, $25 drop-in by cash, check, or Venmo \u00b7 bring a mat or towel and water \u00b7 5-min walk or drive",
+      "location": "Seaside Pavilion",
+      "url": "https://seasidefl.com/neighborhood/seaside-yoga/",
+      "recurring": "Daily"
+    },
+    {
+      "title": "Central Square Cinema",
+      "start": "2026-10-23T00:00:00",
+      "end": null,
+      "description": "Through Oct 30 \u00b7 Fri 8 PM \u00b7 Free family movies on the big screen at the Seaside Amphitheater, Fridays at 8 PM \u2014 Coco (Oct 23) and a Halloween feature (Oct 30) \u00b7 bring a blanket and the kids \u00b7 5-min walk or drive",
+      "location": "Free Movies Under the Stars",
+      "url": "https://seasidefl.com/events/",
+      "recurring": "Fri"
+    },
+    {
+      "title": "Seaside Farmers Market",
+      "start": "2026-10-24T00:00:00",
+      "end": null,
+      "description": "Year-Round \u00b7 Sat 9\u20131 \u00b7 Saturdays year-round, 9 AM\u20131 PM at the Seaside Amphitheater, with a second Tuesday market added each June and July \u00b7 local growers, artisan cheeses and breads, craft chefs, and live acoustic music \u00b7 5-min walk or drive",
+      "location": "",
+      "url": "https://30a.com/locations/seaside-farmers-market/",
+      "recurring": "Sat"
+    }
+  ],
+  "new_bookings": [
+    {
+      "unit": "moon",
+      "start": "2027-01-21",
+      "end": "2027-01-22"
+    },
+    {
+      "unit": "full",
+      "start": "2027-01-21",
+      "end": "2027-01-22"
+    }
+  ],
+  "briefs": [
+    {
+      "id": "avail-sun-2026-12-31",
+      "pillar": "availability_spotlight",
+      "unit": "sun",
+      "unit_label": "Golden Sun",
+      "unit_angle": "bright mornings, coffee on the back patio, sunset light",
+      "open_dates": "Thu Dec 31 \u2013 Sat Jan 2 (3 nights)",
+      "window": {
+        "unit": "sun",
+        "start": "2026-12-31",
+        "end": "2027-01-03",
+        "nights": 3,
+        "score": 16,
+        "kind": "long_weekend",
+        "event_title": ""
+      },
+      "event": null,
+      "event_summary": null,
+      "rate": null,
+      "media_url": "https://sunandmoon30a.com/photos/golden-sun/001.jpg",
+      "alt_text": "Golden Sun cottage at dusk, warm light in the windows, tall palms in the foreground.",
+      "photo_shows": "the cottage exterior at dusk",
+      "copy": {
+        "instagram": "New Year's Eve into the first morning of 2027 \u2014 Golden Sun is open Thu Dec 31 \u2013 Sat Jan 2.\n\nThree nights on Crystal Court: coffee on the covered back patio, the fireplace going after dark.\n\nThree bedrooms, sleeps 8, Pelayo public beach access a 3-minute walk across Scenic 30A.\n\nBook direct \u2014 link in bio.",
+        "facebook": "Golden Sun has Thu Dec 31 \u2013 Sat Jan 2 open: three nights to see out the year with coffee on the back patio in the morning and the fireplace lit in the evening, with the public beach access at Pelayo a 3-minute walk across Scenic 30A. Live dates and real prices at https://book.sunandmoon30a.com"
+      },
+      "hashtags": "#SunAndMoon30A #StayWithTheSky #30A #30Aliving #Seaside30A #Seagrove #NewYears30A",
+      "copy_source": "claude"
+    },
+    {
+      "id": "avail-full-2026-12-24",
+      "pillar": "availability_spotlight",
+      "unit": "full",
+      "unit_label": "The whole property",
+      "unit_angle": "both cottages together \u2014 six bedrooms, one address, room for sixteen",
+      "open_dates": "Thu Dec 24 \u2013 Sat 26 (3 nights)",
+      "window": {
+        "unit": "full",
+        "start": "2026-12-24",
+        "end": "2026-12-27",
+        "nights": 3,
+        "score": 16,
+        "kind": "long_weekend",
+        "event_title": ""
+      },
+      "event": null,
+      "event_summary": null,
+      "rate": null,
+      "media_url": "https://sunandmoon30a.com/images/both-cottages.jpg",
+      "alt_text": "Golden Sun and Blue Moon side by side on Crystal Court, seen from the street under palms.",
+      "photo_shows": "both cottages from the street",
+      "copy": {
+        "instagram": "Christmas Eve through Dec 26 \u2014 both cottages open, Thu Dec 24 \u2013 Sat 26.\n\nGolden Sun and Blue Moon side by side on the same quiet lane: six bedrooms, four baths, sixteen people, one address.\n\nTwo fireplaces, two kitchens, nobody driving across town to say goodnight.\n\nBook direct \u2014 link in bio.",
+        "facebook": "The whole property is open Thu Dec 24 \u2013 Sat 26 \u2014 Golden Sun and Blue Moon next door to each other on Crystal Court, six bedrooms and four baths for sixteen, with the community pool steps away and Seaside five minutes by car. Book the three nights at https://book.sunandmoon30a.com"
+      },
+      "hashtags": "#SunAndMoon30A #StayWithTheSky #30Aliving #Seaside30A #Seagrove #EmeraldCoast #ChristmasOn30A",
+      "copy_source": "claude"
+    }
+  ],
+  "posts": [
+    {
+      "platform": "meta_instagram",
+      "id": "avail-sun-2026-12-31",
+      "pillar": "availability_spotlight",
+      "unit": "sun",
+      "unit_label": "Golden Sun",
+      "unit_angle": "bright mornings, coffee on the back patio, sunset light",
+      "open_dates": "Thu Dec 31 \u2013 Sat Jan 2 (3 nights)",
+      "window": {
+        "unit": "sun",
+        "start": "2026-12-31",
+        "end": "2027-01-03",
+        "nights": 3,
+        "score": 16,
+        "kind": "long_weekend",
+        "event_title": ""
+      },
+      "event": null,
+      "event_summary": null,
+      "rate": null,
+      "media_url": "https://sunandmoon30a.com/photos/golden-sun/001.jpg",
+      "alt_text": "Golden Sun cottage at dusk, warm light in the windows, tall palms in the foreground.",
+      "photo_shows": "the cottage exterior at dusk",
+      "hashtags": "#SunAndMoon30A #StayWithTheSky #30A #30Aliving #Seaside30A #Seagrove #NewYears30A",
+      "copy_source": "claude",
+      "copy": "New Year's Eve into the first morning of 2027 \u2014 Golden Sun is open Thu Dec 31 \u2013 Sat Jan 2.\n\nThree nights on Crystal Court: coffee on the covered back patio, the fireplace going after dark.\n\nThree bedrooms, sleeps 8, Pelayo public beach access a 3-minute walk across Scenic 30A.\n\nBook direct \u2014 link in bio."
+    },
+    {
+      "platform": "meta_instagram",
+      "id": "avail-full-2026-12-24",
+      "pillar": "availability_spotlight",
+      "unit": "full",
+      "unit_label": "The whole property",
+      "unit_angle": "both cottages together \u2014 six bedrooms, one address, room for sixteen",
+      "open_dates": "Thu Dec 24 \u2013 Sat 26 (3 nights)",
+      "window": {
+        "unit": "full",
+        "start": "2026-12-24",
+        "end": "2026-12-27",
+        "nights": 3,
+        "score": 16,
+        "kind": "long_weekend",
+        "event_title": ""
+      },
+      "event": null,
+      "event_summary": null,
+      "rate": null,
+      "media_url": "https://sunandmoon30a.com/images/both-cottages.jpg",
+      "alt_text": "Golden Sun and Blue Moon side by side on Crystal Court, seen from the street under palms.",
+      "photo_shows": "both cottages from the street",
+      "hashtags": "#SunAndMoon30A #StayWithTheSky #30Aliving #Seaside30A #Seagrove #EmeraldCoast #ChristmasOn30A",
+      "copy_source": "claude",
+      "copy": "Christmas Eve through Dec 26 \u2014 both cottages open, Thu Dec 24 \u2013 Sat 26.\n\nGolden Sun and Blue Moon side by side on the same quiet lane: six bedrooms, four baths, sixteen people, one address.\n\nTwo fireplaces, two kitchens, nobody driving across town to say goodnight.\n\nBook direct \u2014 link in bio."
+    },
+    {
+      "platform": "meta_facebook",
+      "id": "avail-sun-2026-12-31",
+      "pillar": "availability_spotlight",
+      "unit": "sun",
+      "unit_label": "Golden Sun",
+      "unit_angle": "bright mornings, coffee on the back patio, sunset light",
+      "open_dates": "Thu Dec 31 \u2013 Sat Jan 2 (3 nights)",
+      "window": {
+        "unit": "sun",
+        "start": "2026-12-31",
+        "end": "2027-01-03",
+        "nights": 3,
+        "score": 16,
+        "kind": "long_weekend",
+        "event_title": ""
+      },
+      "event": null,
+      "event_summary": null,
+      "rate": null,
+      "media_url": "https://sunandmoon30a.com/photos/golden-sun/001.jpg",
+      "alt_text": "Golden Sun cottage at dusk, warm light in the windows, tall palms in the foreground.",
+      "photo_shows": "the cottage exterior at dusk",
+      "hashtags": "#SunAndMoon30A #StayWithTheSky #30A #30Aliving #Seaside30A #Seagrove #NewYears30A",
+      "copy_source": "claude",
+      "copy": "Golden Sun has Thu Dec 31 \u2013 Sat Jan 2 open: three nights to see out the year with coffee on the back patio in the morning and the fireplace lit in the evening, with the public beach access at Pelayo a 3-minute walk across Scenic 30A. Live dates and real prices at https://book.sunandmoon30a.com"
+    },
+    {
+      "platform": "meta_facebook",
+      "id": "avail-full-2026-12-24",
+      "pillar": "availability_spotlight",
+      "unit": "full",
+      "unit_label": "The whole property",
+      "unit_angle": "both cottages together \u2014 six bedrooms, one address, room for sixteen",
+      "open_dates": "Thu Dec 24 \u2013 Sat 26 (3 nights)",
+      "window": {
+        "unit": "full",
+        "start": "2026-12-24",
+        "end": "2026-12-27",
+        "nights": 3,
+        "score": 16,
+        "kind": "long_weekend",
+        "event_title": ""
+      },
+      "event": null,
+      "event_summary": null,
+      "rate": null,
+      "media_url": "https://sunandmoon30a.com/images/both-cottages.jpg",
+      "alt_text": "Golden Sun and Blue Moon side by side on Crystal Court, seen from the street under palms.",
+      "photo_shows": "both cottages from the street",
+      "hashtags": "#SunAndMoon30A #StayWithTheSky #30Aliving #Seaside30A #Seagrove #EmeraldCoast #ChristmasOn30A",
+      "copy_source": "claude",
+      "copy": "The whole property is open Thu Dec 24 \u2013 Sat 26 \u2014 Golden Sun and Blue Moon next door to each other on Crystal Court, six bedrooms and four baths for sixteen, with the community pool steps away and Seaside five minutes by car. Book the three nights at https://book.sunandmoon30a.com"
+    }
+  ],
+  "busy_map": {
+    "sun": [
+      [
+        "2026-10-21",
+        "2026-10-24"
+      ]
+    ],
+    "moon": [
+      [
+        "2026-11-23",
+        "2026-11-29"
+      ],
+      [
+        "2027-01-01",
+        "2027-01-22"
+      ]
+    ],
+    "full": [
+      [
+        "2026-10-21",
+        "2026-10-24"
+      ],
+      [
+        "2026-11-23",
+        "2026-11-29"
+      ],
+      [
+        "2027-01-01",
+        "2027-01-22"
+      ]
+    ]
+  }
+}
