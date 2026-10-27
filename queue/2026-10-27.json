@@ -1,0 +1,466 @@
+{
+  "date": "2026-10-27",
+  "generated_at": "2026-10-27T18:29:19.353915Z",
+  "pillar_of_day": "availability_spotlight",
+  "active_platforms": [
+    "meta_facebook",
+    "meta_instagram"
+  ],
+  "inactive_platforms": [
+    "google_business_profile",
+    "linkedin",
+    "nextdoor",
+    "pinterest",
+    "threads",
+    "tiktok",
+    "x_twitter",
+    "youtube"
+  ],
+  "open_windows": [
+    {
+      "unit": "sun",
+      "start": "2026-10-27",
+      "end": "2027-01-10",
+      "nights": 75,
+      "score": 126,
+      "kind": "window",
+      "event_title": ""
+    },
+    {
+      "unit": "moon",
+      "start": "2026-10-27",
+      "end": "2026-11-15",
+      "nights": 19,
+      "score": 53,
+      "kind": "window",
+      "event_title": ""
+    },
+    {
+      "unit": "full",
+      "start": "2026-10-27",
+      "end": "2026-11-15",
+      "nights": 19,
+      "score": 53,
+      "kind": "window",
+      "event_title": ""
+    },
+    {
+      "unit": "moon",
+      "start": "2026-11-29",
+      "end": "2027-01-01",
+      "nights": 33,
+      "score": 39,
+      "kind": "window",
+      "event_title": ""
+    },
+    {
+      "unit": "full",
+      "start": "2026-11-29",
+      "end": "2027-01-01",
+      "nights": 33,
+      "score": 39,
+      "kind": "window",
+      "event_title": ""
+    }
+  ],
+  "top_stays": [
+    {
+      "unit": "sun",
+      "start": "2026-11-04",
+      "end": "2026-11-09",
+      "nights": 5,
+      "score": 20,
+      "kind": "event_stay",
+      "event_title": "Seeing Red Wine Festival"
+    },
+    {
+      "unit": "moon",
+      "start": "2026-11-04",
+      "end": "2026-11-09",
+      "nights": 5,
+      "score": 20,
+      "kind": "event_stay",
+      "event_title": "Seeing Red Wine Festival"
+    },
+    {
+      "unit": "full",
+      "start": "2026-11-04",
+      "end": "2026-11-09",
+      "nights": 5,
+      "score": 20,
+      "kind": "event_stay",
+      "event_title": "Seeing Red Wine Festival"
+    },
+    {
+      "unit": "sun",
+      "start": "2026-10-29",
+      "end": "2026-11-02",
+      "nights": 4,
+      "score": 19,
+      "kind": "long_weekend",
+      "event_title": ""
+    },
+    {
+      "unit": "sun",
+      "start": "2026-10-30",
+      "end": "2026-11-03",
+      "nights": 4,
+      "score": 19,
+      "kind": "long_weekend",
+      "event_title": ""
+    },
+    {
+      "unit": "moon",
+      "start": "2026-10-29",
+      "end": "2026-11-02",
+      "nights": 4,
+      "score": 19,
+      "kind": "long_weekend",
+      "event_title": ""
+    },
+    {
+      "unit": "moon",
+      "start": "2026-10-30",
+      "end": "2026-11-03",
+      "nights": 4,
+      "score": 19,
+      "kind": "long_weekend",
+      "event_title": ""
+    },
+    {
+      "unit": "full",
+      "start": "2026-10-29",
+      "end": "2026-11-02",
+      "nights": 4,
+      "score": 19,
+      "kind": "long_weekend",
+      "event_title": ""
+    }
+  ],
+  "upcoming_events": [
+    {
+      "title": "Seeing Red Wine Festival",
+      "start": "2026-11-05T00:00:00",
+      "end": "2026-11-08T00:00:00",
+      "description": "Four days in Seaside: the Bud & Alley's vintners dinner Thursday, the Al Fresco Reserve Tasting on the Lyceum lawn Friday evening, Saturday's Battle of the Sommeliers and Grand Tasting across Central Square and Ruskin Place, and a Celebration of Bubbles brunch Sunday morning \u00b7 benefits DCWAF \u00b7 weekend passes are waitlisted, single-day tickets at seasideseeingred.com \u00b7 5-min walk or drive.",
+      "location": "Seaside",
+      "url": "https://seasideseeingred.com/",
+      "recurring": ""
+    },
+    {
+      "title": "WaterColor Mountainfilm on Tour",
+      "start": "2026-11-06T00:00:00",
+      "end": "2026-11-07T00:00:00",
+      "description": "26th year of the tour \u00b7 two nights of award-winning documentary shorts on adventure, environment and culture, straight from the Mountainfilm festival in Telluride, outdoors at the Marina Park Amphitheater \u00b7 gates 5:45 PM, films at 7 PM \u00b7 10-min drive west",
+      "location": "WaterColor",
+      "url": "https://www.watercolorresort.com/mountainfilm-on-tour",
+      "recurring": ""
+    },
+    {
+      "title": "Baytowne Tribute Weekend",
+      "start": "2026-11-06T00:00:00",
+      "end": "2026-11-07T00:00:00",
+      "description": "Two free nights of tribute bands on the Events Plaza Lawn, 7\u20139 PM \u2014 Pandora's Box Friday, The 77 Experience Saturday \u00b7 bring a blanket or lawn chairs \u00b7 25-min drive west",
+      "location": "Village of Baytowne Wharf",
+      "url": "https://www.baytownewharf.com/",
+      "recurring": ""
+    },
+    {
+      "title": "Alys Beach Crafted",
+      "start": "2026-11-11T00:00:00",
+      "end": "2026-11-14T00:00:00",
+      "description": "A four-day craft and culinary weekend \u2014 the Firkin F\u00eate, the Spirited Soir\u00e9e, mixology dinners and seminars, and the Holiday Makers Market, daily 10 AM\u201310 PM \u00b7 benefits the Cultural Arts Alliance of Walton County \u00b7 15-min drive east",
+      "location": "",
+      "url": "https://alysbeachcrafted.com/",
+      "recurring": ""
+    },
+    {
+      "title": "Rosemary Beach Uncorked",
+      "start": "2026-11-14T00:00:00",
+      "end": "2026-11-14T00:00:00",
+      "description": "15th annual \u00b7 Saturday Nov 14, 2026, 1\u20134 PM on Barrett Square \u00b7 wines poured by vintners from around the world alongside dishes from ten Rosemary Beach restaurants, with live music as you stroll the cobblestone streets \u00b7 $225 general admission, $350 VIP \u00b7 15-min drive east",
+      "location": "",
+      "url": "https://rosemarybeachuncorked.com/",
+      "recurring": ""
+    },
+    {
+      "title": "Turn On The Town",
+      "start": "2026-11-28T00:00:00",
+      "end": "2026-11-28T00:00:00",
+      "description": "Saturday Nov 28, 2026 \u2014 the holiday parade steps off from Seagrove Plaza at 3 PM and ends in Central Square, where Santa lights the town tree at 5 PM in the Amphitheater \u00b7 free to attend \u00b7 5-min walk or drive",
+      "location": "Seaside",
+      "url": "https://seasidefl.com/events/",
+      "recurring": ""
+    },
+    {
+      "title": "Morning Vinyasa Yoga",
+      "start": "2026-10-27T00:00:00",
+      "end": null,
+      "description": "Through Oct 31 \u00b7 Daily 8:30 AM \u00b7 Every morning at 8:30 AM on the pavilion overlooking the Gulf, weather permitting \u00b7 no preregistration, $25 drop-in by cash, check, or Venmo \u00b7 bring a mat or towel and water \u00b7 5-min walk or drive",
+      "location": "Seaside Pavilion",
+      "url": "https://seasidefl.com/neighborhood/seaside-yoga/",
+      "recurring": "Daily"
+    },
+    {
+      "title": "Sounds of Seaside Concert Series",
+      "start": "2026-10-28T00:00:00",
+      "end": null,
+      "description": "Through Nov 25 \u00b7 Wed 4\u20136 PM \u00b7 Free Wednesday-evening concerts on the Seaside Amphitheater lawn, 4\u20136 PM, running weekly through Nov 25 \u00b7 a different act each week, free and open to all ages \u00b7 bring blankets and chairs, snacks and drinks welcome \u00b7 5-min walk or drive",
+      "location": "",
+      "url": "https://www.homeownerscollection.com/seaside-events/outdoor-activities/sounds-seaside-concert-series-0",
+      "recurring": "Wed"
+    },
+    {
+      "title": "Central Square Cinema",
+      "start": "2026-10-30T00:00:00",
+      "end": null,
+      "description": "Through Oct 30 \u00b7 Fri 8 PM \u00b7 Free family movies on the big screen at the Seaside Amphitheater, Fridays at 8 PM through Oct 30, closing the season with a Halloween-themed show \u00b7 bring a blanket and the kids \u00b7 5-min walk or drive",
+      "location": "Free Movies Under the Stars",
+      "url": "https://seasidefl.com/events/",
+      "recurring": "Fri"
+    },
+    {
+      "title": "Seaside Farmers Market",
+      "start": "2026-10-31T00:00:00",
+      "end": null,
+      "description": "Year-Round \u00b7 Sat 9\u20131 \u00b7 Saturdays year-round, 9 AM\u20131 PM at the Seaside Amphitheater, with a second Tuesday market added each June and July \u00b7 local growers, artisan cheeses and breads, craft chefs, and live acoustic music \u00b7 5-min walk or drive",
+      "location": "",
+      "url": "https://30a.com/locations/seaside-farmers-market/",
+      "recurring": "Sat"
+    }
+  ],
+  "new_bookings": [
+    {
+      "unit": "moon",
+      "start": "2027-01-27",
+      "end": "2027-01-28"
+    },
+    {
+      "unit": "full",
+      "start": "2027-01-27",
+      "end": "2027-01-28"
+    }
+  ],
+  "briefs": [
+    {
+      "id": "avail-full-2026-11-04",
+      "pillar": "availability_spotlight",
+      "unit": "full",
+      "unit_label": "The whole property",
+      "unit_angle": "both cottages together \u2014 six bedrooms, one address, room for sixteen",
+      "open_dates": "Wed Nov 4 \u2013 Sun 8 (5 nights)",
+      "window": {
+        "unit": "full",
+        "start": "2026-11-04",
+        "end": "2026-11-09",
+        "nights": 5,
+        "score": 20,
+        "kind": "event_stay",
+        "event_title": "Seeing Red Wine Festival"
+      },
+      "event": {
+        "title": "Seeing Red Wine Festival",
+        "start": "2026-11-05T00:00:00",
+        "end": "2026-11-08T00:00:00",
+        "description": "Four days in Seaside: the Bud & Alley's vintners dinner Thursday, the Al Fresco Reserve Tasting on the Lyceum lawn Friday evening, Saturday's Battle of the Sommeliers and Grand Tasting across Central Square and Ruskin Place, and a Celebration of Bubbles brunch Sunday morning \u00b7 benefits DCWAF \u00b7 weekend passes are waitlisted, single-day tickets at seasideseeingred.com \u00b7 5-min walk or drive.",
+        "location": "Seaside",
+        "url": "https://seasideseeingred.com/",
+        "recurring": ""
+      },
+      "event_summary": "Seeing Red Wine Festival, Nov 5\u20138",
+      "rate": null,
+      "media_url": "https://sunandmoon30a.com/images/both-cottages.jpg",
+      "alt_text": "Golden Sun and Blue Moon side by side on Crystal Court, seen from the street under palms.",
+      "photo_shows": "both cottages from the street",
+      "copy": {
+        "instagram": "Wed Nov 4 \u2013 Sun Nov 8, both cottages are open. Five nights.\n\nThat's the Seeing Red Wine Festival weekend in Seaside \u2014 vintners dinner Thursday, the Grand Tasting Saturday, bubbles brunch Sunday \u2014 1.8 miles up Scenic 30A, five minutes by car.\n\nSix bedrooms, four baths, one address on Crystal Court. Room for sixteen.\n\nBook direct \u2014 link in bio.",
+        "facebook": "Golden Sun and Blue Moon are both open Wed Nov 4 \u2013 Sun Nov 8, five nights, which lines up with the Seeing Red Wine Festival in Seaside (Nov 5\u20138, about five minutes up Scenic 30A). Six bedrooms, four baths, sixteen guests, one lane \u2014 book direct with live availability and real prices at https://book.sunandmoon30a.com"
+      },
+      "hashtags": "#SunAndMoon30A #StayWithTheSky #WeekendGetaway #VacationRental #BeachHouse #GulfCoast #Seaside30A #SeagroveBeach",
+      "copy_source": "claude"
+    },
+    {
+      "id": "avail-full-2026-10-29",
+      "pillar": "availability_spotlight",
+      "unit": "full",
+      "unit_label": "The whole property",
+      "unit_angle": "both cottages together \u2014 six bedrooms, one address, room for sixteen",
+      "open_dates": "Thu Oct 29 \u2013 Sun Nov 1 (4 nights)",
+      "window": {
+        "unit": "full",
+        "start": "2026-10-29",
+        "end": "2026-11-02",
+        "nights": 4,
+        "score": 19,
+        "kind": "long_weekend",
+        "event_title": ""
+      },
+      "event": null,
+      "event_summary": null,
+      "rate": null,
+      "media_url": "https://sunandmoon30a.com/images/sunset-seagrove.jpg",
+      "alt_text": "An adult and child silhouetted on the beach at sunset, the sun low over the Gulf.",
+      "photo_shows": "the beach at sunset",
+      "copy": {
+        "instagram": "Thu Oct 29 \u2013 Sun Nov 1 is open across both cottages. Four nights.\n\nThe closest beach access is Pelayo \u2014 a public Walton County access, three minutes on foot straight across Scenic 30A. No gate, no shuttle.\n\nWalk over with the wagon and the umbrella, stay for the last of the light.\n\nBook direct \u2014 link in bio.",
+        "facebook": "Four nights open across the whole property, Thu Oct 29 \u2013 Sun Nov 1 \u2014 six bedrooms, sixteen guests, one address on Crystal Court. Pelayo, a public Walton County beach access, is a three-minute walk straight across Scenic 30A: https://book.sunandmoon30a.com"
+      },
+      "hashtags": "#SunAndMoon30A #StayWithTheSky #VacationRental #BeachHouse #GulfCoast #30A #SeagroveBeach #EmeraldCoast",
+      "copy_source": "claude"
+    }
+  ],
+  "posts": [
+    {
+      "platform": "meta_instagram",
+      "id": "avail-full-2026-11-04",
+      "pillar": "availability_spotlight",
+      "unit": "full",
+      "unit_label": "The whole property",
+      "unit_angle": "both cottages together \u2014 six bedrooms, one address, room for sixteen",
+      "open_dates": "Wed Nov 4 \u2013 Sun 8 (5 nights)",
+      "window": {
+        "unit": "full",
+        "start": "2026-11-04",
+        "end": "2026-11-09",
+        "nights": 5,
+        "score": 20,
+        "kind": "event_stay",
+        "event_title": "Seeing Red Wine Festival"
+      },
+      "event": {
+        "title": "Seeing Red Wine Festival",
+        "start": "2026-11-05T00:00:00",
+        "end": "2026-11-08T00:00:00",
+        "description": "Four days in Seaside: the Bud & Alley's vintners dinner Thursday, the Al Fresco Reserve Tasting on the Lyceum lawn Friday evening, Saturday's Battle of the Sommeliers and Grand Tasting across Central Square and Ruskin Place, and a Celebration of Bubbles brunch Sunday morning \u00b7 benefits DCWAF \u00b7 weekend passes are waitlisted, single-day tickets at seasideseeingred.com \u00b7 5-min walk or drive.",
+        "location": "Seaside",
+        "url": "https://seasideseeingred.com/",
+        "recurring": ""
+      },
+      "event_summary": "Seeing Red Wine Festival, Nov 5\u20138",
+      "rate": null,
+      "media_url": "https://sunandmoon30a.com/images/both-cottages.jpg",
+      "alt_text": "Golden Sun and Blue Moon side by side on Crystal Court, seen from the street under palms.",
+      "photo_shows": "both cottages from the street",
+      "hashtags": "#SunAndMoon30A #StayWithTheSky #WeekendGetaway #VacationRental #BeachHouse #GulfCoast #Seaside30A #SeagroveBeach",
+      "copy_source": "claude",
+      "copy": "Wed Nov 4 \u2013 Sun Nov 8, both cottages are open. Five nights.\n\nThat's the Seeing Red Wine Festival weekend in Seaside \u2014 vintners dinner Thursday, the Grand Tasting Saturday, bubbles brunch Sunday \u2014 1.8 miles up Scenic 30A, five minutes by car.\n\nSix bedrooms, four baths, one address on Crystal Court. Room for sixteen.\n\nBook direct \u2014 link in bio."
+    },
+    {
+      "platform": "meta_instagram",
+      "id": "avail-full-2026-10-29",
+      "pillar": "availability_spotlight",
+      "unit": "full",
+      "unit_label": "The whole property",
+      "unit_angle": "both cottages together \u2014 six bedrooms, one address, room for sixteen",
+      "open_dates": "Thu Oct 29 \u2013 Sun Nov 1 (4 nights)",
+      "window": {
+        "unit": "full",
+        "start": "2026-10-29",
+        "end": "2026-11-02",
+        "nights": 4,
+        "score": 19,
+        "kind": "long_weekend",
+        "event_title": ""
+      },
+      "event": null,
+      "event_summary": null,
+      "rate": null,
+      "media_url": "https://sunandmoon30a.com/images/sunset-seagrove.jpg",
+      "alt_text": "An adult and child silhouetted on the beach at sunset, the sun low over the Gulf.",
+      "photo_shows": "the beach at sunset",
+      "hashtags": "#SunAndMoon30A #StayWithTheSky #VacationRental #BeachHouse #GulfCoast #30A #SeagroveBeach #EmeraldCoast",
+      "copy_source": "claude",
+      "copy": "Thu Oct 29 \u2013 Sun Nov 1 is open across both cottages. Four nights.\n\nThe closest beach access is Pelayo \u2014 a public Walton County access, three minutes on foot straight across Scenic 30A. No gate, no shuttle.\n\nWalk over with the wagon and the umbrella, stay for the last of the light.\n\nBook direct \u2014 link in bio."
+    },
+    {
+      "platform": "meta_facebook",
+      "id": "avail-full-2026-11-04",
+      "pillar": "availability_spotlight",
+      "unit": "full",
+      "unit_label": "The whole property",
+      "unit_angle": "both cottages together \u2014 six bedrooms, one address, room for sixteen",
+      "open_dates": "Wed Nov 4 \u2013 Sun 8 (5 nights)",
+      "window": {
+        "unit": "full",
+        "start": "2026-11-04",
+        "end": "2026-11-09",
+        "nights": 5,
+        "score": 20,
+        "kind": "event_stay",
+        "event_title": "Seeing Red Wine Festival"
+      },
+      "event": {
+        "title": "Seeing Red Wine Festival",
+        "start": "2026-11-05T00:00:00",
+        "end": "2026-11-08T00:00:00",
+        "description": "Four days in Seaside: the Bud & Alley's vintners dinner Thursday, the Al Fresco Reserve Tasting on the Lyceum lawn Friday evening, Saturday's Battle of the Sommeliers and Grand Tasting across Central Square and Ruskin Place, and a Celebration of Bubbles brunch Sunday morning \u00b7 benefits DCWAF \u00b7 weekend passes are waitlisted, single-day tickets at seasideseeingred.com \u00b7 5-min walk or drive.",
+        "location": "Seaside",
+        "url": "https://seasideseeingred.com/",
+        "recurring": ""
+      },
+      "event_summary": "Seeing Red Wine Festival, Nov 5\u20138",
+      "rate": null,
+      "media_url": "https://sunandmoon30a.com/images/both-cottages.jpg",
+      "alt_text": "Golden Sun and Blue Moon side by side on Crystal Court, seen from the street under palms.",
+      "photo_shows": "both cottages from the street",
+      "hashtags": "#SunAndMoon30A #StayWithTheSky #WeekendGetaway #VacationRental #BeachHouse #GulfCoast #Seaside30A #SeagroveBeach",
+      "copy_source": "claude",
+      "copy": "Golden Sun and Blue Moon are both open Wed Nov 4 \u2013 Sun Nov 8, five nights, which lines up with the Seeing Red Wine Festival in Seaside (Nov 5\u20138, about five minutes up Scenic 30A). Six bedrooms, four baths, sixteen guests, one lane \u2014 book direct with live availability and real prices at https://book.sunandmoon30a.com"
+    },
+    {
+      "platform": "meta_facebook",
+      "id": "avail-full-2026-10-29",
+      "pillar": "availability_spotlight",
+      "unit": "full",
+      "unit_label": "The whole property",
+      "unit_angle": "both cottages together \u2014 six bedrooms, one address, room for sixteen",
+      "open_dates": "Thu Oct 29 \u2013 Sun Nov 1 (4 nights)",
+      "window": {
+        "unit": "full",
+        "start": "2026-10-29",
+        "end": "2026-11-02",
+        "nights": 4,
+        "score": 19,
+        "kind": "long_weekend",
+        "event_title": ""
+      },
+      "event": null,
+      "event_summary": null,
+      "rate": null,
+      "media_url": "https://sunandmoon30a.com/images/sunset-seagrove.jpg",
+      "alt_text": "An adult and child silhouetted on the beach at sunset, the sun low over the Gulf.",
+      "photo_shows": "the beach at sunset",
+      "hashtags": "#SunAndMoon30A #StayWithTheSky #VacationRental #BeachHouse #GulfCoast #30A #SeagroveBeach #EmeraldCoast",
+      "copy_source": "claude",
+      "copy": "Four nights open across the whole property, Thu Oct 29 \u2013 Sun Nov 1 \u2014 six bedrooms, sixteen guests, one address on Crystal Court. Pelayo, a public Walton County beach access, is a three-minute walk straight across Scenic 30A: https://book.sunandmoon30a.com"
+    }
+  ],
+  "busy_map": {
+    "sun": [
+      [
+        "2026-10-23",
+        "2026-10-24"
+      ]
+    ],
+    "moon": [
+      [
+        "2026-11-15",
+        "2026-11-29"
+      ],
+      [
+        "2027-01-01",
+        "2027-01-28"
+      ]
+    ],
+    "full": [
+      [
+        "2026-11-15",
+        "2026-11-29"
+      ],
+      [
+        "2027-01-01",
+        "2027-01-28"
+      ]
+    ]
+  }
+}
