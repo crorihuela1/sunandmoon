@@ -1,0 +1,92 @@
+/* Sun & Moon — the slow coast collection. */
+:root {
+  --white: #faf8f2; --sand: #f0ecdf; --sand2: #e5dfcf;
+  --deep: #193c37; --text: #233c36; --muted: #667168;
+  --brown: #64725f; --tan: #918061; --border: #d8ddce;
+  --foam: #e9efea; --sun-deep: #82643c; --moon-deep: #315e64;
+}
+body { -webkit-font-smoothing: antialiased; }
+::selection { background: #cfdfcc; color: #193c37; }
+:focus-visible { outline: 3px solid #b58442; outline-offset: 5px; }
+section, [id] { scroll-margin-top: 100px; }
+nav { height: 88px; padding: 0 4vw; background: rgba(250,248,242,.97); border-bottom: 1px solid #dce0d5; }
+.nav-logo img { height: 42px; }
+.nav-logo-main { font-size: 19px; letter-spacing: .07em; }
+.nav-logo-sub { color: #64725f; font-size: 9px; margin-top: 7px; }
+.nav-links { gap: 28px; }
+.nav-links a { font-size: 10px; letter-spacing: .14em; color: #465a50; }
+.nav-book { background: var(--deep); padding: 15px 22px; font-size: 10px; }
+.hero { height: min(880px, 100svh); min-height: 690px; margin-top: 88px; align-items: flex-start; justify-content: center; padding: 65px 7vw 100px; }
+.hero-bg::after { background: linear-gradient(90deg, rgba(10,35,34,.65), rgba(10,35,34,.2) 66%, rgba(10,35,34,.08)), linear-gradient(0deg, rgba(10,35,34,.4), transparent 40%); }
+.hero-content { text-align: left; padding: 0; max-width: 1000px; }
+.hero-eyebrow { color: #fff9e9; font-size: 10px; letter-spacing: .24em; margin-bottom: 30px; display: flex; align-items: center; gap: 16px; }
+.hero-eyebrow::before { content: ''; width: 36px; height: 1px; background: #e2c68d; }
+.hero-title { font-size: clamp(64px, 7.8vw, 118px); letter-spacing: -.055em; line-height: 1.03; max-width: 900px; margin: 0 0 28px; text-wrap: balance; }
+.hero-title em { color: #f1dcae; font-weight: 400; }
+.hero-location { text-transform: none; letter-spacing: .015em; font-size: 16px; max-width: 420px; line-height: 1.8; color: #f8f5ec; margin-bottom: 34px; }
+.hero-ctas { justify-content: flex-start; gap: 14px; }
+.btn-light, .btn-outline { padding: 17px 25px; font-size: 10px; letter-spacing: .14em; border-radius: 0; }
+.btn-light { background: #f7f2e6; border-color: #f7f2e6; }
+.hero-caption { left: 7vw; bottom: 30px; color: white; font-size: 9px; }
+.hero-dots { left: auto; right: 7vw; transform: none; bottom: 36px; }
+.intro-bar { background: var(--white); color: #657267; border-bottom: 1px solid var(--border); padding: 35px 5vw; gap: 0; justify-content: space-around; }
+.intro-bar-item { font-size: 9px; letter-spacing: .14em; gap: 10px; padding: 0 20px; }
+.intro-bar-item strong { color: var(--deep); font-size: 30px; }
+.section-label { color: #7c7156; font-size: 10px; letter-spacing: .22em; }
+.section-title { letter-spacing: -.04em; font-size: clamp(36px, 4vw, 60px); line-height: 1.13; text-wrap: balance; }
+.section-body { font-family: -apple-system, BlinkMacSystemFont, sans-serif; font-size: 15px; line-height: 1.95; }
+#about { padding: 120px 5vw; gap: 8vw; max-width: 1440px; }
+.about-img { border-radius: 48% 48% 2px 2px; aspect-ratio: 4/5; }
+.about-img::after { content: ''; position: absolute; inset: 60% 0 0; background: linear-gradient(transparent, #122d3280); }
+.about-img-caption { font-size: 8px; text-align: center; }
+#properties { padding: 110px 5vw 80px; }
+.props-header { margin-bottom: 58px; }
+.props-grid { gap: 28px; }
+.prop-card { border: 1px solid #dcded2; }
+.prop-body { padding: 36px; flex: 1; }
+.prop-card.sun .prop-body, .prop-card.moon .prop-body { background: var(--white); }
+.prop-name { font-size: 40px; letter-spacing: -.035em; }
+.prop-icon { height: 32px; }
+.prop-desc { font-family: -apple-system, sans-serif; font-size: 13px; line-height: 1.9; }
+.prop-sub { font-size: 9px; line-height: 1.7; }
+.prop-specs { border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 22px 0; }
+.prop-photo-badge { top: auto; bottom: 20px; left: 20px; font-size: 9px; padding: 10px 14px; }
+.prop-together { margin-top: 28px; padding: 52px 30px; background: #193c37; }
+.prop-together strong { font-size: 34px; }
+.prop-together a { color: var(--deep); background: #e7d4a9; }
+.house-gallery.sun, .house-gallery.moon { background: var(--white); border-top: 1px solid var(--border); }
+.gallery-grid { gap: 12px; }
+.gallery-overlay { opacity: 1; background: linear-gradient(transparent 65%, #132d3266); }
+.gallery-overlay span { font-size: 9px; }
+.house-tag { font-size: 15px; }
+.review-card { border: 1px solid var(--border); box-shadow: none; }
+#book { background: #e9eee6; }
+footer { background: #193c37; }
+.footer-brand h3 { letter-spacing: -.03em; }
+@media (min-width: 901px) and (max-width: 1150px) { .nav-links { gap: 16px; } .nav-logo-text { display: none; } }
+@media (max-width: 900px) {
+  nav { height: 74px; padding: 0 22px; }
+  .nav-logo-text { display: flex; } .nav-logo-main { font-size: 15px; } .nav-logo-sub { font-size: 8px; }
+  .nav-logo img { height: 32px; } .nav-book { padding: 13px 14px; font-size: 9px; letter-spacing: .06em; }
+  .hero { margin-top: 74px; height: 780px; min-height: 620px; max-height: 95svh; padding: 65px 7vw 100px; }
+  .hero-title { font-size: clamp(54px, 10vw, 86px); }
+  .hero-location { max-width: 340px; font-size: 14px; }
+  .hero-eyebrow { font-size: 8px; letter-spacing: .18em; }
+  .hero-caption { bottom: 25px; max-width: 65%; font-size: 8px; }
+  .hero-dots { bottom: 32px; gap: 5px; } .hero-dots span { width: 17px; }
+  .intro-bar { display: grid; grid-template-columns: repeat(3, 1fr); padding: 28px 10px; gap: 26px 4px; }
+  .intro-bar-item { padding: 0; font-size: 8px; } .intro-bar-item strong { font-size: 26px; }
+  #about { padding: 75px 24px; gap: 40px; } .about-img { max-height: 560px; }
+  #properties { padding: 70px 20px 45px; } .props-header { padding: 0 4px; }
+  .prop-body { padding: 28px; } .prop-btn { padding: 12px 18px; font-size: 10px; }
+  .gallery-grid { gap: 7px; } .house-name { white-space: normal; }
+}
+@media (max-width: 380px) { .nav-logo-sub { display: none; } .nav-logo img { height: 27px; } .nav-book { font-size: 8px; } .hero-title { font-size: 50px; } }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+  .hero-slide.s1 { opacity: 1; } .fade-in { opacity: 1; transform: none; }
+}
+@media (max-width: 900px) {
+  .hero-bg::after { background: linear-gradient(90deg, rgba(10,35,34,.72), rgba(10,35,34,.32)), linear-gradient(0deg, rgba(10,35,34,.3), transparent); }
+}
