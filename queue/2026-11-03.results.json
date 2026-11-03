@@ -1,0 +1,22 @@
+[
+  {
+    "platform": "meta_instagram",
+    "status": "skipped",
+    "reason": "missing secrets: IG_BUSINESS_ACCOUNT_ID"
+  },
+  {
+    "platform": "meta_instagram",
+    "status": "skipped",
+    "reason": "missing secrets: IG_BUSINESS_ACCOUNT_ID"
+  },
+  {
+    "platform": "meta_facebook",
+    "status": "published",
+    "id": "122136797967399910"
+  },
+  {
+    "platform": "meta_facebook",
+    "status": "published",
+    "id": "122136798039399910"
+  }
+]
