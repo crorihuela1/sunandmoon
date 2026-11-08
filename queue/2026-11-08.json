@@ -1,0 +1,368 @@
+{
+  "date": "2026-11-08",
+  "generated_at": "2026-11-08T18:10:02.785683Z",
+  "pillar_of_day": "local_events",
+  "active_platforms": [
+    "meta_facebook",
+    "meta_instagram"
+  ],
+  "inactive_platforms": [
+    "google_business_profile",
+    "linkedin",
+    "nextdoor",
+    "pinterest",
+    "threads",
+    "tiktok",
+    "x_twitter",
+    "youtube"
+  ],
+  "open_windows": [
+    {
+      "unit": "sun",
+      "start": "2026-11-08",
+      "end": "2027-01-22",
+      "nights": 75,
+      "score": 115,
+      "kind": "window",
+      "event_title": ""
+    },
+    {
+      "unit": "moon",
+      "start": "2026-11-29",
+      "end": "2027-01-01",
+      "nights": 33,
+      "score": 39,
+      "kind": "window",
+      "event_title": ""
+    },
+    {
+      "unit": "full",
+      "start": "2026-11-29",
+      "end": "2027-01-01",
+      "nights": 33,
+      "score": 39,
+      "kind": "window",
+      "event_title": ""
+    },
+    {
+      "unit": "moon",
+      "start": "2026-11-08",
+      "end": "2026-11-15",
+      "nights": 7,
+      "score": 20,
+      "kind": "window",
+      "event_title": ""
+    },
+    {
+      "unit": "full",
+      "start": "2026-11-08",
+      "end": "2026-11-15",
+      "nights": 7,
+      "score": 20,
+      "kind": "window",
+      "event_title": ""
+    }
+  ],
+  "top_stays": [
+    {
+      "unit": "sun",
+      "start": "2026-11-10",
+      "end": "2026-11-16",
+      "nights": 6,
+      "score": 22,
+      "kind": "event_stay",
+      "event_title": "Alys Beach Crafted"
+    },
+    {
+      "unit": "moon",
+      "start": "2026-11-10",
+      "end": "2026-11-15",
+      "nights": 5,
+      "score": 20,
+      "kind": "event_stay",
+      "event_title": "Alys Beach Crafted"
+    },
+    {
+      "unit": "full",
+      "start": "2026-11-10",
+      "end": "2026-11-15",
+      "nights": 5,
+      "score": 20,
+      "kind": "event_stay",
+      "event_title": "Alys Beach Crafted"
+    },
+    {
+      "unit": "moon",
+      "start": "2026-11-08",
+      "end": "2026-11-15",
+      "nights": 7,
+      "score": 20,
+      "kind": "short_stay",
+      "event_title": ""
+    },
+    {
+      "unit": "full",
+      "start": "2026-11-08",
+      "end": "2026-11-15",
+      "nights": 7,
+      "score": 20,
+      "kind": "short_stay",
+      "event_title": ""
+    },
+    {
+      "unit": "sun",
+      "start": "2026-11-13",
+      "end": "2026-11-16",
+      "nights": 3,
+      "score": 16,
+      "kind": "event_stay",
+      "event_title": "Rosemary Beach Uncorked"
+    },
+    {
+      "unit": "sun",
+      "start": "2026-12-24",
+      "end": "2026-12-27",
+      "nights": 3,
+      "score": 16,
+      "kind": "long_weekend",
+      "event_title": ""
+    },
+    {
+      "unit": "sun",
+      "start": "2026-12-31",
+      "end": "2027-01-03",
+      "nights": 3,
+      "score": 16,
+      "kind": "long_weekend",
+      "event_title": ""
+    }
+  ],
+  "upcoming_events": [
+    {
+      "title": "Seeing Red Wine Festival",
+      "start": "2026-11-05T00:00:00",
+      "end": "2026-11-08T00:00:00",
+      "description": "Four days in Seaside: the Bud & Alley's vintners dinner Thursday, the Al Fresco Reserve Tasting on the Lyceum lawn Friday evening, Saturday's Battle of the Sommeliers and Grand Tasting across Central Square and Ruskin Place, and a Celebration of Bubbles brunch Sunday morning \u00b7 benefits DCWAF \u00b7 tickets at seasideseeingred.com \u00b7 5-min walk or drive.",
+      "location": "Seaside",
+      "url": "https://seasideseeingred.com/",
+      "recurring": ""
+    },
+    {
+      "title": "Alys Beach Crafted",
+      "start": "2026-11-11T00:00:00",
+      "end": "2026-11-15T00:00:00",
+      "description": "Five days of craft and culinary events \u2014 a songwriters session at Caliza, experiential dinners, the Firkin F\u00eate, the Spirited Soir\u00e9e cocktail tasting, and the Holiday Makers Market each afternoon \u00b7 benefits the Cultural Arts Alliance of Walton County \u00b7 15-min drive east",
+      "location": "",
+      "url": "https://alysbeachcrafted.com/",
+      "recurring": ""
+    },
+    {
+      "title": "Rosemary Beach Uncorked",
+      "start": "2026-11-14T00:00:00",
+      "end": "2026-11-14T00:00:00",
+      "description": "15th annual \u00b7 Saturday Nov 14, 2026, 1\u20134 PM \u00b7 wines poured by vintners from around the world alongside dishes from ten Rosemary Beach restaurants, with live music as you stroll the cobblestone streets \u00b7 15-min drive east",
+      "location": "",
+      "url": "https://rosemarybeachuncorked.com/",
+      "recurring": ""
+    },
+    {
+      "title": "30A 10K Thanksgiving Day Races",
+      "start": "2026-11-26T00:00:00",
+      "end": "2026-11-26T00:00:00",
+      "description": "Thanksgiving-morning 10K, 5K and 1-mile fun run through Rosemary Beach, with the 10K stepping off around 7:30 AM \u00b7 Highway 30A closes to traffic 7\u201310:30 AM for the course \u00b7 advance registration only, no race-day sign-up \u00b7 15-min drive east",
+      "location": "Rosemary Beach",
+      "url": "https://runsignup.com/Race/FL/RosemaryBeach/30A10K",
+      "recurring": ""
+    },
+    {
+      "title": "Turn On The Town",
+      "start": "2026-11-28T00:00:00",
+      "end": "2026-11-28T00:00:00",
+      "description": "Saturday Nov 28, 2026 \u2014 the holiday parade steps off from Seagrove Plaza at 3 PM and ends in Central Square, where Santa lights the town tree at 5 PM in the Amphitheater \u00b7 free to attend \u00b7 5-min walk or drive",
+      "location": "Seaside",
+      "url": "https://seasidefl.com/events/",
+      "recurring": ""
+    },
+    {
+      "title": "30A Songwriters Festival",
+      "start": "2027-01-15T00:00:00",
+      "end": "2027-01-18T00:00:00",
+      "description": "18th annual \u00b7 MLK weekend \u00b7 songwriters across 30A's intimate listening rooms in Seaside, Rosemary, Alys, WaterColor, Grayton and more \u00b7 benefits the Cultural Arts Alliance \u00b7 5-min walk or drive",
+      "location": "",
+      "url": "https://www.30asongwritersfestival.com/",
+      "recurring": ""
+    },
+    {
+      "title": "30A Farmers' Market",
+      "start": "2026-11-08T00:00:00",
+      "end": null,
+      "description": "Year-Round \u00b7 Sun 9\u20131 \u00b7 About 30 vendors on Barrett Square every Sunday, 9 AM\u20131 PM \u2014 local produce and micro-greens, Gulf seafood off the boat, artisan breads and sweets, grass-fed beef, tupelo honey \u00b7 pet-friendly \u00b7 a great Sunday-morning outing \u00b7 15-min drive east",
+      "location": "Rosemary Beach",
+      "url": "https://www.visitsouthwalton.com/listing/30a-farmers-market-rosemary-beach/",
+      "recurring": "Sun"
+    },
+    {
+      "title": "Sounds of Seaside Concert Series",
+      "start": "2026-11-11T00:00:00",
+      "end": null,
+      "description": "Through Dec 30 \u00b7 Wed 4\u20136 PM \u00b7 Free Wednesday-evening concerts on the Seaside Amphitheater lawn, 4\u20136 PM, running weekly through Dec 30 \u00b7 a different act each week, free and open to all ages \u00b7 bring blankets and chairs, snacks and drinks welcome \u00b7 5-min walk or drive",
+      "location": "",
+      "url": "https://www.homeownerscollection.com/seaside-events/outdoor-activities/sounds-seaside-concert-series-0",
+      "recurring": "Wed"
+    },
+    {
+      "title": "Seaside Farmers Market",
+      "start": "2026-11-14T00:00:00",
+      "end": null,
+      "description": "Year-Round \u00b7 Sat 9\u20131 \u00b7 Saturdays year-round, 9 AM\u20131 PM at the Seaside Amphitheater, with a second Tuesday market added each June and July \u00b7 local growers, artisan cheeses and breads, craft chefs, and live acoustic music \u00b7 5-min walk or drive",
+      "location": "",
+      "url": "https://30a.com/locations/seaside-farmers-market/",
+      "recurring": "Sat"
+    }
+  ],
+  "new_bookings": [
+    {
+      "unit": "moon",
+      "start": "2027-02-08",
+      "end": "2027-02-09"
+    },
+    {
+      "unit": "full",
+      "start": "2027-02-08",
+      "end": "2027-02-09"
+    }
+  ],
+  "briefs": [
+    {
+      "id": "event-739928-2026-11-14-rosemary-beach-uncorked",
+      "pillar": "local_events",
+      "event": {
+        "title": "Rosemary Beach Uncorked",
+        "start": "2026-11-14T00:00:00",
+        "end": "2026-11-14T00:00:00",
+        "description": "15th annual \u00b7 Saturday Nov 14, 2026, 1\u20134 PM \u00b7 wines poured by vintners from around the world alongside dishes from ten Rosemary Beach restaurants, with live music as you stroll the cobblestone streets \u00b7 15-min drive east",
+        "location": "",
+        "url": "https://rosemarybeachuncorked.com/",
+        "recurring": ""
+      },
+      "event_summary": "Rosemary Beach Uncorked, Sat Nov 14",
+      "unit": "sun",
+      "unit_label": "Golden Sun",
+      "open_dates": "Fri Nov 13 \u2013 Sun 15 (3 nights)",
+      "window": {
+        "unit": "sun",
+        "start": "2026-11-13",
+        "end": "2026-11-16",
+        "nights": 3,
+        "score": 16,
+        "kind": "event_stay",
+        "event_title": "Rosemary Beach Uncorked"
+      },
+      "media_url": "https://sunandmoon30a.com/images/both-cottages.jpg",
+      "alt_text": "Golden Sun and Blue Moon side by side on Crystal Court, seen from the street under palms.",
+      "photo_shows": "both cottages from the street",
+      "copy": {
+        "instagram": "Rosemary Beach Uncorked pours Sat Nov 14, 1\u20134 PM \u2014 wine from vintners around the world, dishes from ten restaurants, live music down the cobblestone streets. Fifteen minutes east.\n\nGolden Sun is open Fri Nov 13 \u2013 Sun 15, three nights on a quiet lane in Seagrove.\n\nCome home to coffee on the covered patio the morning after.\n\nBook direct \u2014 link in bio.",
+        "facebook": "Rosemary Beach Uncorked returns Saturday Nov 14, 1\u20134 PM, a 15-minute drive east \u2014 wines poured by vintners from around the world, plates from ten Rosemary restaurants, and live music along the cobblestones. Golden Sun is open Fri Nov 13 \u2013 Sun 15 (3 nights), three bedrooms for eight on a quiet lane in Seagrove, with the covered back patio waiting for a slow Sunday morning. Live availability and real prices at book.sunandmoon30a.com."
+      },
+      "hashtags": "#SunAndMoon30A #StayWithTheSky #BeachHouse #GulfCoast #30A #30Aliving #RosemaryBeachUncorked #SeagroveBeach",
+      "copy_source": "claude"
+    }
+  ],
+  "posts": [
+    {
+      "platform": "meta_instagram",
+      "id": "event-739928-2026-11-14-rosemary-beach-uncorked",
+      "pillar": "local_events",
+      "event": {
+        "title": "Rosemary Beach Uncorked",
+        "start": "2026-11-14T00:00:00",
+        "end": "2026-11-14T00:00:00",
+        "description": "15th annual \u00b7 Saturday Nov 14, 2026, 1\u20134 PM \u00b7 wines poured by vintners from around the world alongside dishes from ten Rosemary Beach restaurants, with live music as you stroll the cobblestone streets \u00b7 15-min drive east",
+        "location": "",
+        "url": "https://rosemarybeachuncorked.com/",
+        "recurring": ""
+      },
+      "event_summary": "Rosemary Beach Uncorked, Sat Nov 14",
+      "unit": "sun",
+      "unit_label": "Golden Sun",
+      "open_dates": "Fri Nov 13 \u2013 Sun 15 (3 nights)",
+      "window": {
+        "unit": "sun",
+        "start": "2026-11-13",
+        "end": "2026-11-16",
+        "nights": 3,
+        "score": 16,
+        "kind": "event_stay",
+        "event_title": "Rosemary Beach Uncorked"
+      },
+      "media_url": "https://sunandmoon30a.com/images/both-cottages.jpg",
+      "alt_text": "Golden Sun and Blue Moon side by side on Crystal Court, seen from the street under palms.",
+      "photo_shows": "both cottages from the street",
+      "hashtags": "#SunAndMoon30A #StayWithTheSky #BeachHouse #GulfCoast #30A #30Aliving #RosemaryBeachUncorked #SeagroveBeach",
+      "copy_source": "claude",
+      "copy": "Rosemary Beach Uncorked pours Sat Nov 14, 1\u20134 PM \u2014 wine from vintners around the world, dishes from ten restaurants, live music down the cobblestone streets. Fifteen minutes east.\n\nGolden Sun is open Fri Nov 13 \u2013 Sun 15, three nights on a quiet lane in Seagrove.\n\nCome home to coffee on the covered patio the morning after.\n\nBook direct \u2014 link in bio."
+    },
+    {
+      "platform": "meta_facebook",
+      "id": "event-739928-2026-11-14-rosemary-beach-uncorked",
+      "pillar": "local_events",
+      "event": {
+        "title": "Rosemary Beach Uncorked",
+        "start": "2026-11-14T00:00:00",
+        "end": "2026-11-14T00:00:00",
+        "description": "15th annual \u00b7 Saturday Nov 14, 2026, 1\u20134 PM \u00b7 wines poured by vintners from around the world alongside dishes from ten Rosemary Beach restaurants, with live music as you stroll the cobblestone streets \u00b7 15-min drive east",
+        "location": "",
+        "url": "https://rosemarybeachuncorked.com/",
+        "recurring": ""
+      },
+      "event_summary": "Rosemary Beach Uncorked, Sat Nov 14",
+      "unit": "sun",
+      "unit_label": "Golden Sun",
+      "open_dates": "Fri Nov 13 \u2013 Sun 15 (3 nights)",
+      "window": {
+        "unit": "sun",
+        "start": "2026-11-13",
+        "end": "2026-11-16",
+        "nights": 3,
+        "score": 16,
+        "kind": "event_stay",
+        "event_title": "Rosemary Beach Uncorked"
+      },
+      "media_url": "https://sunandmoon30a.com/images/both-cottages.jpg",
+      "alt_text": "Golden Sun and Blue Moon side by side on Crystal Court, seen from the street under palms.",
+      "photo_shows": "both cottages from the street",
+      "hashtags": "#SunAndMoon30A #StayWithTheSky #BeachHouse #GulfCoast #30A #30Aliving #RosemaryBeachUncorked #SeagroveBeach",
+      "copy_source": "claude",
+      "copy": "Rosemary Beach Uncorked returns Saturday Nov 14, 1\u20134 PM, a 15-minute drive east \u2014 wines poured by vintners from around the world, plates from ten Rosemary restaurants, and live music along the cobblestones. Golden Sun is open Fri Nov 13 \u2013 Sun 15 (3 nights), three bedrooms for eight on a quiet lane in Seagrove, with the covered back patio waiting for a slow Sunday morning. Live availability and real prices at book.sunandmoon30a.com."
+    }
+  ],
+  "busy_map": {
+    "sun": [
+      [
+        "2026-10-23",
+        "2026-10-24"
+      ]
+    ],
+    "moon": [
+      [
+        "2026-11-15",
+        "2026-11-29"
+      ],
+      [
+        "2027-01-01",
+        "2027-02-09"
+      ]
+    ],
+    "full": [
+      [
+        "2026-11-15",
+        "2026-11-29"
+      ],
+      [
+        "2027-01-01",
+        "2027-02-09"
+      ]
+    ]
+  }
+}
