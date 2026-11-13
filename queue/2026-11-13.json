@@ -1,0 +1,457 @@
+{
+  "date": "2026-11-13",
+  "generated_at": "2026-11-13T20:10:31.432264Z",
+  "pillar_of_day": "availability_spotlight",
+  "active_platforms": [
+    "meta_facebook",
+    "meta_instagram"
+  ],
+  "inactive_platforms": [
+    "google_business_profile",
+    "linkedin",
+    "nextdoor",
+    "pinterest",
+    "threads",
+    "tiktok",
+    "x_twitter",
+    "youtube"
+  ],
+  "open_windows": [
+    {
+      "unit": "sun",
+      "start": "2026-12-01",
+      "end": "2027-01-27",
+      "nights": 57,
+      "score": 68,
+      "kind": "window",
+      "event_title": ""
+    },
+    {
+      "unit": "full",
+      "start": "2026-12-01",
+      "end": "2027-01-01",
+      "nights": 31,
+      "score": 39,
+      "kind": "window",
+      "event_title": ""
+    },
+    {
+      "unit": "moon",
+      "start": "2026-11-29",
+      "end": "2027-01-01",
+      "nights": 33,
+      "score": 39,
+      "kind": "window",
+      "event_title": ""
+    },
+    {
+      "unit": "sun",
+      "start": "2026-11-13",
+      "end": "2026-11-21",
+      "nights": 8,
+      "score": 25,
+      "kind": "window",
+      "event_title": ""
+    }
+  ],
+  "top_stays": [
+    {
+      "unit": "sun",
+      "start": "2026-12-30",
+      "end": "2027-01-02",
+      "nights": 3,
+      "score": 17,
+      "kind": "event_stay",
+      "event_title": "New Year's Eve in Seaside"
+    },
+    {
+      "unit": "sun",
+      "start": "2026-12-24",
+      "end": "2026-12-27",
+      "nights": 3,
+      "score": 16,
+      "kind": "long_weekend",
+      "event_title": ""
+    },
+    {
+      "unit": "sun",
+      "start": "2026-12-31",
+      "end": "2027-01-03",
+      "nights": 3,
+      "score": 16,
+      "kind": "long_weekend",
+      "event_title": ""
+    },
+    {
+      "unit": "full",
+      "start": "2026-12-24",
+      "end": "2026-12-27",
+      "nights": 3,
+      "score": 16,
+      "kind": "long_weekend",
+      "event_title": ""
+    },
+    {
+      "unit": "moon",
+      "start": "2026-12-24",
+      "end": "2026-12-27",
+      "nights": 3,
+      "score": 16,
+      "kind": "long_weekend",
+      "event_title": ""
+    },
+    {
+      "unit": "sun",
+      "start": "2026-11-13",
+      "end": "2026-11-16",
+      "nights": 3,
+      "score": 16,
+      "kind": "event_stay",
+      "event_title": "Alys Beach Crafted"
+    },
+    {
+      "unit": "sun",
+      "start": "2026-12-24",
+      "end": "2026-12-28",
+      "nights": 4,
+      "score": 16,
+      "kind": "long_weekend",
+      "event_title": ""
+    },
+    {
+      "unit": "sun",
+      "start": "2026-12-31",
+      "end": "2027-01-04",
+      "nights": 4,
+      "score": 16,
+      "kind": "long_weekend",
+      "event_title": ""
+    }
+  ],
+  "upcoming_events": [
+    {
+      "title": "Alys Beach Crafted",
+      "start": "2026-11-11T00:00:00",
+      "end": "2026-11-14T00:00:00",
+      "description": "Four days of culinary events at Alys Beach: a wine dinner Wednesday, the Firkin F\u00eate in Central Park Friday 6:30\u20139 PM, and the Spirited Soir\u00e9e cocktail tasting Saturday 1\u20134 PM, with additional craft and market events to be announced \u00b7 15-min drive east.",
+      "location": "Alys Beach",
+      "url": "https://alysbeachcrafted.com/",
+      "recurring": ""
+    },
+    {
+      "title": "Rosemary Beach Uncorked",
+      "start": "2026-11-14T00:00:00",
+      "end": "2026-11-14T00:00:00",
+      "description": "Saturday Nov 14, 2026, 1\u20134 PM \u00b7 wines poured by vintners from around the world alongside dishes from Rosemary Beach restaurants, with live music as you stroll the cobblestone streets \u00b7 15-min drive east",
+      "location": "",
+      "url": "https://rosemarybeachuncorked.com/",
+      "recurring": ""
+    },
+    {
+      "title": "30A 10K Thanksgiving Day Races",
+      "start": "2026-11-26T00:00:00",
+      "end": "2026-11-26T00:00:00",
+      "description": "Thanksgiving-morning 10K, 5K and 1-mile fun run through Rosemary Beach \u2014 10K starts 7:30 AM, 1-mile 7:35 AM, 5K 9:30 AM \u00b7 packet pickup Wed Nov 25 at The Big Chill, no race-day pickup \u00b7 advance registration only, closes Nov 24 \u00b7 15-min drive east",
+      "location": "Rosemary Beach",
+      "url": "https://runsignup.com/Race/FL/RosemaryBeach/30A10K",
+      "recurring": ""
+    },
+    {
+      "title": "Turn On The Town",
+      "start": "2026-11-28T00:00:00",
+      "end": "2026-11-28T00:00:00",
+      "description": "Saturday Nov 28, 2026 \u2014 the holiday parade steps off from Seagrove Plaza at 3 PM and runs to Central Square, with the town tree lighting around 5 PM in the Amphitheater \u00b7 free to attend \u00b7 5-min walk or drive",
+      "location": "Seaside",
+      "url": "https://seasidefl.com/news/holidays/",
+      "recurring": ""
+    },
+    {
+      "title": "Seaside Holiday Market",
+      "start": "2026-12-05T00:00:00",
+      "end": "2026-12-06T00:00:00",
+      "description": "Saturday 9 AM\u20134 PM and Sunday 10 AM\u20134 PM in Central Square \u00b7 local makers and gift vendors kick off the holiday season \u00b7 5-min walk or drive",
+      "location": "Seaside",
+      "url": "https://seasidefl.com/event/seaside-holiday-market",
+      "recurring": ""
+    },
+    {
+      "title": "New Year's Eve in Seaside",
+      "start": "2026-12-31T00:00:00",
+      "end": "2026-12-31T00:00:00",
+      "description": "Central Square's family celebration runs 4\u20139 PM with arts and crafts and a photo spot at the Post Office, live music from 5:30 PM, and fireworks at 9 PM \u00b7 5-min walk or drive",
+      "location": "Seaside",
+      "url": "https://seasidefl.com/news/holidays/",
+      "recurring": ""
+    },
+    {
+      "title": "30A Songwriters Festival",
+      "start": "2027-01-15T00:00:00",
+      "end": "2027-01-18T00:00:00",
+      "description": "18th annual \u00b7 MLK weekend \u00b7 songwriters across 30A's intimate listening rooms in Seaside, Rosemary, Alys, WaterColor, Grayton and more, with headliners including St. Paul & The Broken Bones and Gillian Welch & David Rawlings \u00b7 benefits the Cultural Arts Alliance \u00b7 5-min walk or drive",
+      "location": "",
+      "url": "https://www.30asongwritersfestival.com/",
+      "recurring": ""
+    },
+    {
+      "title": "Seaside Farmers Market",
+      "start": "2026-11-14T00:00:00",
+      "end": null,
+      "description": "Year-Round \u00b7 Sat 9\u20131 \u00b7 Saturdays year-round, 9 AM\u20131 PM at the Seaside Amphitheater, with a second Tuesday market added each June and July \u00b7 local growers, artisan cheeses and breads, craft chefs, and live acoustic music \u00b7 5-min walk or drive",
+      "location": "",
+      "url": "https://30a.com/locations/seaside-farmers-market/",
+      "recurring": "Sat"
+    },
+    {
+      "title": "30A Farmers' Market",
+      "start": "2026-11-15T00:00:00",
+      "end": null,
+      "description": "Year-Round \u00b7 Sun 9\u20131 \u00b7 About 30 vendors on Barrett Square every Sunday, 9 AM\u20131 PM \u2014 local produce and micro-greens, Gulf seafood off the boat, artisan breads and sweets, grass-fed beef, tupelo honey \u00b7 pet-friendly \u00b7 a great Sunday-morning outing \u00b7 15-min drive east",
+      "location": "Rosemary Beach",
+      "url": "https://www.visitsouthwalton.com/listing/30a-farmers-market-rosemary-beach/",
+      "recurring": "Sun"
+    },
+    {
+      "title": "Sounds of Seaside Concert Series",
+      "start": "2026-11-18T00:00:00",
+      "end": null,
+      "description": "Through Dec 30 \u00b7 Wed 4\u20136 PM \u00b7 Free Wednesday-evening concerts on the Seaside Amphitheater lawn, 4\u20136 PM, running weekly through Dec 30 \u00b7 a different act each week, free and open to all ages \u00b7 bring blankets and chairs, snacks and drinks welcome \u00b7 5-min walk or drive",
+      "location": "",
+      "url": "https://www.homeownerscollection.com/seaside-events/outdoor-activities/sounds-seaside-concert-series-0",
+      "recurring": "Wed"
+    }
+  ],
+  "new_bookings": [
+    {
+      "unit": "moon",
+      "start": "2027-02-13",
+      "end": "2027-02-14"
+    },
+    {
+      "unit": "full",
+      "start": "2027-02-13",
+      "end": "2027-02-14"
+    }
+  ],
+  "briefs": [
+    {
+      "id": "avail-full-2026-12-24",
+      "pillar": "availability_spotlight",
+      "unit": "full",
+      "unit_label": "The whole property",
+      "unit_angle": "both cottages together \u2014 six bedrooms, one address, room for sixteen",
+      "open_dates": "Thu Dec 24 \u2013 Sat 26 (3 nights)",
+      "window": {
+        "unit": "full",
+        "start": "2026-12-24",
+        "end": "2026-12-27",
+        "nights": 3,
+        "score": 16,
+        "kind": "long_weekend",
+        "event_title": ""
+      },
+      "event": null,
+      "event_summary": null,
+      "rate": null,
+      "media_url": "https://sunandmoon30a.com/images/sunset-seagrove.jpg",
+      "alt_text": "An adult and child silhouetted on the beach at sunset, the sun low over the Gulf.",
+      "photo_shows": "the beach at sunset",
+      "copy": {
+        "instagram": "Christmas Eve through the 26th, both cottages are open \u2014 Thu Dec 24 \u2013 Sat 26, three nights.\n\nSix bedrooms, four baths, sixteen people, one address on Crystal Court. No one driving across town to say goodnight.\n\nThe beach access is a 3-minute walk, and the light over the Gulf does the rest.\n\nBook direct \u2014 link in bio.",
+        "facebook": "The whole property is open for Christmas \u2014 Thu Dec 24 through Sat Dec 26, three nights, with Golden Sun and Blue Moon side by side on the same quiet lane: six bedrooms, four baths, room for sixteen. One address, two fireplaces, and the beach a three-minute walk away. Live availability and real prices at https://book.sunandmoon30a.com"
+      },
+      "hashtags": "#SunAndMoon30A #StayWithTheSky #Seagrove #EmeraldCoast #FloridaPanhandle #WeekendGetaway #FamilyReunion #30A",
+      "copy_source": "claude"
+    },
+    {
+      "id": "avail-sun-2026-11-13",
+      "pillar": "availability_spotlight",
+      "unit": "sun",
+      "unit_label": "Golden Sun",
+      "unit_angle": "bright mornings, coffee on the back patio, sunset light",
+      "open_dates": "Fri Nov 13 \u2013 Sun 15 (3 nights)",
+      "window": {
+        "unit": "sun",
+        "start": "2026-11-13",
+        "end": "2026-11-16",
+        "nights": 3,
+        "score": 16,
+        "kind": "event_stay",
+        "event_title": "Alys Beach Crafted"
+      },
+      "event": {
+        "title": "Alys Beach Crafted",
+        "start": "2026-11-11T00:00:00",
+        "end": "2026-11-14T00:00:00",
+        "description": "Four days of culinary events at Alys Beach: a wine dinner Wednesday, the Firkin F\u00eate in Central Park Friday 6:30\u20139 PM, and the Spirited Soir\u00e9e cocktail tasting Saturday 1\u20134 PM, with additional craft and market events to be announced \u00b7 15-min drive east.",
+        "location": "Alys Beach",
+        "url": "https://alysbeachcrafted.com/",
+        "recurring": ""
+      },
+      "event_summary": "Alys Beach Crafted, Nov 11\u201314",
+      "rate": null,
+      "media_url": "https://sunandmoon30a.com/photos/golden-sun/001.jpg",
+      "alt_text": "Golden Sun cottage at dusk, warm light in the windows, tall palms in the foreground.",
+      "photo_shows": "the cottage exterior at dusk",
+      "copy": {
+        "instagram": "Golden Sun is open tonight \u2014 Fri Nov 13 \u2013 Sun 15, three nights.\n\nAlys Beach Crafted runs through Nov 14, a 15-minute drive east: the Firkin F\u00eate tonight 6:30\u20139, the Spirited Soir\u00e9e Saturday 1\u20134.\n\nCome back to a quiet lane in Seagrove and coffee on the covered patio in the morning.\n\nBook direct \u2014 link in bio.",
+        "facebook": "Golden Sun has Fri Nov 13 \u2013 Sun 15 open, three nights, with Alys Beach Crafted running through Nov 14 just 15 minutes east \u2014 the Firkin F\u00eate Friday evening and the Spirited Soir\u00e9e Saturday afternoon. Three bedrooms, sleeps eight, and a covered back patio waiting for morning coffee: https://book.sunandmoon30a.com"
+      },
+      "hashtags": "#SunAndMoon30A #StayWithTheSky #EmeraldCoast #FloridaPanhandle #WeekendGetaway #VacationRental #AlysBeachCrafted #Seagrove",
+      "copy_source": "claude"
+    }
+  ],
+  "posts": [
+    {
+      "platform": "meta_instagram",
+      "id": "avail-full-2026-12-24",
+      "pillar": "availability_spotlight",
+      "unit": "full",
+      "unit_label": "The whole property",
+      "unit_angle": "both cottages together \u2014 six bedrooms, one address, room for sixteen",
+      "open_dates": "Thu Dec 24 \u2013 Sat 26 (3 nights)",
+      "window": {
+        "unit": "full",
+        "start": "2026-12-24",
+        "end": "2026-12-27",
+        "nights": 3,
+        "score": 16,
+        "kind": "long_weekend",
+        "event_title": ""
+      },
+      "event": null,
+      "event_summary": null,
+      "rate": null,
+      "media_url": "https://sunandmoon30a.com/images/sunset-seagrove.jpg",
+      "alt_text": "An adult and child silhouetted on the beach at sunset, the sun low over the Gulf.",
+      "photo_shows": "the beach at sunset",
+      "hashtags": "#SunAndMoon30A #StayWithTheSky #Seagrove #EmeraldCoast #FloridaPanhandle #WeekendGetaway #FamilyReunion #30A",
+      "copy_source": "claude",
+      "copy": "Christmas Eve through the 26th, both cottages are open \u2014 Thu Dec 24 \u2013 Sat 26, three nights.\n\nSix bedrooms, four baths, sixteen people, one address on Crystal Court. No one driving across town to say goodnight.\n\nThe beach access is a 3-minute walk, and the light over the Gulf does the rest.\n\nBook direct \u2014 link in bio."
+    },
+    {
+      "platform": "meta_instagram",
+      "id": "avail-sun-2026-11-13",
+      "pillar": "availability_spotlight",
+      "unit": "sun",
+      "unit_label": "Golden Sun",
+      "unit_angle": "bright mornings, coffee on the back patio, sunset light",
+      "open_dates": "Fri Nov 13 \u2013 Sun 15 (3 nights)",
+      "window": {
+        "unit": "sun",
+        "start": "2026-11-13",
+        "end": "2026-11-16",
+        "nights": 3,
+        "score": 16,
+        "kind": "event_stay",
+        "event_title": "Alys Beach Crafted"
+      },
+      "event": {
+        "title": "Alys Beach Crafted",
+        "start": "2026-11-11T00:00:00",
+        "end": "2026-11-14T00:00:00",
+        "description": "Four days of culinary events at Alys Beach: a wine dinner Wednesday, the Firkin F\u00eate in Central Park Friday 6:30\u20139 PM, and the Spirited Soir\u00e9e cocktail tasting Saturday 1\u20134 PM, with additional craft and market events to be announced \u00b7 15-min drive east.",
+        "location": "Alys Beach",
+        "url": "https://alysbeachcrafted.com/",
+        "recurring": ""
+      },
+      "event_summary": "Alys Beach Crafted, Nov 11\u201314",
+      "rate": null,
+      "media_url": "https://sunandmoon30a.com/photos/golden-sun/001.jpg",
+      "alt_text": "Golden Sun cottage at dusk, warm light in the windows, tall palms in the foreground.",
+      "photo_shows": "the cottage exterior at dusk",
+      "hashtags": "#SunAndMoon30A #StayWithTheSky #EmeraldCoast #FloridaPanhandle #WeekendGetaway #VacationRental #AlysBeachCrafted #Seagrove",
+      "copy_source": "claude",
+      "copy": "Golden Sun is open tonight \u2014 Fri Nov 13 \u2013 Sun 15, three nights.\n\nAlys Beach Crafted runs through Nov 14, a 15-minute drive east: the Firkin F\u00eate tonight 6:30\u20139, the Spirited Soir\u00e9e Saturday 1\u20134.\n\nCome back to a quiet lane in Seagrove and coffee on the covered patio in the morning.\n\nBook direct \u2014 link in bio."
+    },
+    {
+      "platform": "meta_facebook",
+      "id": "avail-full-2026-12-24",
+      "pillar": "availability_spotlight",
+      "unit": "full",
+      "unit_label": "The whole property",
+      "unit_angle": "both cottages together \u2014 six bedrooms, one address, room for sixteen",
+      "open_dates": "Thu Dec 24 \u2013 Sat 26 (3 nights)",
+      "window": {
+        "unit": "full",
+        "start": "2026-12-24",
+        "end": "2026-12-27",
+        "nights": 3,
+        "score": 16,
+        "kind": "long_weekend",
+        "event_title": ""
+      },
+      "event": null,
+      "event_summary": null,
+      "rate": null,
+      "media_url": "https://sunandmoon30a.com/images/sunset-seagrove.jpg",
+      "alt_text": "An adult and child silhouetted on the beach at sunset, the sun low over the Gulf.",
+      "photo_shows": "the beach at sunset",
+      "hashtags": "#SunAndMoon30A #StayWithTheSky #Seagrove #EmeraldCoast #FloridaPanhandle #WeekendGetaway #FamilyReunion #30A",
+      "copy_source": "claude",
+      "copy": "The whole property is open for Christmas \u2014 Thu Dec 24 through Sat Dec 26, three nights, with Golden Sun and Blue Moon side by side on the same quiet lane: six bedrooms, four baths, room for sixteen. One address, two fireplaces, and the beach a three-minute walk away. Live availability and real prices at https://book.sunandmoon30a.com"
+    },
+    {
+      "platform": "meta_facebook",
+      "id": "avail-sun-2026-11-13",
+      "pillar": "availability_spotlight",
+      "unit": "sun",
+      "unit_label": "Golden Sun",
+      "unit_angle": "bright mornings, coffee on the back patio, sunset light",
+      "open_dates": "Fri Nov 13 \u2013 Sun 15 (3 nights)",
+      "window": {
+        "unit": "sun",
+        "start": "2026-11-13",
+        "end": "2026-11-16",
+        "nights": 3,
+        "score": 16,
+        "kind": "event_stay",
+        "event_title": "Alys Beach Crafted"
+      },
+      "event": {
+        "title": "Alys Beach Crafted",
+        "start": "2026-11-11T00:00:00",
+        "end": "2026-11-14T00:00:00",
+        "description": "Four days of culinary events at Alys Beach: a wine dinner Wednesday, the Firkin F\u00eate in Central Park Friday 6:30\u20139 PM, and the Spirited Soir\u00e9e cocktail tasting Saturday 1\u20134 PM, with additional craft and market events to be announced \u00b7 15-min drive east.",
+        "location": "Alys Beach",
+        "url": "https://alysbeachcrafted.com/",
+        "recurring": ""
+      },
+      "event_summary": "Alys Beach Crafted, Nov 11\u201314",
+      "rate": null,
+      "media_url": "https://sunandmoon30a.com/photos/golden-sun/001.jpg",
+      "alt_text": "Golden Sun cottage at dusk, warm light in the windows, tall palms in the foreground.",
+      "photo_shows": "the cottage exterior at dusk",
+      "hashtags": "#SunAndMoon30A #StayWithTheSky #EmeraldCoast #FloridaPanhandle #WeekendGetaway #VacationRental #AlysBeachCrafted #Seagrove",
+      "copy_source": "claude",
+      "copy": "Golden Sun has Fri Nov 13 \u2013 Sun 15 open, three nights, with Alys Beach Crafted running through Nov 14 just 15 minutes east \u2014 the Firkin F\u00eate Friday evening and the Spirited Soir\u00e9e Saturday afternoon. Three bedrooms, sleeps eight, and a covered back patio waiting for morning coffee: https://book.sunandmoon30a.com"
+    }
+  ],
+  "busy_map": {
+    "sun": [
+      [
+        "2026-11-21",
+        "2026-12-01"
+      ]
+    ],
+    "moon": [
+      [
+        "2026-11-15",
+        "2026-11-29"
+      ],
+      [
+        "2027-01-01",
+        "2027-02-14"
+      ]
+    ],
+    "full": [
+      [
+        "2026-11-15",
+        "2026-12-01"
+      ],
+      [
+        "2027-01-01",
+        "2027-02-14"
+      ]
+    ]
+  }
+}
