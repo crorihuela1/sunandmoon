@@ -1,6 +1,6 @@
 {
   "date": "2026-11-24",
-  "generated_at": "2026-11-24T00:30:19.077468Z",
+  "generated_at": "2026-11-24T22:51:22.701527Z",
   "pillar_of_day": "local_events",
   "active_platforms": [
     "meta_facebook",
@@ -211,18 +211,7 @@
       "recurring": "Sun"
     }
   ],
-  "new_bookings": [
-    {
-      "unit": "moon",
-      "start": "2027-02-23",
-      "end": "2027-02-25"
-    },
-    {
-      "unit": "full",
-      "start": "2027-02-23",
-      "end": "2027-02-25"
-    }
-  ],
+  "new_bookings": [],
   "briefs": [
     {
       "id": "event-739944-2026-11-26-30a-10k-thanksgiving-day",
@@ -249,12 +238,12 @@
         "kind": "event_stay",
         "event_title": "30A 10K Thanksgiving Day Races"
       },
-      "media_url": "https://sunandmoon30a.com/images/aerial-30a.jpg",
-      "alt_text": "Aerial view of the 30A shoreline with a coastal dune lake meeting the white sand.",
-      "photo_shows": "the coast and a coastal dune lake from the air",
+      "media_url": "https://sunandmoon30a.com/images/both-cottages.jpg",
+      "alt_text": "Golden Sun and Blue Moon side by side on Crystal Court, seen from the street under palms.",
+      "photo_shows": "both cottages from the street",
       "copy": {
-        "instagram": "The 30A 10K Thanksgiving Day Races run through Rosemary Beach on Thu Nov 26 \u2014 10K at 7:30, the 1-mile at 7:35, 5K at 9:30, about 15 minutes east of us.\n\nRegistration is advance only and closes today; packet pickup is Wed Nov 25 at The Big Chill.\n\nFor the quiet week after, Golden Sun is open Tue Dec 1 \u2013 Thu 3, three nights of coffee on the covered back patio and low winter light over the coast.\n\nBook direct \u2014 link in bio.",
-        "facebook": "The 30A 10K Thanksgiving Day Races take over Rosemary Beach on Thu Nov 26, a 15-minute drive east \u2014 advance registration closes today, with packet pickup Wed Nov 25 at The Big Chill. If you'd rather have the week after to yourselves, Golden Sun is open Tue Dec 1 \u2013 Thu 3: three nights, three bedrooms, and a three-minute walk to the public beach access across Scenic 30A. Live dates and real prices at https://book.sunandmoon30a.com"
+        "instagram": "The 30A 10K runs Thanksgiving morning through Rosemary Beach \u2014 10K at 7:30, 1-mile at 7:35, 5K at 9:30, fifteen minutes east.\n\nRegistration is advance only and closes today; packet pickup is Wed Nov 25 at The Big Chill.\n\nIf you'd rather have the quiet week after, Golden Sun is open Tue Dec 1 \u2013 Thu 3, three nights of coffee on the covered patio and December light.\n\nBook direct \u2014 link in bio.",
+        "facebook": "The 30A 10K Thanksgiving Day Races take over Rosemary Beach on Thu Nov 26, a 15-minute drive east \u2014 10K at 7:30 AM, 1-mile at 7:35, 5K at 9:30, with advance registration closing today and packet pickup Wed Nov 25 at The Big Chill. For the quieter week that follows, Golden Sun is open Tue Dec 1 \u2013 Thu 3, three nights on a residential lane in Seagrove with the public beach access a 3-minute walk across Scenic 30A. Live dates and real prices at book.sunandmoon30a.com"
       },
       "hashtags": "#SunAndMoon30A #StayWithTheSky #EmeraldCoast #FloridaPanhandle #WeekendGetaway #VacationRental #30A10K #SeagroveBeach",
       "copy_source": "claude"
@@ -287,12 +276,12 @@
         "kind": "event_stay",
         "event_title": "30A 10K Thanksgiving Day Races"
       },
-      "media_url": "https://sunandmoon30a.com/images/aerial-30a.jpg",
-      "alt_text": "Aerial view of the 30A shoreline with a coastal dune lake meeting the white sand.",
-      "photo_shows": "the coast and a coastal dune lake from the air",
+      "media_url": "https://sunandmoon30a.com/images/both-cottages.jpg",
+      "alt_text": "Golden Sun and Blue Moon side by side on Crystal Court, seen from the street under palms.",
+      "photo_shows": "both cottages from the street",
       "hashtags": "#SunAndMoon30A #StayWithTheSky #EmeraldCoast #FloridaPanhandle #WeekendGetaway #VacationRental #30A10K #SeagroveBeach",
       "copy_source": "claude",
-      "copy": "The 30A 10K Thanksgiving Day Races run through Rosemary Beach on Thu Nov 26 \u2014 10K at 7:30, the 1-mile at 7:35, 5K at 9:30, about 15 minutes east of us.\n\nRegistration is advance only and closes today; packet pickup is Wed Nov 25 at The Big Chill.\n\nFor the quiet week after, Golden Sun is open Tue Dec 1 \u2013 Thu 3, three nights of coffee on the covered back patio and low winter light over the coast.\n\nBook direct \u2014 link in bio."
+      "copy": "The 30A 10K runs Thanksgiving morning through Rosemary Beach \u2014 10K at 7:30, 1-mile at 7:35, 5K at 9:30, fifteen minutes east.\n\nRegistration is advance only and closes today; packet pickup is Wed Nov 25 at The Big Chill.\n\nIf you'd rather have the quiet week after, Golden Sun is open Tue Dec 1 \u2013 Thu 3, three nights of coffee on the covered patio and December light.\n\nBook direct \u2014 link in bio."
     },
     {
       "platform": "meta_facebook",
@@ -320,12 +309,12 @@
         "kind": "event_stay",
         "event_title": "30A 10K Thanksgiving Day Races"
       },
-      "media_url": "https://sunandmoon30a.com/images/aerial-30a.jpg",
-      "alt_text": "Aerial view of the 30A shoreline with a coastal dune lake meeting the white sand.",
-      "photo_shows": "the coast and a coastal dune lake from the air",
+      "media_url": "https://sunandmoon30a.com/images/both-cottages.jpg",
+      "alt_text": "Golden Sun and Blue Moon side by side on Crystal Court, seen from the street under palms.",
+      "photo_shows": "both cottages from the street",
       "hashtags": "#SunAndMoon30A #StayWithTheSky #EmeraldCoast #FloridaPanhandle #WeekendGetaway #VacationRental #30A10K #SeagroveBeach",
       "copy_source": "claude",
-      "copy": "The 30A 10K Thanksgiving Day Races take over Rosemary Beach on Thu Nov 26, a 15-minute drive east \u2014 advance registration closes today, with packet pickup Wed Nov 25 at The Big Chill. If you'd rather have the week after to yourselves, Golden Sun is open Tue Dec 1 \u2013 Thu 3: three nights, three bedrooms, and a three-minute walk to the public beach access across Scenic 30A. Live dates and real prices at https://book.sunandmoon30a.com"
+      "copy": "The 30A 10K Thanksgiving Day Races take over Rosemary Beach on Thu Nov 26, a 15-minute drive east \u2014 10K at 7:30 AM, 1-mile at 7:35, 5K at 9:30, with advance registration closing today and packet pickup Wed Nov 25 at The Big Chill. For the quieter week that follows, Golden Sun is open Tue Dec 1 \u2013 Thu 3, three nights on a residential lane in Seagrove with the public beach access a 3-minute walk across Scenic 30A. Live dates and real prices at book.sunandmoon30a.com"
     }
   ],
   "busy_map": {
