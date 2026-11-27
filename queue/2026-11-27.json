@@ -1,0 +1,489 @@
+{
+  "date": "2026-11-27",
+  "generated_at": "2026-11-27T21:45:14.006369Z",
+  "pillar_of_day": "guest_love",
+  "active_platforms": [
+    "meta_facebook",
+    "meta_instagram"
+  ],
+  "inactive_platforms": [
+    "google_business_profile",
+    "linkedin",
+    "nextdoor",
+    "pinterest",
+    "threads",
+    "tiktok",
+    "x_twitter",
+    "youtube"
+  ],
+  "open_windows": [
+    {
+      "unit": "sun",
+      "start": "2026-12-01",
+      "end": "2027-02-10",
+      "nights": 71,
+      "score": 102,
+      "kind": "window",
+      "event_title": ""
+    },
+    {
+      "unit": "moon",
+      "start": "2026-11-29",
+      "end": "2027-01-01",
+      "nights": 33,
+      "score": 65,
+      "kind": "window",
+      "event_title": ""
+    },
+    {
+      "unit": "full",
+      "start": "2026-12-01",
+      "end": "2027-01-01",
+      "nights": 31,
+      "score": 61,
+      "kind": "window",
+      "event_title": ""
+    }
+  ],
+  "top_stays": [
+    {
+      "unit": "sun",
+      "start": "2026-12-30",
+      "end": "2027-01-02",
+      "nights": 3,
+      "score": 17,
+      "kind": "event_stay",
+      "event_title": "New Year's Eve in Seaside"
+    },
+    {
+      "unit": "sun",
+      "start": "2026-12-04",
+      "end": "2026-12-07",
+      "nights": 3,
+      "score": 16,
+      "kind": "event_stay",
+      "event_title": "Caf\u00e9 Thirty-A Christmas Charity Ball"
+    },
+    {
+      "unit": "sun",
+      "start": "2026-12-24",
+      "end": "2026-12-27",
+      "nights": 3,
+      "score": 16,
+      "kind": "long_weekend",
+      "event_title": ""
+    },
+    {
+      "unit": "sun",
+      "start": "2026-12-31",
+      "end": "2027-01-03",
+      "nights": 3,
+      "score": 16,
+      "kind": "long_weekend",
+      "event_title": ""
+    },
+    {
+      "unit": "moon",
+      "start": "2026-12-04",
+      "end": "2026-12-07",
+      "nights": 3,
+      "score": 16,
+      "kind": "event_stay",
+      "event_title": "Caf\u00e9 Thirty-A Christmas Charity Ball"
+    },
+    {
+      "unit": "moon",
+      "start": "2026-12-24",
+      "end": "2026-12-27",
+      "nights": 3,
+      "score": 16,
+      "kind": "long_weekend",
+      "event_title": ""
+    },
+    {
+      "unit": "full",
+      "start": "2026-12-04",
+      "end": "2026-12-07",
+      "nights": 3,
+      "score": 16,
+      "kind": "event_stay",
+      "event_title": "Caf\u00e9 Thirty-A Christmas Charity Ball"
+    },
+    {
+      "unit": "full",
+      "start": "2026-12-24",
+      "end": "2026-12-27",
+      "nights": 3,
+      "score": 16,
+      "kind": "long_weekend",
+      "event_title": ""
+    }
+  ],
+  "upcoming_events": [
+    {
+      "title": "Turn On The Town",
+      "start": "2026-11-28T00:00:00",
+      "end": "2026-11-28T00:00:00",
+      "description": "Seaside's holiday season opens Saturday Nov 28: the parade steps off from Seagrove Plaza at 3 PM and winds to Central Square, followed by a live performance from Emerald Coast Theatre Company at Krier Plaza and the town tree lighting in the Amphitheater around 5 PM, with a visit from Santa. Free and open to all \u00b7 5-min walk or drive.",
+      "location": "Seaside",
+      "url": "https://seasidefl.com/news/holidays/",
+      "recurring": ""
+    },
+    {
+      "title": "Grayt Jackalope 10-Miler",
+      "start": "2026-11-28T00:00:00",
+      "end": "2026-11-28T00:00:00",
+      "description": "Saturday Nov 28, 2026 \u2014 10-mile and 5-mile trail races start and finish at the Grayton Beach State Park trailhead, 10-miler out at 8 AM with the 5-miler ten minutes behind \u00b7 packet pickup Fri Nov 27, 4\u20136 PM at Fleet Feet Inlet Beach \u00b7 10-min drive west",
+      "location": "Grayton Beach State Park",
+      "url": "https://gotrail.run/en/event/grayt-jackalope-10-miler",
+      "recurring": ""
+    },
+    {
+      "title": "Caf\u00e9 Thirty-A Christmas Charity Ball",
+      "start": "2026-12-05T00:00:00",
+      "end": "2026-12-05T00:00:00",
+      "description": "Black-tie-optional benefit for Caring & Sharing of South Walton, 6\u201310 PM at the restaurant, with dinner and a live and silent auction \u00b7 5-min drive",
+      "location": "Seagrove Beach",
+      "url": "https://sowal.com/node/157949",
+      "recurring": ""
+    },
+    {
+      "title": "Seaside Holiday Market",
+      "start": "2026-12-05T00:00:00",
+      "end": "2026-12-06T00:00:00",
+      "description": "Saturday 9 AM\u20134 PM and Sunday 10 AM\u20134 PM in Central Square \u00b7 local makers and gift vendors kick off the holiday season \u00b7 5-min walk or drive",
+      "location": "Seaside",
+      "url": "https://seasidefl.com/event/seaside-holiday-market",
+      "recurring": ""
+    },
+    {
+      "title": "New Year's Eve in Seaside",
+      "start": "2026-12-31T00:00:00",
+      "end": "2026-12-31T00:00:00",
+      "description": "Central Square's family celebration runs 4\u20139 PM with arts and crafts and a photo spot at the Post Office, live music from 5:30 PM, and fireworks at 9 PM \u00b7 5-min walk or drive",
+      "location": "Seaside",
+      "url": "https://seasidefl.com/news/holidays/",
+      "recurring": ""
+    },
+    {
+      "title": "Baytowne Wharf New Year's Eve Countdown",
+      "start": "2026-12-31T00:00:00",
+      "end": "2026-12-31T00:00:00",
+      "description": "The Village of Baytowne Wharf rings in 2027 with family-friendly live music from 6 PM, a fireworks show at 8 PM, a drone show over the lagoon, and a midnight fireworks finale \u00b7 35-min drive west",
+      "location": "Sandestin",
+      "url": "https://www.sandestin.com/things-to-do/events/baytowne-nye-countdown",
+      "recurring": ""
+    },
+    {
+      "title": "30A Songwriters Festival",
+      "start": "2027-01-15T00:00:00",
+      "end": "2027-01-18T00:00:00",
+      "description": "18th annual \u00b7 MLK weekend \u00b7 songwriters across 30A's intimate listening rooms in Seaside, Rosemary, Alys, WaterColor, Grayton and more, with headliners including St. Paul & The Broken Bones and Gillian Welch & David Rawlings \u00b7 benefits the Cultural Arts Alliance \u00b7 5-min walk or drive",
+      "location": "",
+      "url": "https://www.30asongwritersfestival.com/",
+      "recurring": ""
+    },
+    {
+      "title": "Seaside Farmers Market",
+      "start": "2026-11-28T00:00:00",
+      "end": null,
+      "description": "Year-Round \u00b7 Sat 9\u20131 \u00b7 Saturdays year-round, 9 AM\u20131 PM at the Seaside Amphitheater, with a second Tuesday market added each June and July \u00b7 local growers, artisan cheeses and breads, craft chefs, and live acoustic music \u00b7 5-min walk or drive",
+      "location": "",
+      "url": "https://30a.com/locations/seaside-farmers-market/",
+      "recurring": "Sat"
+    },
+    {
+      "title": "30A Farmers' Market",
+      "start": "2026-11-29T00:00:00",
+      "end": null,
+      "description": "Year-Round \u00b7 Sun 9\u20131 \u00b7 About 30 vendors on Barrett Square every Sunday, 9 AM\u20131 PM \u2014 local produce and micro-greens, Gulf seafood off the boat, artisan breads and sweets, grass-fed beef, tupelo honey \u00b7 pet-friendly \u00b7 a great Sunday-morning outing \u00b7 15-min drive east",
+      "location": "Rosemary Beach",
+      "url": "https://www.visitsouthwalton.com/events/30a-farmers-market-rosemary-beach",
+      "recurring": "Sun"
+    },
+    {
+      "title": "Sounds of Seaside Concert Series",
+      "start": "2026-12-02T00:00:00",
+      "end": null,
+      "description": "Through Dec 30 \u00b7 Wed 4\u20136 PM \u00b7 Free Wednesday-evening concerts on the Seaside Amphitheater lawn, 4\u20136 PM, running through the holidays with Roman Street on Dec 2 and Flow Tribe closing out the year Dec 30 \u00b7 free and open to all ages \u00b7 bring blankets and chairs, snacks and drinks welcome \u00b7 5-min walk or drive",
+      "location": "",
+      "url": "https://seasidefl.com/events/",
+      "recurring": "Wed"
+    }
+  ],
+  "new_bookings": [
+    {
+      "unit": "sun",
+      "start": "2027-02-27",
+      "end": "2027-02-28"
+    },
+    {
+      "unit": "moon",
+      "start": "2027-02-27",
+      "end": "2027-02-28"
+    },
+    {
+      "unit": "full",
+      "start": "2027-02-27",
+      "end": "2027-02-28"
+    }
+  ],
+  "briefs": [
+    {
+      "id": "avail-full-2026-12-10",
+      "pillar": "availability_spotlight",
+      "unit": "full",
+      "unit_label": "The whole property",
+      "unit_angle": "both cottages together \u2014 six bedrooms, one address, room for sixteen",
+      "open_dates": "Thu Dec 10 \u2013 Sat 12 (3 nights)",
+      "window": {
+        "unit": "full",
+        "start": "2026-12-10",
+        "end": "2026-12-13",
+        "nights": 3,
+        "score": 10,
+        "kind": "long_weekend",
+        "event_title": ""
+      },
+      "event": null,
+      "event_summary": null,
+      "rate": null,
+      "media_url": "https://sunandmoon30a.com/images/sunset-seagrove.jpg",
+      "alt_text": "An adult and child silhouetted on the beach at sunset, the sun low over the Gulf.",
+      "photo_shows": "the beach at sunset",
+      "copy": {
+        "instagram": "Thu Dec 10 \u2013 Sat 12, three nights, both cottages open.\n\nGolden Sun and Blue Moon side by side on the same lane \u2014 six bedrooms, four baths, sixteen people at one address.\n\nThe nearest beach access, Pelayo, is public county access, a 3-minute walk straight across Scenic 30A.\n\nBook direct \u2014 link in bio.",
+        "facebook": "Both cottages are open Thu Dec 10 \u2013 Sat 12 (3 nights): six bedrooms, four baths, sixteen guests, one address on Crystal Court \u2014 and the nearest beach access, Pelayo, is a public Walton County access a 3-minute walk across Scenic 30A. Live availability and real prices at https://book.sunandmoon30a.com"
+      },
+      "hashtags": "#SunAndMoon30A #StayWithTheSky #VacationRental #BeachHouse #GulfCoast #30A #SeagroveBeach #FamilyReunion",
+      "copy_source": "claude"
+    },
+    {
+      "id": "evergreen-guest_love-739947",
+      "pillar": "guest_love",
+      "prompt": "Repost a recent review or guest photo (with permission). Let their words carry it; add only a thank-you.",
+      "media_url": "https://sunandmoon30a.com/images/aerial-30a.jpg",
+      "alt_text": "Aerial view of the 30A shoreline with a coastal dune lake meeting the white sand.",
+      "photo_shows": "the coast and a coastal dune lake from the air",
+      "copy": {
+        "instagram": "Repost a recent review or guest photo (with permission). Let their words carry it; add only a thank-you.",
+        "facebook": "Repost a recent review or guest photo (with permission). Let their words carry it; add only a thank-you."
+      },
+      "hashtags": "#SunAndMoon30A #StayWithTheSky #VacationRental #BeachHouse #GulfCoast #30A",
+      "needs_human_media": true
+    },
+    {
+      "id": "event-739947-2026-11-28-turn-on-the-town",
+      "pillar": "local_events",
+      "event": {
+        "title": "Turn On The Town",
+        "start": "2026-11-28T00:00:00",
+        "end": "2026-11-28T00:00:00",
+        "description": "Seaside's holiday season opens Saturday Nov 28: the parade steps off from Seagrove Plaza at 3 PM and winds to Central Square, followed by a live performance from Emerald Coast Theatre Company at Krier Plaza and the town tree lighting in the Amphitheater around 5 PM, with a visit from Santa. Free and open to all \u00b7 5-min walk or drive.",
+        "location": "Seaside",
+        "url": "https://seasidefl.com/news/holidays/",
+        "recurring": ""
+      },
+      "event_summary": "Turn On The Town, Sat Nov 28",
+      "unit": "sun",
+      "unit_label": "Golden Sun",
+      "open_dates": "Tue Dec 1 \u2013 Thu 3 (3 nights)",
+      "window": {
+        "unit": "sun",
+        "start": "2026-12-01",
+        "end": "2026-12-04",
+        "nights": 3,
+        "score": 10,
+        "kind": "event_stay",
+        "event_title": "Turn On The Town"
+      },
+      "media_url": "https://sunandmoon30a.com/images/both-cottages.jpg",
+      "alt_text": "Golden Sun and Blue Moon side by side on Crystal Court, seen from the street under palms.",
+      "photo_shows": "both cottages from the street",
+      "copy": {
+        "instagram": "Turn On The Town, Sat Nov 28 \u2014 Seaside's holiday season opens with the parade from Seagrove Plaza at 3 PM and the tree lighting around 5.\n\nSeaside is 1.8 miles up 30A, five minutes by car.\n\nIf you want the quiet week right after it, Golden Sun is open Tue Dec 1 \u2013 Thu 3: coffee on the covered patio, fireplace in the evening.\n\nBook direct \u2014 link in bio.",
+        "facebook": "Turn On The Town kicks off Seaside's holiday season this Saturday, Nov 28 \u2014 parade from Seagrove Plaza at 3 PM, tree lighting around 5, all of it five minutes up 30A. Golden Sun is open the following week, Tue Dec 1 \u2013 Thu 3, if you'd rather have the quiet side of the season: https://book.sunandmoon30a.com"
+      },
+      "hashtags": "#SunAndMoon30A #StayWithTheSky #VacationRental #BeachHouse #GulfCoast #30A #SeasideFL #TurnOnTheTown",
+      "copy_source": "claude"
+    }
+  ],
+  "posts": [
+    {
+      "platform": "meta_instagram",
+      "id": "avail-full-2026-12-10",
+      "pillar": "availability_spotlight",
+      "unit": "full",
+      "unit_label": "The whole property",
+      "unit_angle": "both cottages together \u2014 six bedrooms, one address, room for sixteen",
+      "open_dates": "Thu Dec 10 \u2013 Sat 12 (3 nights)",
+      "window": {
+        "unit": "full",
+        "start": "2026-12-10",
+        "end": "2026-12-13",
+        "nights": 3,
+        "score": 10,
+        "kind": "long_weekend",
+        "event_title": ""
+      },
+      "event": null,
+      "event_summary": null,
+      "rate": null,
+      "media_url": "https://sunandmoon30a.com/images/sunset-seagrove.jpg",
+      "alt_text": "An adult and child silhouetted on the beach at sunset, the sun low over the Gulf.",
+      "photo_shows": "the beach at sunset",
+      "hashtags": "#SunAndMoon30A #StayWithTheSky #VacationRental #BeachHouse #GulfCoast #30A #SeagroveBeach #FamilyReunion",
+      "copy_source": "claude",
+      "copy": "Thu Dec 10 \u2013 Sat 12, three nights, both cottages open.\n\nGolden Sun and Blue Moon side by side on the same lane \u2014 six bedrooms, four baths, sixteen people at one address.\n\nThe nearest beach access, Pelayo, is public county access, a 3-minute walk straight across Scenic 30A.\n\nBook direct \u2014 link in bio."
+    },
+    {
+      "platform": "meta_instagram",
+      "id": "evergreen-guest_love-739947",
+      "pillar": "guest_love",
+      "prompt": "Repost a recent review or guest photo (with permission). Let their words carry it; add only a thank-you.",
+      "media_url": "https://sunandmoon30a.com/images/aerial-30a.jpg",
+      "alt_text": "Aerial view of the 30A shoreline with a coastal dune lake meeting the white sand.",
+      "photo_shows": "the coast and a coastal dune lake from the air",
+      "hashtags": "#SunAndMoon30A #StayWithTheSky #VacationRental #BeachHouse #GulfCoast #30A",
+      "needs_human_media": true,
+      "copy": "Repost a recent review or guest photo (with permission). Let their words carry it; add only a thank-you."
+    },
+    {
+      "platform": "meta_instagram",
+      "id": "event-739947-2026-11-28-turn-on-the-town",
+      "pillar": "local_events",
+      "event": {
+        "title": "Turn On The Town",
+        "start": "2026-11-28T00:00:00",
+        "end": "2026-11-28T00:00:00",
+        "description": "Seaside's holiday season opens Saturday Nov 28: the parade steps off from Seagrove Plaza at 3 PM and winds to Central Square, followed by a live performance from Emerald Coast Theatre Company at Krier Plaza and the town tree lighting in the Amphitheater around 5 PM, with a visit from Santa. Free and open to all \u00b7 5-min walk or drive.",
+        "location": "Seaside",
+        "url": "https://seasidefl.com/news/holidays/",
+        "recurring": ""
+      },
+      "event_summary": "Turn On The Town, Sat Nov 28",
+      "unit": "sun",
+      "unit_label": "Golden Sun",
+      "open_dates": "Tue Dec 1 \u2013 Thu 3 (3 nights)",
+      "window": {
+        "unit": "sun",
+        "start": "2026-12-01",
+        "end": "2026-12-04",
+        "nights": 3,
+        "score": 10,
+        "kind": "event_stay",
+        "event_title": "Turn On The Town"
+      },
+      "media_url": "https://sunandmoon30a.com/images/both-cottages.jpg",
+      "alt_text": "Golden Sun and Blue Moon side by side on Crystal Court, seen from the street under palms.",
+      "photo_shows": "both cottages from the street",
+      "hashtags": "#SunAndMoon30A #StayWithTheSky #VacationRental #BeachHouse #GulfCoast #30A #SeasideFL #TurnOnTheTown",
+      "copy_source": "claude",
+      "copy": "Turn On The Town, Sat Nov 28 \u2014 Seaside's holiday season opens with the parade from Seagrove Plaza at 3 PM and the tree lighting around 5.\n\nSeaside is 1.8 miles up 30A, five minutes by car.\n\nIf you want the quiet week right after it, Golden Sun is open Tue Dec 1 \u2013 Thu 3: coffee on the covered patio, fireplace in the evening.\n\nBook direct \u2014 link in bio."
+    },
+    {
+      "platform": "meta_facebook",
+      "id": "avail-full-2026-12-10",
+      "pillar": "availability_spotlight",
+      "unit": "full",
+      "unit_label": "The whole property",
+      "unit_angle": "both cottages together \u2014 six bedrooms, one address, room for sixteen",
+      "open_dates": "Thu Dec 10 \u2013 Sat 12 (3 nights)",
+      "window": {
+        "unit": "full",
+        "start": "2026-12-10",
+        "end": "2026-12-13",
+        "nights": 3,
+        "score": 10,
+        "kind": "long_weekend",
+        "event_title": ""
+      },
+      "event": null,
+      "event_summary": null,
+      "rate": null,
+      "media_url": "https://sunandmoon30a.com/images/sunset-seagrove.jpg",
+      "alt_text": "An adult and child silhouetted on the beach at sunset, the sun low over the Gulf.",
+      "photo_shows": "the beach at sunset",
+      "hashtags": "#SunAndMoon30A #StayWithTheSky #VacationRental #BeachHouse #GulfCoast #30A #SeagroveBeach #FamilyReunion",
+      "copy_source": "claude",
+      "copy": "Both cottages are open Thu Dec 10 \u2013 Sat 12 (3 nights): six bedrooms, four baths, sixteen guests, one address on Crystal Court \u2014 and the nearest beach access, Pelayo, is a public Walton County access a 3-minute walk across Scenic 30A. Live availability and real prices at https://book.sunandmoon30a.com"
+    },
+    {
+      "platform": "meta_facebook",
+      "id": "evergreen-guest_love-739947",
+      "pillar": "guest_love",
+      "prompt": "Repost a recent review or guest photo (with permission). Let their words carry it; add only a thank-you.",
+      "media_url": "https://sunandmoon30a.com/images/aerial-30a.jpg",
+      "alt_text": "Aerial view of the 30A shoreline with a coastal dune lake meeting the white sand.",
+      "photo_shows": "the coast and a coastal dune lake from the air",
+      "hashtags": "#SunAndMoon30A #StayWithTheSky #VacationRental #BeachHouse #GulfCoast #30A",
+      "needs_human_media": true,
+      "copy": "Repost a recent review or guest photo (with permission). Let their words carry it; add only a thank-you."
+    },
+    {
+      "platform": "meta_facebook",
+      "id": "event-739947-2026-11-28-turn-on-the-town",
+      "pillar": "local_events",
+      "event": {
+        "title": "Turn On The Town",
+        "start": "2026-11-28T00:00:00",
+        "end": "2026-11-28T00:00:00",
+        "description": "Seaside's holiday season opens Saturday Nov 28: the parade steps off from Seagrove Plaza at 3 PM and winds to Central Square, followed by a live performance from Emerald Coast Theatre Company at Krier Plaza and the town tree lighting in the Amphitheater around 5 PM, with a visit from Santa. Free and open to all \u00b7 5-min walk or drive.",
+        "location": "Seaside",
+        "url": "https://seasidefl.com/news/holidays/",
+        "recurring": ""
+      },
+      "event_summary": "Turn On The Town, Sat Nov 28",
+      "unit": "sun",
+      "unit_label": "Golden Sun",
+      "open_dates": "Tue Dec 1 \u2013 Thu 3 (3 nights)",
+      "window": {
+        "unit": "sun",
+        "start": "2026-12-01",
+        "end": "2026-12-04",
+        "nights": 3,
+        "score": 10,
+        "kind": "event_stay",
+        "event_title": "Turn On The Town"
+      },
+      "media_url": "https://sunandmoon30a.com/images/both-cottages.jpg",
+      "alt_text": "Golden Sun and Blue Moon side by side on Crystal Court, seen from the street under palms.",
+      "photo_shows": "both cottages from the street",
+      "hashtags": "#SunAndMoon30A #StayWithTheSky #VacationRental #BeachHouse #GulfCoast #30A #SeasideFL #TurnOnTheTown",
+      "copy_source": "claude",
+      "copy": "Turn On The Town kicks off Seaside's holiday season this Saturday, Nov 28 \u2014 parade from Seagrove Plaza at 3 PM, tree lighting around 5, all of it five minutes up 30A. Golden Sun is open the following week, Tue Dec 1 \u2013 Thu 3, if you'd rather have the quiet side of the season: https://book.sunandmoon30a.com"
+    }
+  ],
+  "busy_map": {
+    "sun": [
+      [
+        "2026-11-27",
+        "2026-12-01"
+      ],
+      [
+        "2027-02-20",
+        "2027-02-28"
+      ]
+    ],
+    "moon": [
+      [
+        "2026-11-27",
+        "2026-11-29"
+      ],
+      [
+        "2027-01-01",
+        "2027-02-28"
+      ]
+    ],
+    "full": [
+      [
+        "2026-11-27",
+        "2026-12-01"
+      ],
+      [
+        "2027-01-01",
+        "2027-02-28"
+      ]
+    ]
+  }
+}
